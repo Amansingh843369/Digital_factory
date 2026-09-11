@@ -19,7 +19,7 @@ function Logo() {
     <a href="#home" className="flex items-center gap-2 font-display text-xl font-bold tracking-tight">
       
         <Image
-    src="/digital-factory.jpeg"
+    src="/digital-factory.png"
     alt="Digital Factory Logo"
     width={170}
     height={140}
