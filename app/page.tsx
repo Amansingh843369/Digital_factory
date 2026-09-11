@@ -14,11 +14,12 @@ export default function Page() {
       <SiteHeader />
       <main>
         <Hero />
+         <About />
         <Services />
-        <About />
-        <Projects />
-        <Stats />
-        <Testimonials />
+       
+        {/* <Projects /> */}
+        {/* <Stats /> */}
+        {/* <Testimonials /> */}
         <LatestNews />
       </main>
       <SiteFooter />

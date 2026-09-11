@@ -2,23 +2,28 @@
 
 import { useState } from 'react'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
+import Image from "next/image";
+
 
 const NAV = [
   { label: 'Home', href: '#home' },
+   { label: 'About Us', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#work' },
-  { label: 'About', href: '#about' },
   { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+   { label: 'FAQ', href: '#work' },
+  { label: 'Contact Us', href: '#contact' },
 ]
 
 function Logo() {
   return (
     <a href="#home" className="flex items-center gap-2 font-display text-xl font-bold tracking-tight">
-      <span className="grid h-8 w-8 place-items-center rounded-full bg-brand text-brand-foreground">
-        <span className="h-2.5 w-2.5 rounded-full bg-brand-foreground" />
-      </span>
-      Nova
+      
+        <Image
+    src="/digital-factory.jpeg"
+    alt="Digital Factory Logo"
+    width={170}
+    height={140}
+    className="object-contain" />
     </a>
   )
 }
@@ -74,7 +79,7 @@ export function SiteHeader() {
                   className="block rounded-lg px-3 py-2.5 text-base font-medium text-foreground/80 hover:bg-muted hover:text-brand"
                 >
                   {item.label}
-                </a>
+                </a> 
               </li>
             ))}
             <li className="mt-2">
