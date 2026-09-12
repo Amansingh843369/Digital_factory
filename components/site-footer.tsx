@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 
 const COLUMNS = [
   {
@@ -8,74 +8,95 @@ const COLUMNS = [
   },
   {
     title: 'Quick links',
-    links: ['Home', 'About us ', 'Our Work', 'Contact'],
+    links: ['Home', 'About Us', 'Our Work', 'Contact'],
   },
-]
+];
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="bg-ink text-ink-foreground">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        {/* CTA */}
-        <div className="grid gap-8 border-b border-white/10 py-16 md:grid-cols-2 md:items-end md:py-20">
-          <h2 className="font-display text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
-            Let&apos;s build something worth sharing.
+    <footer className="bg-neutral-950 text-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        
+        {/* ================= CTA SECTION ================= */}
+        <div className="grid gap-8 border-b border-neutral-800 py-16 md:grid-cols-2 md:items-center md:py-20 lg:py-24">
+          <h2 className="font-serif text-4xl leading-[1.1] tracking-tight md:text-5xl lg:text-[52px]">
+            Let&apos;s build something <span className="text-[#C46A42]">worth sharing.</span>
           </h2>
           <div className="md:justify-self-end">
             <a
-              href="mailto:"
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-sm font-semibold uppercase tracking-wider text-brand-foreground transition-transform hover:-translate-y-0.5"
+              href="mailto:aman@singh.com"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C46A42] px-8 py-4 text-[15px] font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#A95A37] hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.5)] hover:-translate-y-1"
             >
               Start a project
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
         </div>
 
-        {/* Links */}
-        <div className="grid gap-10 py-14 md:grid-cols-4">
+        {/* ================= LINKS & INFO SECTION ================= */}
+        <div className="grid gap-12 py-16 md:grid-cols-4 lg:py-20">
+          
+          {/* Logo & Contact Info */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 font-display text-2xl font-bold">
-               <a>
+            <div className="flex items-center gap-2">
+              <a href="/" className="inline-block transition-transform hover:opacity-90">
                 <Image
-                    src="/digital-factory.jpeg"
-                    alt="Digital Factory Logo"
-                    width={170}
-                    height={140}
-                    className="object-contain" />
-                    </a>
-              
+                  src="/digital-factory.jpeg" // Make sure this path is correct
+                  alt="Digital Factory Logo"
+                  width={150}
+                  height={50}
+                  className="h-auto w-[150px] object-contain"
+                />
+              </a>
             </div>
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-foreground/60">
-              A web design &amp; development agency helping brands ship exceptional digital
-              products with round-the-clock support.
+            <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-neutral-400">
+              A premium web design, development & cyber security agency helping brands ship exceptional digital products with round-the-clock support.
             </p>
-            <ul className="mt-6 space-y-3 text-sm text-ink-foreground/70">
-              <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-brand" /> +91 8433694423
+            
+            <ul className="mt-8 space-y-4 text-[15px] text-neutral-300">
+              <li className="flex items-center gap-4 group">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-900 transition-colors group-hover:bg-[#C46A42]/20">
+                  <Phone className="h-4 w-4 text-[#C46A42]" />
+                </div>
+                <a href="tel:+918433694423" className="transition-colors hover:text-[#C46A42]">
+                  +91 8433694423
+                </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-4 w-4 text-brand" /> aman@singh.com
+              <li className="flex items-center gap-4 group">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-900 transition-colors group-hover:bg-[#C46A42]/20">
+                  <Mail className="h-4 w-4 text-[#C46A42]" />
+                </div>
+                <a href="mailto:aman@singh.com" className="transition-colors hover:text-[#C46A42]">
+                  aman@singh.com
+                </a>
               </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 text-brand" /> Mumbai
+              <li className="flex items-center gap-4 group">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-900 transition-colors group-hover:bg-[#C46A42]/20">
+                  <MapPin className="h-4 w-4 text-[#C46A42]" />
+                </div>
+                <span>Mumbai, India</span>
               </li>
             </ul>
           </div>
 
+          {/* Nav Columns */}
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-foreground/50">
+              <h3 className="mb-6 text-[13px] font-bold uppercase tracking-wider text-[#C46A42]">
                 {col.title}
               </h3>
-              <ul className="mt-5 space-y-3">
+              <ul className="space-y-4">
                 {col.links.map((l) => (
                   <li key={l}>
                     <a
                       href="#"
-                      className="text-sm text-ink-foreground/70 transition-colors hover:text-brand"
+                      className="group inline-flex items-center text-[15px] text-neutral-400 transition-colors hover:text-white"
                     >
-                      {l}
+                      <span className="relative overflow-hidden">
+                        {l}
+                        {/* Custom animated underline effect */}
+                        <span className="absolute bottom-0 left-0 h-[1px] w-full origin-right scale-x-0 bg-[#C46A42] transition-transform duration-300 ease-out group-hover:origin-left group-hover:scale-x-100"></span>
+                      </span>
                     </a>
                   </li>
                 ))}
@@ -84,11 +105,15 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/10 py-6 text-xs text-ink-foreground/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()}  All rights reserved.</p>
-          <p>Built with Digital Factory </p>
+        {/* ================= COPYRIGHT BAR ================= */}
+        <div className="flex flex-col gap-4 border-t border-neutral-800 py-8 text-[14px] text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Digital Factory. All rights reserved.</p>
+          <p className="flex items-center gap-1">
+            Built with <span className="text-[#C46A42] font-semibold">Digital Factory</span>
+          </p>
         </div>
+        
       </div>
     </footer>
-  )
+  );
 }

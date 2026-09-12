@@ -31,7 +31,7 @@ export function Services() {
     {
       title: "Cyber Security Solutions",
       description: "Comprehensive security measures to protect your critical digital assets.",
-      icon: <ShieldCheck className="h-7 w-7 text-[#C46A42]" />,
+      icon: <ShieldCheck className="h-7 w-7 text-[#ededed]" />,
       features: ["Network & Cloud Security", "Data Protection", "IT Infrastructure Audits"],
     },
     {
