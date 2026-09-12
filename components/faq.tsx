@@ -27,7 +27,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-[#FAFAFA] py-24 px-5 sm:px-8">
+    <section id="faq" className="bg-[#FAFAFA] py-24 px-5 sm:px-8">
       <div className="mx-auto max-w-3xl">
         
         {/* ================= HEADER ================= */}
