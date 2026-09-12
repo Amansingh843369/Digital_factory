@@ -112,6 +112,16 @@ export function Contact() {
                     className="w-full resize-none rounded-2xl bg-[#F0EBE1] px-5 py-4.5 text-neutral-800 placeholder-neutral-400 outline-none transition-all focus:ring-2 focus:ring-[#C46A42]/40"
                   />
                 </div>
+
+                {/* SUBMIT BUTTON */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="w-full rounded-2xl bg-[#C46A42] py-4.5 text-[16px] font-semibold text-white transition-colors duration-300 hover:bg-[#A95A37] focus:outline-none focus:ring-2 focus:ring-[#C46A42] focus:ring-offset-2 focus:ring-offset-[#FAF7F2]"
+                  >
+                    Send Message
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -121,7 +131,7 @@ export function Contact() {
             {/* Image Container with precise rounded corners like the reference */}
             <div className="relative h-full w-full overflow-hidden rounded-[2rem]">
               <Image
-                src="/images/tech-office.jpg" /* Replace with your image path */
+                src="/free.avif" /* Replace with your image path */
                 alt="Workspace Environment"
                 fill
                 className="object-cover"
