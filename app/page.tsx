@@ -7,12 +7,12 @@ import { Stats } from '@/components/stats'
 import { Testimonials } from '@/components/testimonials'
 import { LatestNews } from '@/components/latest-news'
 import { SiteFooter } from '@/components/site-footer'
-import { Faq } from '@/components/Faq'
+import { FAQSection } from "@/components/faq";
 import { Contact } from '@/components/contact'
 
 export default function Page() {
   return (
-    <>
+    <>   
       <SiteHeader />
       <main>
         <Hero />
@@ -22,7 +22,7 @@ export default function Page() {
         {/* <Projects /> */}
         {/* <Stats /> */}
         {/* <Testimonials /> */}
-        <Faq/>
+        <FAQSection/>
         <Contact/>
         <LatestNews />
       </main>
