@@ -14,35 +14,35 @@ import {
 const features = [
   {
     id: 0,
-    title: "Proven Track Record",
+    title: "Innovation First",
     icon: Trophy,
     description: "500+ successful audits, custom software deployments, and digital campaigns. We don't just promise results — we deliver measurable impact.",
     whatYouGet: "A dedicated team backed by verifiable numbers and 99.9% reliability.",
-    image: "/images/why-track-record.jpg"
+    image: "/f1.jpg"
   },
   {
     id: 1,
-    title: "Client-Centered Focus",
+    title: " Custom-Built Solutions",
     icon: Users,
     description: "We work as an extension of your team. Complete transparency, zero tech jargon, and iterative feedback ensure long-term trust.",
     whatYouGet: "Direct access to domain experts and dedicated project managers.",
-    image: "/images/why-client-focus.jpg"
+    image: "/f3.jpg"
   },
   {
     id: 2,
-    title: "End-to-End Partner",
+    title: "Secure & Reliable",
     icon: Layers,
     description: "From digital marketing and web development to custom enterprise apps and cybersecurity, we are your one-stop digital transformation hub.",
     whatYouGet: "Seamless tech integration with zero multi-vendor management friction.",
-    image: "/images/why-end-to-end.jpg"
+    image: "/f4.jpg"
   },
   {
     id: 3,
-    title: "Zero-Trust Security",
+    title: "Affordable Packages",
     icon: ShieldCheck,
     description: "Security is engineered into every line of code. Protected infrastructures designed to safeguard your critical data against modern threats.",
     whatYouGet: "Enterprise-grade data protection meeting strict global VAPT standards.",
-    image: "/images/why-cyber-security.jpg"
+    image: "/fake.avif"
   }
 ];
 

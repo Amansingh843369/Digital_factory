@@ -75,7 +75,7 @@ export function About() {
           <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
             <div className="relative aspect-square rounded-[2rem] overflow-hidden border border-neutral-200/50 shadow-2xl shadow-neutral-900/10 group">
               <Image
-                src="/images/about-us-tech-team.jpg" // Aapki actual image path
+                src="/fake.avif" // Aapki actual image path
                 alt="Digital Factory Team"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"

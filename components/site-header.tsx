@@ -1,14 +1,21 @@
 'use client'
 
-import { useState } from 'react'
+import { Children, useState } from 'react'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import Image from "next/image";
-
+import { ChevronDown } from "lucide-react";
 
 const NAV = [
   { label: 'Home', href: '#home' },
    { label: 'About Us', href: '#about' },
-  { label: 'Services', href: '#services' },
+  { label: 'Services', href: '#services' ,
+    children: [
+    { label: "Web Development", href: "#web-development" },
+    { label: "AI Agents", href: "#ai-agents" },
+    { label: "Digital Marketing", href: "#digital-marketing" },
+    { label: "SEO", href: "#seo" },
+  ],
+  },
   { label: 'Blog', href: '#blog' },
    { label: 'FAQ', href: '#faq' },
    { label: 'Career', href: '/career' },
