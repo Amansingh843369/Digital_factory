@@ -8,6 +8,8 @@ import { Testimonials } from '@/components/testimonials'
 import { LatestNews } from '@/components/latest-news'
 import { SiteFooter } from '@/components/site-footer'
 import { FAQSection } from "@/components/faq";
+import { WhyChooseUs} from "@/components/WhyChooseUs";
+
 import { Contact } from '@/components/contact'
 
 export default function Page() {
@@ -18,6 +20,7 @@ export default function Page() {
         <Hero />
          <About />
         <Services />
+        <WhyChooseUs/>
        
         {/* <Projects /> */}
         {/* <Stats /> */}

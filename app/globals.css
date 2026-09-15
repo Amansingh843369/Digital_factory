@@ -93,5 +93,7 @@
   }
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 

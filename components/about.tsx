@@ -1,18 +1,70 @@
-import Image from 'next/image';
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { 
   ShieldCheck, 
-  Lock, 
-  Server, 
-  ScanSearch, 
-  ArrowRight, 
-  ShieldAlert 
-} from 'lucide-react';
+  ArrowRight,
+  Globe,
+  TrendingUp,
+  Code2
+} from "lucide-react";
+
+// ================= CUSTOM HOOK FOR NUMBER COUNTING =================
+function AnimatedNumber({ value, isDecimal = false, suffix = "", duration = 2000 }: { value: number, isDecimal?: boolean, suffix?: string, duration?: number }) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); 
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      const easeOut = 1 - Math.pow(1 - progress, 4);
+      const currentCount = easeOut * value;
+      
+      setCount(currentCount);
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setCount(value);
+      }
+    };
+    
+    window.requestAnimationFrame(step);
+  }, [isVisible, value, duration]);
+
+  const displayValue = isDecimal ? count.toFixed(1) : Math.floor(count);
+
+  return <span ref={ref}>{displayValue}{suffix}</span>;
+}
+// ===================================================================
 
 export function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-24 lg:py-10">
+    <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-24 lg:py-32">
       
-      {/* Background Decor (Subtle Theme Colors) */}
+      {/* Background Decor */}
       <div className="absolute top-0 right-0 -z-10 h-[600px] w-[600px] rounded-full bg-[#C46A42]/5 blur-[120px]" />
       <div className="absolute bottom-0 left-0 -z-10 h-[500px] w-[500px] rounded-full bg-neutral-900/5 blur-[120px]" />
 
@@ -21,40 +73,45 @@ export function About() {
           
           {/* ================= LEFT: VISUAL STORYTELLING ================= */}
           <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-            <div className="relative aspect-square rounded-[2rem] overflow-hidden border border-neutral-200/50 shadow-2xl shadow-neutral-900/10">
+            <div className="relative aspect-square rounded-[2rem] overflow-hidden border border-neutral-200/50 shadow-2xl shadow-neutral-900/10 group">
               <Image
-                src="/images/cyber-defense.jpg" // Replace with your actual cyber security image
-                alt="Cyber Security Operations"
+                src="/images/about-us-tech-team.jpg" // Aapki actual image path
+                alt="Digital Factory Team"
                 fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              {/* Overlay Dark Gradient for Stats Readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-900/20 to-transparent" />
               
-              {/* Bottom Stats Bar inside Image */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 backdrop-blur-md bg-white/5 border-t border-white/10">
-                <div className="flex justify-between text-white">
+              {/* Overlay Dark Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-900/40 to-transparent transition-opacity duration-500" />
+              
+              {/* Bottom Stats Bar inside Image (Live Counters) */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 backdrop-blur-md bg-white/5 border-t border-white/10">
+                <div className="grid grid-cols-3 gap-4 text-white text-center sm:text-left">
                   <div>
-                    <p className="text-2xl font-bold text-[#C46A42]">10+</p>
-                    <p className="text-xs font-medium uppercase tracking-wider opacity-80 mt-1">Years Securing</p>
+                    <p className="text-3xl sm:text-4xl font-bold text-[#C46A42]">
+                      <AnimatedNumber value={10} suffix="+" duration={2000} />
+                    </p>
+                    <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1">Years Experience</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-[#C46A42]">500+</p>
-                    <p className="text-xs font-medium uppercase tracking-wider opacity-80 mt-1">VAPT Audits</p>
+                    <p className="text-3xl sm:text-4xl font-bold text-[#C46A42]">
+                      <AnimatedNumber value={500} suffix="+" duration={2500} />
+                    </p>
+                    <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1">Projects Delivered</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-[#C46A42]">99.9%</p>
-                    <p className="text-xs font-medium uppercase tracking-wider opacity-80 mt-1">Threats Blocked</p>
+                    <p className="text-3xl sm:text-4xl font-bold text-[#C46A42]">
+                      <AnimatedNumber value={99.9} isDecimal={true} suffix="%" duration={3000} />
+                    </p>
+                    <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1">Client Satisfaction</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            
           </div>
 
-          {/* ================= RIGHT: CONTENT & ANIMATIONS ================= */}
+          {/* ================= RIGHT: CONTENT ================= */}
           <div className="space-y-8">
             
             {/* Section Label */}
@@ -65,56 +122,55 @@ export function About() {
 
             {/* Headline */}
             <h2 className="font-serif text-4xl leading-[1.1] tracking-tight text-neutral-900 md:text-5xl lg:text-[52px]">
-              Fortifying Your Digital Assets Against <br className="hidden lg:block" />
+              Exploring Endless <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 to-[#C46A42]">
-                Modern Threats
+                Digital Possibilities
               </span>
             </h2>
 
             {/* Description Paragraphs */}
-            <div className="space-y-6 text-[17px] leading-relaxed text-neutral-600">
-              <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-backwards [animation-delay:200ms]">
-                At Digital Factory, we don't just build digital solutions; we secure them. We empower enterprises with robust cyber defense mechanisms, proactive threat hunting, and comprehensive <strong className="text-neutral-900">VAPT (Vulnerability Assessment & Penetration Testing)</strong>.
+            <div className="space-y-5 text-[16px] leading-relaxed text-neutral-600">
+              <p>
+                <strong className="text-neutral-900">Digital Factory</strong> is a forward-thinking digital solutions company. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
               </p>
-              <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-backwards [animation-delay:400ms]">
-                Our mission is to deliver zero-trust architectures and resilient infrastructures that ensure your critical data remains uncompromised, allowing you to focus on scalable business growth with absolute peace of mind.
+              <p>
+                We believe that technology and creativity must go hand-in-hand. Driven by innovation, integrity, and trust, our team brings together specialists from different domains to deliver measurable results. From startups to established enterprises, we are your one-stop partner for digital transformation.
               </p>
             </div>
 
-            {/* Key Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+            {/* Key Features Grid (Based on your 4 points) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4">
               {[
-                { icon: ScanSearch, title: "Proactive Threat Hunting", desc: "Identify and neutralize risks before they impact your business." },
-                { icon: Lock, title: "Zero Trust Architecture", desc: "Never trust, always verify for maximum internal security." },
-                { icon: Server, title: "Infrastructure Security", desc: "Hardened networks designed to withstand targeted attacks." },
-                { icon: ShieldCheck, title: "Compliance & VAPT", desc: "End-to-end security audits meeting global standards." },
+                { icon: Globe, title: "Digital Identity", desc: "Build a strong and lasting digital identity for your brand." },
+                { icon: TrendingUp, title: "Customer Engagement", desc: "Enhance reach through effective marketing strategies." },
+                { icon: Code2, title: "Custom Software", desc: "Deploy solutions to improve efficiency and growth." },
+                { icon: ShieldCheck, title: "Cybersecurity", desc: "Protect your data with cutting-edge security solutions." },
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className="group flex gap-4 rounded-2xl border border-neutral-200/60 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C46A42]/30 hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.15)] animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-backwards"
-                  style={{ animationDelay: `${600 + idx * 100}ms` }}
+                  className="group flex gap-4 rounded-2xl border border-neutral-200/60 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C46A42]/30 hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.15)]"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#F0EBE1] text-[#C46A42] transition-colors duration-300 group-hover:bg-[#C46A42] group-hover:text-white">
-                    <item.icon className="h-6 w-6" />
+                    <item.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-neutral-900">{item.title}</h3>
-                    <p className="mt-1 text-sm text-neutral-500 leading-relaxed">{item.desc}</p>
+                    <h3 className="font-bold text-neutral-900 text-[15px]">{item.title}</h3>
+                    <p className="mt-1 text-[13px] text-neutral-500 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* CTA Link */}
-            <div className="pt-6 animate-in fade-in duration-1000 fill-mode-backwards [animation-delay:1200ms]">
+            {/* <div className="pt-4">
               <a 
                 href="#services" 
                 className="group inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-wider text-neutral-900 transition-colors hover:text-[#C46A42]"
               >
-                Explore our security methodology
+                Discover our methodology
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
-            </div>
+            </div> */}
 
           </div>
         </div>
