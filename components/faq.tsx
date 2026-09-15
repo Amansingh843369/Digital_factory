@@ -23,8 +23,20 @@ const faqs = [
 ];
 
 export function FAQSection() {
-  // By default, the first item (index 0) is open. Set to 'null' if you want all closed initially.
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  // State to track which index is currently open. 
+  // null means nothing is open initially.
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  // Function to handle opening an item
+  const handleOpen = (index: number) => {
+    setOpenIndex(index);
+  };
+
+  // Function to handle closing an item (only for mobile click logic if needed, 
+  // but for desktop hover, we just let it close naturally or switch)
+  const handleClose = () => {
+    setOpenIndex(null);
+  };
 
   return (
     <section id="faq" className="bg-[#FAFAFA] py-24 px-5 sm:px-8">
@@ -54,33 +66,45 @@ export function FAQSection() {
             return (
               <div
                 key={index}
-                // Desktop ke liye onMouseEnter, Mobile ke liye onClick
-                onMouseEnter={() => setOpenIndex(index)}
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                className={`group cursor-pointer rounded-2xl border bg-white transition-all duration-300 ${
+                // Desktop: Mouse Enter se open, Mouse Leave se close
+                onMouseEnter={() => handleOpen(index)}
+                onMouseLeave={() => handleClose()}
+                
+                // Mobile/Tablet: Click se toggle (agar already open hai toh band, nahi toh open)
+                onClick={() => {
+                  // Mobile par hover behavior ko override karke proper toggle dena better UX hai
+                  // Lekin kyunki tumne kaha "hover out pe normal", 
+                  // Mobile pe hum click ko toggle maanenge.
+                  if (isOpen) {
+                    handleClose();
+                  } else {
+                    handleOpen(index);
+                  }
+                }}
+                className={`group cursor-pointer rounded-2xl border bg-white transition-all duration-300 ease-in-out ${
                   isOpen 
-                    ? "border-neutral-300 shadow-md" 
+                    ? "border-neutral-300 shadow-md ring-1 ring-neutral-200" 
                     : "border-neutral-200 hover:border-neutral-300 hover:shadow-sm"
                 }`}
               >
                 {/* Question Row */}
                 <div className="flex items-center justify-between p-6 sm:px-8">
-                  <h3 className={`text-lg transition-colors duration-300 ${isOpen ? "text-neutral-900 font-medium" : "text-neutral-700 font-normal"}`}>
+                  <h3 className={`text-lg transition-colors duration-300 ${isOpen ? "text-neutral-900 font-semibold" : "text-neutral-700 font-normal group-hover:text-neutral-900"}`}>
                     {faq.question}
                   </h3>
                   
-                  <div className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300">
+                  <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen ? "bg-neutral-900 rotate-90" : "bg-neutral-100 group-hover:bg-neutral-200"}`}>
                     {isOpen ? (
-                      <X className="h-5 w-5 text-neutral-900" />
+                      <X className="h-5 w-5 text-white" />
                     ) : (
-                      <Plus className="h-5 w-5 text-neutral-400 group-hover:text-neutral-900" />
+                      <Plus className="h-5 w-5 text-neutral-600" />
                     )}
                   </div>
                 </div>
                 
                 {/* Answer Content (Animated using CSS Grid) */}
                 <div
-                  className={`grid transition-all duration-300 ease-in-out ${
+                  className={`grid transition-all duration-500 ease-in-out ${
                     isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
