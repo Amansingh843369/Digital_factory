@@ -62,7 +62,7 @@ function AnimatedNumber({ value, isDecimal = false, suffix = "", duration = 2000
 
 export function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-24 lg:py-32">
+    <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-24 lg:py-7">
       
       {/* Background Decor */}
       <div className="absolute top-0 right-0 -z-10 h-[600px] w-[600px] rounded-full bg-[#C46A42]/5 blur-[120px]" />

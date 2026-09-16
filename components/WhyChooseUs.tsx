@@ -74,7 +74,7 @@ export function WhyChooseUs() {
   const activeFeature = features[activeTab];
 
   return (
-    <section ref={containerRef} className="relative bg-[#FAF7F2] py-24 min-h-[220vh]">
+    <section ref={containerRef} className="relative bg-[#FAF7F2] py-10 min-h-[220vh]">
       
       {/* Sticky Container */}
       <div className="sticky top-20 mx-auto max-w-7xl px-6 lg:px-8 pt-10">

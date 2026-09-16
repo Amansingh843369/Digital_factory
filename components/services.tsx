@@ -68,7 +68,7 @@ export function Services() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section id="services" className="relative overflow-hidden bg-[#FAF7F2] py-20 sm:py-28 lg:py-36 text-neutral-900">
+    <section id="services" className="relative overflow-hidden bg-[#FAF7F2] py-20 sm:py-28 lg:py-10 text-neutral-900">
       
       {/* Background Ambient Glow */}
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[600px] w-[600px] rounded-full bg-[#C46A42]/5 blur-[120px]" />
