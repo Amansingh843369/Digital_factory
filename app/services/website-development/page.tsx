@@ -1,4 +1,4 @@
- 'use client';
+'use client';
 
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -12,7 +12,7 @@ const fadeInUp = {
   }
 };
 
-export default function SoftwareDevelopmentPage() {
+export default function WebsiteDevelopmentPage() {
   // Lenis Smooth Scroll Integration
   useEffect(() => {
     let lenis: any;
@@ -46,180 +46,145 @@ export default function SoftwareDevelopmentPage() {
   const services = [
     {
       num: "01",
-      category: "Tailored Solutions",
-      title: "Custom Application Development",
-      desc: "Tailored solutions designed specifically for your workflows and business goals.",
+      category: "UI/UX & Branding",
+      title: "Custom Web Design & UX/UI",
+      desc: "Tailored website layouts designed to capture your brand identity and deliver seamless user experiences.",
       highlights: [
-        "Business Process Automation Tools",
-        "CRM & ERP Solutions",
-        "Industry-Specific Software",
-        "Cloud-Based Business Applications",
-        "Desktop Applications",
-        "API Development & Integration"
+        "Bespoke UI/UX Wireframing & Prototyping",
+        "Brand Identity & Style Guide Integration",
+        "Mobile-First Responsive Layouts",
+        "Interactive Micro-Animations",
+        "Design Systems & Component Libraries",
+        "User Journey & Conversion Optimization"
       ],
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
-      badge: "Custom Dev"
+      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200",
+      badge: "Custom Design"
     },
     {
       num: "02",
-      category: "Cloud Native",
-      title: "SaaS (Software as a Service) Development",
-      desc: "Build scalable cloud-based products that users can access anytime, anywhere.",
+      category: "E-Commerce",
+      title: "E-Commerce Website Development",
+      desc: "High-converting online stores built with secure payment gateways, inventory sync, and fast checkout flows.",
       highlights: [
-        "SaaS Product Architecture Design",
-        "Multi-Tenant Application Development",
-        "Subscription & Billing Integration",
-        "Cloud Hosting (AWS, Azure, Google Cloud)",
-        "Data Security & Compliance",
-        "Ongoing Maintenance & Scaling"
+        "Shopify & WooCommerce Customization",
+        "Headless E-Commerce Solutions",
+        "Payment Gateway & Shipping Integration",
+        "Inventory & Order Management",
+        "Multi-Currency & Multi-Language Support",
+        "High-Performance Cart & Checkout"
       ],
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
-      badge: "SaaS"
+      whyChoose: [
+        "Increased Checkout Conversion Rates",
+        "Robust Security for Online Payments",
+        "Scalable Infrastructure for Peak Sales",
+        "Seamless Third-Party ERP/CRM Sync"
+      ],
+      image: "https://images.unsplash.com/photo-1556742049-0a67568d0d9f?auto=format&fit=crop&q=80&w=1200",
+      badge: "E-Commerce"
     },
     {
       num: "03",
-      category: "iOS & Android",
-      title: "Mobile Application Development",
-      desc: "Create seamless mobile experiences for Android and iOS users.",
+      category: "CMS Platforms",
+      title: "WordPress & CMS Development",
+      desc: "Easy-to-manage Content Management Systems empowering your team to update content effortlessly.",
       highlights: [
-        "Native App Development (iOS & Android)",
-        "Cross-Platform App Development (Flutter, React Native)",
-        "UI/UX Design for Mobile Interfaces",
-        "Mobile App API Development",
-        "App Store & Play Store Deployment",
-        "Performance Optimization & Updates"
+        "Custom WordPress Theme & Plugin Dev",
+        "Webflow Development & Migration",
+        "Headless CMS (Sanity, Strapi, Contentful)",
+        "Intuitive Admin Dashboard Setup",
+        "Role-Based User Permissions",
+        "SEO-Friendly Content Workflows"
       ],
-      image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&q=80&w=1200",
-      badge: "Mobile Apps"
+      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1200",
+      badge: "CMS Solutions"
     },
     {
       num: "04",
-      category: "Web Platforms",
-      title: "Web Application Development",
-      desc: "High-performing, secure, and responsive web apps for businesses.",
+      category: "Full-Stack Tech",
+      title: "Next.js & React Web Apps",
+      desc: "Ultra-fast modern web applications built on cutting-edge JavaScript frameworks for maximum speed.",
       highlights: [
-        "Progressive Web Apps (PWAs)",
-        "Enterprise Portals & Dashboards",
-        "Custom Web Platforms",
-        "Real-Time Data Applications",
-        "Third-Party Integrations"
+        "Server-Side Rendering (SSR) & Static Generation",
+        "API Route & Backend Integration",
+        "Progressive Web App (PWA) Capabilities",
+        "State Management & Database Connections",
+        "Blazing Fast Page Load Speeds",
+        "Scalable Cloud Deployment (Vercel, AWS)"
       ],
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200",
-      badge: "Web Apps"
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
+      badge: "Full-Stack"
     },
     {
       num: "05",
-      category: "Quality Assurance",
-      title: "Software Testing & Quality Assurance",
-      desc: "Ensure your applications are reliable, secure, and bug-free.",
+      category: "Growth & Leads",
+      title: "Landing Page & Conversion Design",
+      desc: "Purpose-built, high-converting landing pages tailored for ad campaigns and product launches.",
       highlights: [
-        "Functional & Performance Testing",
-        "Security Testing",
-        "Usability Testing",
-        "Automated & Manual Testing"
+        "A/B Testing Ready Architecture",
+        "Lead Capture & Form Integrations",
+        "CRM & Email Marketing Automation Sync",
+        "Heatmap & User Analytics Setup",
+        "Ultra-Fast Mobile Optimization"
       ],
-      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=1200",
-      badge: "QA & Testing"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+      badge: "Landing Pages"
     },
     {
       num: "06",
-      category: "Enterprise Systems",
-      title: "Enterprise Resource Planning (ERP)",
-      desc: "Streamline your business operations, centralize data, and improve efficiency with powerful ERP solutions.",
+      category: "Performance",
+      title: "Website Speed & Core Web Vitals Optimization",
+      desc: "Boost your site ranking and user retention by transforming slow websites into lightning-fast platforms.",
       highlights: [
-        "ERP Software Development & Implementation",
-        "Finance & Accounting Management",
-        "Inventory & Supply Chain Management",
-        "HR & Payroll Management",
-        "Sales & Customer Management",
-        "Business Process Automation",
-        "Real-Time Reports & Analytics"
+        "Google Core Web Vitals Optimization",
+        "Code Splitting & Asset Compression",
+        "CDN Setup & Caching Strategies",
+        "Database Cleanup & Query Tuning",
+        "Image & Video Format Optimization"
       ],
       whyChoose: [
-        "Centralized Business Management",
-        "Improved Operational Efficiency",
-        "Customized Solutions for Your Business",
-        "Real-Time Data & Reporting",
-        "Scalable & Secure ERP Solutions",
-        "Focus on Productivity & Long-Term Growth"
+        "Higher Google Search Rankings",
+        "Lower Bounce Rates and Higher Retention",
+        "Improved User Experience Across Devices",
+        "Reduced Server Load & Bandwidth Costs"
       ],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
-      badge: "ERP Systems"
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+      badge: "Optimization"
     },
     {
       num: "07",
-      category: "Artificial Intelligence",
-      title: "AI Integration",
-      desc: "Leverage the power of Artificial Intelligence to automate processes, improve efficiency, and create smarter business solutions.",
+      category: "Enterprise",
+      title: "Web Portals & Enterprise Dashboards",
+      desc: "Secure web portals designed for internal teams, clients, and partner collaboration.",
       highlights: [
-        "AI-Powered Business Automation",
-        "AI Chatbots & Virtual Assistants",
-        "AI Integration with Existing Systems",
-        "Generative AI Solutions",
-        "AI-Powered Data Analysis & Insights",
-        "Workflow Automation & Process Optimization",
-        "Custom AI Solutions for Business Needs"
+        "Customer & Vendor Self-Service Portals",
+        "Interactive Analytics Dashboards",
+        "Single Sign-On (SSO) & Secure Auth",
+        "Role-Based Data Access Control",
+        "Custom API Integrations"
       ],
-      whyChoose: [
-        "Smarter & Faster Business Processes",
-        "Customized AI Solutions",
-        "Seamless System Integration",
-        "Reduced Manual Effort & Operational Costs",
-        "Scalable & Secure AI Implementation",
-        "Focus on Productivity, Innovation & Long-Term Growth"
-      ],
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
-      badge: "AI Integration"
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200",
+      badge: "Web Portals"
     },
     {
       num: "08",
-      category: "Smart Automation",
-      title: "AI Automation",
-      desc: "Automate repetitive tasks, streamline workflows, and empower your business with intelligent AI-driven solutions.",
+      category: "Maintenance",
+      title: "Website Maintenance & Support",
+      desc: "Continuous monitoring, security patches, backups, and feature updates to keep your website running smoothly.",
       highlights: [
-        "AI-Powered Workflow Automation",
-        "Automated Customer Support & Chatbots",
-        "Lead Generation & Follow-Up Automation",
-        "Document & Data Processing Automation",
-        "Email & Marketing Automation",
-        "Business Process Automation",
-        "AI-Powered Reporting & Insights"
+        "24/7 Security Monitoring & Malware Protection",
+        "Regular Automated Cloud Backups",
+        "Plugin, CMS & Framework Updates",
+        "Uptime Monitoring & Emergency Fixes",
+        "Content Updates & Ongoing Improvements"
       ],
       whyChoose: [
-        "Reduce Manual & Repetitive Work",
-        "Improve Operational Efficiency",
-        "Faster & Smarter Decision-Making",
-        "Customized Automation Solutions",
-        "Seamless Integration with Business Tools",
-        "Focus on Productivity, Cost Savings & Long-Term Growth"
+        "Peace of Mind with Zero Downtime Risk",
+        "Dedicated Technical Support Team",
+        "Proactive Vulnerability Patching",
+        "Consistent High Performance"
       ],
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
-      badge: "AI Automation"
-    },
-    {
-      num: "09",
-      category: "Process Engineering",
-      title: "Workflow Orchestration",
-      desc: "Connect people, processes, and technology to automate complex workflows and improve business efficiency.",
-      highlights: [
-        "Business Process Workflow Design",
-        "Automated Task Management",
-        "System & Application Integration",
-        "Workflow Monitoring & Tracking",
-        "Approval & Notification Automation",
-        "Data Flow & Process Optimization",
-        "Custom Workflow Solutions"
-      ],
-      whyChoose: [
-        "Streamlined Business Processes",
-        "Reduced Manual Work & Errors",
-        "Seamless System Integration",
-        "Improved Productivity & Efficiency",
-        "Real-Time Workflow Visibility",
-        "Scalable Solutions for Business Growth"
-      ],
-      image: "https://images.unsplash.com/photo-1507925922837-326f12a5270d?auto=format&fit=crop&q=80&w=1200",
-      badge: "Orchestration"
+      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=1200",
+      badge: "Maintenance"
     }
   ];
 
@@ -252,9 +217,9 @@ export default function SoftwareDevelopmentPage() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl sm:text-7xl font-extrabold text-[#2C2825] tracking-tight leading-[1.1]"
           >
-            Custom Software Solutions for a <br className="hidden sm:block"/>
+            Custom Website Design & <br className="hidden sm:block"/>
             <span className="text-[#C87D55]">
-              Digital-First World
+              Development Solutions
             </span>
           </motion.h1>
 
@@ -264,7 +229,7 @@ export default function SoftwareDevelopmentPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg sm:text-xl text-[#6B635B] leading-relaxed font-light max-w-3xl mx-auto"
           >
-            We design scalable applications and platforms that solve real business challenges and drive growth. Every business is unique — and so are its technology needs.
+            We build fast, responsive, and SEO-optimized websites that turn casual visitors into loyal customers and drive sustainable business growth.
           </motion.p>
 
           <motion.div 
@@ -279,7 +244,7 @@ export default function SoftwareDevelopmentPage() {
               href="#contact"
               className="w-full sm:w-auto px-9 py-4 rounded-xl bg-[#C87D55] text-white font-semibold text-sm tracking-wide shadow-lg shadow-[#C87D55]/20 hover:bg-[#B56E47] transition-all"
             >
-              Start Your Software Project →
+              Start Your Web Project →
             </motion.a>
           </motion.div>
         </section>
@@ -293,15 +258,15 @@ export default function SoftwareDevelopmentPage() {
         >
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#C87D55]/15 blur-3xl rounded-full" />
           <p className="text-base sm:text-lg text-[#4A433D] leading-relaxed relative z-10">
-            At <strong>Digital Factory</strong>, we specialize in designing custom software applications and scalable platforms tailored to your specific business requirements. Whether you need enterprise-grade solutions, SaaS products, or mobile applications, our team ensures your software is secure, user-friendly, and future-ready.
+            At <strong>Digital Factory</strong>, your website is more than just a digital brochure — it’s your primary growth engine. We combine stunning visuals, modern frontend architectures, and high-conversion layouts to ensure your online presence stands out in a crowded market.
           </p>
         </motion.section>
 
-        {/* 9 SERVICES ZIG-ZAG SHOWCASE */}
+        {/* SERVICES ZIG-ZAG SHOWCASE */}
         <section id="services" className="mt-32 space-y-24 sm:space-y-36">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-10">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#C87D55] font-bold">Our Capabilities</span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#2C2825] tracking-tight">Our Software Development Services</h2>
+            <span className="text-xs font-mono uppercase tracking-widest text-[#C87D55] font-bold">Web Development Capabilities</span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#2C2825] tracking-tight">Our Website Services</h2>
           </div>
 
           <div className="space-y-24 sm:space-y-32">
@@ -371,13 +336,13 @@ export default function SoftwareDevelopmentPage() {
                     {service.whyChoose && (
                       <div className="mt-8 bg-[#F3EEEA] border border-[#E5DCD5] rounded-2xl p-6 shadow-sm">
                         <h4 className="text-sm font-bold text-[#2C2825] uppercase tracking-wider mb-4 border-b border-[#E5DCD5] pb-3">
-                          Why Choose Our {service.badge} Services?
+                          Why Choose Our {service.badge}?
                         </h4>
                         <ul className="space-y-2.5">
                           {service.whyChoose.map((reason, i) => (
                             <li key={i} className="flex items-start gap-3 text-sm text-[#6B635B]">
                               <span className="text-[#C87D55] font-bold">✓</span>
-                              <span>{reason.replace('✅', '').trim()}</span>
+                              <span>{reason}</span>
                             </li>
                           ))}
                         </ul>
@@ -408,14 +373,14 @@ export default function SoftwareDevelopmentPage() {
 
             <div className="relative z-10 max-w-3xl mx-auto space-y-8">
               <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1] text-[#2C2825]">
-                Ready to Build the <br className="hidden sm:inline" />
+                Ready to Build Your <br className="hidden sm:inline" />
                 <span className="text-[#C87D55]">
-                  Future of Your Business?
+                  Next High-Performing Website?
                 </span>
               </h2>
 
               <p className="text-[#6B635B] text-base sm:text-xl font-light leading-relaxed max-w-xl mx-auto">
-                Let's discuss your software requirements and map out a scalable digital architecture tailored for growth.
+                Let's discuss your web project requirements and craft a custom solution that delivers real business results.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -425,7 +390,7 @@ export default function SoftwareDevelopmentPage() {
                   href="mailto:hello@digitalfactory.com"
                   className="w-full sm:w-auto px-9 py-5 rounded-xl bg-[#C87D55] text-white font-bold text-sm sm:text-base tracking-wide shadow-xl shadow-[#C87D55]/20 hover:bg-[#B56E47] transition-all flex items-center justify-center gap-2 group"
                 >
-                  <span>Start Your Software Project</span>
+                  <span>Start Your Web Project</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </motion.a>
 
@@ -437,7 +402,7 @@ export default function SoftwareDevelopmentPage() {
                   rel="noreferrer"
                   className="w-full sm:w-auto px-8 py-5 rounded-xl bg-[#FAF8F5] border border-[#E5DCD5] text-[#2C2825] font-semibold text-sm sm:text-base hover:bg-[#E5DCD5]/50 transition-all shadow-sm"
                 >
-                  💬 Chat with Tech Expert
+                  💬 Chat with Web Consultant
                 </motion.a>
               </div>
             </div>
