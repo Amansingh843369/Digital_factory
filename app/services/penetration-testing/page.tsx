@@ -310,7 +310,7 @@ export default function PenTestingServicesPage() {
           <div className="relative rounded-[2rem] md:rounded-[3rem] bg-gradient-to-br from-[#A64B2A] to-[#7A351D] p-3 md:p-15 text-center overflow-hidden shadow-2xl text-white">
             <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
             
-            <div className="relative z-10 max-w-3xl mx-auto space-y-1">
+            <div className="relative z-10 max-w-3xl mx-auto ">
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
                 Secure Your Attack Surface
               </h2>

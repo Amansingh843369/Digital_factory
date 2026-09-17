@@ -25,6 +25,10 @@ const NAV = [
         href: "/services/software-development",
       },
       {
+        label: "Cyber Security",
+        href: "/services/cyber-security",
+      },
+      {
         label: "Penetration Testing",
         href: "/services/penetration-testing",
       },
