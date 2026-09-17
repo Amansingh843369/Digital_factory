@@ -312,34 +312,7 @@ export default function SoftwareDevelopmentPage() {
           </motion.div>
         </section>
 
-        {/* INTRO GRID HIGHLIGHT */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 sm:mt-28 max-w-5xl mx-auto bg-white/80 border border-[#E5DCD5] p-8 sm:p-12 rounded-[2.5rem] shadow-sm backdrop-blur-md relative overflow-hidden"
-        >
-          <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#C87D55]/10 blur-3xl rounded-full pointer-events-none" />
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#C87D55]">Why Work With Us</span>
-              <p className="text-base sm:text-lg text-[#3E3832] leading-relaxed font-normal">
-                At <strong>Digital Factory</strong>, we don't just write code — we engineer scalable business engines. Whether you are modernizing legacy operations, launching a new SaaS product, or automating workflows, our software is built for long-term speed, security, and growth.
-              </p>
-            </div>
-            <div className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-4 pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-[#E5DCD5] lg:pl-8">
-              <div>
-                <div className="text-3xl font-extrabold text-[#2C2825]">99.9%</div>
-                <div className="text-xs text-[#6B635B] font-medium mt-0.5">Uptime & Security First</div>
-              </div>
-              <div>
-                <div className="text-3xl font-extrabold text-[#C87D55]">100%</div>
-                <div className="text-xs text-[#6B635B] font-medium mt-0.5">Tailored Solutions</div>
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
+  
         {/* SERVICES SHOWCASE */}
         <section id="services" className="mt-28 sm:mt-36 space-y-24 sm:space-y-32">
           <div className="text-center max-w-2xl mx-auto space-y-3">
@@ -444,7 +417,7 @@ export default function SoftwareDevelopmentPage() {
           id="contact"
           className="mt-32 sm:mt-40 relative"
         >
-          <div className="relative rounded-[2.5rem] bg-gradient-to-b from-[#FAF8F5] to-[#F3EEEA] border border-[#E5DCD5] p-8 sm:p-16 lg:p-10 text-center overflow-hidden shadow-xl">
+          <div className="relative rounded-[2.5rem] bg-gradient-to-b from-[#FAF8F5] to-[#F3EEEA] border border-[#E5DCD5] p-8 sm:p-16 lg:p-20 text-center overflow-hidden shadow-xl">
             
             {/* Ambient Background Glows */}
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#C87D55]/15 rounded-full blur-[100px] pointer-events-none" />
