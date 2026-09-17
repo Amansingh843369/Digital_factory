@@ -569,7 +569,7 @@ export default function WebsiteDevelopmentPage() {
                   rel="noreferrer"
                   className="w-full sm:w-auto px-8 py-5 rounded-xl bg-[#FAF8F5] border border-[#E5DCD5] text-[#2C2825] font-semibold text-sm sm:text-base hover:bg-[#E5DCD5]/50 transition-all shadow-sm"
                 >
-                  💬 Chat with Web Consultant
+                   Chat with Web Consultant
                 </motion.a>
               </div>
             </div>

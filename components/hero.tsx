@@ -118,20 +118,25 @@ const typeWriterText = useTypewriter([
               {/* CTA Buttons */}
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <a
-                  href="#contact"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-brand px-7 py-4 text-sm font-bold text-brand-foreground shadow-lg shadow-brand/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/30"
-                >
-                  Get Started
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
+  href="#contact"
+  className="rotating-border-btn group"
+>
+  <span className="rotating-border-content">
+    Get Started
+    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+  </span>
+</a>
 
-                <a
-                  href="#services"
-                  className="group inline-flex items-center gap-2 rounded-xl border border-border bg-background/50 px-7 py-4 text-sm font-bold backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:bg-muted/50"
-                >
-                  <Layers className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-brand" />
-                   Explore Services
-                </a>
+
+         <a
+  href="#services"
+  className="rotating-border-btn group"
+>
+  <span className="rotating-border-content">
+    Go Services
+    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+  </span>
+</a>
               </div>
             </div>
           </div>

@@ -103,7 +103,7 @@ export function Services() {
               <span>Our Capabilities</span>
             </div>
 
-            <h2 className="font-serif text-4xl font-normal leading-[1.1] tracking-tight sm:text-5xl lg:text-[4rem]">
+            <h2 className="font-serif text-4xl font-normal leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.9rem]">
               Engineered for <span className="italic text-[#C46A42]">Scale</span> <br className="hidden sm:block" /> 
               & Secure by Design.
             </h2>

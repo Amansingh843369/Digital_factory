@@ -97,3 +97,89 @@ html {
   scroll-behavior: smooth;
 }
 
+.rotating-border-btn {
+  padding: 3px;
+}
+
+.rotating-border-btn {
+  position: relative;
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 14px;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Static button */
+  transform: none;
+
+  box-shadow:
+    0 0 8px rgba(79, 140, 255, 0.25),
+    0 0 18px rgba(139, 92, 246, 0.12);
+}
+
+/* ONLY THIS LAYER ROTATES */
+.rotating-border-btn::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  z-index: -2;
+
+  background: conic-gradient(
+    from 0deg,
+    #c6420e 0deg,
+    #dc600e 90deg,
+  
+    #ea8306 300deg,
+    rgb(217, 125, 12) 360deg
+  );
+
+  /* Slow anticlockwise */
+  animation: borderSpinReverse 7s linear infinite;
+}
+
+/* Button/background stays completely static */
+.rotating-border-content {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 14px 28px;
+  border-radius: 12px;
+
+  background: hsl(var(--brand));
+  color: hsl(var(--brand-foreground));
+
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Hover = ONLY border becomes fast clockwise */
+.rotating-border-btn:hover::before {
+  animation: borderSpinClockwise 1.3s linear infinite;
+}
+
+/* Slow anticlockwise */
+@keyframes borderSpinReverse {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Fast clockwise */
+@keyframes borderSpinClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
