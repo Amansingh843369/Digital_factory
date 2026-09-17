@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="w-full bg-[#FAF7F2] py-16 lg:py-24">
+    <section id="contact" className="w-full bg-[#FAF7F2] py-16 lg:py-15">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12 items-center">
           

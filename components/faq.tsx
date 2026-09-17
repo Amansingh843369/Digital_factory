@@ -39,7 +39,7 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="bg-[#FAFAFA] py-24 px-5 sm:px-8">
+    <section id="faq" className="bg-[#FAFAFA] py-15 px-5 sm:px-8">
       <div className="mx-auto max-w-3xl">
         
         {/* ================= HEADER ================= */}
@@ -72,9 +72,7 @@ export function FAQSection() {
                 
                 // Mobile/Tablet: Click se toggle (agar already open hai toh band, nahi toh open)
                 onClick={() => {
-                  // Mobile par hover behavior ko override karke proper toggle dena better UX hai
-                  // Lekin kyunki tumne kaha "hover out pe normal", 
-                  // Mobile pe hum click ko toggle maanenge.
+                 
                   if (isOpen) {
                     handleClose();
                   } else {
@@ -93,7 +91,7 @@ export function FAQSection() {
                     {faq.question}
                   </h3>
                   
-                  <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen ? "bg-neutral-900 rotate-90" : "bg-neutral-100 group-hover:bg-neutral-200"}`}>
+                  <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen ? "bg-[#c86a42] rotate-90" : "bg-neutral-100 group-hover:bg-neutral-200"}`}>
                     {isOpen ? (
                       <X className="h-5 w-5 text-white" />
                     ) : (

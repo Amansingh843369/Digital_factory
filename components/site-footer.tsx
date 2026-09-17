@@ -121,7 +121,7 @@ export function SiteFooter() {
             amount: 0.2,
           }}
           variants={stagger}
-          className="relative py-12 sm:py-16 lg:py-20"
+          className="relative py-12 sm:py-16 lg:py-12"
         >
 
           {/* Main CTA Card */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // Import router for navigation
 import { 
   TrendingUp, 
   MonitorSmartphone, 
@@ -21,6 +22,8 @@ const services = [
     description: "Scale your reach and drive measurable conversions with data-backed marketing campaigns and precise audience targeting.",
     icon: TrendingUp,
     features: ["SEO Optimization", "Paid Ads (PPC)", "Social Media Management"],
+    tags: ["Performance Marketing", "Analytics", "Brand Strategy", "Lead Gen"],
+    link: "/services/digital-marketing" // Link added
   },
   {
     id: "02",
@@ -29,6 +32,8 @@ const services = [
     description: "Fast, responsive, and visually stunning websites tailored to represent your brand identity and convert visitors into clients.",
     icon: MonitorSmartphone,
     features: ["Corporate Sites", "E-commerce Platforms", "High-Converting Landing Pages"],
+    tags: ["Next.js", "React", "Headless CMS", "UI/UX Design"],
+    link: "/services/web-development"
   },
   {
     id: "03",
@@ -37,6 +42,8 @@ const services = [
     description: "Robust, secure, and scalable custom software solutions engineered to automate operations and solve complex business problems.",
     icon: Settings2,
     features: ["Custom Web Apps", "SaaS Development", "Mobile Applications"],
+    tags: ["Microservices", "Cloud Native", "API Integration", "DevOps"],
+    link: "/services/software-development"
   },
   {
     id: "04",
@@ -45,6 +52,8 @@ const services = [
     description: "Comprehensive enterprise security measures and protocols designed to guard your critical data and digital assets against threats.",
     icon: ShieldCheck,
     features: ["Network & Cloud Security", "Data Protection", "IT Infrastructure Audits"],
+    tags: ["Zero Trust", "SIEM", "Threat Detection", "Compliance"],
+    link: "/services/cyber-security"
   },
   {
     id: "05",
@@ -53,6 +62,8 @@ const services = [
     description: "Simulated real-world cyber attacks to proactively find and patch security vulnerabilities before adversaries can exploit them.",
     icon: TerminalSquare,
     features: ["Web App Pen-Testing", "Network Pen-Testing", "API Security Testing"],
+    tags: ["Red Teaming", "Exploit Analysis", "OWASP Top 10", "Reporting"],
+    link: "/services/penetration-testing"
   },
   {
     id: "06",
@@ -61,11 +72,19 @@ const services = [
     description: "End-to-end Vulnerability Assessment and Penetration Testing delivering in-depth risk reports for global compliance standards.",
     icon: ScanSearch,
     features: ["Automated Risk Scanning", "Manual Vulnerability Checks", "Compliance Reporting"],
+    tags: ["ISO 27001", "PCI-DSS", "Risk Assessment", "Remediation"],
+    link: "/services/vapt"
   },
 ];
 
 export function Services() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const router = useRouter();
+
+  // Handle navigation click
+  const handleNavigate = (link: string) => {
+    router.push(link);
+  };
 
   return (
     <section id="services" className="relative overflow-hidden bg-[#FAF7F2] py-20 sm:py-28 lg:py-10 text-neutral-900">
@@ -142,8 +161,10 @@ export function Services() {
                     </div>
                   </div>
 
-                  {/* Right Side: Icon & Arrow */}
-                  <div className="flex items-center gap-4 shrink-0">
+                  {/* Right Side: Icons & Navigation Button */}
+                  <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+                    
+                    {/* Service Type Icon (Visual Only) */}
                     <div className={`hidden sm:flex h-12 w-12 items-center justify-center rounded-full transition-all duration-500 ease-out ${
                       isActive 
                         ? "bg-[#C46A42] text-white rotate-0 scale-100 shadow-lg shadow-[#C46A42]/20" 
@@ -152,13 +173,22 @@ export function Services() {
                       <Icon className="h-5 w-5" />
                     </div>
 
-                    <div className={`flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border transition-all duration-500 ease-out ${
-                      isActive 
-                        ? "border-[#C46A42] bg-[#C46A42] text-white rotate-45" // Rotates to point diagonally down
-                        : "border-neutral-300 text-neutral-500 group-hover:border-neutral-900 group-hover:text-neutral-900 group-hover:bg-neutral-900 group-hover:text-white"
-                    }`}>
+                    {/* MODIFIED: CLICKABLE DIAGONAL ARROW BUTTON */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevents row expand/collapse when clicking this button
+                        handleNavigate(service.link);
+                      }}
+                      className={`flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border transition-all duration-500 ease-out ${
+                        isActive 
+                          ? "border-[#C46A42] bg-[#C46A42] text-white rotate-45 hover:bg-[#a85532]" // Added hover effect for button
+                          : "border-neutral-300 text-neutral-500 group-hover:border-neutral-900 group-hover:text-neutral-900 group-hover:bg-neutral-900 group-hover:text-white"
+                      }`}
+                      aria-label={`Go to ${service.title}`}
+                    >
                       <ArrowUpRight className="h-5 w-5 transition-transform duration-300" />
-                    </div>
+                    </button>
+
                   </div>
                 </div>
 
@@ -172,26 +202,45 @@ export function Services() {
                     {/* Aligned with Title by matching the left gap */}
                     <div className="px-4 sm:px-6 ml-0 sm:ml-[4.5rem] md:ml-[7.5rem] grid grid-cols-1 md:grid-cols-12 gap-8 pt-2">
                       
-                      {/* Description Column */}
+                      {/* Description Column (Left) */}
                       <div className="md:col-span-6 lg:col-span-5">
                         <p className="text-lg sm:text-xl font-medium leading-relaxed text-neutral-600">
                           {service.description}
                         </p>
                       </div>
 
-                      {/* Features Column (Glassmorphic Pills) */}
-                      <div className="md:col-span-6 lg:col-span-7 flex flex-wrap gap-3 items-start md:mt-1">
-                        {service.features.map((feature, idx) => (
-                          <div 
-                            key={idx} 
-                            className="inline-flex items-center gap-2.5 rounded-full border border-neutral-200/80 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm font-medium text-neutral-700 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-[#C46A42]/40 hover:bg-white"
-                          >
-                            <div className="flex h-4 w-4 items-center justify-center rounded-full bg-[#C46A42]/10">
-                              <Check className="h-2.5 w-2.5 text-[#C46A42] stroke-[3]" />
-                            </div>
-                            <span>{feature}</span>
+                      {/* Right Side: Tags & Features */}
+                      <div className="md:col-span-6 lg:col-span-7 flex flex-col gap-5 items-start">
+                        
+                        {/* Tags Section (Small Pills) */}
+                        {service.tags && (
+                          <div className="flex flex-wrap gap-2">
+                            {service.tags.map((tag, idx) => (
+                              <span 
+                                key={idx} 
+                                className="inline-flex items-center rounded-full border border-neutral-200/60 bg-white/40 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-neutral-600 shadow-sm transition-all hover:border-[#C46A42]/30 hover:bg-white"
+                              >
+                                {tag}
+                              </span>
+                            ))}
                           </div>
-                        ))}
+                        )}
+
+                        {/* Features Column (Larger Glassmorphic Pills) */}
+                        <div className="flex flex-wrap gap-3 items-start">
+                          {service.features.map((feature, idx) => (
+                            <div 
+                              key={idx} 
+                              className="inline-flex items-center gap-2.5 rounded-full border border-neutral-200/80 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm font-medium text-neutral-700 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-[#C46A42]/40 hover:bg-white"
+                            >
+                              <div className="flex h-4 w-4 items-center justify-center rounded-full bg-[#C46A42]/10">
+                                <Check className="h-2.5 w-2.5 text-[#C46A42] stroke-[3]" />
+                              </div>
+                              <span>{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+
                       </div>
 
                     </div>

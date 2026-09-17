@@ -16,7 +16,7 @@ import { Contact } from '@/components/contact'
 export default function Page() {
   return (
     <>   
-      <SiteHeader />
+      {/* <SiteHeader /> */}
       <main>
         <Hero />
          <About />
@@ -30,7 +30,7 @@ export default function Page() {
         <Contact/>
         <LatestNews />
       </main>
-      <SiteFooter />
+      {/* <SiteFooter /> */}
     </>
   )
 }
