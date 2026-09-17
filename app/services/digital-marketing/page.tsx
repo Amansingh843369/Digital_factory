@@ -246,10 +246,10 @@ export default function DigitalMarketingPage() {
           </div>
         </section>
 
-        {/* 🚀 ULTIMATE REDESIGN: WHY CHOOSE US (GLASSMORPHISM & BIG NUMBERS) */}
+ 
         <motion.section 
           initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeInUp}
-          className="mt-32 md:mt-48 relative bg-[#0D0A09] rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 lg:p-24 overflow-hidden shadow-2xl border border-[#2A211E]"
+          className="mt-32 md:mt-48 relative bg-[#622e20] rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 lg:p-24 overflow-hidden shadow-2xl border border-[#2A211E]"
         >
           {/* Subtle Ambient Background Orbs */}
           <div className="absolute top-0 left-1/4 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#CD7F5D]/15 rounded-full blur-[100px] md:blur-[140px] pointer-events-none opacity-50" />
