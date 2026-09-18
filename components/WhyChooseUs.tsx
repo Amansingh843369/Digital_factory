@@ -53,7 +53,7 @@ export function WhyChooseUs() {
   // Scroll sync logic - Only active on Desktop (lg screens and above)
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth < 1024) return; // Disable scroll-sync on mobile/tablet
+      if (window.innerWidth < 1024) return; 
       
       if (!containerRef.current) return;
       const { top, height } = containerRef.current.getBoundingClientRect();
@@ -96,7 +96,7 @@ export function WhyChooseUs() {
                 Why Choose Us
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-[1.2] text-neutral-900 tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-4xl  text-neutral-900 tracking-tight">
                 See The Difference When You <br className="hidden sm:block" />
                 <span className="italic font-normal">Choose Us.</span>
               </h2>
