@@ -90,8 +90,8 @@ tags: [
     tagline: "Infrastructure Protection",
     description: "Comprehensive enterprise security measures and protocols designed to guard your critical data and digital assets against threats.",
     icon: ShieldCheck,
-    features: ["OWASP Top 10", "Data Protection", "IT Infrastructure Audits","Cyber Vadis"],
-    tags: ["NIST", "SIEM", "DORA", "CIS Controls"],
+    features: ["OWASP Top 10", "Data Protection", "IT Infrastructure Audits","Cyber Vadis",  "Continuous Threat Monitoring",],
+    tags: ["NIST", "SIEM", "DORA", "CIS Controls", "VAPT"],
     link: "/services/cyber-security"
   },
   {

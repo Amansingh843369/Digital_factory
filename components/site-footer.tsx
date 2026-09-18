@@ -109,7 +109,7 @@ export function SiteFooter() {
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
-        {/* =====================================================
+        {/* ===================================================
             CTA SECTION
         ====================================================== */}
 
@@ -121,11 +121,11 @@ export function SiteFooter() {
             amount: 0.2,
           }}
           variants={stagger}
-          className="relative py-12 sm:py-16 lg:py-12"
+          className="relative  sm:py-16 lg:py-12"
         >
 
           {/* Main CTA Card */}
-          <div className="relative overflow-hidden rounded-[28px] border border-[#C46A42]/25 bg-white px-6 py-10 shadow-[0_25px_80px_rgba(0,0,0,0.06)] sm:rounded-[36px] sm:px-10 sm:py-14 lg:px-14 lg:py-16">
+          <div className="relative overflow-hidden rounded-[28px] border border-[#C46A42]/25 bg-white px-6 py-3 shadow-[0_25px_80px_rgba(0,0,0,0.06)] sm:rounded-[36px] sm:px-10 sm:py-14 lg:px-14 ">
 
             {/* Decorative orange circle */}
             <motion.div
@@ -294,7 +294,7 @@ export function SiteFooter() {
                 }
                 className="group inline-block"
               >
-                <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white px-5 py-4 shadow-sm transition-all duration-500 group-hover:border-[#C46A42]/30 group-hover:shadow-[0_15px_40px_rgba(196,106,66,0.1)]">
+                <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white px-5  shadow-sm transition-all duration-500 group-hover:border-[#C46A42]/30 group-hover:shadow-[0_15px_40px_rgba(196,106,66,0.1)]">
 
                   <Image
                     src="/digital-factory.jpeg"
@@ -524,7 +524,7 @@ export function SiteFooter() {
             duration: 0.7,
             ease,
           }}
-          className="relative flex flex-col gap-4 border-t border-neutral-200 py-7 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:py-8 sm:text-sm"
+          className="relative flex flex-col gap-4 border-t border-neutral-200  text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:py-1 sm:text-sm"
         >
 
           {/* Animated orange line */}
@@ -542,7 +542,7 @@ export function SiteFooter() {
               duration: 1.2,
               ease,
             }}
-            className="absolute left-0 top-0 h-[2px] w-full origin-left bg-gradient-to-r from-transparent via-[#C46A42] to-transparent"
+            className="absolute left-0 top-0 h-[1px] w-full origin-left  "
           />
 
           <p>
