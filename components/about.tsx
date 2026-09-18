@@ -3,14 +3,11 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { 
-  ShieldCheck, 
-  ArrowRight,
-  Globe,
-  TrendingUp,
-  Code2
+  Target, 
+  Eye 
 } from "lucide-react";
 
-// ================= CUSTOM HOOK FOR NUMBER COUNTING =================
+// ============== CUSTOM HOOK FOR NUMBER COUNTING ================
 function AnimatedNumber({ value, isDecimal = false, suffix = "", duration = 2000 }: { value: number, isDecimal?: boolean, suffix?: string, duration?: number }) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -61,6 +58,25 @@ function AnimatedNumber({ value, isDecimal = false, suffix = "", duration = 2000
 // ===================================================================
 
 export function About() {
+  // Hook for Left-to-Right Image Reveal
+  const [isImageRevealed, setIsImageRevealed] = useState(false);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsImageRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (imageRef.current) observer.observe(imageRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-24 lg:py-3">
       
@@ -71,8 +87,13 @@ export function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
           
-          {/* ================= LEFT: VISUAL STORYTELLING ================= */}
-          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+          {/* ================= LEFT: VISUAL STORYTELLING (Reveals Left to Right) ================= */}
+          <div 
+            ref={imageRef}
+            className={`relative mx-auto w-full max-w-lg lg:max-w-none transition-all duration-1000 ease-out ${
+              isImageRevealed ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-24"
+            }`}
+          >
             <div className="relative aspect-square rounded-[2rem] overflow-hidden border border-neutral-200/50 shadow-2xl shadow-neutral-900/10 group">
               <Image
                 src="/fake.avif" // Aapki actual image path
@@ -138,39 +159,34 @@ export function About() {
               </p>
             </div>
 
-            {/* Key Features Grid (Based on your 4 points) */}
+            {/* Mission & Vision Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4">
               {[
-                { icon: Globe, title: "Digital Identity", desc: "Build a strong and lasting digital identity for your brand." },
-                { icon: TrendingUp, title: "Customer Engagement", desc: "Enhance reach through effective marketing strategies." },
-                { icon: Code2, title: "Custom Software", desc: "Deploy solutions to improve efficiency and growth." },
-                { icon: ShieldCheck, title: "Cybersecurity", desc: "Protect your data with cutting-edge security solutions." },
+                { 
+                  icon: Target, 
+                  title: "Our Mission", 
+                  desc: "To empower organizations with strategic, secure, and innovative digital solutions that drive real, measurable impact." 
+                },
+                { 
+                  icon: Eye, 
+                  title: "Our Vision", 
+                  desc: "To be a global catalyst for digital transformation, seamlessly blending creativity and cutting-edge technology." 
+                },
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className="group flex gap-4 rounded-2xl border border-neutral-200/60 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C46A42]/30 hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.15)]"
+                  className="group flex flex-col gap-4 rounded-2xl border border-neutral-200/60 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C46A42]/30 hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.15)]"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#F0EBE1] text-[#C46A42] transition-colors duration-300 group-hover:bg-[#C46A42] group-hover:text-white">
                     <item.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-neutral-900 text-[15px]">{item.title}</h3>
-                    <p className="mt-1 text-[13px] text-neutral-500 leading-relaxed">{item.desc}</p>
+                    <h3 className="font-bold text-neutral-900 text-[16px]">{item.title}</h3>
+                    <p className="mt-2 text-[14px] text-neutral-500 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* CTA Link */}
-            {/* <div className="pt-4">
-              <a 
-                href="#services" 
-                className="group inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-wider text-neutral-900 transition-colors hover:text-[#C46A42]"
-              >
-                Discover our methodology
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div> */}
 
           </div>
         </div>

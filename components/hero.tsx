@@ -125,9 +125,11 @@ export function Hero() {
 
             {/* Description - Slide Up 3 */}
             <motion.p variants={itemVariants} className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              Digital Factory provides world-class engineering teams to architect, build, and scale digital products. We turn complex ideas into elegant, reliable, and high-performance software.
+              Digital Factory empowers businesses with expert engineering teams to design, build, and scale high-impact digital products.  
             </motion.p>
-
+   <motion.p variants={itemVariants} className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+  We transform complex challenges into secure, scalable, and high-performance solutions built for long-term growth.
+            </motion.p>
             {/* Features Grid - Slide Up 4 */}
             <motion.div variants={itemVariants} className="mt-8 grid max-w-2xl gap-4 text-sm font-medium text-foreground/80 sm:grid-cols-2">
               <div className="flex items-center gap-3">
@@ -136,15 +138,15 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="h-5 w-5 shrink-0 text-emerald-500" />
-                <span>Cloud Infrastructure</span>
+                <span>Cybersecurity & Pen Testing</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="h-5 w-5 shrink-0 text-emerald-500" />
-                <span>AI & Machine Learning</span>
+                <span>AI & Automation Learning</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="h-5 w-5 shrink-0 text-emerald-500" />
-                <span>24/7 DevOps Support</span>
+                <span>UI/UX & Product Design</span>
               </div>
             </motion.div>
 
