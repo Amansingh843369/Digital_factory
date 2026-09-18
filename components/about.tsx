@@ -2,10 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { 
-  Target, 
-  Eye 
-} from "lucide-react";
+import { Target, Eye } from "lucide-react";
 
 // ============== CUSTOM HOOK FOR NUMBER COUNTING ================
 function AnimatedNumber({ value, isDecimal = false, suffix = "", duration = 2000 }: { value: number, isDecimal?: boolean, suffix?: string, duration?: number }) {
@@ -78,29 +75,27 @@ export function About() {
   }, []);
 
   return (
-    <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-24 lg:py-3">
+    <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-20 lg:py-24">
       
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 -z-10 h-[600px] w-[600px] rounded-full bg-[#C46A42]/5 blur-[120px]" />
-      <div className="absolute bottom-0 left-0 -z-10 h-[500px] w-[500px] rounded-full bg-neutral-900/5 blur-[120px]" />
+      <div className="absolute top-0 right-0 -z-10 h-[400px] w-[400px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#C46A42]/5 blur-[120px]" />
+      <div className="absolute bottom-0 left-0 -z-10 h-[300px] w-[300px] sm:h-[500px] sm:w-[500px] rounded-full bg-neutral-900/5 blur-[120px]" />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           
           {/* ================= LEFT: VISUAL STORYTELLING (SLOW LEFT-TO-RIGHT REVEAL) ================= */}
-          <div ref={imageRef} className="relative mx-auto w-full max-w-lg lg:max-w-none">
+          <div ref={imageRef} className="relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
             {/* The Clip-path container for reveal effect */}
             <div 
-              className="relative aspect-square rounded-[2rem] overflow-hidden border border-neutral-200/50 shadow-2xl shadow-neutral-900/10 group"
+              className="relative aspect-square rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-neutral-200/50 shadow-2xl shadow-neutral-900/10 group"
               style={{
-                // Ye property image ko left se right kholti hai (0% hidden se 100% visible)
                 clipPath: isImageRevealed ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
-                // Ye dheere dheere reveal karega (1.5 seconds delay ke sath smooth effect)
                 transition: "clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1)"
               }}
             >
               <Image
-                src="/fake.avif" // Aapki actual image path
+                src="/fake.avif" 
                 alt="Digital Factory Team"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -111,25 +106,25 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-900/40 to-transparent" />
               
               {/* Bottom Stats Bar inside Image (Live Counters) */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 backdrop-blur-md bg-white/5 border-t border-white/10">
-                <div className="grid grid-cols-3 gap-4 text-white text-center sm:text-left">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 backdrop-blur-md bg-white/5 border-t border-white/10">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 text-white text-center">
                   <div>
-                    <p className="text-3xl sm:text-4xl font-bold text-[#C46A42]">
+                    <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#C46A42]">
                       <AnimatedNumber value={10} suffix="+" duration={2000} />
                     </p>
-                    <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1">Years Experience</p>
+                    <p className="text-[9px] sm:text-[10px] lg:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1 sm:mt-1.5">Years Exp.</p>
                   </div>
                   <div>
-                    <p className="text-3xl sm:text-4xl font-bold text-[#C46A42]">
+                    <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#C46A42]">
                       <AnimatedNumber value={240} suffix="+" duration={2500} />
                     </p>
-                    <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1">Projects Delivered</p>
+                    <p className="text-[9px] sm:text-[10px] lg:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1 sm:mt-1.5">Delivered</p>
                   </div>
                   <div>
-                    <p className="text-3xl sm:text-4xl font-bold text-[#C46A42]">
+                    <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#C46A42]">
                       <AnimatedNumber value={82.1} isDecimal={true} suffix="%" duration={3000} />
                     </p>
-                    <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1">Client Satisfaction</p>
+                    <p className="text-[9px] sm:text-[10px] lg:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1 sm:mt-1.5">Satisfaction</p>
                   </div>
                 </div>
               </div>
@@ -137,16 +132,16 @@ export function About() {
           </div>
 
           {/* ================= RIGHT: CONTENT (MISSION & VISION) ================= */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             
             {/* Section Label */}
-            <div className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-[#C46A42]">
-              <span className="h-px w-8 bg-[#C46A42]" />
+            <div className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-bold uppercase tracking-wider text-[#C46A42]">
+              <span className="h-px w-6 sm:w-8 bg-[#C46A42]" />
               About Digital Factory
             </div>
 
             {/* Headline */}
-            <h2 className="font-serif text-4xl leading-[1.1] tracking-tight text-neutral-900 md:text-5xl lg:text-[52px]">
+            <h2 className="font-serif text-3xl sm:text-4xl leading-[1.2] sm:leading-[1.1] tracking-tight text-neutral-900 md:text-5xl lg:text-[52px]">
               Exploring Endless <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 to-[#C46A42]">
                 Digital Possibilities
@@ -154,7 +149,7 @@ export function About() {
             </h2>
 
             {/* Description Paragraphs */}
-            <div className="space-y-5 text-[16px] leading-relaxed text-neutral-600 text-justify">
+            <div className="space-y-4 sm:space-y-5 text-[15px] sm:text-[16px] leading-relaxed text-neutral-600 text-justify">
               <p>
                 <strong className="text-neutral-900">Digital Factory</strong> is a forward-thinking digital solutions company. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
               </p>
@@ -164,7 +159,7 @@ export function About() {
             </div>
 
             {/* Mission & Vision Grid */}
-            <div className="grid grid-cols-3 sm:grid-cols-2 gap-5 pt-4 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2 sm:pt-4">
               {[
                 { 
                   icon: Target, 
@@ -179,14 +174,14 @@ export function About() {
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className="group flex flex-col gap-4 text-justify  leading-7 tracking-normal hyphens-auto rounded-2xl border border-neutral-200/60 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C46A42]/30 hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.15)]"
+                  className="group flex flex-col gap-3 sm:gap-4 text-justify leading-relaxed tracking-normal hyphens-auto rounded-2xl border border-neutral-200/60 bg-white p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C46A42]/30 hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.15)]"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#F0EBE1] text-[#C46A42] transition-colors duration-300 group-hover:bg-[#C46A42] group-hover:text-white">
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-[#F0EBE1] text-[#C46A42] transition-colors duration-300 group-hover:bg-[#C46A42] group-hover:text-white">
                     <item.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-neutral-900 text-[16px]">{item.title}</h3>
-                    <p className="mt-2 text-[14px] text-neutral-500 leading-relaxed">{item.desc}</p>
+                    <h3 className="font-bold text-neutral-900 text-[15px] sm:text-[16px]">{item.title}</h3>
+                    <p className="mt-1.5 sm:mt-2 text-[13px] sm:text-[14px] text-neutral-500 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
