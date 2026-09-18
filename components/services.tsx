@@ -21,9 +21,24 @@ const services = [
     tagline: "Growth & Conversions",
     description: "Scale your reach and drive measurable conversions with data-backed marketing campaigns and precise audience targeting.",
     icon: TrendingUp,
-    features: ["SEO Optimization", "Paid Ads (PPC)", "Social Media Management"],
-    tags: ["Performance Marketing", "Analytics", "Brand Strategy", "Lead Gen"],
-    link: "/services/digital-marketing" // Link added
+   features: [
+  "Organic Search Growth",
+  "Performance Ad Campaigns",
+  "Social Media Marketing",
+  "Conversion Rate Optimization",
+  "Qualified Lead Generation",
+],
+
+tags: [
+  "SEO",
+  "PPC",
+  "Social Media",
+  "Lead Gen",
+  "Brand Awareness",
+  "Conversion Optimization",
+  "Analytics & Strategy",
+],
+    link: "/services/digital-marketing" 
   },
   {
     id: "02",
@@ -31,8 +46,21 @@ const services = [
     tagline: "Web Design & Performance",
     description: "Fast, responsive, and visually stunning websites tailored to represent your brand identity and convert visitors into clients.",
     icon: MonitorSmartphone,
-    features: ["Corporate Sites", "E-commerce Platforms", "High-Converting Landing Pages"],
-    tags: ["Next.js", "React", "Headless CMS", "UI/UX Design"],
+   features: [
+  "Premium Business Websites",
+  "High-Converting E-Commerce",
+  "Conversion-Focused Landing Pages",
+  "Responsive Web Experiences",
+  "Custom UI & Interactions",
+],
+
+tags: [
+  "Next.js",
+  "React",
+  "Modern UI/UX",
+  "Node.js ",
+  "Conversion Optimized",
+],
     link: "/services/web-development"
   },
   {
@@ -41,8 +69,19 @@ const services = [
     tagline: "Custom Architecture",
     description: "Robust, secure, and scalable custom software solutions engineered to automate operations and solve complex business problems.",
     icon: Settings2,
-    features: ["Custom Web Apps", "SaaS Development", "Mobile Applications"],
-    tags: ["Microservices", "Cloud Native", "API Integration", "DevOps"],
+    features: [
+  "High-Performance Web Apps",
+  "Scalable SaaS Platforms",
+  "Cross-Platform Mobile Apps",
+  "Custom API Development",
+  "Enterprise Software Solutions",
+],
+  tags: [
+  "Custom Solutions",
+  "Full Stack",
+  "API Integration",
+  "High Performance"
+],
     link: "/services/software-development"
   },
   {
@@ -51,8 +90,8 @@ const services = [
     tagline: "Infrastructure Protection",
     description: "Comprehensive enterprise security measures and protocols designed to guard your critical data and digital assets against threats.",
     icon: ShieldCheck,
-    features: ["Network & Cloud Security", "Data Protection", "IT Infrastructure Audits"],
-    tags: ["Zero Trust", "SIEM", "Threat Detection", "Compliance"],
+    features: ["OWASP Top 10", "Data Protection", "IT Infrastructure Audits","Cyber Vadis"],
+    tags: ["NIST", "SIEM", "DORA", "CIS Controls"],
     link: "/services/cyber-security"
   },
   {
@@ -61,20 +100,30 @@ const services = [
     tagline: "Offensive Security",
     description: "Simulated real-world cyber attacks to proactively find and patch security vulnerabilities before adversaries can exploit them.",
     icon: TerminalSquare,
-    features: ["Web App Pen-Testing", "Network Pen-Testing", "API Security Testing"],
+    features: ["Web App Testing", "Network Testing", "API Security Testing" ,"Cloud Testing","Mobile Testing"],
     tags: ["Red Teaming", "Exploit Analysis", "OWASP Top 10", "Reporting"],
     link: "/services/penetration-testing"
   },
-  {
-    id: "06",
-    title: "VAPT Services",
-    tagline: "Compliance & Audits",
-    description: "End-to-end Vulnerability Assessment and Penetration Testing delivering in-depth risk reports for global compliance standards.",
-    icon: ScanSearch,
-    features: ["Automated Risk Scanning", "Manual Vulnerability Checks", "Compliance Reporting"],
-    tags: ["ISO 27001", "PCI-DSS", "Risk Assessment", "Remediation"],
-    link: "/services/vapt"
-  },
+{
+  id: "06",
+  title: "e-Office Management Security",
+  tagline: "Secure Digital Office Solutions",
+  description:
+    "Secure and efficient e-office management solutions that streamline digital workflows, protect sensitive data, and improve organizational productivity.",
+  icon: ShieldCheck,
+  features: [
+    "Digital Document Management",
+    "Access & Security Controls",
+    "Workflow & Process Automation",
+  ],
+  tags: [
+    "e-Office",
+    "Data Security",
+    "Access Control",
+    "Digital Workflow",
+  ],
+  link: "/services/e-office-management-security"
+}
 ];
 
 export function Services() {

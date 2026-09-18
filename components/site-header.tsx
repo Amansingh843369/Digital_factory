@@ -33,8 +33,8 @@ const NAV = [
         href: "/services/penetration-testing",
       },
       {
-        label: "VAPT Services",
-        href: "/services/vapt-services",
+        label: "eOMS",
+        href: "/services/e-office-management-security",
       },
     ],
   },
