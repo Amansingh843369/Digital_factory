@@ -82,7 +82,7 @@ export function Hero() {
         animate={{ clipPath: "inset(0 0% 0 0)" }}
         transition={{ duration: 1.8, ease: [0.76, 0, 0.24, 1] }}
       >
-        <div className="relative h-full w-full lg:w-[50%] bg-gray-100 opacity-20 lg:opacity-100 transition-opacity">
+        <div className="relative h-full w-full lg:w-[45%] bg-gray-100 opacity-20 lg:opacity-100 transition-opacity">
           <Image
             src="/images/hero-workspace.png" 
             alt="Digital Factory Engineering Team"
@@ -97,7 +97,7 @@ export function Hero() {
 
       {/* CONTENT LAYER */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <div className="w-full lg:w-[50%] xl:w-[45%]">
+        <div className="w-full lg:w-[60%] xl:w-[55%]">
           
           <motion.div
             variants={containerVariants}
@@ -118,14 +118,16 @@ export function Hero() {
             {/* Headline */}
             <motion.h1 
               variants={itemVariants} 
-              className="max-w-4xl font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] sm:leading-[1.02] tracking-tight text-foreground"
+              className="max-w-4xl font-display text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] sm:leading-[1.05] tracking-tight text-foreground"
             >
               Digital Factory
               <br />
-              <span className="bg-gradient-to-r from-brand via-teal-400 to-indigo-500 bg-clip-text text-transparent inline-block min-h-[1.2em]">
-                {typeWriterText}
+              <span className="inline-flex items-baseline whitespace-nowrap min-h-[1.2em]">
+                <span className="bg-gradient-to-r from-brand via-teal-400 to-indigo-500 bg-clip-text text-transparent">
+                  {typeWriterText}
+                </span>
+                <span className="animate-pulse text-indigo-500 font-light">|</span>
               </span>
-              <span className="animate-pulse text-indigo-500 font-light">|</span>
             </motion.h1>
 
             {/* Description Paragraphs */}

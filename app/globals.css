@@ -98,3 +98,38 @@ html {
 }
 
 
+/* Smooth Scroll Effect */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Chrome, Edge, Safari (WebKit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03); /* Soft subtle background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7b3f00; /* Chocolate color */
+  border-radius: 10px;
+  /* Floating / Padded look ke liye */
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a2500; /* Dark chocolate on hover */
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7b3f00 transparent;
+}

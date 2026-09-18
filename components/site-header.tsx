@@ -3,14 +3,15 @@
 import { useState } from "react";
 import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link"; // FIXED: Next.js Link imported
 
 const NAV = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
+  { label: "Home", href: "/#home" },
+  { label: "About Us", href: "/#about" },
 
   {
     label: "Services",
-    href: "#services",
+    href: "/#services",
     children: [
       {
         label: "Digital Marketing",
@@ -39,16 +40,16 @@ const NAV = [
     ],
   },
 
-  { label: "Blog", href: "#blog" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Blog", href: "/#blog" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Career", href: "/career" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Contact Us", href: "/#contact" },
 ];
 
 function Logo() {
   return (
-    <a
-      href="#home"
+    <Link
+      href="/#home"
       className="flex items-center gap-2 font-display text-xl font-bold tracking-tight"
     >
       <Image
@@ -58,7 +59,7 @@ function Logo() {
         height={140}
         className="object-contain"
       />
-    </a>
+    </Link>
   );
 }
 
@@ -100,25 +101,25 @@ export function SiteHeader() {
                   {servicesOpen && (
                     <div className="absolute left-1/2 top-full mt-4 w-64 -translate-x-1/2 rounded-xl border border-border/70 bg-background p-2 shadow-xl">
                       {item.children.map((child) => (
-                        <a
+                        <Link
                           key={child.label}
                           href={child.href}
                           onClick={() => setServicesOpen(false)}
                           className="block rounded-lg px-4 py-3 text-sm font-medium text-foreground/80 transition-colors hover:bg-muted hover:text-brand"
                         >
                           {child.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
                 </>
               ) : (
-                <a
+                <Link
                   href={item.href}
                   className="text-sm font-medium text-foreground/80 transition-colors hover:text-brand"
                 >
                   {item.label}
-                </a>
+                </Link>
               )}
             </div>
           ))}
@@ -126,13 +127,13 @@ export function SiteHeader() {
 
         {/* ================= RIGHT SIDE ================= */}
         <div className="flex items-center gap-3">
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="hidden items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-background transition-colors hover:bg-brand sm:inline-flex"
           >
             Get in touch
             <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -182,7 +183,7 @@ export function SiteHeader() {
                     {servicesOpen && (
                       <div className="mt-1 ml-3 border-l border-border pl-3">
                         {item.children.map((child) => (
-                          <a
+                          <Link
                             key={child.label}
                             href={child.href}
                             onClick={() => {
@@ -192,33 +193,33 @@ export function SiteHeader() {
                             className="block rounded-lg px-3 py-2.5 text-sm text-foreground/70 hover:bg-muted hover:text-brand"
                           >
                             {child.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
                   </>
                 ) : (
-                  <a
+                  <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className="block rounded-lg px-3 py-2.5 text-base font-medium text-foreground/80 hover:bg-muted hover:text-brand"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 )}
               </li>
             ))}
 
             {/* Mobile Get In Touch */}
             <li className="mt-2">
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-background"
               >
                 Get in touch
                 <ArrowUpRight className="h-4 w-4" />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
