@@ -58,7 +58,7 @@ function AnimatedNumber({ value, isDecimal = false, suffix = "", duration = 2000
 // ===================================================================
 
 export function About() {
-  // Hook for Left-to-Right Image Reveal
+  // Hook for Slow Left-to-Right Image Reveal
   const [isImageRevealed, setIsImageRevealed] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
 
@@ -70,7 +70,7 @@ export function About() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 } // Starts revealing when 20% visible on screen
     );
     
     if (imageRef.current) observer.observe(imageRef.current);
@@ -87,14 +87,18 @@ export function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
           
-          {/* ================= LEFT: VISUAL STORYTELLING (Reveals Left to Right) ================= */}
-          <div 
-            ref={imageRef}
-            className={`relative mx-auto w-full max-w-lg lg:max-w-none transition-all duration-1000 ease-out ${
-              isImageRevealed ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-24"
-            }`}
-          >
-            <div className="relative aspect-square rounded-[2rem] overflow-hidden border border-neutral-200/50 shadow-2xl shadow-neutral-900/10 group">
+          {/* ================= LEFT: VISUAL STORYTELLING (SLOW LEFT-TO-RIGHT REVEAL) ================= */}
+          <div ref={imageRef} className="relative mx-auto w-full max-w-lg lg:max-w-none">
+            {/* The Clip-path container for reveal effect */}
+            <div 
+              className="relative aspect-square rounded-[2rem] overflow-hidden border border-neutral-200/50 shadow-2xl shadow-neutral-900/10 group"
+              style={{
+                // Ye property image ko left se right kholti hai (0% hidden se 100% visible)
+                clipPath: isImageRevealed ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
+                // Ye dheere dheere reveal karega (1.5 seconds delay ke sath smooth effect)
+                transition: "clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1)"
+              }}
+            >
               <Image
                 src="/fake.avif" // Aapki actual image path
                 alt="Digital Factory Team"
@@ -104,7 +108,7 @@ export function About() {
               />
               
               {/* Overlay Dark Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-900/40 to-transparent transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-900/40 to-transparent" />
               
               {/* Bottom Stats Bar inside Image (Live Counters) */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 backdrop-blur-md bg-white/5 border-t border-white/10">
@@ -117,13 +121,13 @@ export function About() {
                   </div>
                   <div>
                     <p className="text-3xl sm:text-4xl font-bold text-[#C46A42]">
-                      <AnimatedNumber value={500} suffix="+" duration={2500} />
+                      <AnimatedNumber value={240} suffix="+" duration={2500} />
                     </p>
                     <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1">Projects Delivered</p>
                   </div>
                   <div>
                     <p className="text-3xl sm:text-4xl font-bold text-[#C46A42]">
-                      <AnimatedNumber value={99.9} isDecimal={true} suffix="%" duration={3000} />
+                      <AnimatedNumber value={82.1} isDecimal={true} suffix="%" duration={3000} />
                     </p>
                     <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1">Client Satisfaction</p>
                   </div>
@@ -132,7 +136,7 @@ export function About() {
             </div>
           </div>
 
-          {/* ================= RIGHT: CONTENT ================= */}
+          {/* ================= RIGHT: CONTENT (MISSION & VISION) ================= */}
           <div className="space-y-8">
             
             {/* Section Label */}
@@ -150,7 +154,7 @@ export function About() {
             </h2>
 
             {/* Description Paragraphs */}
-            <div className="space-y-5 text-[16px] leading-relaxed text-neutral-600">
+            <div className="space-y-5 text-[16px] leading-relaxed text-neutral-600 text-justify">
               <p>
                 <strong className="text-neutral-900">Digital Factory</strong> is a forward-thinking digital solutions company. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
               </p>
@@ -160,22 +164,22 @@ export function About() {
             </div>
 
             {/* Mission & Vision Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4">
+            <div className="grid grid-cols-3 sm:grid-cols-2 gap-5 pt-4 ">
               {[
                 { 
                   icon: Target, 
                   title: "Our Mission", 
-                  desc: "To empower organizations with strategic, secure, and innovative digital solutions that drive real, measurable impact." 
+                  desc: "To deliver innovative, secure, and result-driven digital solutions that empower businesses to scale, transform, and achieve sustainable growth." 
                 },
                 { 
                   icon: Eye, 
                   title: "Our Vision", 
-                  desc: "To be a global catalyst for digital transformation, seamlessly blending creativity and cutting-edge technology." 
+                  desc: "To become a global leader in digital transformation by combining creativity, technology, and cybersecurity — building a future where every business can explore endless digital possibilities." 
                 },
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className="group flex flex-col gap-4 rounded-2xl border border-neutral-200/60 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C46A42]/30 hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.15)]"
+                  className="group flex flex-col gap-4 text-justify  leading-7 tracking-normal hyphens-auto rounded-2xl border border-neutral-200/60 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C46A42]/30 hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.15)]"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#F0EBE1] text-[#C46A42] transition-colors duration-300 group-hover:bg-[#C46A42] group-hover:text-white">
                     <item.icon className="h-5 w-5" />
