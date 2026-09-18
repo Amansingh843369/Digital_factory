@@ -8,7 +8,6 @@ Digital Factory is a modern and responsive technology services website designed 
 
 [Visit Digital Factory](https://digital-factory-nu.vercel.app/)
 
----
 
 ## ✨ Features
 
