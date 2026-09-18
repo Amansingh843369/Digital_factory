@@ -44,7 +44,7 @@ export function FAQSection() {
         
         {/* ================= HEADER ================= */}
         <div className="mb-16 flex flex-col items-center text-center">
-          <div className="mb-6 flex items-center gap-2 rounded-full bg-neutral-900 px-4 py-1.5 text-sm font-medium text-white shadow-sm">
+          <div className="mb-6 flex items-center gap-2 rounded-full bg-[#c86a42] px-4 py-1.5 text-sm font-medium text-white shadow-sm">
             <MessageSquare className="h-4 w-4" />
             FAQs
           </div>

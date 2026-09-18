@@ -13,17 +13,18 @@ const NAV = [
     label: "Services",
     href: "/#services",
     children: [
-      {
-        label: "Digital Marketing",
-        href: "/services/digital-marketing",
+     
+       {
+        label: "Software Development",
+        href: "/services/software-development",
       },
       {
         label: "Website Development",
         href: "/services/website-development",
       },
-      {
-        label: "Software Development",
-        href: "/services/software-development",
+        {
+        label: "Digital Marketing",
+        href: "/services/digital-marketing",
       },
       {
         label: "Cyber Security",

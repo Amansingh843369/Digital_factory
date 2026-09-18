@@ -1,22 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import {
-  ArrowUpRight,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
 const COLUMNS = [
   {
-    title: "Company",
-    links: ["About Us", "Our Services", "Why Choose Us", "Careers"],
+    title: "Services",
+    links: [
+      "Web Design & Dev",
+      "Digital Marketing",
+      "Cyber Security",
+      "UI/UX Design",
+      "SEO Optimization",
+      "Brand Strategy",
+    ],
   },
   {
     title: "Quick links",
-    links: ["Home", "About Us", "Our Work", "Contact"],
+    links: [
+      "Home",
+      "About Us",
+      "Our Work",
+      "Why Choose Us",
+      "Careers",
+      "Contact",
+    ],
   },
 ];
 
@@ -51,13 +60,10 @@ export function SiteFooter() {
 
   return (
     <footer className="relative overflow-hidden bg-[#faf9f7] text-neutral-950">
-
       {/* =====================================================
           BACKGROUND DECORATION
       ====================================================== */}
-
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
         {/* Top orange glow */}
         <motion.div
           animate={
@@ -108,11 +114,9 @@ export function SiteFooter() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-
         {/* ===================================================
             CTA SECTION
         ====================================================== */}
-
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -121,12 +125,10 @@ export function SiteFooter() {
             amount: 0.2,
           }}
           variants={stagger}
-          className="relative  sm:py-16 lg:py-12"
+          className="relative sm:py-16 lg:py-12"
         >
-
           {/* Main CTA Card */}
-          <div className="relative overflow-hidden rounded-[28px] border border-[#C46A42]/25 bg-white px-6 py-3 shadow-[0_25px_80px_rgba(0,0,0,0.06)] sm:rounded-[36px] sm:px-10 sm:py-14 lg:px-14 ">
-
+          <div className="relative overflow-hidden rounded-[28px] border border-[#C46A42]/25 bg-white px-6 py-3 shadow-[0_25px_80px_rgba(0,0,0,0.06)] sm:rounded-[36px] sm:px-10 sm:py-14 lg:px-14">
             {/* Decorative orange circle */}
             <motion.div
               animate={
@@ -179,23 +181,16 @@ export function SiteFooter() {
             />
 
             <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1fr_auto]">
-
               {/* Heading */}
-              <motion.div
-                variants={fadeUp}
-                className="max-w-3xl"
-              >
-
+              <motion.div variants={fadeUp} className="max-w-3xl">
                 <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C46A42]/30 bg-[#C46A42]/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#C46A42] sm:text-xs">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#C46A42]" />
                   Let&apos;s work together
                 </span>
 
                 <h2 className="mt-1 font-serif text-[40px] leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-[62px]">
-                  Your Business Deserves a Secure and Powerful  &nbsp;
-                  <span className="text-[#C46A42]">
-                    Digital Future . 
-                  </span>
+                  Your Business Deserves a Secure and Powerful{" "}
+                  <span className="text-[#C46A42]">Digital Future.</span>
                 </h2>
 
                 {/* Decorative line */}
@@ -239,13 +234,10 @@ export function SiteFooter() {
                   }
                   className="group relative inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-[#C46A42] px-7 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-[0_15px_35px_rgba(196,106,66,0.22)] transition-all duration-300 hover:bg-[#A95A37] sm:w-auto sm:px-8 sm:py-5"
                 >
-
                   {/* Shine */}
                   <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
-                  <span className="relative z-10">
-                    Start a project
-                  </span>
+                  <span className="relative z-10">Start a project</span>
 
                   <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/15">
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
@@ -259,7 +251,6 @@ export function SiteFooter() {
         {/* =====================================================
             FOOTER CONTENT
         ====================================================== */}
-
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -270,18 +261,11 @@ export function SiteFooter() {
           variants={stagger}
           className="border-t border-neutral-200 py-14 sm:py-16 lg:py-20"
         >
-
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-
             {/* =================================================
                 BRAND + CONTACT
             ================================================== */}
-
-            <motion.div
-              variants={fadeUp}
-              className="lg:col-span-5"
-            >
-
+            <motion.div variants={fadeUp} className="lg:col-span-5">
               {/* Logo */}
               <motion.a
                 href="/"
@@ -294,8 +278,7 @@ export function SiteFooter() {
                 }
                 className="group inline-block"
               >
-                <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white px-5  shadow-sm transition-all duration-500 group-hover:border-[#C46A42]/30 group-hover:shadow-[0_15px_40px_rgba(196,106,66,0.1)]">
-
+                <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white px-5 shadow-sm transition-all duration-500 group-hover:border-[#C46A42]/30 group-hover:shadow-[0_15px_40px_rgba(196,106,66,0.1)]">
                   <Image
                     src="/digital-factory.jpeg"
                     alt="Digital Factory Logo"
@@ -319,7 +302,6 @@ export function SiteFooter() {
 
               {/* Contact Cards */}
               <div className="mt-8 space-y-3">
-
                 {/* Phone */}
                 <motion.a
                   href="tel:+918433694423"
@@ -381,14 +363,12 @@ export function SiteFooter() {
                     Mumbai, India
                   </span>
                 </motion.div>
-
               </div>
             </motion.div>
 
             {/* =================================================
-                COMPANY
+                SERVICES
             ================================================== */}
-
             <motion.div
               variants={fadeUp}
               className="lg:col-span-2 lg:col-start-6"
@@ -399,22 +379,14 @@ export function SiteFooter() {
             {/* =================================================
                 QUICK LINKS
             ================================================== */}
-
-            <motion.div
-              variants={fadeUp}
-              className="lg:col-span-2"
-            >
+            <motion.div variants={fadeUp} className="lg:col-span-2">
               <FooterColumn column={COLUMNS[1]} />
             </motion.div>
 
             {/* =================================================
                 VISUAL CARD
             ================================================== */}
-
-            <motion.div
-              variants={fadeUp}
-              className="lg:col-span-3"
-            >
+            <motion.div variants={fadeUp} className="lg:col-span-3">
               <motion.div
                 whileHover={
                   reduceMotion
@@ -425,7 +397,6 @@ export function SiteFooter() {
                 }
                 className="relative min-h-[250px] overflow-hidden rounded-[28px] border border-neutral-200 bg-white p-6 shadow-sm transition-shadow duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]"
               >
-
                 {/* Orange Glow */}
                 <motion.div
                   animate={
@@ -460,7 +431,6 @@ export function SiteFooter() {
                   }}
                   className="relative rounded-2xl border border-neutral-200 bg-[#faf9f7] p-4 shadow-sm"
                 >
-
                   <div className="mb-4 flex items-center justify-between">
                     <div className="flex gap-1.5">
                       <span className="h-2 w-2 rounded-full bg-[#C46A42]" />
@@ -490,24 +460,19 @@ export function SiteFooter() {
                   <p className="font-serif text-2xl leading-tight text-neutral-950">
                     Better Ideas
                     <br />
-                    <span className="text-[#C46A42]">
-                      Bigger Impact.
-                    </span>
+                    <span className="text-[#C46A42]">Bigger Impact.</span>
                   </p>
 
                   <div className="mt-4 h-[2px] w-14 bg-[#C46A42]" />
                 </div>
-
               </motion.div>
             </motion.div>
-
           </div>
         </motion.section>
 
         {/* =====================================================
             COPYRIGHT
         ====================================================== */}
-
         <motion.div
           initial={{
             opacity: 0,
@@ -524,9 +489,8 @@ export function SiteFooter() {
             duration: 0.7,
             ease,
           }}
-          className="relative flex flex-col gap-4 border-t border-neutral-200  text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:py-1 sm:text-sm"
+          className="relative flex flex-col gap-4 border-t border-neutral-200 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:py-6 sm:text-sm"
         >
-
           {/* Animated orange line */}
           <motion.div
             initial={{
@@ -542,7 +506,7 @@ export function SiteFooter() {
               duration: 1.2,
               ease,
             }}
-            className="absolute left-0 top-0 h-[1px] w-full origin-left  "
+            className="absolute left-0 top-0 h-[1px] w-full origin-left bg-[#C46A42]/20"
           />
 
           <p>
@@ -555,9 +519,7 @@ export function SiteFooter() {
               Digital Factory
             </span>
           </p>
-
         </motion.div>
-
       </div>
     </footer>
   );
