@@ -18,7 +18,7 @@ const features = [
     icon: Trophy,
     description: "500+ successful audits, custom software deployments, and digital campaigns. We don't just promise results — we deliver measurable impact.",
     whatYouGet: "A dedicated team backed by verifiable numbers and 99.9% reliability.",
-    image: "/f1.jpg"
+    image: "/innovate.png"
   },
   {
     id: 1,
@@ -26,7 +26,7 @@ const features = [
     icon: Users,
     description: "We work as an extension of your team. Complete transparency, zero tech jargon, and iterative feedback ensure long-term trust.",
     whatYouGet: "Direct access to domain experts and dedicated project managers.",
-    image: "/f3.jpg"
+    image: "/cutome-built.png"
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const features = [
     icon: Layers,
     description: "From digital marketing and web development to custom enterprise apps and cybersecurity, we are your one-stop digital transformation hub.",
     whatYouGet: "Seamless tech integration with zero multi-vendor management friction.",
-    image: "/f4.jpg"
+    image: "/security.png"
   },
   {
     id: 3,
@@ -149,7 +149,7 @@ export function WhyChooseUs() {
                       src={activeFeature.image}
                       alt={activeFeature.title}
                       fill
-                      className="object-cover"
+                      className=" object-cover object-center "
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>

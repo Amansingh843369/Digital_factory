@@ -95,7 +95,7 @@ export function About() {
               }}
             >
               <Image
-                src="/fake.avif" 
+                src="/about.jpg" 
                 alt="Digital Factory Team"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
