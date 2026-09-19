@@ -2,7 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-
+import {
+  ShieldCheck,
+  Target,
+  LockKeyhole,
+  Zap,
+} from "lucide-react";
 // Premium smooth easing
 const customEase = [0.22, 1, 0.36, 1];
 
@@ -172,12 +177,28 @@ const detailedServices = [
     badge: "White Box"
   }
 ];
-  const whyChooseUs = [
-    { title: "Manual-First Approach", desc: "We don't just run automated scanners. Our senior pentesters manually verify every finding to eliminate false positives.", icon: "" },
-    { title: "Actionable Reporting", desc: "Receive executive summaries and technical remediation guides that developers can actually understand and fix.", icon: "" },
-    { title: "Compliance Ready", desc: "Our reports satisfy requirements for SOC2, ISO 27001, HIPAA, PCI-DSS, and GDPR compliance audits.", icon: "" },
-    { title: "Post-Test Support", desc: "Free re-testing after remediation and direct developer support calls to ensure vulnerabilities are properly closed.", icon: "" },
-  ];
+ const whyChooseUs = [
+  {
+    icon: <ShieldCheck size={30} strokeWidth={1.8} />,
+    title: "Proven Security Expertise",
+    desc: "Our security approach combines offensive testing with defensive strategies to identify vulnerabilities before they become real threats.",
+  },
+  {
+    icon: <Target size={30} strokeWidth={1.8} />,
+    title: "Precision-Driven Testing",
+    desc: "We focus on real-world attack scenarios to uncover weaknesses that automated tools alone may overlook.",
+  },
+  {
+    icon: <LockKeyhole size={30} strokeWidth={1.8} />,
+    title: "Security & Compliance",
+    desc: "Protect sensitive business data while aligning your systems with modern security practices and compliance requirements.",
+  },
+  {
+    icon: <Zap size={30} strokeWidth={1.8} />,
+    title: "Fast & Actionable Results",
+    desc: "Receive clear security findings, practical recommendations, and prioritized remediation steps without unnecessary complexity.",
+  },
+];
 
   const faqs = [
     { question: "How long does a typical penetration test take?", answer: "Duration depends on scope. A standard web app test takes 1-2 weeks, while comprehensive network or cloud assessments may take 3-4 weeks. We provide exact timelines during scoping." },

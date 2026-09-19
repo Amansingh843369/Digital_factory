@@ -73,7 +73,7 @@ export default function DigitalMarketingPage() {
       title: "Pay-Per-Click Advertising (PPC & Ads)",
       desc: "Drive targeted traffic instantly with well-optimized ad campaigns tailored for conversions.",
       highlights: [ "Google Ads (Search, Display, Shopping)", "Social Media Ads (Facebook, Instagram, LinkedIn)", "Remarketing & Retargeting Campaigns", "Conversion Rate Optimization (CRO)", "Ad Copywriting & Creative Design", "Campaign Monitoring & Analytics" ],
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1200", 
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRiTxwLfyMk3K2I_r1q2YepiYskOvy6Lb6sI1etJfEWwn-hpsjBvdSTtc&s=10", 
       badge: "Performance Ads"
     },
     {
@@ -105,7 +105,7 @@ export default function DigitalMarketingPage() {
       title: "Analytics & Performance Tracking",
       desc: "Measure what matters, eliminate guesswork, and continuously optimize your digital ROI.",
       highlights: [ "Google Analytics & Tag Manager Setup", "Campaign Performance Dashboards", "ROI Tracking & Monthly Reports", "Actionable Insights & Recommendations" ],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", 
+      image: "https://media.licdn.com/dms/image/v2/D5612AQGNeSU2EHa0dw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1720763737572?e=2147483647&v=beta&t=sXZHyPZinxG5w_bM8GU1VHBENpoMaI0LXtEYr4KS9ko", 
       badge: "Analytics"
     },
     {
@@ -202,7 +202,7 @@ export default function DigitalMarketingPage() {
         >
           <motion.img 
             style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600" 
+            src="https://t4.ftcdn.net/jpg/07/07/02/79/360_F_707027965_o1Nawl8IUYvBowX2BWbJBO8lAyHtkuIa.jpg" 
             alt="Dashboard Analytics" 
             className="w-full h-full object-cover transform-origin-top will-change-transform"
           />
