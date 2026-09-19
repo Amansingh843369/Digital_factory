@@ -73,8 +73,8 @@ const SERVICES: Service[] = [
       "Data Security & Compliance",
       "Ongoing Maintenance & Scaling"
     ],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
-    badge: "SaaS Platform"
+    image: "/Saas.jpg",
+    badge: "Saas Platform"
   },
   {
     num: "03",
@@ -208,7 +208,7 @@ const SERVICES: Service[] = [
       "Scalable Process Infrastructure",
       "Enterprise Security Standards"
     ],
-    image: "https://images.unsplash.com/photo-1507925922837-326f12a5270d?auto=format&fit=crop&q=80&w=1200",
+    image: "/Workflow_Orchestration.jpg",
     badge: "Orchestration"
   }
 ];

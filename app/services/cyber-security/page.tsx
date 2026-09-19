@@ -106,12 +106,56 @@ export default function CyberSecurityPage() {
     }
   ];
 
-  // WHY CHOOSE US DATA
+  // WHY CHOOSE US DATA - With Premium SVGs
   const whyChooseUs = [
-    { title: "Comprehensive Coverage", desc: "Full-stack security from network to cloud.", icon: "" },
-    { title: "Compliance Ready", desc: "Meets ISO, GDPR, HIPAA, and SOC 2 standards.", icon: "" },
-    { title: "Proactive Detection", desc: "24/7 monitoring to stop threats early.", icon: "" },
-    { title: "Tailored Strategy", desc: "Custom security plans for your business needs.", icon: "" },
+    { 
+      title: "Comprehensive Coverage", 
+      desc: "Full-stack security from network to cloud.", 
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg> 
+    },
+    { 
+      title: "Compliance Ready", 
+      desc: "Meets ISO, GDPR, HIPAA, and SOC 2 standards.", 
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m9 15 2 2 4-4"></path></svg> 
+    },
+    { 
+      title: "Proactive Detection", 
+      desc: "24/7 monitoring to stop threats early.", 
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10S2 17.5 2 12Z"></path><path d="M12 12v.01"></path><path d="M19.07 4.93a10 10 0 0 0-14.14 0"></path></svg> 
+    },
+    { 
+      title: "Tailored Strategy", 
+      desc: "Custom security plans for your business needs.", 
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> 
+    },
+  ];
+
+  // CYBER SECURITY FRAMEWORKS DATA
+  const frameworks = [
+    {
+      abbr: "NIST CSF",
+      name: "National Institute of Standards & Technology",
+      desc: "A powerful framework helping organizations to understand, manage, and reduce their cybersecurity risk using five core functions: Identify, Protect, Detect, Respond, and Recover.",
+      highlight: "U.S. Federal Standard"
+    },
+    {
+      abbr: "ISO 27001",
+      name: "Information Security Management",
+      desc: "The premier international standard for information security. It sets out the specification for an information security management system (ISMS) to keep data assets secure.",
+      highlight: "Global Compliance"
+    },
+    {
+      abbr: "CIS Controls",
+      name: "Center for Internet Security",
+      desc: "A prioritized set of best practices and defensive actions to mitigate the most pervasive and dangerous cyber attacks. Highly actionable and globally recognized.",
+      highlight: "Actionable Defenses"
+    },
+    {
+      abbr: "MITRE ATT&CK",
+      name: "Adversary Tactics & Techniques",
+      desc: "A globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. Essential for developing specific threat models and methodologies.",
+      highlight: "Threat Modeling"
+    }
   ];
 
   return (
@@ -123,7 +167,7 @@ export default function CyberSecurityPage() {
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] max-w-[1000px] h-[500px] bg-gradient-to-b from-[#A64B2A]/10 to-transparent rounded-full blur-[100px] md:blur-[140px] pointer-events-none will-change-transform" 
       />
 
-      {/* MAIN CONTENT WRAPPER (Tightened Padding) */}
+      {/* MAIN CONTENT WRAPPER */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 relative z-10">
         
         {/* BREADCRUMB */}
@@ -163,13 +207,13 @@ export default function CyberSecurityPage() {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3, ease: customEase }}>
              <motion.a
-                whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-                href="#consultation"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#A64B2A] text-white font-medium text-sm tracking-wide shadow-md hover:bg-[#8a3d22] transition-colors"
-              >
-                Secure Your Business
-                <span className="text-lg leading-none">→</span>
-              </motion.a>
+               whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+               href="#consultation"
+               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#A64B2A] text-white font-medium text-sm tracking-wide shadow-md hover:bg-[#8a3d22] transition-colors"
+             >
+               Secure Your Business
+               <span className="text-lg leading-none">→</span>
+             </motion.a>
           </motion.div>
         </section>
 
@@ -217,11 +261,9 @@ export default function CyberSecurityPage() {
               const isEven = index % 2 === 0;
               
               // LOGIC FOR DIRECTIONAL REVEAL
-              // If Even (Image Left): Reveal from Left (inset 0 100% 0 0 -> 0 0% 0 0)
-              // If Odd (Image Right): Reveal from Right (inset 0 0 0 100% -> 0 0 0 0%)
               const revealClip = isEven 
-                ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] // Left to Right
-                : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; // Right to Left
+                ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] 
+                : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; 
 
               return (
                 <motion.div 
@@ -239,11 +281,10 @@ export default function CyberSecurityPage() {
                       transition={{ duration: 0.5, ease: customEase }}
                       className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl bg-white border border-[#E5D7CD]/50 aspect-[4/3] md:aspect-[16/10]"
                     >
-                      {/* The Mask Container using Clip Path - Triggers on Viewport Entry */}
                       <motion.div 
-                        initial={{ clipPath: revealClip[0] }} // Hidden initially based on direction
-                        whileInView={{ clipPath: revealClip[1] }} // Revealed when in view
-                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} // Smooth timing
+                        initial={{ clipPath: revealClip[0] }} 
+                        whileInView={{ clipPath: revealClip[1] }} 
+                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} 
                         className="w-full h-full relative"
                       >
                         <img 
@@ -254,7 +295,7 @@ export default function CyberSecurityPage() {
                         <div className="absolute inset-0 bg-[#2C1E16]/10 group-hover:bg-transparent transition-colors duration-700" />
                       </motion.div>
                       
-                      {/* Badge stays on top of the reveal */}
+                      {/* Badge */}
                       <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-white/90 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg flex items-center gap-2 z-20">
                         <span className="font-mono text-[10px] md:text-xs font-bold text-[#A64B2A]">{String(index + 1).padStart(2, '0')}</span>
                         <span className="text-[10px] md:text-xs font-bold text-[#2C1E16] uppercase tracking-wider">{service.badge}</span>
@@ -286,83 +327,247 @@ export default function CyberSecurityPage() {
 
       </main>
 
-      {/* FULL WIDTH SECTIONS (Outside max-w-7xl) */}
-      
-      {/* WHY CHOOSE US - Full Width, Reduced Padding */}
-      <motion.section 
-        initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeInUp}
-        className="mt-16 md:mt-32 relative bg-[#ffffff] w-full py-10 md:py-16 overflow-hidden border-y border-[#1A120D]"
-      >
-        {/* Ambient Orbs */}
-        <div className="absolute top-0 left-1/4 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#A64B2A]/15 rounded-full blur-[80px] md:blur-[120px] pointer-events-none opacity-50" />
-        <div className="absolute bottom-0 right-1/4 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-[#E62020]/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none opacity-50" />
+      {/* WHY CHOOSE US - Upgraded Dark Glassmorphism UI */}
+     {/* WHY CHOOSE US - Premium Cream Glassmorphism UI */}
+<motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.1 }}
+  variants={fadeInUp}
+  className="mt-16 md:mt-32 relative bg-[#F7F1E8] w-full py-16 md:py-24 overflow-hidden border-y border-[#8F6B55]/10"
+>
+  {/* Ambient Soft Cream / Brown Orbs */}
+  <motion.div
+    animate={{
+      scale: [1, 1.15, 1],
+      opacity: [0.2, 0.35, 0.2],
+    }}
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="absolute top-0 left-1/4 w-[250px] h-[250px] md:w-[550px] md:h-[550px] bg-[#C88A68]/20 rounded-full blur-[100px] md:blur-[130px] pointer-events-none"
+  />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-            {/* Header */}
-            <div className="text-center max-w-2xl mx-auto space-y-3 mb-8 md:mb-10">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#bd5028] font-medium">Why Digital Factory</span>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#483d1f] tracking-tight">
-                Why Choose Us?
-                </h2>
-                <p className="text-[#A99A93] text-sm leading-relaxed font-normal">
-                Advanced tools combined with human expertise for scalable security.
-                </p>
+  <motion.div
+    animate={{
+      scale: [1, 1.2, 1],
+      opacity: [0.15, 0.3, 0.15],
+    }}
+    transition={{
+      duration: 10,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: 2,
+    }}
+    className="absolute bottom-0 right-1/4 w-[200px] h-[200px] md:w-[450px] md:h-[450px] bg-[#D8B08B]/20 rounded-full blur-[100px] md:blur-[130px] pointer-events-none"
+  />
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+
+    {/* Header */}
+    <div className="text-center max-w-2xl mx-auto space-y-3 mb-12 md:mb-16">
+
+      <span className="text-xs font-mono uppercase tracking-[0.18em] text-[#A64B2A] font-bold">
+        Why Digital Factory
+      </span>
+
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#2B211C] tracking-tight">
+        Why Choose Us?
+      </h2>
+
+      <p className="text-[#75675F] text-sm md:text-base leading-relaxed font-normal">
+        Advanced tools combined with human expertise for scalable security.
+      </p>
+
+    </div>
+
+    {/* Card Grid */}
+    <motion.div
+      variants={staggerContainer}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+    >
+      {whyChooseUs.map((item, idx) => (
+        <motion.div
+          key={idx}
+          variants={fadeInUp}
+          whileHover={{ y: -8 }}
+          className="
+            relative
+            bg-white/65
+            backdrop-blur-xl
+            p-6 md:p-8
+            rounded-[1.5rem]
+            border border-[#8F6B55]/15
+            shadow-[0_10px_40px_rgba(97,67,48,0.08)]
+            group
+            overflow-hidden
+            transition-all
+            duration-500
+            hover:bg-white/80
+            hover:border-[#A64B2A]/35
+            hover:shadow-[0_18px_45px_rgba(97,67,48,0.14)]
+          "
+        >
+
+          {/* Soft Hover Gradient */}
+          <div
+            className="
+              absolute inset-0
+              bg-gradient-to-br
+              from-[#A64B2A]/10
+              via-[#D9B79C]/5
+              to-transparent
+              opacity-0
+              group-hover:opacity-100
+              transition-opacity
+              duration-500
+            "
+          />
+
+          <div className="relative z-10 flex flex-col h-full">
+
+            {/* Icon */}
+            <div
+              className="
+                w-12 h-12 md:w-14 md:h-14
+                rounded-2xl
+                bg-[#F3E8DC]
+                border border-[#A64B2A]/15
+                text-[#A64B2A]
+                flex items-center justify-center
+                mb-6
+                group-hover:scale-110
+                group-hover:bg-[#A64B2A]
+                group-hover:text-white
+                transition-all
+                duration-500
+                shadow-sm
+              "
+            >
+              {item.icon}
             </div>
 
-            {/* Card Grid */}
-            <motion.div variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-                {whyChooseUs.map((item, idx) => (
-                <motion.div 
-                    key={idx} variants={fadeInUp}
-                    whileHover={{ y: -4 }}
-                    className="relative bg-gradient-to-br from-[#3D2B22] to-[#1A120D] p-5 md:p-6 rounded-xl border border-[#4A352A] shadow-lg group overflow-hidden transition-all duration-300 hover:border-[#A64B2A]/50"
-                >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#A64B2A]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    <div className="relative z-10">
-                    <div className="w-10 h-10 rounded-lg bg-[#2C1E16] border border-[#4A352A] text-[#A64B2A] flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-[#A64B2A] group-hover:text-white transition-all duration-300">
-                        {item.icon}
-                    </div>
-                    
-                    <h3 className="text-base md:text-lg font-medium text-[#F7F3E8] mb-2 group-hover:text-[#A64B2A] transition-colors duration-300">
-                        {item.title}
-                    </h3>
-                    <p className="text-xs text-[#A99A93] leading-relaxed font-normal group-hover:text-[#D8C9C1] transition-colors duration-300">
-                        {item.desc}
-                    </p>
-                    </div>
-                </motion.div>
-                ))}
-            </motion.div>
+            {/* Title */}
+            <h3
+              className="
+                text-lg md:text-xl
+                font-semibold
+                text-[#2B211C]
+                mb-3
+                group-hover:text-[#A64B2A]
+                transition-colors
+                duration-300
+              "
+            >
+              {item.title}
+            </h3>
+
+            {/* Description */}
+            <p
+              className="
+                text-sm
+                text-[#75675F]
+                leading-relaxed
+                font-normal
+                group-hover:text-[#4B403A]
+                transition-colors
+                duration-300
+                flex-grow
+              "
+            >
+              {item.desc}
+            </p>
+
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+
+  </div>
+</motion.section>
+
+      {/* CYBER SECURITY FRAMEWORKS - New Bento Box UI */}
+      <motion.section 
+        initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeInUp}
+        className="py-16 md:py-24 relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8"
+      >
+        <div className="max-w-2xl space-y-3 mb-10 md:mb-14">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#A64B2A] font-medium">Standards & Compliance</span>
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#2C1E16] tracking-tight">Cyber Security Frameworks</h2>
+          <p className="text-[#6B5D56] text-sm md:text-base leading-relaxed font-normal">
+            We align our security strategies with globally recognized methodologies to ensure robust and verifiable protection for your organization.
+          </p>
         </div>
+
+        <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          {frameworks.map((fw, idx) => (
+            <motion.div 
+              key={idx} variants={fadeInUp}
+              whileHover={{ scale: 1.01 }}
+              className="bg-white rounded-3xl p-8 md:p-10 border border-[#E5D7CD] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+            >
+              {/* Subtle Tech Pattern Background */}
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#2C1E16] tracking-tight">{fw.abbr}</h3>
+                  <span className="bg-[#F7F3E8] text-[#A64B2A] text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full border border-[#E5D7CD]">
+                    {fw.highlight}
+                  </span>
+                </div>
+                <h4 className="text-base md:text-lg font-medium text-[#A64B2A] mb-3">{fw.name}</h4>
+                <p className="text-[#6B5D56] text-sm leading-relaxed font-normal">
+                  {fw.desc}
+                </p>
+              </div>
+              
+              {/* Decorative accent line */}
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#A64B2A] group-hover:w-full transition-all duration-700 ease-out" />
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.section>
 
-      {/* CTA SECTION - Full Width, Reduced Padding */}
+      {/* CTA SECTION - Upgraded Floating Lucrative Banner */}
       <motion.section 
-        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: customEase }}
-        id="consultation" className="mt-0 w-full relative"
+        initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: customEase }}
+        id="consultation" className="w-full pb-16 md:pb-24 px-4 sm:px-6 md:px-8 relative z-20"
       >
-        <div className="w-full bg-gradient-to-br from-[#A64B2A] to-[#7A351D] py-10 md:py-16 px-4 text-center overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
+        <div className="max-w-5xl mx-auto">
+          <motion.div 
+            whileHover={{ y: -5 }}
+            className="w-full rounded-[2rem] bg-gradient-to-br from-[#2C1E16] via-[#4A2B1D] to-[#A64B2A] p-10 md:p-16 text-center overflow-hidden relative shadow-2xl shadow-[#A64B2A]/20 border border-white/10"
+          >
+            {/* Animated Ambient Glow inside CTA */}
+            <motion.div 
+              animate={{ rotate: 360 }} 
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute -top-1/2 -right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#A64B2A]/40 to-transparent rounded-full blur-[80px] pointer-events-none" 
+            />
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay pointer-events-none" />
             
             <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-white">
-                    Cyber threats are evolving. <br/> Don't fall behind.
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-white drop-shadow-md">
+                    Cyber threats are evolving. <br className="hidden sm:block"/> Don't fall behind.
                 </h2>
-                <p className="text-white/90 text-sm md:text-base font-normal leading-relaxed max-w-xl mx-auto">
+                <p className="text-white/80 text-sm md:text-lg font-normal leading-relaxed max-w-xl mx-auto">
                     Protect your organization with Digital Factory. Get a comprehensive security audit today.
                 </p>
-                <div className="pt-2">
+                <div className="pt-6">
                     <motion.a
-                    whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-                    href="mailto:security@digitalfactory.com"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#2C1E16] text-white font-medium text-sm tracking-wide shadow-lg hover:bg-black transition-colors"
+                      whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                      href="mailto:security@digitalfactory.com"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#A64B2A] font-bold text-sm md:text-base tracking-wide shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all"
                     >
-                    Request Free Audit
-                    <span className="text-lg leading-none">→</span>
+                      Request Free Audit
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </motion.a>
                 </div>
             </div>
+          </motion.div>
         </div>
       </motion.section>
 
