@@ -80,13 +80,15 @@ export function About() {
       {/* Background Decor */}
  
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        {/* Changed items-center to lg:items-stretch so columns equal height */}
+        <div className="grid items-center lg:items-stretch gap-12 lg:grid-cols-2 lg:gap-20">
           
           {/* ================= LEFT: VISUAL STORYTELLING (SLOW LEFT-TO-RIGHT REVEAL) ================= */}
-          <div ref={imageRef} className="relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
-            {/* The Clip-path container for reveal effect */}
+          {/* Added h-full and a minimum height for mobile stacked view */}
+          <div ref={imageRef} className="relative mx-auto w-full h-full min-h-[450px] lg:min-h-0 max-w-md sm:max-w-lg lg:max-w-none">
+            {/* Removed aspect-square, added h-full w-full */}
             <div 
-              className="relative aspect-square rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-neutral-200/10 shadow-2xl shadow-neutral-900/10 group"
+              className="relative h-full w-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-neutral-200/10 shadow-2xl shadow-neutral-900/10 group"
               style={{
                 clipPath: isImageRevealed ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
                 transition: "clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1)"
@@ -104,7 +106,7 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-900/40 to-transparent" />
               
               {/* Bottom Stats Bar inside Image (Live Counters) */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 backdrop-blur-md bg-white/5 border-t border-white/10">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 backdrop-blur-md bg-white/5 border-t border-white/10 z-10">
                 <div className="grid grid-cols-3 gap-2 sm:gap-4 text-white text-center">
                   <div>
                     <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#C46A42]">
@@ -130,7 +132,7 @@ export function About() {
           </div>
 
           {/* ================= RIGHT: CONTENT (MISSION & VISION) ================= */}
-          <div className="space-y-6 sm:space-y-8">
+          <div className="flex flex-col justify-center space-y-6 sm:space-y-8 py-2">
             
             {/* Section Label */}
             <div className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-bold uppercase tracking-wider text-[#C46A42]">
@@ -157,7 +159,7 @@ export function About() {
             </div>
 
             {/* Mission & Vision Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2">
               {[
                 { 
                   icon: Target, 
