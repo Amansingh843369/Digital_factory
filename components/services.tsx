@@ -17,7 +17,7 @@ const services = [
   {
     id: "01",
     title: "Digital Marketing",
-    tagline: "Growth & Conversions",
+    tag: "Growth & Conversions",
     description: "Expand your reach and turn attention into measurable growth with data-driven marketing campaigns, precision audience targeting, and continuous optimization built to generate quality leads and meaningful conversions.",
     icon: TrendingUp,
     features: [
@@ -27,7 +27,7 @@ const services = [
       "Conversion Rate Optimization",
       "Qualified Lead Generation",
     ],
-    tags: [
+    techs: [
       "SEO",
       "PPC",
       "Social Media",
@@ -41,7 +41,7 @@ const services = [
   {
     id: "02",
     title: "Website Development",
-    tagline: "Web Design & Performance",
+    tag: "Web Design & Performance",
     description: "Fast, responsive, and visually stunning websites crafted around your brand identity, built to deliver seamless user experiences, strengthen your digital presence, and turn visitors into loyal customers.",
     icon: MonitorSmartphone,
     features: [
@@ -51,7 +51,7 @@ const services = [
       "Responsive Web Experiences",
       "Custom UI & Interactions",
     ],
-    tags: [
+    techs: [
       "Next.js",
       "React",
       "Modern UI/UX",
@@ -63,7 +63,7 @@ const services = [
   {
     id: "03",
     title: "Software Development",
-    tagline: "Custom Architecture",
+    tag: "Custom Architecture",
     description: "Robust, secure, and scalable custom software solutions engineered to automate operations and solve complex business problems.",
     icon: Settings2,
     features: [
@@ -73,7 +73,7 @@ const services = [
       "Custom API Development",
       "Enterprise Software Solutions",
     ],
-    tags: [
+    techs: [
       "Custom Solutions",
       "Full Stack",
       "API Integration",
@@ -84,27 +84,27 @@ const services = [
   {
     id: "04",
     title: "Cyber Security Solutions",
-    tagline: "Infrastructure Protection",
+    tag: "Infrastructure Protection",
     description: "Comprehensive enterprise security measures and protocols designed to guard your critical data and digital assets against threats.",
     icon: ShieldCheck,
     features: ["OWASP Top 10", "Data Protection", "IT Infrastructure Audits","Cyber Vadis", "Continuous Threat Monitoring"],
-    tags: ["NIST", "SIEM", "DORA", "CIS Controls", "VAPT"],
+    techs: ["NIST", "SIEM", "DORA", "CIS Controls", "VAPT"],
     link: "/services/cyber-security"
   },
   {
     id: "05",
     title: "Penetration Testing",
-    tagline: "Offensive Security",
+    tag: "Offensive Security",
     description: "Simulated real-world cyber attacks to proactively find and patch security vulnerabilities before adversaries can exploit them.",
     icon: TerminalSquare,
     features: ["Web App Testing", "Network Testing", "API Security Testing" ,"Cloud Testing","Mobile Testing"],
-    tags: ["Red Teaming", "Exploit Analysis", "OWASP Top 10", "Reporting"],
+    techs: ["Red Teaming", "Exploit Analysis", "OWASP Top 10", "Reporting"],
     link: "/services/penetration-testing"
   },
   {
     id: "06",
     title: "e-Office Management Security",
-    tagline: "Secure Digital Office Solutions",
+    tag: "Secure Digital Office Solutions",
     description:
       "Secure and efficient e-office management solutions that streamline digital workflows, protect sensitive data, and improve organizational productivity.",
     icon: ShieldCheck,
@@ -113,7 +113,7 @@ const services = [
       "Access & Security Controls",
       "Workflow & Process Automation",
     ],
-    tags: [
+    techs: [
       "e-Office",
       "Data Security",
       "Access Control",
@@ -127,13 +127,12 @@ export function Services() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const router = useRouter();
 
-  // Handle navigation click
   const handleNavigate = (link: string) => {
     router.push(link);
   };
 
   return (
-    <section id="services" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-24 lg:py-3 text-neutral-900">
+    <section id="services" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-24 lg:py-1 text-neutral-900">
       
       {/* Background Ambient Glow */}
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[400px] w-[400px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#C46A42]/5 blur-[120px]" />
@@ -142,22 +141,18 @@ export function Services() {
       <div className="mx-auto w-full max-w-[85rem] px-4 sm:px-8 lg:px-12">
         
         {/* ================= HEADER SECTION ================= */}
-        <div className="mb-12 sm:mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 border-b border-neutral-300/80 pb-8 sm:pb-12">
-          <div className="max-w-3xl">
-            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-[#C46A42]/30 bg-white/60 px-3.5 sm:px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#C46A42] backdrop-blur-md shadow-sm">
-              <Sparkles className="h-3.5 w-3.5 shrink-0" />
-              <span>Our Capabilities</span>
-            </div>
-
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-[3.9rem] font-normal leading-[1.15] sm:leading-[1.1] tracking-tight">
-              Engineered for <span className="italic text-[#C46A42]">Scale</span> <br className="hidden sm:block" /> 
-              & Secure by Design.
-            </h2>
-          </div>
+        <div className="mb-12 sm:mb-16 md:mb-2 flex flex-col items-center justify-center text-center gap-6 md:gap-8 border-b border-neutral-300/80 pb-8 sm:pb-12">
           
-          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-neutral-600 max-w-sm md:text-right">
-            Hover or tap a service to explore our specialized solutions and technology stack.
-          </p>
+          <div className="mb-2 sm:mb-4 inline-flex items-center gap-2 rounded-full border border-[#C46A42]/30 bg-white/60 px-3.5 sm:px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#C46A42] backdrop-blur-md shadow-sm">
+            <Sparkles className="h-3.5 w-3.5 shrink-0" />
+            <span>Our Capabilities</span>
+          </div>
+
+          <h2 className=" text-3xl sm:text-5xl lg:text-[3rem] font-normal leading-[1.1] sm:leading-[1.1] tracking-tight max-w-4xl mx-auto">
+            Engineered for <span className="italic text-[#C46A42]">Scale</span> <br className="hidden sm:block" /> 
+            & Secure by Design.
+          </h2>
+          
         </div>
 
         {/* ================= INTERACTIVE ROW LIST ================= */}
@@ -196,13 +191,14 @@ export function Services() {
                         isActive ? "text-[#C46A42]" : "text-neutral-900 group-hover:text-[#C46A42]"
                       }`}>
                         {service.title}
+                        <ArrowUpRight className="inline-block md:hidden h-4 w-4 ml-2 opacity-50"/>
                       </h3>
 
-                      {/* Tagline Badge */}
+                      {/* Tag Badge */}
                       <span className={`hidden lg:inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border shrink-0 transition-colors duration-300 ${
                         isActive ? "border-[#C46A42]/30 bg-[#C46A42]/5 text-[#C46A42]" : "border-neutral-200 bg-white/50 text-neutral-400"
                       }`}>
-                        {service.tagline}
+                        {service.tag}
                       </span>
                     </div>
                   </div>
@@ -254,13 +250,13 @@ export function Services() {
                         </p>
                       </div>
 
-                      {/* Right Side: Tags & Features */}
+                      {/* Right Side: Techs & Features */}
                       <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5 items-start">
                         
-                        {/* Tags Section */}
-                        {service.tags && (
+                        {/* Tech Stack Section */}
+                        {service.techs && (
                           <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                            {service.tags.map((tag, idx) => (
+                            {service.techs.map((tag, idx) => (
                               <span 
                                 key={idx} 
                                 className="inline-flex items-center rounded-full border border-neutral-200/60 bg-white/40 backdrop-blur-sm px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-semibold text-neutral-600 shadow-sm transition-all hover:border-[#C46A42]/30 hover:bg-white"
