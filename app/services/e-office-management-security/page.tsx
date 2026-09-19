@@ -423,3 +423,12 @@
 //     </div>
 //   );
 // }
+
+
+export default function EOfficeManagementSecurity() {
+  return (
+    <main>
+      {/* your page content */}
+    </main>
+  );
+}
