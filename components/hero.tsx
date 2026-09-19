@@ -400,7 +400,7 @@
 // }
 
 
-"use client";
+ "use client";
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -693,6 +693,9 @@ export function Hero() {
           px-4
           sm:px-6
           lg:px-8
+          -mt-10
+          sm:-mt-16
+          lg:-mt-20
         "
       >
 
@@ -1069,4 +1072,3 @@ export function Hero() {
     </section>
   );
 }
-
