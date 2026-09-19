@@ -78,9 +78,7 @@ export function About() {
     <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-20 lg:py-24">
       
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 -z-10 h-[400px] w-[400px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#C46A42]/5 blur-[120px]" />
-      <div className="absolute bottom-0 left-0 -z-10 h-[300px] w-[300px] sm:h-[500px] sm:w-[500px] rounded-full bg-neutral-900/5 blur-[120px]" />
-
+ 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           
@@ -88,7 +86,7 @@ export function About() {
           <div ref={imageRef} className="relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
             {/* The Clip-path container for reveal effect */}
             <div 
-              className="relative aspect-square rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-neutral-200/50 shadow-2xl shadow-neutral-900/10 group"
+              className="relative aspect-square rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-neutral-200/10 shadow-2xl shadow-neutral-900/10 group"
               style={{
                 clipPath: isImageRevealed ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
                 transition: "clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1)"
@@ -159,7 +157,7 @@ export function About() {
             </div>
 
             {/* Mission & Vision Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2 sm:pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2 ">
               {[
                 { 
                   icon: Target, 

@@ -18,7 +18,7 @@ const services = [
     id: "01",
     title: "Digital Marketing",
     tagline: "Growth & Conversions",
-    description: "Scale your reach and drive measurable conversions with data-backed marketing campaigns and precise audience targeting.",
+    description: "Expand your reach and turn attention into measurable growth with data-driven marketing campaigns, precision audience targeting, and continuous optimization built to generate quality leads and meaningful conversions.",
     icon: TrendingUp,
     features: [
       "Organic Search Growth",
@@ -42,7 +42,7 @@ const services = [
     id: "02",
     title: "Website Development",
     tagline: "Web Design & Performance",
-    description: "Fast, responsive, and visually stunning websites tailored to represent your brand identity and convert visitors into clients.",
+    description: "Fast, responsive, and visually stunning websites crafted around your brand identity, built to deliver seamless user experiences, strengthen your digital presence, and turn visitors into loyal customers.",
     icon: MonitorSmartphone,
     features: [
       "Premium Business Websites",
@@ -133,7 +133,7 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-24 lg:py-7 text-neutral-900">
+    <section id="services" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-24 lg:py-3 text-neutral-900">
       
       {/* Background Ambient Glow */}
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[400px] w-[400px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#C46A42]/5 blur-[120px]" />
