@@ -59,65 +59,119 @@ export default function PenTestingServicesPage() {
   const toggleAccordion = (index) => setOpenAccordion(openAccordion === index ? null : index);
 
   // PENETRATION TESTING DATA - Fresh Free Images from Unsplash/Pexels
-  const detailedServices = [
-    {
-      category: "Application Security", 
-      title: "Web Application Penetration Testing",
-      desc: "Identify and exploit vulnerabilities in your web apps before attackers do. Comprehensive OWASP Top 10 coverage.",
-      highlights: [ "Login & Authentication Bypass Testing", "Authorization & Access Control (IDOR)", "SQL Injection & XSS Exploitation", "CSRF & Session Management Testing", "File Upload Vulnerability Assessment", "API Endpoint Security Review" ],
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200", // Cyberpunk Server Room
-      badge: "OWASP Top 10"
-    },
-    {
-      category: "Interface Security", 
-      title: "API Penetration Testing",
-      desc: "Secure your REST and GraphQL endpoints against data leaks, broken object level authorization, and injection attacks.",
-      highlights: [ "REST & GraphQL API Assessment", "Broken Object Level Authorization (BOLA)", "Rate Limiting & DoS Resilience", "JWT & OAuth Token Security", "Input Validation & Mass Assignment", "Business Logic Flaw Detection" ],
-      image: "https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&q=80&w=1200", // Data Center Cables
-      badge: "REST & GraphQL"
-    },
-    {
-      category: "Mobile Security", 
-      title: "Mobile Application Testing",
-      desc: "Deep-dive security assessment for Android and iOS applications, covering binary analysis and backend communication.",
-      highlights: [ "Android & iOS Binary Analysis", "Insecure Data Storage & Logging", "Certificate Pinning Bypass", "Session & Authentication Security", "TLS/SSL Configuration Review", "Reverse Engineering & Tampering" ],
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200", // Smartphone Hacking Concept
-      badge: "iOS & Android"
-    },
-    {
-      category: "Infrastructure", 
-      title: "Network Penetration Testing",
-      desc: "Assess the security posture of your internal and external networks, identifying misconfigurations and open attack vectors.",
-      highlights: [ "External Perimeter Assessment", "Internal Network Lateral Movement", "Firewall & IDS/IPS Evasion", "Open Port & Service Enumeration", "Network Segmentation Validation", "Legacy Protocol Exploitation" ],
-      image: "https://images.unsplash.com/photo-1544197150-b99a580bbcbf?auto=format&fit=crop&q=80&w=1200", // Network Switches / Pexels Alternative
-      badge: "Infra Security"
-    },
-    {
-      category: "Cloud Environment", 
-      title: "Cloud Security Assessment",
-      desc: "Review your AWS, Azure, or GCP environments for IAM misconfigurations, exposed storage, and serverless risks.",
-      highlights: [ "AWS / Azure / GCP Config Review", "IAM Policy & Permission Audits", "S3/Blob Storage Exposure Check", "Serverless Function Security", "Container & Kubernetes Security", "Cloud API & Metadata Attacks" ],
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200", // Cloud Abstract
-      badge: "AWS / Azure / GCP"
-    },
-    {
-      category: "Wireless & Physical", 
-      title: "Wireless & Social Engineering",
-      desc: "Test the human element and wireless perimeter. From Wi-Fi cracking to targeted phishing simulations.",
-      highlights: [ "WPA/WPA2/WPA3 Security Assessment", "Rogue Access Point Detection", "Phishing & Vishing Simulations", "Physical Entry Assessments", "Employee Security Awareness", "USB Drop & Tailgating Tests" ],
-      image: "https://images.unsplash.com/photo-1563206767-5b1d972e8136?auto=format&fit=crop&q=80&w=1200", // Hacker Hoodie / Human Element
-      badge: "Human Layer"
-    },
-    {
-      category: "Red Teaming", 
-      title: "Red Teaming & Adversary Simulation",
-      desc: "Real-world attack scenarios to identify weaknesses across applications, infrastructure, identities, and security controls before actual attackers can exploit them.",
-      highlights: [ "External & Internal Attack Simulation", "Web Application & API Attack Paths", "Identity & Privilege Escalation Testing", "Network & Infrastructure Assessment", "Social Engineering & Phishing Simulation", "Detection & Response Control Validation" ],
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200", // Coding Screen Dark Mode
-      badge: "White Box"
-    }
-  ];
+const detailedServices = [
+  {
+    category: "Application Security", 
+    title: "Web Application Penetration Testing",
+    desc: "Identify and exploit vulnerabilities in your web apps before attackers do. Comprehensive OWASP Top 10 coverage.",
+    highlights: [
+      "Login & Authentication Bypass Testing",
+      "Authorization & Access Control (IDOR)",
+      "SQL Injection & XSS Exploitation",
+      "CSRF & Session Management Testing",
+      "File Upload Vulnerability Assessment",
+      "API Endpoint Security Review"
+    ],
+    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=85&w=1400",
+    badge: "OWASP Top 10"
+  },
 
+  {
+    category: "Interface Security", 
+    title: "API Penetration Testing",
+    desc: "Secure your REST and GraphQL endpoints against data leaks, broken object level authorization, and injection attacks.",
+    highlights: [
+      "REST & GraphQL API Assessment",
+      "Broken Object Level Authorization (BOLA)",
+      "Rate Limiting & DoS Resilience",
+      "JWT & OAuth Token Security",
+      "Input Validation & Mass Assignment",
+      "Business Logic Flaw Detection"
+    ],
+    image: "https://www.wattlecorp.com/wp-content/uploads/2026/02/api-penetration-testing-in-india-bangalore-two.webp",
+    badge: "REST & GraphQL"
+  },
+
+  {
+    category: "Mobile Security", 
+    title: "Mobile Application Testing",
+    desc: "Deep-dive security assessment for Android and iOS applications, covering binary analysis and backend communication.",
+    highlights: [
+      "Android & iOS Binary Analysis",
+      "Insecure Data Storage & Logging",
+      "Certificate Pinning Bypass",
+      "Session & Authentication Security",
+      "TLS/SSL Configuration Review",
+      "Reverse Engineering & Tampering"
+    ],
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=85&w=1400",
+    badge: "iOS & Android"
+  },
+
+  {
+    category: "Infrastructure", 
+    title: "Network Penetration Testing",
+    desc: "Assess the security posture of your internal and external networks, identifying misconfigurations and open attack vectors.",
+    highlights: [
+      "External Perimeter Assessment",
+      "Internal Network Lateral Movement",
+      "Firewall & IDS/IPS Evasion",
+      "Open Port & Service Enumeration",
+      "Network Segmentation Validation",
+      "Legacy Protocol Exploitation"
+    ],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=85&w=1400",
+    badge: "Infra Security"
+  },
+
+  {
+    category: "Cloud Environment", 
+    title: "Cloud Security Assessment",
+    desc: "Review your AWS, Azure, or GCP environments for IAM misconfigurations, exposed storage, and serverless risks.",
+    highlights: [
+      "AWS / Azure / GCP Config Review",
+      "IAM Policy & Permission Audits",
+      "S3/Blob Storage Exposure Check",
+      "Serverless Function Security",
+      "Container & Kubernetes Security",
+      "Cloud API & Metadata Attacks"
+    ],
+    image: "https://cypricsinc.com/wp-content/uploads/2025/06/Cloud-Security-Assessment.jpg",
+    badge: "AWS / Azure / GCP"
+  },
+
+  {
+    category: "Wireless & Physical", 
+    title: "Wireless & Social Engineering",
+    desc: "Test the human element and wireless perimeter. From Wi-Fi cracking to targeted phishing simulations.",
+    highlights: [
+      "WPA/WPA2/WPA3 Security Assessment",
+      "Rogue Access Point Detection",
+      "Phishing & Vishing Simulations",
+      "Physical Entry Assessments",
+      "Employee Security Awareness",
+      "USB Drop & Tailgating Tests"
+    ],
+    image: "https://www.swktech.com/wp-content/uploads/2023/11/Social-Engineering.jpg",
+    badge: "Wireless & Social"
+  },
+
+  {
+    category: "Red Teaming", 
+    title: "Red Teaming & Adversary Simulation",
+    desc: "Real-world attack scenarios to identify weaknesses across applications, infrastructure, identities, and security controls before actual attackers can exploit them.",
+    highlights: [
+      "External & Internal Attack Simulation",
+      "Web Application & API Attack Paths",
+      "Identity & Privilege Escalation Testing",
+      "Network & Infrastructure Assessment",
+      "Social Engineering & Phishing Simulation",
+      "Detection & Response Control Validation"
+    ],
+    image: "https://cybersecurity-nxxt.com/assets/images/vapt/about-1.png",
+    badge: "White Box"
+  }
+];
   const whyChooseUs = [
     { title: "Manual-First Approach", desc: "We don't just run automated scanners. Our senior pentesters manually verify every finding to eliminate false positives.", icon: "" },
     { title: "Actionable Reporting", desc: "Receive executive summaries and technical remediation guides that developers can actually understand and fix.", icon: "" },
@@ -187,7 +241,7 @@ export default function PenTestingServicesPage() {
         >
           <motion.img 
             style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600" 
+            src="https://www.lmgsecurity.com/wp-content/uploads/2023/12/shutterstock_1916985977-e1703134556975.jpg" 
             alt="Security Operations Center" 
             className="w-full h-full object-cover transform-origin-top will-change-transform"
           />
@@ -299,7 +353,7 @@ export default function PenTestingServicesPage() {
           </div>
 
           {/* Card Grid */}
-          <motion.div variants={staggerContainer} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <motion className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {whyChooseUs.map((item, idx) => (
               <motion.div 
                 key={idx} variants={fadeInUp}
@@ -329,7 +383,7 @@ export default function PenTestingServicesPage() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </motion>
         </motion.section>
 
         {/* FAQ (SPLIT STICKY LAYOUT) */}

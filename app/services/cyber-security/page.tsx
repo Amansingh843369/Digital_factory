@@ -55,56 +55,97 @@ export default function CyberSecurityPage() {
   const yHeroBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   // CYBER SECURITY SERVICES DATA - Fresh Free Images from Unsplash/Pexels
-  const detailedServices = [
-    {
-      category: "Infrastructure", 
-      title: "Network Security",
-      desc: "Secure your IT infrastructure against unauthorized access and ensure business continuity.",
-      highlights: [ "Firewalls & IPS Deployment", "Secure Network Architecture", "VPN & Remote Access Security", "Endpoint Protection", "24/7 Threat Monitoring" ],
-      image: "https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&q=80&w=1200", // Server Rack / Data Center
-      badge: "Network Defense"
-    },
-    {
-      category: "Cloud", 
-      title: "Cloud Security",
-      desc: "Protect your data and applications across AWS, Azure, and Google Cloud environments.",
-      highlights: [ "Secure Cloud Migration", "Identity & Access Management", "Cloud Compliance (ISO/GDPR)", "Data Encryption", "Continuous Threat Mitigation" ],
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200", // Abstract Cloud Tech
-      badge: "Cloud Safe"
-    },
-    {
-      category: "Data", 
-      title: "Data Protection & Privacy",
-      desc: "Safeguard sensitive business and customer information from leaks and theft.",
-      highlights: [ "Data Loss Prevention (DLP)", "Encryption (Rest & Transit)", "Backup & Disaster Recovery", "Privacy Compliance", "Secure File Sharing" ],
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200", // Digital Lock / Security Concept
-      badge: "Data Privacy"
-    },
-    {
-      category: "Compliance", 
-      title: "IT Security Audits",
-      desc: "Identify vulnerabilities and ensure your organization meets global regulatory standards.",
-      highlights: [ "Vulnerability Assessment (VAPT)", "Risk Assessments", "ISO 27001 Support", "Compliance Audits", "Policy Development" ],
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200", // Code / Audit Screen
-      badge: "Audit Ready"
-    },
-    {
-      category: "Intelligence", 
-      title: "Threat Intelligence & SOC",
-      desc: "Proactive monitoring and analysis to detect threats before they impact your business.",
-      highlights: [ "24/7 Security Operations Center", "Real-time Threat Detection", "Malware Analysis & Forensics", "SIEM Implementation", "Dark Web Monitoring" ],
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1200", // Hacker / Terminal Screen
-      badge: "24/7 SOC"
-    },
-    {
-      category: "Zero Trust", 
-      title: "Identity & Access Management",
-      desc: "Implement Zero Trust architecture to verify every user and device accessing your resources.",
-      highlights: [ "Multi-Factor Authentication (MFA)", "Single Sign-On (SSO)", "Privileged Access Management", "Role-Based Access Control", "Biometric Integration" ],
-      image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=1200", // Biometric / Fingerprint Scan
-      badge: "Zero Trust"
-    }
-  ];
+const detailedServices = [
+  {
+    category: "Infrastructure", 
+    title: "Network Security",
+    desc: "Secure your IT infrastructure against unauthorized access and ensure business continuity.",
+    highlights: [
+      "Firewalls & IPS Deployment",
+      "Secure Network Architecture",
+      "VPN & Remote Access Security",
+      "Endpoint Protection",
+      "24/7 Threat Monitoring"
+    ],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=85&w=1400",
+    badge: "Network Defense"
+  },
+
+  {
+    category: "Cloud", 
+    title: "Cloud Security",
+    desc: "Protect your data and applications across AWS, Azure, and Google Cloud environments.",
+    highlights: [
+      "Secure Cloud Migration",
+      "Identity & Access Management",
+      "Cloud Compliance (ISO/GDPR)",
+      "Data Encryption",
+      "Continuous Threat Mitigation"
+    ],
+    image: "https://unsplash.com/photos/8zB4P0eafrs/download?force=true",
+    badge: "Cloud Safe"
+  },
+
+  {
+    category: "Data", 
+    title: "Data Protection & Privacy",
+    desc: "Safeguard sensitive business and customer information from leaks and theft.",
+    highlights: [
+      "Data Loss Prevention (DLP)",
+      "Encryption (Rest & Transit)",
+      "Backup & Disaster Recovery",
+      "Privacy Compliance",
+      "Secure File Sharing"
+    ],
+    image: "https://unsplash.com/photos/FnA5pAzqhMM/download?force=true",
+    badge: "Data Privacy"
+  },
+
+  {
+    category: "Compliance", 
+    title: "IT Security Audits",
+    desc: "Identify vulnerabilities and ensure your organization meets global regulatory standards.",
+    highlights: [
+      "Vulnerability Assessment (VAPT)",
+      "Risk Assessments",
+      "ISO 27001 Support",
+      "Compliance Audits",
+      "Policy Development"
+    ],
+    image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&q=85&w=1400",
+    badge: "Audit Ready"
+  },
+
+  {
+    category: "Intelligence", 
+    title: "Threat Intelligence & SOC",
+    desc: "Proactive monitoring and analysis to detect threats before they impact your business.",
+    highlights: [
+      "24/7 Security Operations Center",
+      "Real-time Threat Detection",
+      "Malware Analysis & Forensics",
+      "SIEM Implementation",
+      "Dark Web Monitoring"
+    ],
+    image: "https://www.zenflux.fun/security-operations-center-with-threat-monitoring-.jpg",
+    badge: "24/7 SOC"
+  },
+
+  {
+    category: "Zero Trust", 
+    title: "Identity & Access Management",
+    desc: "Implement Zero Trust architecture to verify every user and device accessing your resources.",
+    highlights: [
+      "Multi-Factor Authentication (MFA)",
+      "Single Sign-On (SSO)",
+      "Privileged Access Management",
+      "Role-Based Access Control",
+      "Biometric Integration"
+    ],
+    image: "https://unsplash.com/photos/Uw_8vSroCSc/download?force=true",
+    badge: "Zero Trust"
+  }
+];
 
   // WHY CHOOSE US DATA - With Premium SVGs
   const whyChooseUs = [
@@ -237,7 +278,7 @@ export default function CyberSecurityPage() {
         >
           <motion.img 
             style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.1 }}
-            src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&q=80&w=1600" 
+         src="https://kahedu.edu.in/n/wp-content/uploads/2023/05/Real-World-Examples-of-Cyber-Attacks-and-Their-Impact-990x500.jpg"
             alt="Cyber Security Operations" 
             className="w-full h-full object-cover transform-origin-top will-change-transform"
           />
