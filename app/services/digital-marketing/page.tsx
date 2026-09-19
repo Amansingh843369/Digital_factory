@@ -2,7 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-
+import {
+  TrendingUp,
+  BarChart3,
+  Target,
+  Lightbulb,
+} from "lucide-react";
 // Premium smooth easing
 const customEase = [0.22, 1, 0.36, 1];
 
@@ -293,60 +298,272 @@ export default function DigitalMarketingPage() {
           </div>
         </section>
 
-        {/* WHY CHOOSE US SECTION */}
-        <motion.section 
-          initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeInUp}
-          className="mt-16 md:mt-32 relative bg-[#622e20] rounded-[1.5rem] md:rounded-[3rem] p-6 md:p-16 lg:p-24 overflow-hidden shadow-2xl border border-[#2A211E]"
-        >
-          {/* Subtle Ambient Background Orbs */}
-          <div className="absolute top-0 left-1/4 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#CD7F5D]/15 rounded-full blur-[80px] md:blur-[140px] pointer-events-none opacity-50" />
-          <div className="absolute bottom-0 right-1/4 w-[200px] h-[200px] md:w-[500px] md:h-[500px] bg-[#A05C3F]/15 rounded-full blur-[80px] md:blur-[140px] pointer-events-none opacity-50" />
+       {/* WHY CHOOSE US / AGENCY ADVANTAGE SECTION */}
+<motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.1 }}
+  variants={fadeInUp}
+  className="
+    mt-16 md:mt-32
+    relative
+    bg-[#F5EFE6]
+    rounded-[1.5rem] md:rounded-[3rem]
+    p-6 md:p-16 lg:p-24
+    overflow-hidden
+    shadow-[0_25px_80px_rgba(71,52,39,0.12)]
+    border border-[#E4D8C9]
+  "
+>
+  {/* Ambient Background */}
+  <div
+    className="
+      absolute -top-32 left-1/4
+      w-[300px] h-[300px]
+      md:w-[600px] md:h-[600px]
+      bg-[#D7B79A]/25
+      rounded-full
+      blur-[80px] md:blur-[140px]
+      pointer-events-none
+    "
+  />
 
-          {/* Header */}
-          <div className="relative z-10 text-center max-w-3xl mx-auto space-y-4 md:space-y-5 mb-10 md:mb-20">
-            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#CD7F5D] font-bold">The Agency Advantage</span>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-              Why Brands Choose Us
-            </h2>
-            <p className="text-[#A99A93] text-sm md:text-base lg:text-lg leading-relaxed font-light max-w-2xl mx-auto px-4">
-              We don't just run ads; we engineer growth. Our entire ecosystem is built around transparency, relentless performance, and tangible ROI.
-            </p>
+  <div
+    className="
+      absolute -bottom-32 right-1/4
+      w-[250px] h-[250px]
+      md:w-[500px] md:h-[500px]
+      bg-[#C6A083]/20
+      rounded-full
+      blur-[80px] md:blur-[140px]
+      pointer-events-none
+    "
+  />
+
+  {/* Top Decorative Line */}
+  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B48A68]/40 to-transparent" />
+
+  {/* Header */}
+  <div
+    className="
+      relative z-10
+      text-center
+      max-w-3xl
+      mx-auto
+      space-y-4 md:space-y-5
+      mb-10 md:mb-20
+    "
+  >
+    {/* Small Label */}
+    <span
+      className="
+        inline-flex
+        items-center
+        justify-center
+        gap-2
+        text-[10px] md:text-xs
+        font-mono
+        uppercase
+        tracking-[0.25em]
+        text-[#8B5E3C]
+        font-bold
+      "
+    >
+      <span className="w-6 md:w-8 h-px bg-[#B48A68]" />
+
+      The Agency Advantage
+
+      <span className="w-6 md:w-8 h-px bg-[#B48A68]" />
+    </span>
+
+    {/* Heading */}
+    <h2
+      className="
+        text-2xl
+        sm:text-3xl
+        md:text-5xl
+        lg:text-6xl
+        font-extrabold
+        text-[#2B211B]
+        tracking-tight
+        leading-tight
+      "
+    >
+      Why Brands Choose Us
+    </h2>
+
+    {/* Description */}
+    <p
+      className="
+        text-[#75675D]
+        text-sm
+        md:text-base
+        lg:text-lg
+        leading-relaxed
+        font-light
+        max-w-2xl
+        mx-auto
+        px-4
+      "
+    >
+      We don't just run ads; we engineer growth. Our ecosystem is built around
+      transparency, creative strategy, measurable performance, and tangible ROI.
+    </p>
+  </div>
+
+  {/* Card Grid */}
+  <motion.div
+    variants={staggerContainer}
+    className="
+      relative z-10
+      grid
+      grid-cols-1
+      md:grid-cols-2
+      gap-4 md:gap-8
+    "
+  >
+    {whyChooseUs.map((item, idx) => (
+      <motion.div
+        key={idx}
+        variants={fadeInUp}
+        whileHover={{ y: -8 }}
+        transition={{ duration: 0.35 }}
+        className="
+          relative
+          bg-[#FFFDF9]
+          p-6 md:p-12
+          rounded-[1.5rem] md:rounded-[2rem]
+          border border-[#E5D8CA]
+          shadow-[0_15px_45px_rgba(70,50,35,0.07)]
+          group
+          overflow-hidden
+          transition-all duration-500
+          hover:border-[#B48A68]/70
+          hover:shadow-[0_25px_65px_rgba(91,65,45,0.14)]
+        "
+      >
+
+        {/* Hover Gradient */}
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-br
+            from-[#F1E4D5]/70
+            via-transparent
+            to-[#E8D4C0]/30
+            opacity-0
+            group-hover:opacity-100
+            transition-opacity duration-500
+          "
+        />
+
+        {/* Giant Number */}
+        <div
+          className="
+            absolute
+            -top-8
+            -right-4
+            text-[6rem] md:text-[10rem]
+            font-extrabold
+            leading-none
+            text-[#5C4635]/[0.035]
+            group-hover:text-[#8B5E3C]/[0.07]
+            transition-colors duration-500
+            pointer-events-none
+            select-none
+          "
+        >
+          0{idx + 1}
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10">
+
+          {/* Icon */}
+          <div
+            className="
+              w-12 h-12
+              md:w-16 md:h-16
+              rounded-xl md:rounded-2xl
+
+              bg-[#F3E9DD]
+              border border-[#E2D1BF]
+
+              text-[#8B5E3C]
+
+              flex
+              items-center
+              justify-center
+
+              mb-6 md:mb-8
+
+              group-hover:scale-110
+              group-hover:bg-[#8B5E3C]
+              group-hover:border-[#8B5E3C]
+              group-hover:text-white
+
+              transition-all
+              duration-500
+
+              shadow-[0_8px_25px_rgba(91,65,45,0.08)]
+            "
+          >
+            {item.icon}
           </div>
 
-          {/* Card Grid */}
-          <motion.div variants={staggerContainer} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-            {whyChooseUs.map((item, idx) => (
-              <motion.div 
-                key={idx} variants={fadeInUp}
-                whileHover={{ y: -8 }}
-                className="relative bg-gradient-to-br from-[#1C1614] to-[#110D0B] p-6 md:p-12 rounded-[1.5rem] md:rounded-[2rem] border border-[#2A211E] shadow-2xl group overflow-hidden transition-all duration-500 hover:border-[#CD7F5D]/60 hover:shadow-[#CD7F5D]/10"
-              >
-                {/* Hover Glow Effect inside Card */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#CD7F5D]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Giant Watermark Number */}
-                <div className="absolute -top-10 -right-6 text-[6rem] md:text-[10rem] font-extrabold text-white/[0.02] group-hover:text-[#CD7F5D]/[0.05] transition-colors duration-500 pointer-events-none leading-none">
-                  0{idx + 1}
-                </div>
+          {/* Title */}
+          <h3
+            className="
+              text-lg
+              md:text-2xl
+              font-bold
+              text-[#2B211B]
+              mb-3 md:mb-4
+              group-hover:text-[#8B5E3C]
+              transition-colors duration-300
+            "
+          >
+            {item.title}
+          </h3>
 
-                <div className="relative z-10">
-                  {/* Icon Box */}
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-[#2A211E] border border-[#382B27] text-[#CD7F5D] flex items-center justify-center text-xl md:text-3xl mb-6 md:mb-8 group-hover:scale-110 group-hover:bg-[#CD7F5D] group-hover:border-[#CD7F5D] group-hover:text-white transition-all duration-500 shadow-lg">
-                    {item.icon}
-                  </div>
-                  
-                  <h3 className="text-lg md:text-2xl font-bold text-white mb-3 md:mb-4 group-hover:text-[#CD7F5D] transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs md:text-base text-[#A99A93] leading-relaxed font-light group-hover:text-[#D8C9C1] transition-colors duration-300">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.section>
+          {/* Description */}
+          <p
+            className="
+              text-xs
+              md:text-base
+              text-[#75675D]
+              leading-relaxed
+              font-light
+              group-hover:text-[#55463C]
+              transition-colors duration-300
+              max-w-xl
+            "
+          >
+            {item.desc}
+          </p>
 
+          {/* Bottom Accent */}
+          <div className="mt-6 md:mt-8 flex items-center gap-2">
+            <span
+              className="
+                w-8 h-[2px]
+                bg-[#B48A68]
+                group-hover:w-14
+                transition-all duration-500
+              "
+            />
+
+            <span className="w-1.5 h-1.5 rounded-full bg-[#B48A68]" />
+          </div>
+
+        </div>
+      </motion.div>
+    ))}
+  </motion.div>
+
+  {/* Bottom Decorative Line */}
+  <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B48A68]/30 to-transparent" />
+</motion.section>
         {/* FAQ (SPLIT STICKY LAYOUT) */}
         <section className="mt-16 md:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-20 items-start">
