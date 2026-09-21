@@ -42,7 +42,7 @@ const features = [
     icon: ShieldCheck,
     description: "Security is engineered into every line of code. Protected infrastructures designed to safeguard your critical data against modern threats.",
     whatYouGet: "Enterprise-grade data protection meeting strict global VAPT standards.",
-    image: "/fake.avif"
+    image: "/innovate.png"
   }
 ];
 
@@ -78,7 +78,7 @@ export function WhyChooseUs() {
   return (
     <section 
       ref={containerRef} 
-      // Desktop par 220vh hogi for scroll sync, mobile par content ke hisaab se normal height
+     
       className="relative bg-[#FAF7F2] py-16 lg:py-10 lg:min-h-[220vh]"
     >
       
@@ -155,7 +155,7 @@ export function WhyChooseUs() {
                   </div>
 
                   {/* Card Text & Callout */}
-                  <div className="md:col-span-7 flex flex-col justify-center py-2 lg:py-4 space-y-5 lg:space-y-6">
+                  <div className="md:col-span-7 flex flex-col justify-center py-2 lg:py-7 space-y-5 lg:space-y-6">
                     <div className="space-y-3 lg:space-y-4">
                       <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-neutral-900 leading-tight">
                         {activeFeature.title}
