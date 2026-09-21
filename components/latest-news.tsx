@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const POSTS = [
   {
     date: "March 15, 2026",
-    title: "Understanding Zero Trust Architecture in Modern Workspaces",
+    title: "Protecting Your Business in an Ever-Changing Digital World",
     excerpt: "Never trust, always verify. Learn how implementing a Zero Trust security model can protect your distributed workforce from internal and external threats.",
     img: "/1.jpg", 
   },

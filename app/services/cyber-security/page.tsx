@@ -172,32 +172,110 @@ const detailedServices = [
   ];
 
   // CYBER SECURITY FRAMEWORKS DATA
-  const frameworks = [
-    {
-      abbr: "NIST CSF",
-      name: "National Institute of Standards & Technology",
-      desc: "A powerful framework helping organizations to understand, manage, and reduce their cybersecurity risk using five core functions: Identify, Protect, Detect, Respond, and Recover.",
-      highlight: "U.S. Federal Standard"
-    },
-    {
-      abbr: "ISO 27001",
-      name: "Information Security Management",
-      desc: "The premier international standard for information security. It sets out the specification for an information security management system (ISMS) to keep data assets secure.",
-      highlight: "Global Compliance"
-    },
-    {
-      abbr: "CIS Controls",
-      name: "Center for Internet Security",
-      desc: "A prioritized set of best practices and defensive actions to mitigate the most pervasive and dangerous cyber attacks. Highly actionable and globally recognized.",
-      highlight: "Actionable Defenses"
-    },
-    {
-      abbr: "MITRE ATT&CK",
-      name: "Adversary Tactics & Techniques",
-      desc: "A globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. Essential for developing specific threat models and methodologies.",
-      highlight: "Threat Modeling"
-    }
-  ];
+const frameworks = [
+  { 
+    abbr: "NIST CSF", 
+    name: "Cybersecurity Framework", 
+    desc: "Provides a risk-based approach with five core functions to manage and reduce cybersecurity risks effectively.", 
+    highlight: "US Standard" 
+  },
+  {
+  abbr: "DPDPA",
+  name: "Digital Personal Data Protection Act",
+  desc: "India's primary privacy legislation regulating digital personal data processing, mandating strict consent, data principal rights, and heavy penalties for non-compliance.",
+  highlight: "Indian Regulatory Law"
+},
+  { 
+    abbr: "ISO/IEC 27001", 
+    name: "Information Security Management", 
+    desc: "Establishes international requirements for implementing and maintaining a comprehensive information security management system.", 
+    highlight: "Global" 
+  },
+  { 
+    abbr: "SOC 2", 
+    name: "Service Organization Control", 
+    desc: "Validates that service providers securely manage customer data through rigorous trust services criteria audits.", 
+    highlight: "Trust Services" 
+  },
+  { 
+    abbr: "CIS Controls", 
+    name: "Center for Internet Security", 
+    desc: "Delivers prioritized defensive actions to protect organizations against the most prevalent cyber attack vectors.", 
+    highlight: "Best Practices" 
+  },
+  { 
+    abbr: "COBIT 2019", 
+    name: "Control Objectives for IT", 
+    desc: "Aligns IT governance and management practices with business goals through structured control objectives.", 
+    highlight: "IT Governance" 
+  },
+  { 
+    abbr: "PCI DSS", 
+    name: "Payment Card Industry Security", 
+    desc: "Mandates security standards for all entities processing or storing credit card and payment data.", 
+    highlight: "Payment Security" 
+  },
+  { 
+    abbr: "HIPAA", 
+    name: "Health Insurance Portability", 
+    desc: "Protects sensitive patient health information from unauthorized access disclosure or misuse in healthcare.", 
+    highlight: "Healthcare US" 
+  },
+  { 
+    abbr: "ISO/IEC 27701", 
+    name: "Privacy Information Management", 
+    desc: "Extends ISO 27001 to establish specific privacy controls for managing personally identifiable information securely.", 
+    highlight: "Privacy Focus" 
+  },
+  { 
+    abbr: "HITRUST CSF", 
+    name: "Health Information Trust Alliance", 
+    desc: "Integrates healthcare regulations and security best practices into a single certifiable compliance framework.", 
+    highlight: "Healthcare Global" 
+  },
+  { 
+    abbr: "IEC 62443", 
+    name: "Industrial Automation Security", 
+    desc: "Defines cybersecurity requirements specifically for industrial automation and control systems in critical infrastructure.", 
+    highlight: "Industrial IoT" 
+  },
+  { 
+    abbr: "FedRAMP", 
+    name: "Federal Risk & Authorization", 
+    desc: "Standardizes security assessment authorization and continuous monitoring for cloud products used by US agencies.", 
+    highlight: "US Federal" 
+  },
+  { 
+    abbr: "CMMC", 
+    name: "Cybersecurity Maturity Model", 
+    desc: "Requires defense contractors to achieve verified cybersecurity maturity levels to handle controlled unclassified information.", 
+    highlight: "Defense Sector" 
+  },
+  { 
+    abbr: "TISAX", 
+    name: "Trusted Information Security", 
+    desc: "Enables mutual recognition of information security assessments across the global automotive supply chain.", 
+    highlight: "Automotive" 
+  },
+  { 
+    abbr: "CSA STAR", 
+    name: "Cloud Security Alliance", 
+    desc: "Combines self-assessment and third-party auditing to validate cloud provider security posture transparently.", 
+    highlight: "Cloud Security" 
+  },
+  { 
+    abbr: "DORA", 
+    name: "Digital Operational Resilience Act", 
+    desc: "Ensures EU financial entities maintain operational resilience against information and communication technology disruptions.", 
+    highlight: "EU Finance" 
+  },
+  { 
+    abbr: "NIS2 Directive", 
+    name: "Network & Information Security", 
+    desc: "Strengthens cybersecurity obligations incident reporting and supply chain security across critical EU sectors.", 
+    highlight: "EU Critical Infra" 
+  }
+];
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#F7F3E8] text-[#2C1E16] font-sans selection:bg-[#A64B2A] selection:text-white relative overflow-hidden">
@@ -529,48 +607,55 @@ const detailedServices = [
   </div>
 </motion.section>
 
-      {/* CYBER SECURITY FRAMEWORKS - New Bento Box UI */}
-      <motion.section 
-        initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeInUp}
-        className="py-16 md:py-24 relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8"
-      >
-        <div className="max-w-2xl space-y-3 mb-10 md:mb-14">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#A64B2A] font-medium">Standards & Compliance</span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#2C1E16] tracking-tight">Cyber Security Frameworks</h2>
-          <p className="text-[#6B5D56] text-sm md:text-base leading-relaxed font-normal">
-            We align our security strategies with globally recognized methodologies to ensure robust and verifiable protection for your organization.
-          </p>
-        </div>
+   {/* CYBER SECURITY FRAMEWORKS - Updated Bento Box UI */}
+<motion.section 
+  initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeInUp}
+  className="py-16 md:py-24 relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8"
+>
+  <div className="max-w-2xl space-y-3 mb-10 md:mb-14">
+    <span className="text-xs font-mono uppercase tracking-wider text-[#A64B2A] font-medium">Standards & Compliance</span>
+    <h2 className="text-3xl md:text-4xl font-semibold text-[#2C1E16] tracking-tight">Cyber Security Frameworks</h2>
+    <p className="text-[#6B5D56] text-sm md:text-base leading-relaxed font-normal">
+      We align our security strategies with globally recognized methodologies to ensure robust and verifiable protection for your organization.
+    </p>
+  </div>
 
-        <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {frameworks.map((fw, idx) => (
-            <motion.div 
-              key={idx} variants={fadeInUp}
-              whileHover={{ scale: 1.01 }}
-              className="bg-white rounded-3xl p-8 md:p-10 border border-[#E5D7CD] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
-            >
-              {/* Subtle Tech Pattern Background */}
-              <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
-              
-              <div className="relative z-10">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#2C1E16] tracking-tight">{fw.abbr}</h3>
-                  <span className="bg-[#F7F3E8] text-[#A64B2A] text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full border border-[#E5D7CD]">
-                    {fw.highlight}
-                  </span>
-                </div>
-                <h4 className="text-base md:text-lg font-medium text-[#A64B2A] mb-3">{fw.name}</h4>
-                <p className="text-[#6B5D56] text-sm leading-relaxed font-normal">
-                  {fw.desc}
-                </p>
-              </div>
-              
-              {/* Decorative accent line */}
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#A64B2A] group-hover:w-full transition-all duration-700 ease-out" />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.section>
+  {/* Bento Grid Layout - Responsive */}
+  <motion.div variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 auto-rows-fr">
+    {frameworks.map((fw, idx) => (
+      <motion.div 
+        key={idx} 
+        variants={fadeInUp}
+        whileHover={{ scale: 1.02, y: -4 }}
+        className={`bg-white rounded-2xl p-6 md:p-8 border border-[#E5D7CD] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden ${
+          // Make some cards span 2 columns on larger screens for visual interest
+          idx === 0 || idx === 5 || idx === 10 ? 'sm:col-span-2 lg:col-span-1' : ''
+        }`}
+      >
+        {/* Subtle Tech Pattern Background */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+        
+        <div className="relative z-10">
+          <div className="flex items-center justify-between mb-4 md:mb-6">
+            <span className="text-xs font-mono text-[#A64B2A]/60 font-semibold">0{idx + 1}</span>
+            <span className="bg-[#F7F3E8] text-[#A64B2A] text-[10px] sm:text-xs font-semibold px-2.5 py-1 rounded-full border border-[#E5D7CD]">
+              {fw.highlight}
+            </span>
+          </div>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-[#2C1E16] tracking-tight mb-2">{fw.abbr}</h3>
+          <h4 className="text-sm md:text-base font-medium text-[#A64B2A] mb-3 line-clamp-1">{fw.name}</h4>
+        <p className="text-[#6B5D56] text-xs md:text-sm leading-snug font-normal text-left hyphens-auto">
+  {fw.desc}
+</p>
+        </div>
+        
+        {/* Decorative accent line */}
+        <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#A64B2A] to-[#D4856A] group-hover:w-full transition-all duration-700 ease-out" />
+      </motion.div>
+    ))}
+  </motion.div>
+</motion.section>
 
       {/* CTA SECTION - Upgraded Floating Lucrative Banner */}
       <motion.section 

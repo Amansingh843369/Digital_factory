@@ -1019,7 +1019,7 @@ export function Hero() {
                     inset-[-100%]
                     -z-10
                     animate-[spin_6s_linear_infinite_reverse]
-                    bg-[conic-gradient(from_90deg,transparent_0%,#2563eb_18%,#06b6d4_32%,#7c3aed_48%,transparent_70%)]
+                    bg-[conic-gradient(from_90deg,transparent_0%,#2C1E16_18%,#2C1E16_92%,#7c3aed_48%,transparent_70%)]
                   "
                 />
 
@@ -1034,25 +1034,25 @@ export function Hero() {
                     gap-2
                     rounded-[11px]
                     border
-                    border-background/80
-                    bg-background/95
+                 
+                    bg-background 
                     px-6
                     py-3.5
                     backdrop-blur-xl
                     transition-all
                     duration-300
-                    group-hover:bg-muted/80
+                    
                   "
                 >
 
                   <Layers
                     className="
-                      h-4
+                      h-3
                       w-4
                       text-muted-foreground
-                      transition-colors
+                      
                       duration-300
-                      group-hover:text-brand
+                     
                     "
                   />
 
