@@ -157,15 +157,14 @@ export function Contact() {
           </p>
         </div>
       </div>
-
       <a
         href="https://www.google.com/maps/search/?api=1&query=912+72+Corp+Saki+Vihar+Road+Sakinaka+Junction+Andheri+Mumbai+400072"
         target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-[#A64B2A] hover:bg-[#8C3E22] text-white text-xs font-semibold rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
+        rel="noreferrer"
+        className="inline-flex items-center gap-2 text-sm font-semibold text-[#A64B2A] hover:underline"
       >
-        <span>Open in Google Maps</span>
-        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        Get Directions
+        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
         </svg>
       </a>
