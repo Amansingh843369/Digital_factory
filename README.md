@@ -1,4 +1,4 @@
-# 🚀 Digital Factory
+# 🚀 Digital Factorys
 
 > A modern digital solutions platform built with Next.js, React, TypeScript, and Tailwind CSS.
 
