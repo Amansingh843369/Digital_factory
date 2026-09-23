@@ -149,8 +149,7 @@ export function Services() {
           </div>
 
           <h2 className=" text-3xl sm:text-5xl lg:text-[3rem] font-normal leading-[1.1] sm:leading-[1.1] tracking-tight max-w-4xl mx-auto">
-            Engineered for <span className="italic text-[#C46A42]">Scale</span> <br className="hidden sm:block" /> 
-            & Secure by Design.
+         Built for Resilience. Secure by Design.
           </h2>
           
         </div>
