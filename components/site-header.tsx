@@ -1,19 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link"; // FIXED: Next.js Link imported
+import Link from "next/link"; 
 
 const NAV = [
   { label: "Home", href: "/#home" },
   { label: "About Us", href: "/#about" },
-
   {
     label: "Services",
     href: "/#services",
     children: [
-     
        {
         label: "Software Development",
         href: "/services/software-development",
@@ -40,7 +38,6 @@ const NAV = [
       },
     ],
   },
-
   { label: "Blog", href: "/#blog" },
   { label: "FAQ", href: "/#faq" },
   { label: "Career", href: "/career" },
@@ -67,9 +64,35 @@ function Logo() {
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  
+  // Refs define kiye hain detect karne ke liye
+  const dropdownRef = useRef(null);
+  const headerRef = useRef(null);
+
+  // Outside click handle karne ke liye useEffect
+  useEffect(() => {
+    function handleClickOutside(event) {
+      // Agar Desktop dropdown ke bahar click hua toh dropdown close karein
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setServicesOpen(false);
+      }
+      // Agar pure header ke bahar click hua toh mobile menu bhi close karein
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+
+    // Event listener attach karna
+    document.addEventListener("mousedown", handleClickOutside);
+    
+    // Cleanup function
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
+    <header ref={headerRef} className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-5 md:h-20 lg:px-8">
         <Logo />
 
@@ -79,7 +102,12 @@ export function SiteHeader() {
           aria-label="Primary"
         >
           {NAV.map((item) => (
-            <div key={item.label} className="relative">
+            <div 
+              key={item.label} 
+              className="relative"
+              // Ref attach kiya gaya hai sirf services wale item par
+              ref={item.children ? dropdownRef : null}
+            >
               {item.children ? (
                 <>
                   {/* Services Button */}
