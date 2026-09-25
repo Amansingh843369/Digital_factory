@@ -65,12 +65,13 @@ export function Contact() {
                         className="w-full appearance-none rounded-2xl bg-[#F0EBE1] px-5 py-4.5 pr-12 text-neutral-500 outline-none transition-all cursor-pointer focus:ring-2 focus:ring-[#C46A42]/40"
                       >
                         <option value="" disabled>Select...</option>
-                        <option value="web-designing">Web Designing</option>
-                        <option value="custom-software">Custom Software</option>
-                        <option value="software-testing">Software Testing</option>
-                        <option value="saas-development">SaaS Development</option>
-                        <option value="mobile-apps">Mobile Apps</option>
-                      </select>
+                        <option value="software-development">Software Development</option>
+                        <option value="website-development">Website Development</option>
+                        <option value="digital-marketing">Digital Marketing</option>
+                        <option value="cyber-security">Cyber Security</option>
+                        <option value="penetration-testing">Penetration Testing</option>
+                        <option value="eoms">eOMS</option>
+                          </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-5">
                         <ChevronDown className="h-5 w-5 text-neutral-400" />
                       </div>

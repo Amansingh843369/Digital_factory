@@ -853,7 +853,7 @@ export function Hero() {
                 FEATURES
             ================================================= */}
 
-            <motion.div
+            {/* <motion.div
               variants={itemVariants}
               className="
                 mt-6
@@ -891,7 +891,7 @@ export function Hero() {
                 <span>UI/UX & Product Design</span>
               </div>
 
-            </motion.div>
+            </motion.div> */}
 
 
             {/* =================================================
