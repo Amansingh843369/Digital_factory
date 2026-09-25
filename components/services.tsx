@@ -14,10 +14,54 @@ import {
 } from "lucide-react";
 
 const services = [
+    {
+    id: "03",
+    title: "Software Development",
+    tag: "Custom Architecture",
+    description: "Robust, secure, and scalable custom software solutions engineered to automate operations and solve complex business problems.",
+    icon: Settings2,
+    features: [
+      "High-Performance Web Apps",
+      "Scalable SaaS Platforms",
+      "Cross-Platform Mobile Apps",
+      "Custom API Development",
+      "Enterprise Software Solutions",
+    ],
+    techs: [
+      "Custom Solutions",
+      "Full Stack",
+      "API Integration",
+      "High Performance"
+    ],
+    link: "/services/software-development"
+  },
+  
+  {
+    id: "02",
+    title: "Website Development",
+
+    description: "Fast, responsive, and visually stunning websites crafted around your brand identity, built to deliver seamless user experiences, strengthen your digital presence, and turn visitors into loyal customers.",
+    icon: MonitorSmartphone,
+    features: [
+      "Premium Business Websites",
+      "High-Converting E-Commerce",
+      "Conversion-Focused Landing Pages",
+      "Responsive Web Experiences",
+      "Custom UI & Interactions",
+    ],
+    techs: [
+      "Next.js",
+      "React",
+      "Modern UI/UX",
+      "Node.js ",
+      "Conversion Optimized",
+    ],
+    link: "/services/web-development"
+  },
   {
     id: "01",
     title: "Digital Marketing",
-    tag: "Growth & Conversions",
+    
     description: "Expand your reach and turn attention into measurable growth with data-driven marketing campaigns, precision audience targeting, and continuous optimization built to generate quality leads and meaningful conversions.",
     icon: TrendingUp,
     features: [
@@ -39,52 +83,9 @@ const services = [
     link: "/services/digital-marketing" 
   },
   {
-    id: "02",
-    title: "Website Development",
-    tag: "Web Design & Performance",
-    description: "Fast, responsive, and visually stunning websites crafted around your brand identity, built to deliver seamless user experiences, strengthen your digital presence, and turn visitors into loyal customers.",
-    icon: MonitorSmartphone,
-    features: [
-      "Premium Business Websites",
-      "High-Converting E-Commerce",
-      "Conversion-Focused Landing Pages",
-      "Responsive Web Experiences",
-      "Custom UI & Interactions",
-    ],
-    techs: [
-      "Next.js",
-      "React",
-      "Modern UI/UX",
-      "Node.js ",
-      "Conversion Optimized",
-    ],
-    link: "/services/web-development"
-  },
-  {
-    id: "03",
-    title: "Software Development",
-    tag: "Custom Architecture",
-    description: "Robust, secure, and scalable custom software solutions engineered to automate operations and solve complex business problems.",
-    icon: Settings2,
-    features: [
-      "High-Performance Web Apps",
-      "Scalable SaaS Platforms",
-      "Cross-Platform Mobile Apps",
-      "Custom API Development",
-      "Enterprise Software Solutions",
-    ],
-    techs: [
-      "Custom Solutions",
-      "Full Stack",
-      "API Integration",
-      "High Performance"
-    ],
-    link: "/services/software-development"
-  },
-  {
     id: "04",
     title: "Cyber Security Solutions",
-    tag: "Infrastructure Protection",
+   
     description: "Comprehensive enterprise security measures and protocols designed to guard your critical data and digital assets against threats.",
     icon: ShieldCheck,
     features: ["OWASP Top 10", "Data Protection", "IT Infrastructure Audits","Cyber Vadis", "Continuous Threat Monitoring"],
@@ -94,7 +95,7 @@ const services = [
   {
     id: "05",
     title: "Penetration Testing",
-    tag: "Offensive Security",
+    
     description: "Simulated real-world cyber attacks to proactively find and patch security vulnerabilities before adversaries can exploit them.",
     icon: TerminalSquare,
     features: ["Web App Testing", "Network Testing", "API Security Testing" ,"Cloud Testing","Mobile Testing"],
@@ -104,7 +105,7 @@ const services = [
   {
     id: "06",
     title: "e-Office Management Security",
-    tag: "Secure Digital Office Solutions",
+   
     description:
       "Secure and efficient e-office management solutions that streamline digital workflows, protect sensitive data, and improve organizational productivity.",
     icon: ShieldCheck,
@@ -148,10 +149,10 @@ export function Services() {
             <span>Our Capabilities</span>
           </div>
 
-          <h2 className=" text-3xl sm:text-5xl lg:text-[3rem] font-normal leading-[1.1] sm:leading-[1.1] tracking-tight max-w-4xl mx-auto">
-         
+          <h2 className=" text-3xl sm:text-5xl lg:text-[2rem] font-normal leading-[1.1] sm:leading-[1.1] tracking-tight max-w-4xl mx-auto">
+           We build smart, scalable software solutions designed to simplify operations and accelerate business growth.
           </h2>
-          We build smart, scalable software solutions designed to simplify operations and accelerate business growth.
+          
 
         </div>
 
@@ -194,12 +195,7 @@ export function Services() {
                         <ArrowUpRight className="inline-block md:hidden h-4 w-4 ml-2 opacity-50"/>
                       </h3>
 
-                      {/* Tag Badge */}
-                      <span className={`hidden lg:inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border shrink-0 transition-colors duration-300 ${
-                        isActive ? "border-[#C46A42]/30 bg-[#C46A42]/5 text-[#C46A42]" : "border-neutral-200 bg-white/50 text-neutral-400"
-                      }`}>
-                        {service.tag}
-                      </span>
+                     
                     </div>
                   </div>
 
