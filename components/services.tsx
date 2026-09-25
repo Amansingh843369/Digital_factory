@@ -149,7 +149,7 @@ export function Services() {
             <span>Our Capabilities</span>
           </div>
 
-          <h2 className=" text-3xl sm:text-5xl lg:text-[2rem] font-normal leading-[1.1] sm:leading-[1.1] tracking-tight max-w-4xl mx-auto">
+          <h2 className=" text-1.9xl text-jutify sm:text-5xl lg:text-[2rem] font-normal leading-[1.1] sm:leading-[1.1] tracking-tight max-w-4xl mx-auto">
            We build smart, scalable software solutions designed to simplify operations and accelerate business growth.
           </h2>
           
