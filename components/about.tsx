@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Target, Eye } from "lucide-react";
+import Link from "next/link";
+import { Target, Eye, ArrowRight } from "lucide-react"; 
 
 // ============== CUSTOM HOOK FOR NUMBER COUNTING ================
 function AnimatedNumber({ value, isDecimal = false, suffix = "", duration = 2000 }: { value: number, isDecimal?: boolean, suffix?: string, duration?: number }) {
@@ -67,7 +68,7 @@ export function About() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 } // Starts revealing when 20% visible on screen
+      { threshold: 0.2 } 
     );
     
     if (imageRef.current) observer.observe(imageRef.current);
@@ -77,16 +78,11 @@ export function About() {
   return (
     <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-20 lg:py-24">
       
-      {/* Background Decor */}
- 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Changed items-center to lg:items-stretch so columns equal height */}
         <div className="grid items-center lg:items-stretch gap-12 lg:grid-cols-2 lg:gap-20">
           
-          {/* ================= LEFT: VISUAL STORYTELLING (SLOW LEFT-TO-RIGHT REVEAL) ================= */}
-          {/* Added h-full and a minimum height for mobile stacked view */}
+          {/* ================= LEFT: VISUAL STORYTELLING ================= */}
           <div ref={imageRef} className="relative mx-auto w-full h-full min-h-[450px] lg:min-h-0 max-w-md sm:max-w-lg lg:max-w-none">
-            {/* Removed aspect-square, added h-full w-full */}
             <div 
               className="relative h-full w-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-neutral-200/10 shadow-2xl shadow-neutral-900/10 group"
               style={{
@@ -102,10 +98,8 @@ export function About() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               
-              {/* Overlay Dark Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-900/40 to-transparent" />
               
-              {/* Bottom Stats Bar inside Image (Live Counters) */}
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 backdrop-blur-md bg-white/5 border-t border-white/10 z-10">
                 <div className="grid grid-cols-3 gap-2 sm:gap-4 text-white text-center">
                   <div>
@@ -134,13 +128,11 @@ export function About() {
           {/* ================= RIGHT: CONTENT (MISSION & VISION) ================= */}
           <div className="flex flex-col justify-center space-y-6 sm:space-y-8 py-2">
             
-            {/* Section Label */}
             <div className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-bold uppercase tracking-wider text-[#C46A42]">
               <span className="h-px w-6 sm:w-8 bg-[#C46A42]" />
               About Digital Factory
             </div>
 
-            {/* Headline */}
             <h2 className="font-serif text-3xl sm:text-4xl leading-[1.2] sm:leading-[1.1] tracking-tight text-neutral-900 md:text-5xl lg:text-[52px]">
               Exploring Endless <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 to-[#C46A42]">
@@ -148,43 +140,45 @@ export function About() {
               </span>
             </h2>
 
-            {/* Description Paragraphs */}
+            {/* Description Paragraphs with Added Bullet Points */}
             <div className="space-y-4 sm:space-y-5 text-[15px] sm:text-[16px] leading-relaxed text-neutral-600 text-justify">
               <p>
                 <strong className="text-neutral-900">Digital Factory</strong> is a forward-thinking digital solutions company. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
               </p>
               <p>
-                We believe that technology and creativity must go hand-in-hand. Driven by innovation, integrity, and trust, our team brings together specialists from different domains to deliver measurable results. From startups to established enterprises, we are your one-stop partner for digital transformation.
+                At Digital Factory, we believe that technology and creativity must go hand-in-hand. Our team brings together specialists from different domains who collaborate to deliver measurable results, not just promises. We adopt a client-first approach, ensuring transparency, reliability, and long-term success in every project we undertake.
               </p>
+              
+              <div className="pt-2 text-left">
+                <p className="mb-3">
+                  We work with businesses across industries — from startups to established enterprises — enabling them to:
+                </p>
+                <ul className="list-disc pl-5 space-y-2 marker:text-[#C46A42]">
+                  <li>
+                    <strong className="text-neutral-900 font-medium">Build</strong> a strong and lasting digital identity.
+                  </li>
+                  <li>
+                    <strong className="text-neutral-900 font-medium">Enhance</strong> customer engagement through effective marketing strategies.
+                  </li>
+                  <li>
+                    <strong className="text-neutral-900 font-medium">Deploy</strong> custom software to improve efficiency and growth.
+                  </li>
+                  <li>
+                    <strong className="text-neutral-900 font-medium">Protect</strong> their data and systems with cutting-edge cybersecurity solutions.
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            {/* Mission & Vision Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2">
-              {[
-                { 
-                  icon: Target, 
-                  title: "Our Mission", 
-                  desc: "To deliver innovative, secure, and result-driven digital solutions that empower businesses to scale, transform, and achieve sustainable growth." 
-                },
-                { 
-                  icon: Eye, 
-                  title: "Our Vision", 
-                  desc: "To become a global leader in digital transformation by combining creativity, technology, and cybersecurity — building a future where every business can explore endless digital possibilities." 
-                },
-              ].map((item, idx) => (
-                <div 
-                  key={idx}
-                  className="group flex flex-col gap-3 sm:gap-4 text-justify leading-relaxed tracking-normal hyphens-auto rounded-2xl border border-neutral-200/60 bg-white p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C46A42]/30 hover:shadow-[0_10px_20px_-10px_rgba(196,106,66,0.15)]"
-                >
-                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-[#F0EBE1] text-[#C46A42] transition-colors duration-300 group-hover:bg-[#C46A42] group-hover:text-white">
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-neutral-900 text-[15px] sm:text-[16px]">{item.title}</h3>
-                    <p className="mt-1.5 sm:mt-2 text-[13px] sm:text-[14px] text-neutral-500 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+            {/* ================= NEW ABOUT PAGE BUTTON ================= */}
+            <div className="pt-4 sm:pt-6">
+              <Link 
+                href="/about" 
+                className="group inline-flex items-center gap-2 rounded-full bg-[#C46A42] px-7 py-3.5 text-[14px] sm:text-[15px] font-semibold text-white transition-all duration-300 hover:bg-[#a65633] hover:shadow-lg hover:shadow-[#C46A42]/20 hover:-translate-y-1"
+              >
+                Know More About Us
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
 
           </div>

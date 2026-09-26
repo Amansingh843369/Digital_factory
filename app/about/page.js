@@ -22,6 +22,32 @@ const AboutUs = () => {
   return (
     <div className="bg-[#FCFBF9] min-h-screen font-sans selection:bg-[#A64B2A] selection:text-white pb-20">
       
+      <section className="relative overflow-hidden bg-[#2C1E16]">
+ 
+
+  <div className="relative mx-auto flex min-h-[280px] max-w-7xl items-center justify-between px-6 py-16 lg:px-10">
+    
+    {/* Left */}
+    <div>
+       
+
+      <h1 className="text-4xl font-semibold text-[#F7F3E8] md:text-5xl">
+        About Us
+      </h1>
+
+      <div className="mt-5 flex items-center gap-3 text-sm text-[#F7F3E8]/70">
+        <span>Home</span>
+        <span className="text-[#C87D55]">›</span>
+        <span className="text-[#F7F3E8]">About Us</span>
+      </div>
+    </div>
+
+    
+
+  </div>
+</section>
+
+
       {/* 1. HERO & COMPANY OVERVIEW (Redesigned matching the reference layout) */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-white">
         
@@ -61,7 +87,7 @@ const AboutUs = () => {
                   <User size={36} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h4 className="text-3xl sm:text-4xl font-extrabold text-[#2A2320] leading-none mb-1">500+</h4>
+                  <h4 className="text-3xl sm:text-4xl font-extrabold text-[#2A2320] leading-none mb-1">240+</h4>
                   <p className="text-sm sm:text-base text-gray-500 font-medium leading-none">Projects Completed</p>
                 </div>
               </div>
@@ -95,7 +121,7 @@ const AboutUs = () => {
                 <p>
                   We provide end-to-end services in Digital Marketing, Website Development, Software Development, and Cyber Security Solutions, making us a one-stop partner for digital transformation tailored to exceed expectations.
                 </p>
-                    <p className="font-light text-[#2A2320] text-1xl leading-tight">
+                    <p className="font-medium  text-1xl leading-tight">
                   Driven by innovation and guided by values of integrity, quality, and trust, <strong className='font-bold'>Digital Factory</strong> is committed to shaping a future where businesses of every size can thrive digitally and unlock their true potential.
                   </p>
               </motion.div>
@@ -232,7 +258,7 @@ const AboutUs = () => {
               <motion.a
                 whileHover={{ scale: 1.03 }} 
                 whileTap={{ scale: 0.97 }}
-                href="#contact"
+                href="/#contact"
                 className="inline-flex items-center justify-center gap-2 px-10 py-4.5 rounded-full bg-[#A64B2A] text-white font-semibold text-lg tracking-wide shadow-xl shadow-[#A64B2A]/30 hover:bg-[#8a3d22] transition-colors"
               >
                 Get in Touch
