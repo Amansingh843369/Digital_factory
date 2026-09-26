@@ -217,42 +217,75 @@ const detailedServices = [
       />
 
       {/* Tightened padding for mobile responsiveness */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-0 sm:py-12 relative z-10">
         
-        {/* BREADCRUMB */}
-        <motion.nav 
-          initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: customEase }}
-          className="flex items-center gap-2 text-[10px] sm:text-xs font-medium text-[#7A6B63] mb-8 md:mb-12 bg-white/60 backdrop-blur-xl border border-[#E5D7CD] px-4 py-2 rounded-full w-fit shadow-sm"
-        >
-          <a href="/" className="hover:text-[#A64B2A] transition-colors">Home</a>
-          <span className="text-[#C2B2A8]">&gt;</span>
-          <a href="/services" className="hover:text-[#A64B2A] transition-colors">Services</a>
-          <span className="text-[#C2B2A8]">&gt;</span>
-          <span className="text-[#A64B2A] font-bold">Penetration Testing</span>
-        </motion.nav>
-
-        {/* HERO SECTION */}
-        <section className="text-center max-w-4xl mx-auto space-y-6 md:space-y-8">
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E5D7CD] text-[#A64B2A] text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-sm"
+      {/* HERO SECTION */}
+        <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-16 lg:pt-1 pb-12 flex flex-col items-center">
+          
+          {/* CENTERED BREADCRUMB PILL */}
+          <motion.nav 
+            initial={{ opacity: 0, y: -10 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.6 }}
+            className="mb-6 inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white border border-[#E5D7CD] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.05)]"
           >
-            <span className="w-2 h-2 rounded-full bg-[#E62020] animate-pulse" /> Offensive Security Services
-          </motion.div>
+            <a href="/" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#A64B2A] transition-colors">
+              Home
+            </a>
+            
+            <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
+            
+            <a href="/services" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#A64B2A] transition-colors">
+              Services
+            </a>
+            
+            <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
+            
+            <span className="text-[#A64B2A] text-sm md:text-[15px] font-bold">
+              Penetration Testing
+            </span>
+          </motion.nav>
 
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: customEase }}
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#2C1E16] tracking-tight leading-[1.1]"
+          {/* HEADLINE */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-[#2A2320] tracking-tight leading-[1.1]"
           >
             Find Weaknesses. <br className="hidden md:block"/>
-            <span className="text-[#A64B2A] relative inline-block mt-2">
+            <span className="text-[#A64B2A]">
               Before Hackers Do.
             </span>
           </motion.h1>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: customEase }}
-            className="text-base sm:text-lg text-[#6B5D56] leading-relaxed font-light max-w-2xl mx-auto px-2"
+          {/* PARAGRAPH */}
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mb-10 md:mb-12 text-lg sm:text-xl text-[#6B5D56] leading-[1.6] font-light max-w-2xl mx-auto px-4"
           >
             Enterprise-grade penetration testing for web apps, APIs, mobile, cloud, and networks. Manual-first methodology with actionable remediation guidance.
           </motion.p>
+
+          {/* CTA BUTTON */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+             <motion.a
+               whileHover={{ scale: 1.02 }} 
+               whileTap={{ scale: 0.98 }}
+               href="/#contact"
+               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#A64B2A] text-white font-semibold text-base tracking-wide shadow-lg shadow-[#A64B2A]/20 hover:bg-[#8a3d22] transition-colors"
+             >
+               Request a Pen Test
+               <span className="text-xl leading-none font-light ml-1">→</span>
+             </motion.a>
+          </motion.div>
+          
         </section>
 
         {/* PARALLAX HERO SHOWCASE */}
@@ -262,7 +295,7 @@ const detailedServices = [
         >
           <motion.img 
             style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
-            src="https://www.lmgsecurity.com/wp-content/uploads/2023/12/shutterstock_1916985977-e1703134556975.jpg" 
+            src="/pen.png" 
             alt="Security Operations Center" 
             className="w-full h-full object-cover transform-origin-top will-change-transform"
           />

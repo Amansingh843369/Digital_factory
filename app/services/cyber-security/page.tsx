@@ -287,80 +287,75 @@ const frameworks = [
       />
 
       {/* MAIN CONTENT WRAPPER */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-1 sm:py-12 relative z-10">
         
-     {/* HERO SECTION CONTAINER */}
-        <section className="relative w-full max-w-7xl mx-auto pt-24 md:pt-32 pb-16 px-4 flex flex-col items-center">
+     {/* HERO SECTION */}
+        <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-16 lg:pt-0 pb-12 flex flex-col items-center">
           
-          {/* TOP-LEFT BREADCRUMB (Matched exactly to the image positioning) */}
+          {/* CENTERED BREADCRUMB PILL */}
           <motion.nav 
             initial={{ opacity: 0, y: -10 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.6 }}
-            className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-2 text-xs md:text-sm font-medium text-[#867E77] bg-white border border-[#E5D7CD] px-5 py-2.5 rounded-full shadow-sm"
+            className="mb-6 inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white border border-[#E5D7CD] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.05)]"
           >
-            <a href="/" className="hover:text-[#A64B2A] transition-colors">Home</a>
+            <a href="/" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#A64B2A] transition-colors">
+              Home
+            </a>
+            
             <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
-            <a href="/services" className="hover:text-[#A64B2A] transition-colors">Services</a>
+            
+            <a href="/#services" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#A64B2A] transition-colors">
+              Services
+            </a>
+            
             <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
-            <span className="text-[#A64B2A] font-bold">Cyber Security</span>
+            
+            <span className="text-[#A64B2A] text-sm md:text-[15px] font-bold">
+              Cyber Security
+            </span>
           </motion.nav>
 
-          {/* CENTERED HERO CONTENT */}
-          <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
-            
-            {/* Pulse Pill - Centered above the heading */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }} 
-              animate={{ opacity: 1, scale: 1 }} 
-              transition={{ duration: 0.5 }}
-              className="mb-6 md:mb-8 inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white border border-[#E5D7CD] text-[#A64B2A] text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-sm"
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#E64235] animate-pulse" /> 
-              Digital Factory Security
-            </motion.div>
+          {/* HEADLINE */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-[#2A2320] tracking-tight leading-[1.1]"
+          >
+            Protecting Your Business <br className="hidden md:block"/>
+            <span className="text-[#B35332]">
+              In a Digital World.
+            </span>
+          </motion.h1>
 
-            {/* Heavy Bicolor Heading */}
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-bold text-[#2A2320] tracking-tight leading-[1.1]"
-            >
-              Protecting Your Business <br className="hidden md:block"/>
-              <span className="text-[#B35332]">
-                In a Digital World.
-              </span>
-            </motion.h1>
+          {/* PARAGRAPH */}
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mb-10 md:mb-12 text-lg sm:text-xl text-[#6B5D56] leading-[1.6] font-light max-w-2xl mx-auto px-4"
+          >
+            End-to-end cyber security solutions to safeguard your data, networks, and systems against evolving threats.
+          </motion.p>
 
-            {/* Light, Spaced Paragraph */}
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="mb-10 md:mb-12 text-lg sm:text-xl text-[#6B5D56] leading-[1.6] font-light max-w-2xl mx-auto px-4"
-            >
-              End-to-end cyber security solutions to safeguard your data, networks, and systems against evolving threats.
-            </motion.p>
-
-            {/* CTA Button */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.7, delay: 0.3 }}
-            >
-               <motion.a
-                 whileHover={{ scale: 1.02 }} 
-                 whileTap={{ scale: 0.98 }}
-                 href="#consultation"
-                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#A64B2A] text-white font-semibold text-base tracking-wide shadow-lg shadow-[#A64B2A]/20 hover:bg-[#8a3d22] transition-colors"
-               >
-                 Secure Your Business
-                 <span className="text-xl leading-none font-light ml-1">→</span>
-               </motion.a>
-            </motion.div>
-            
-          </div>
+          {/* CTA BUTTON */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+             <motion.a
+               whileHover={{ scale: 1.02 }} 
+               whileTap={{ scale: 0.98 }}
+               href="#consultation"
+               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#A64B2A] text-white font-semibold text-base tracking-wide shadow-lg shadow-[#A64B2A]/20 hover:bg-[#8a3d22] transition-colors"
+             >
+               Secure Your Business
+               <span className="text-xl leading-none font-light ml-1">→</span>
+             </motion.a>
+          </motion.div>
+          
         </section>
 
         {/* INTRO SECTION */}
