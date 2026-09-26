@@ -93,7 +93,7 @@ export default function WebsiteDevelopmentPage() {
         "Scalable Infrastructure for Peak Sales",
         "Seamless Third-Party ERP/CRM Sync"
       ],
-      image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200", // Shopping / Payment Concept
+      image: "/e.png", 
       badge: "E-Commerce"
     },
     {
@@ -157,7 +157,7 @@ export default function WebsiteDevelopmentPage() {
         "Improved User Experience Across Devices",
         "Reduced Server Load & Bandwidth Costs"
       ],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", // Analytics / Speed Chart
+      image: "/vital.png", // Analytics / Speed Chart
       badge: "Optimization"
     },
     {
@@ -171,7 +171,7 @@ export default function WebsiteDevelopmentPage() {
         "Role-Based Data Access Control",
         "Custom API Integrations"
       ],
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200", // Team Collaboration / Dashboard
+      image: "/enterprises.png", 
       badge: "Web Portals"
     },
     {
@@ -191,7 +191,7 @@ export default function WebsiteDevelopmentPage() {
         "Proactive Vulnerability Patching",
         "Consistent High Performance"
       ],
-      image: "https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&q=80&w=1200", // Server Room / Maintenance
+      image: "/maintain.png",  
       badge: "Maintenance"
     }
   ];
@@ -225,68 +225,71 @@ export default function WebsiteDevelopmentPage() {
       {/* MAIN CONTENT WRAPPER (Tightened Padding) */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 relative z-10">
         
-        {/* BREADCRUMB */}
-        <motion.nav 
-          initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: customEase }}
-          className="flex items-center gap-2 text-[10px] sm:text-xs font-medium text-[#8A8279] mb-8 md:mb-12 bg-[#F3EEEA] backdrop-blur-xl border border-[#E5DCD5] px-4 py-2 rounded-full w-fit shadow-sm"
-        >
-          <a href="/" className="hover:text-[#C87D55] transition-colors">Home</a>
-          <span className="text-[#C2B2A8]">&gt;</span>
-          <a href="/services" className="hover:text-[#C87D55] transition-colors">Services</a>
-          <span className="text-[#C2B2A8]">&gt;</span>
-          <span className="text-[#C87D55] font-bold">Web Development</span>
-        </motion.nav>
-
-        {/* HERO SECTION */}
-        <section className="text-center max-w-4xl mx-auto space-y-6 md:space-y-8 pt-6 md:pt-10">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3EEEA] border border-[#E5DCD5] text-[#C87D55] text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-sm"
+   {/* HERO SECTION */}
+        <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-16 lg:pt-1 pb-12 flex flex-col items-center">
+          
+          {/* Centered Breadcrumb Pill matching the image style */}
+          <motion.nav 
+            initial={{ opacity: 0, y: -10 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.6 }}
+            className="mb-8 inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white border border-[#E5DCD5] shadow-[0_2px_10px_-4px_rgba(0,0,0,0.08)]"
           >
-            <span className="w-2 h-2 rounded-full bg-[#C87D55] animate-pulse" />
-            Digital Factory Services
-          </motion.div>
+            <a href="/" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">
+              Home
+            </a>
+            
+            <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
+            
+            <a href="/#services" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">
+              Services
+            </a>
+            
+            <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
+            
+            <span className="text-[#BD6E44] text-sm md:text-[15px] font-bold">
+              Web Development
+            </span>
+          </motion.nav>
 
+          {/* Solid Color & Ultra-Bold Headline with your provided text */}
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#2C2825] tracking-tight leading-[1.1]"
+            className="mb-6 md:mb-8 text-5xl sm:text-6xl md:text-7xl lg:text-[4rem] font-black text-[#272422] tracking-tighter leading-[1.05]"
           >
-            Custom Website Design & <br className="hidden sm:block"/>
-            <span className="text-[#C87D55]">
-              Development Solutions
-            </span>
+            Custom Website Design & Development Solutions
           </motion.h1>
 
+          {/* Your provided paragraph content */}
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-base sm:text-lg text-[#6B635B] leading-relaxed font-light max-w-3xl mx-auto px-2"
+            className="mb-10 md:mb-8 text-lg sm:text-xl md:text-2xl text-[#6B635B] leading-relaxed font-light max-w-3xl mx-auto px-4"
           >
             We build fast, responsive, and SEO-optimized websites that turn casual visitors into loyal customers and drive sustainable business growth.
           </motion.p>
 
+          {/* CTA Section - Adapted to Image Style with your Text */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full px-4"
           >
             <motion.a
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               href="#contact"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#C87D55] text-white font-semibold text-sm tracking-wide shadow-lg shadow-[#C87D55]/20 hover:bg-[#B56E47] transition-all"
+              className="w-full sm:w-auto px-8 py-4 md:px-10 md:py-4.5 rounded-full bg-[#BD6E44] text-white font-bold text-sm md:text-base tracking-wide shadow-xl shadow-[#BD6E44]/30 hover:bg-[#A65E38] transition-all flex items-center justify-center gap-2 group"
             >
-              Start Your Web Project →
+              <span>Start Your Web Project →</span>
             </motion.a>
           </motion.div>
+          
         </section>
-
         {/* INTRO BLOCK */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
