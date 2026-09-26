@@ -162,42 +162,73 @@ export default function DigitalMarketingPage() {
       />
 
       {/* Reduced global padding for mobile responsiveness */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-6 relative z-10">
         
-        {/* BREADCRUMB */}
-        <motion.nav 
-          initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: customEase }}
-          className="flex items-center gap-2 text-[10px] sm:text-xs font-medium text-[#7A6B63] mb-8 md:mb-12 bg-white/60 backdrop-blur-xl border border-[#EBE2D8] px-4 py-2 rounded-full w-fit shadow-sm"
-        >
-          <a href="/" className="hover:text-[#CD7F5D] transition-colors">Home</a>
-          <span className="text-[#C2B2A8]">&gt;</span>
-          <a href="/services" className="hover:text-[#CD7F5D] transition-colors">Services</a>
-          <span className="text-[#C2B2A8]">&gt;</span>
-          <span className="text-[#CD7F5D] font-bold">Digital Marketing</span>
-        </motion.nav>
-
-        {/* HERO SECTION */}
-        <section className="text-center max-w-4xl mx-auto space-y-6 md:space-y-8">
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E5D7CD] text-[#B35E3B] text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-sm"
+    {/* HERO SECTION */}
+        <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-14 lg:pt-0 pb-12 flex flex-col items-center">
+          
+          {/* Centered Breadcrumb Pill exactly matching the image */}
+          <motion.nav 
+            initial={{ opacity: 0, y: -10 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.6 }}
+            className="mb-8 inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white border border-[#E5DCD5] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.05)]"
           >
-            <span className="w-2 h-2 rounded-full bg-[#CD7F5D] animate-pulse" /> Digital Marketing Services
-          </motion.div>
+            <a href="/" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">
+              Home
+            </a>
+            
+            <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
+            
+            <a href="/#services" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">
+              Services
+            </a>
+            
+            <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
+            
+            <span className="text-[#CD7F5D] text-sm md:text-[15px] font-bold">
+              Digital Marketing
+            </span>
+          </motion.nav>
 
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: customEase }}
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#1C1614] tracking-tight leading-[1.1]"
+          {/* Ultra-Bold Monochromatic Headline matching image spacing and weight */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="mb-6 md:mb-8 text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-[#272422] tracking-tighter leading-[1.05]"
           >
             Data-Driven Marketing. <br className="hidden md:block"/>
-            <span className="text-[#CD7F5D] relative inline-block mt-2">
-              Unstoppable Growth.
-            </span>
+            Unstoppable Growth.
           </motion.h1>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: customEase }}
-            className="text-base sm:text-lg text-[#6B5D56] leading-relaxed font-light max-w-2xl mx-auto px-2"
+          {/* Large, Light-weight Paragraph perfectly spaced */}
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mb-10 md:mb-12 text-lg sm:text-xl md:text-[22px] text-[#6B635B] leading-[1.6] font-light max-w-3xl mx-auto px-4"
           >
             Boost visibility, drive qualified leads, and maximize your return on ad spend with our end-to-end performance marketing suite.
           </motion.p>
+
+          {/* CTA Section - Placed with proper spacing below paragraph */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full px-4"
+          >
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="/#contact"
+              className="w-full sm:w-auto px-8 py-4 md:px-10 md:py-4.5 rounded-full bg-[#CD7F5D] text-white font-bold text-sm md:text-base tracking-wide shadow-xl shadow-[#CD7F5D]/30 hover:bg-[#B35E3B] transition-all flex items-center justify-center gap-2 group"
+            >
+              <span>Start Your Marketing Campaign</span>
+            </motion.a>
+          </motion.div>
+          
         </section>
 
         {/* PARALLAX HERO SHOWCASE */}

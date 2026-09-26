@@ -310,7 +310,7 @@ export default function WebsiteDevelopmentPage() {
         >
           <motion.img 
             style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1600" 
+            src="/hero-banner-WD.png" 
             alt="Web Development Workspace" 
             className="w-full h-full object-cover transform-origin-top will-change-transform"
           />
