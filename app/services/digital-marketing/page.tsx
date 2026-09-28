@@ -110,7 +110,7 @@ export default function DigitalMarketingPage() {
       title: "Analytics & Performance Tracking",
       desc: "Measure what matters, eliminate guesswork, and continuously optimize your digital ROI.",
       highlights: [ "Google Analytics & Tag Manager Setup", "Campaign Performance Dashboards", "ROI Tracking & Monthly Reports", "Actionable Insights & Recommendations" ],
-      image: "https://media.licdn.com/dms/image/v2/D5612AQGNeSU2EHa0dw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1720763737572?e=2147483647&v=beta&t=sXZHyPZinxG5w_bM8GU1VHBENpoMaI0LXtEYr4KS9ko", 
+      image: "/analytics.jpg", 
       badge: "Analytics"
     },
     {
@@ -118,7 +118,7 @@ export default function DigitalMarketingPage() {
       title: "Google Ads Management",
       desc: "Reach the right audience, drive high-quality traffic, and maximize your advertising ROI.",
       highlights: [ "Google Search & Display Ads Setup", "Keyword Research & Campaign Optimization", "Ad Copy & Landing Page Optimization", "Conversion & ROI Tracking", "Performance Monitoring & Reports" ],
-      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200", 
+      image: "/google-ads.jpg", 
       badge: "Google Ads"
     },
     {
