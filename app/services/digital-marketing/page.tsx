@@ -8,6 +8,7 @@ import {
   Target,
   Lightbulb,
 } from "lucide-react";
+
 // Premium smooth easing
 const customEase = [0.22, 1, 0.36, 1];
 
@@ -42,7 +43,7 @@ export default function DigitalMarketingPage() {
         });
 
         function raf(time) {
-          lenis.raf(time);
+          lenis?.raf(time);
           requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
@@ -60,8 +61,8 @@ export default function DigitalMarketingPage() {
   const yHeroBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   // Accordion State
-  const [openAccordion, setOpenAccordion] = useState(0);
-  const toggleAccordion = (index) => setOpenAccordion(openAccordion === index ? null : index);
+  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
+  const toggleAccordion = (index: number) => setOpenAccordion(openAccordion === index ? null : index);
 
   // DATA - Cleaned Content & Numbers Removed
   const detailedServices = [
@@ -140,10 +141,10 @@ export default function DigitalMarketingPage() {
   ];
 
   const whyChooseUs = [
-    { title: "Data-Driven Strategies", desc: "Every campaign is backed by real-time analytics, user behavior heatmaps, and clear ROI metrics.", icon: "" },
-    { title: "Transparent Reporting", desc: "Get full access to live performance dashboards—no hidden costs, no vanity metrics.", icon: "" },
-    { title: "Customized Solutions", desc: "Tailored digital strategies designed specifically for your industry vertical and growth goals.", icon: "" },
-    { title: "Focus on ROI & Growth", desc: "We focus on real revenue, qualified leads, and sustainable long-term scale.", icon: "" },
+    { title: "Data-Driven Strategies", desc: "Every campaign is backed by real-time analytics, user behavior heatmaps, and clear ROI metrics.", icon: <BarChart3 className="w-6 h-6 md:w-8 md:h-8" /> },
+    { title: "Transparent Reporting", desc: "Get full access to live performance dashboards—no hidden costs, no vanity metrics.", icon: <TrendingUp className="w-6 h-6 md:w-8 md:h-8" /> },
+    { title: "Customized Solutions", desc: "Tailored digital strategies designed specifically for your industry vertical and growth goals.", icon: <Target className="w-6 h-6 md:w-8 md:h-8" /> },
+    { title: "Focus on ROI & Growth", desc: "We focus on real revenue, qualified leads, and sustainable long-term scale.", icon: <Lightbulb className="w-6 h-6 md:w-8 md:h-8" /> },
   ];
 
   const faqs = [
@@ -275,14 +276,16 @@ export default function DigitalMarketingPage() {
                   whileInView="visible" 
                   viewport={{ once: true, amount: 0.1 }} 
                   variants={fadeInUp}
-                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 md:gap-16`}
+                  // ✅ KEY FIX: items-stretch ensures both columns equal height
+                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-8 md:gap-16`}
                 >
                   {/* IMAGE SIDE WITH DIRECTIONAL CURTAIN REVEAL EFFECT */}
                   <div className="w-full lg:w-1/2 relative group">
                     <motion.div 
                       whileHover={{ scale: 1.02 }} 
                       transition={{ duration: 0.5, ease: customEase }}
-                      className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl bg-white border border-[#E8DDD2]/50 aspect-[4/3] md:aspect-[16/10]"
+                      // ✅ KEY FIX: h-full + removed aspect ratio allows perfect stretching
+                      className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl bg-white border border-[#E8DDD2]/50 w-full h-full min-h-[300px] md:min-h-[400px]"
                     >
                       {/* The Mask Container using Clip Path - Triggers on Viewport Entry */}
                       <motion.div 
@@ -308,7 +311,7 @@ export default function DigitalMarketingPage() {
                   </div>
 
                   {/* TEXT SIDE */}
-                  <div className="w-full lg:w-1/2 space-y-4 md:space-y-6">
+                  <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-4 md:space-y-6">
                     <div className="space-y-2 md:space-y-3">
                       <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#CD7F5D] font-bold">{service.category}</span>
                       <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-[#1C1614] tracking-tight leading-tight">{service.title}</h3>

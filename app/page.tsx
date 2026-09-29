@@ -8,6 +8,7 @@ import { Testimonials } from '@/components/testimonials'
 import { LatestNews } from '@/components/latest-news'
 import { SiteFooter } from '@/components/site-footer'
 import { FAQSection } from "@/components/faq";
+import  ParallaxImage  from "@/components/parallax";
  
 import { WhyChooseUs} from "@/components/WhyChooseUs";
 
@@ -19,6 +20,7 @@ export default function Page() {
       {/* <SiteHeader /> */}
       <main>
         <Hero />
+        <ParallaxImage />
          <About />
         <Services />
         <WhyChooseUs/>

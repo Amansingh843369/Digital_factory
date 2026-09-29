@@ -107,20 +107,7 @@ const SERVICES: Service[] = [
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200",
     badge: "Web Apps"
   },
-  {
-    num: "05",
-    category: "Quality Assurance",
-    title: "Software Testing & QA",
-    desc: "Ensure your software is bulletproof, secure, and performant before reaching your end users.",
-    highlights: [
-      "Functional & Performance Testing",
-      "Security & Vulnerability Assessment",
-      "Usability Testing",
-      "Automated & Manual QA Pipelines"
-    ],
-    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=1200",
-    badge: "QA & Testing"
-  },
+
   {
     num: "06",
     category: "Enterprise Systems",
@@ -251,7 +238,7 @@ export default function SoftwareDevelopmentPage() {
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-[#C87D55]/15 to-transparent rounded-full blur-[140px] pointer-events-none" 
       />
 
-      <main className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-14 relative z-10">
+      <main className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-4 relative z-10">
         
       {/* HERO SECTION */}
         <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-16 lg:pt-0 pb-12 flex flex-col items-center">
@@ -352,14 +339,17 @@ export default function SoftwareDevelopmentPage() {
                   whileInView="visible"
                   viewport={{ once: true, margin: "-100px" }}
                   variants={fadeInUp}
-                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-10 lg:gap-16`}
+                  // ✅ KEY FIX: items-stretch ensures both columns equal height
+                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-8 lg:gap-12`}
                 >
                   {/* IMAGE CONTAINER WITH HORIZONTAL CURTAIN REVEAL */}
-                  <div className="w-full lg:w-5/12 flex">
+                  <div className="w-full lg:w-5/12">
                     <motion.div 
                       whileHover={{ scale: 1.01 }}
                       transition={{ duration: 0.4 }}
-                      className="relative rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-md group bg-neutral-100 w-full min-h-[320px] sm:min-h-[420px]"
+                      // ✅ KEY FIX: h-full stretches image to match text column height
+                      // ✅ Removed fixed min-height values that caused gaps
+                      className="relative rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-md group bg-neutral-100 w-full h-full"
                     >
                       {/* 1. Image Zoom Reveal */}
                       <motion.div
@@ -374,6 +364,7 @@ export default function SoftwareDevelopmentPage() {
                           alt={service.title} 
                           fill
                           sizes="(max-width: 1024px) 100vw, 45vw"
+                          // ✅ object-cover + no fixed height = fills parent perfectly
                           className="object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                         />
                       </motion.div>

@@ -18,7 +18,7 @@ const services = [
     id: "03",
     title: "Software Development",
     tag: "Custom Architecture",
-    description: "Robust, secure, and scalable custom software solutions engineered to automate operations and solve complex business problems.",
+    description: "At Digital Factory, we specialize in designing custom software applications and scalable platforms tailored to your specific business requirements. Whether you need enterprise-grade solutions, SaaS products, or mobile applications, our team ensures your software is secure, user-friendly, and future-ready.",
     icon: Settings2,
   
  
@@ -29,7 +29,7 @@ const services = [
     id: "02",
     title: "Website Development",
 
-    description: "Fast, responsive, and visually stunning websites crafted around your brand identity, built to deliver seamless user experiences, strengthen your digital presence, and turn visitors into loyal customers.",
+    description: "Your website is often the first impression of your business. At Digital Factory, we design and develop websites that are not only visually appealing but also optimized for performance, usability, and conversions.",
     icon: MonitorSmartphone,
  
     link: "/services/website-development"
@@ -38,7 +38,7 @@ const services = [
     id: "01",
     title: "Digital Marketing",
     
-    description: "Expand your reach and turn attention into measurable growth with data-driven marketing campaigns, precision audience targeting, and continuous optimization built to generate quality leads and meaningful conversions.",
+    description: "We design result-driven digital marketing strategies that help businesses grow their online presence, reach the right audience, and achieve measurable success. From SEO to social media campaigns and paid advertising, our team blends creativity with data-driven insights to maximize ROI.",
     icon: TrendingUp,
    
     link: "/services/digital-marketing" 
@@ -47,7 +47,7 @@ const services = [
     id: "04",
     title: "Cyber Security Solutions",
    
-    description: "Comprehensive enterprise security measures and protocols designed to guard your critical data and digital assets against threats.",
+    description: "We provide comprehensive cybersecurity solutions that ensure your digital assets remain secure, compliant, and resilient. Our team combines advanced security tools, proven methodologies, and industry expertise to protect your business from cyber threats while enabling growth and digital innovation.",
     icon: ShieldCheck,
  
     link: "/services/cyber-security"
@@ -190,7 +190,7 @@ export function Services() {
                       
                       {/* Description Column (Left)*/}
                       <div className="lg:col-span-11">
-                        <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-neutral-600">
+                        <p className="text-base sm:text-lg lg:text-xl text-justify font-medium leading-relaxed text-neutral-600">
                           {service.description}
                         </p>
                       </div>

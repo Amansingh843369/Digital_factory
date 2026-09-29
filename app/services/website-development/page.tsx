@@ -23,7 +23,7 @@ const staggerContainer = {
   }
 };
 
-export default function WebsiteDevelopmentPage() {
+export default function SoftwareDevelopmentPage() {
   // Lenis Smooth Scroll Integration
   useEffect(() => {
     let lenis;
@@ -37,7 +37,7 @@ export default function WebsiteDevelopmentPage() {
         });
 
         function raf(time) {
-          lenis.raf(time);
+          lenis?.raf(time);
           requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
@@ -55,162 +55,190 @@ export default function WebsiteDevelopmentPage() {
   const yHeroBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   // Accordion State for FAQ
-  const [openAccordion, setOpenAccordion] = useState(0);
-  const toggleAccordion = (index) => setOpenAccordion(openAccordion === index ? null : index);
+  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
+  const toggleAccordion = (index: number) => setOpenAccordion(openAccordion === index ? null : index);
 
-  // --- SERVICES DATA (Fresh Free Images & Cleaned Content) ---
+  // --- SOFTWARE DEVELOPMENT SERVICES DATA ---
   const services = [
     {
-      category: "UI/UX & Branding",
-      title: "Custom Web Design & UX/UI",
-      desc: "Tailored website layouts designed to capture your brand identity and deliver seamless user experiences.",
+      category: "Tailored Solutions",
+      title: "Custom Application Development",
+      desc: "Tailored solutions designed specifically for your workflows, operational bottlenecks, and strategic business goals.",
       highlights: [
-        "Bespoke UI/UX Wireframing & Prototyping",
-        "Brand Identity & Style Guide Integration",
-        "Mobile-First Responsive Layouts",
-        "Interactive Micro-Animations",
-        "Design Systems & Component Libraries",
-        "User Journey & Conversion Optimization"
+        "Business Process Automation Tools",
+        "CRM & ERP Solutions",
+        "Industry-Specific Software",
+        "Cloud-Based Business Applications",
+        "Desktop Applications",
+        "API Development & Integration"
       ],
-      image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&q=80&w=1200", // Designer Workspace / Sketches
-      badge: "Custom Design"
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
+      badge: "Custom Dev"
     },
     {
-      category: "E-Commerce",
-      title: "E-Commerce Website Development",
-      desc: "High-converting online stores built with secure payment gateways, inventory sync, and fast checkout flows.",
+      category: "Cloud Native",
+      title: "SaaS Product Development",
+      desc: "Build scalable cloud-based products with multi-tenant architecture designed to handle thousands of concurrent users.",
       highlights: [
-        "Shopify & WooCommerce Customization",
-        "Headless E-Commerce Solutions",
-        "Payment Gateway & Shipping Integration",
-        "Inventory & Order Management",
-        "Multi-Currency & Multi-Language Support",
-        "High-Performance Cart & Checkout"
+        "SaaS Product Architecture Design",
+        "Multi-Tenant Application Development",
+        "Subscription & Billing Integration",
+        "Cloud Hosting (AWS, Azure, GCP)",
+        "Data Security & Compliance",
+        "Ongoing Maintenance & Scaling"
       ],
       whyChoose: [
-        "Increased Checkout Conversion Rates",
-        "Robust Security for Online Payments",
-        "Scalable Infrastructure for Peak Sales",
-        "Seamless Third-Party ERP/CRM Sync"
+        "Scalable Multi-Tenant Architecture",
+        "Secure Subscription Management",
+        "Enterprise-Grade Cloud Infrastructure",
+        "Rapid Time-to-Market Deployment"
       ],
-      image: "/e.png", 
-      badge: "E-Commerce"
+      image: "/Saas.jpg", 
+      badge: "SaaS Platform"
     },
     {
-      category: "CMS Platforms",
-      title: "WordPress & CMS Development",
-      desc: "Easy-to-manage Content Management Systems empowering your team to update content effortlessly.",
+      category: "iOS & Android",
+      title: "Mobile Application Development",
+      desc: "Create seamless, high-performance mobile experiences for Android and iOS devices with intuitive UI/UX.",
       highlights: [
-        "Custom WordPress Theme & Plugin Dev",
-        "Webflow Development & Migration",
-        "Headless CMS (Sanity, Strapi, Contentful)",
-        "Intuitive Admin Dashboard Setup",
-        "Role-Based User Permissions",
-        "SEO-Friendly Content Workflows"
+        "Native App Development (iOS & Android)",
+        "Cross-Platform (Flutter, React Native)",
+        "UI/UX Design for Mobile Interfaces",
+        "Mobile App API Integration",
+        "App Store & Play Store Deployment",
+        "Performance Optimization & Updates"
       ],
-      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200", // Laptop / Coding Screen
-      badge: "CMS Solutions"
+      image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&q=80&w=1200",
+      badge: "Mobile Apps"
     },
     {
-      category: "Full-Stack Tech",
-      title: "Next.js & React Web Apps",
-      desc: "Ultra-fast modern web applications built on cutting-edge JavaScript frameworks for maximum speed.",
+      category: "Web Platforms",
+      title: "Web Application Development",
+      desc: "High-performing, secure, and responsive web apps built with modern frontend frameworks and robust backend systems.",
       highlights: [
-        "Server-Side Rendering (SSR) & Static Generation",
-        "API Route & Backend Integration",
-        "Progressive Web App (PWA) Capabilities",
-        "State Management & Database Connections",
-        "Blazing Fast Page Load Speeds",
-        "Scalable Cloud Deployment (Vercel, AWS)"
+        "Progressive Web Apps (PWAs)",
+        "Enterprise Portals & Dashboards",
+        "Custom Web Platforms",
+        "Real-Time Data Applications",
+        "Third-Party Integrations"
       ],
-      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=1200", // React Logo / Code
-      badge: "Full-Stack"
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200",
+      badge: "Web Apps"
     },
     {
-      category: "Growth & Leads",
-      title: "Landing Page & Conversion Design",
-      desc: "Purpose-built, high-converting landing pages tailored for ad campaigns and product launches.",
+      category: "Quality Assurance",
+      title: "Software Testing & QA",
+      desc: "Ensure your software is bulletproof, secure, and performant before reaching your end users.",
       highlights: [
-        "A/B Testing Ready Architecture",
-        "Lead Capture & Form Integrations",
-        "CRM & Email Marketing Automation Sync",
-        "Heatmap & User Analytics Setup",
-        "Ultra-Fast Mobile Optimization"
+        "Functional & Performance Testing",
+        "Security & Vulnerability Assessment",
+        "Usability Testing",
+        "Automated & Manual QA Pipelines"
       ],
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=1200", // Modern Web Layout / Landing Page
-      badge: "Landing Pages"
+      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=1200",
+      badge: "QA & Testing"
     },
     {
-      category: "Performance",
-      title: "Website Speed & Core Web Vitals",
-      desc: "Boost your site ranking and user retention by transforming slow websites into lightning-fast platforms.",
+      category: "Enterprise Systems",
+      title: "Enterprise Resource Planning (ERP)",
+      desc: "Streamline your business operations, centralize data, and improve organization-wide efficiency with powerful ERP solutions.",
       highlights: [
-        "Google Core Web Vitals Optimization",
-        "Code Splitting & Asset Compression",
-        "CDN Setup & Caching Strategies",
-        "Database Cleanup & Query Tuning",
-        "Image & Video Format Optimization"
+        "ERP Software Development & Integration",
+        "Finance & Accounting Management",
+        "Inventory & Supply Chain Systems",
+        "HR & Payroll Management",
+        "Sales & Customer Management",
+        "Real-Time Analytics & Reporting"
       ],
       whyChoose: [
-        "Higher Google Search Rankings",
-        "Lower Bounce Rates and Higher Retention",
-        "Improved User Experience Across Devices",
-        "Reduced Server Load & Bandwidth Costs"
+        "Centralized Business Management",
+        "Improved Operational Efficiency",
+        "Customized Solutions for Your Business",
+        "Real-Time Data & Reporting"
       ],
-      image: "/vital.png", // Analytics / Speed Chart
-      badge: "Optimization"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+      badge: "ERP Systems"
     },
     {
-      category: "Enterprise",
-      title: "Web Portals & Enterprise Dashboards",
-      desc: "Secure web portals designed for internal teams, clients, and partner collaboration.",
+      category: "Artificial Intelligence",
+      title: "AI Integration & ML Solutions",
+      desc: "Leverage AI to automate tasks, derive predictive insights, and build next-gen intelligent features into existing platforms.",
       highlights: [
-        "Customer & Vendor Self-Service Portals",
-        "Interactive Analytics Dashboards",
-        "Single Sign-On (SSO) & Secure Auth",
-        "Role-Based Data Access Control",
-        "Custom API Integrations"
-      ],
-      image: "/enterprises.png", 
-      badge: "Web Portals"
-    },
-    {
-      category: "Maintenance",
-      title: "Website Maintenance & Support",
-      desc: "Continuous monitoring, security patches, backups, and feature updates to keep your website running smoothly.",
-      highlights: [
-        "24/7 Security Monitoring & Malware Protection",
-        "Regular Automated Cloud Backups",
-        "Plugin, CMS & Framework Updates",
-        "Uptime Monitoring & Emergency Fixes",
-        "Content Updates & Ongoing Improvements"
+        "AI-Powered Business Automation",
+        "Custom AI Chatbots & Virtual Assistants",
+        "Legacy System AI Integration",
+        "Generative AI & LLM Solutions",
+        "Predictive Data Analytics",
+        "Workflow Process Optimization"
       ],
       whyChoose: [
-        "Peace of Mind with Zero Downtime Risk",
-        "Dedicated Technical Support Team",
-        "Proactive Vulnerability Patching",
-        "Consistent High Performance"
+        "Smarter & Faster Decision Making",
+        "Customized AI Architecture",
+        "Seamless API-Driven Integration",
+        "Reduced Operational Overhead"
       ],
-      image: "/maintain.png",  
-      badge: "Maintenance"
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
+      badge: "AI Solutions"
+    },
+    {
+      category: "Smart Automation",
+      title: "Intelligent Process Automation",
+      desc: "Eliminate repetitive tasks and streamline workflows to empower teams for high-value strategic growth.",
+      highlights: [
+        "Workflow Automation Pipelines",
+        "Automated Customer Support Systems",
+        "Lead Generation & Nurture Automation",
+        "Document Processing & OCR Systems",
+        "Marketing & Sales Automation",
+        "Automated Reporting & Analytics"
+      ],
+      whyChoose: [
+        "Eliminate Manual Errors",
+        "Up to 60% Faster Task Processing",
+        "Seamless Integration with SaaS Tools",
+        "24/7 Uninterrupted Operations"
+      ],
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
+      badge: "Automation"
+    },
+    {
+      category: "Process Engineering",
+      title: "Workflow Orchestration",
+      desc: "Connect people, software systems, and data pipelines into unified, high-efficiency business processes.",
+      highlights: [
+        "Enterprise Workflow Mapping",
+        "Automated Task Management",
+        "System & API Integration",
+        "Real-time Workflow Monitoring",
+        "Custom Approval Pipelines",
+        "Process Optimization Consulting"
+      ],
+      whyChoose: [
+        "End-to-End Operational Visibility",
+        "Frictionless Departmental Handoffs",
+        "Scalable Process Infrastructure",
+        "Enterprise Security Standards"
+      ],
+      image: "/Workflow_Orchestration.jpg",
+      badge: "Orchestration"
     }
   ];
 
   // WHY CHOOSE US DATA
   const whyChooseUs = [
-    { title: "Conversion-Focused Design", desc: "Every pixel is designed to turn visitors into customers.", icon: "" },
-    { title: "Lightning Fast Performance", desc: "Optimized for Core Web Vitals and instant load times.", icon: "" },
-    { title: "SEO-Ready Architecture", desc: "Built to rank higher on Google from day one.", icon: "" },
-    { title: "Mobile-First Approach", desc: "Flawless experience across all devices and screens.", icon: "" },
-    { title: "Scalable & Future-Proof", desc: "Modern tech stack that grows with your business.", icon: "" }
+    { title: "Bespoke Engineering", desc: "Every line of code is written to solve your specific business challenges.", icon: "" },
+    { title: "Future-Proof Tech Stack", desc: "Built on modern architectures that scale as your company grows.", icon: "" },
+    { title: "Security First Approach", desc: "Enterprise-grade security protocols embedded from day one.", icon: "" },
+    { title: "Agile Development", desc: "Transparent sprints with regular demos and iterative feedback loops.", icon: "" },
+    { title: "Post-Launch Support", desc: "Dedicated maintenance teams ensuring 99.9% uptime and performance.", icon: "" }
   ];
 
   // FAQ DATA
   const faqs = [
-    { question: "How long does it take to build a custom website?", answer: "Timeline depends on complexity. A standard business website takes 4-6 weeks, while complex e-commerce or web apps may take 8-12 weeks. We provide exact timelines after scoping." },
-    { question: "Do you provide ongoing maintenance after launch?", answer: "Yes. We offer monthly maintenance packages covering security updates, backups, performance monitoring, and content changes to keep your site running smoothly." },
-    { question: "Will my website be mobile-friendly and SEO optimized?", answer: "Absolutely. All our websites are built mobile-first and follow SEO best practices including fast load speeds, clean code, and proper metadata structure." },
-    { question: "Can you redesign my existing website?", answer: "Yes. We can audit your current site, preserve your SEO rankings, and rebuild it with modern design and better performance." }
+    { question: "How long does custom software development take?", answer: "Timelines vary based on complexity. A standard MVP typically takes 8-12 weeks, while complex enterprise systems may require 4-6 months. We provide detailed roadmaps after initial scoping." },
+    { question: "Do you handle legacy system integration?", answer: "Yes. We specialize in connecting modern applications with legacy databases and systems using secure APIs and middleware to ensure seamless data flow without disrupting current operations." },
+    { question: "What technologies do you use for development?", answer: "We work with a wide range of modern stacks including React, Next.js, Node.js, Python, .NET, Flutter, and cloud platforms like AWS and Azure, choosing the best fit for your specific requirements." },
+    { question: "Can you maintain and update our existing software?", answer: "Absolutely. We offer comprehensive maintenance packages including security patching, feature enhancements, performance optimization, and dedicated support teams." }
   ];
 
   return (
@@ -222,13 +250,13 @@ export default function WebsiteDevelopmentPage() {
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#C87D55]/10 rounded-full blur-[140px] pointer-events-none" 
       />
 
-      {/* MAIN CONTENT WRAPPER (Tightened Padding) */}
+      {/* MAIN CONTENT WRAPPER */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 relative z-10">
         
    {/* HERO SECTION */}
         <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-16 lg:pt-1 pb-12 flex flex-col items-center">
           
-          {/* Centered Breadcrumb Pill matching the image style */}
+          {/* Centered Breadcrumb Pill */}
           <motion.nav 
             initial={{ opacity: 0, y: -10 }} 
             animate={{ opacity: 1, y: 0 }} 
@@ -248,31 +276,31 @@ export default function WebsiteDevelopmentPage() {
             <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
             
             <span className="text-[#BD6E44] text-sm md:text-[15px] font-bold">
-              Web Development
+              Software Development
             </span>
           </motion.nav>
 
-          {/* Solid Color & Ultra-Bold Headline with your provided text */}
+          {/* Headline */}
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mb-6 md:mb-8 text-5xl sm:text-6xl md:text-7xl lg:text-[4rem] font-black text-[#272422] tracking-tighter leading-[1.05]"
           >
-            Custom Website Design & Development Solutions
+            Custom Software Built for a Digital-First Era
           </motion.h1>
 
-          {/* Your provided paragraph content */}
+          {/* Subheadline */}
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mb-10 md:mb-8 text-lg sm:text-xl md:text-2xl text-[#6B635B] leading-relaxed font-light max-w-3xl mx-auto px-4"
           >
-            We build fast, responsive, and SEO-optimized websites that turn casual visitors into loyal customers and drive sustainable business growth.
+            We engineer high-performance web applications, scalable cloud platforms, and automated workflows designed specifically to unlock real business growth.
           </motion.p>
 
-          {/* CTA Section - Adapted to Image Style with your Text */}
+          {/* CTA Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -285,11 +313,12 @@ export default function WebsiteDevelopmentPage() {
               href="#contact"
               className="w-full sm:w-auto px-8 py-4 md:px-10 md:py-4.5 rounded-full bg-[#BD6E44] text-white font-bold text-sm md:text-base tracking-wide shadow-xl shadow-[#BD6E44]/30 hover:bg-[#A65E38] transition-all flex items-center justify-center gap-2 group"
             >
-              <span>Start Your Web Project →</span>
+              <span>Start Your Software Project →</span>
             </motion.a>
           </motion.div>
           
         </section>
+
         {/* INTRO BLOCK */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
@@ -299,7 +328,7 @@ export default function WebsiteDevelopmentPage() {
         >
           <div className="absolute -top-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-[#C87D55]/15 blur-3xl rounded-full" />
           <p className="text-sm sm:text-base md:text-lg text-[#4A433D] leading-relaxed relative z-10">
-            At <strong>Digital Factory</strong>, your website is more than just a digital brochure — it's your primary growth engine. We combine stunning visuals, modern frontend architectures, and high-conversion layouts to ensure your online presence stands out in a crowded market.
+            At <strong>Digital Factory</strong>, we don't just write code — we architect digital ecosystems. From AI-powered automation to enterprise-grade ERPs, our engineering team builds software that becomes the backbone of your operational success.
           </p>
         </motion.section>
 
@@ -311,13 +340,13 @@ export default function WebsiteDevelopmentPage() {
           <motion.img 
             style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
             src="/hero-banner-WD.png" 
-            alt="Web Development Workspace" 
+            alt="Software Development Workspace" 
             className="w-full h-full object-cover transform-origin-top will-change-transform"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#2C2825]/90 via-[#2C2825]/20 to-transparent flex items-end p-6 md:p-14">
             <div className="text-white space-y-3">
-              <span className="text-[10px] md:text-xs font-mono font-bold text-[#FAF8F5] uppercase tracking-widest backdrop-blur-md bg-[#C87D55]/80 px-4 py-1.5 rounded-full border border-white/20">Full-Stack Excellence</span>
-              <h3 className="text-xl sm:text-3xl md:text-5xl font-bold tracking-tight">Fast. Responsive. Conversion-Ready.</h3>
+              <span className="text-[10px] md:text-xs font-mono font-bold text-[#FAF8F5] uppercase tracking-widest backdrop-blur-md bg-[#C87D55]/80 px-4 py-1.5 rounded-full border border-white/20">Full-Cycle Engineering</span>
+              <h3 className="text-xl sm:text-3xl md:text-5xl font-bold tracking-tight">Scalable. Secure. Intelligent.</h3>
             </div>
           </div>
         </motion.div>
@@ -325,8 +354,8 @@ export default function WebsiteDevelopmentPage() {
         {/* SERVICES ZIG-ZAG WITH DIRECTIONAL CURTAIN REVEAL */}
         <section id="services" className="mt-12 md:mt-24 space-y-8 md:space-y-24">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-8 md:mb-10 px-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#C87D55] font-bold">Web Development Capabilities</span>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#2C2825] tracking-tight">Our Website Services</h2>
+            <span className="text-xs font-mono uppercase tracking-widest text-[#C87D55] font-bold">Engineering Capabilities</span>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#2C2825] tracking-tight">Our Software Services</h2>
           </div>
 
           <div className="space-y-12 md:space-y-32">
@@ -334,8 +363,6 @@ export default function WebsiteDevelopmentPage() {
               const isEven = index % 2 === 0;
               
               // LOGIC FOR DIRECTIONAL REVEAL
-              // If Even (Image Left): Reveal from Left (inset 0 100% 0 0 -> 0 0% 0 0)
-              // If Odd (Image Right): Reveal from Right (inset 0 0 0 100% -> 0 0 0 0%)
               const revealClip = isEven 
                 ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] // Left to Right
                 : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; // Right to Left
@@ -347,20 +374,20 @@ export default function WebsiteDevelopmentPage() {
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.1 }}
                   variants={fadeInUp}
-                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 md:gap-16`}
+                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-8 md:gap-16`}
                 >
                   {/* IMAGE SIDE WITH DIRECTIONAL CURTAIN REVEAL EFFECT */}
                   <div className="w-full lg:w-5/12 relative group">
                     <motion.div 
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.5, ease: customEase }}
-                      className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-xl bg-[#F3EEEA] aspect-[4/3] md:aspect-[16/10]"
+                      className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-xl bg-[#F3EEEA] h-full min-h-[300px] md:min-h-[400px]"
                     >
-                      {/* The Mask Container using Clip Path - Triggers on Viewport Entry */}
+                      {/* The Mask Container using Clip Path */}
                       <motion.div 
-                        initial={{ clipPath: revealClip[0] }} // Hidden initially based on direction
-                        whileInView={{ clipPath: revealClip[1] }} // Revealed when in view
-                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} // Smooth timing
+                        initial={{ clipPath: revealClip[0] }}
+                        whileInView={{ clipPath: revealClip[1] }}
+                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }}
                         className="w-full h-full relative"
                       >
                         <img 
@@ -380,7 +407,7 @@ export default function WebsiteDevelopmentPage() {
                   </div>
 
                   {/* CONTENT BLOCK */}
-                  <div className="w-full lg:w-7/12 space-y-4 md:space-y-6">
+                  <div className="w-full lg:w-7/12 flex flex-col justify-center space-y-4 md:space-y-6">
                     <div className="space-y-2">
                       <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#C87D55] font-bold">
                         {service.category}
@@ -441,9 +468,9 @@ export default function WebsiteDevelopmentPage() {
           <div className="relative z-10">
             <div className="text-center max-w-2xl mx-auto space-y-3 mb-8 md:mb-12">
               <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#C87D55] font-bold">The Digital Factory Advantage</span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Choose Us?</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Partner With Us?</h2>
               <p className="text-[#6B635B] text-sm sm:text-base leading-relaxed font-light">
-                We don't just build websites — we engineer digital growth engines tailored to your business goals.
+                We combine technical excellence with business strategy to deliver software that drives measurable outcomes.
               </p>
             </div>
 
@@ -479,12 +506,12 @@ export default function WebsiteDevelopmentPage() {
                 Frequently Asked <br className="hidden lg:block"/> Questions
               </h2>
               <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light">
-                Everything you need to know about our web development process, timelines, and support structure.
+                Everything you need to know about our software development process, timelines, and support structure.
               </p>
               <div className="pt-2 md:pt-4 hidden lg:block">
                 <p className="text-sm font-bold text-[#2C2825] mb-2">Still have questions?</p>
                 <a href="#contact" className="text-sm font-bold text-[#C87D55] hover:text-[#2C2825] transition-colors flex items-center gap-2">
-                  Talk to our web consultant <span>→</span>
+                  Talk to our tech consultant <span>→</span>
                 </a>
               </div>
             </div>
@@ -553,12 +580,12 @@ export default function WebsiteDevelopmentPage() {
               <h2 className="text-2xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-[#2C2825]">
                 Ready to Build Your <br className="hidden sm:inline" />
                 <span className="text-[#C87D55]">
-                  Next High-Performing Website?
+                  Next Scalable Software Solution?
                 </span>
               </h2>
 
               <p className="text-[#6B635B] text-sm sm:text-base md:text-xl font-light leading-relaxed max-w-xl mx-auto px-2">
-                Let's discuss your web project requirements and craft a custom solution that delivers real business results.
+                Let's discuss your technical requirements and craft a custom software architecture that delivers real business results.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 pt-2 md:pt-4">
@@ -568,7 +595,7 @@ export default function WebsiteDevelopmentPage() {
                   href="mailto:hello@digitalfactory.com"
                   className="w-full sm:w-auto px-8 py-4 md:py-5 rounded-xl bg-[#C87D55] text-white font-bold text-sm sm:text-base tracking-wide shadow-xl shadow-[#C87D55]/20 hover:bg-[#B56E47] transition-all flex items-center justify-center gap-2 group"
                 >
-                  <span>Start Your Web Project</span>
+                  <span>Start Your Software Project</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </motion.a>
 
@@ -580,7 +607,7 @@ export default function WebsiteDevelopmentPage() {
                   rel="noreferrer"
                   className="w-full sm:w-auto px-7 py-4 md:py-5 rounded-xl bg-[#FAF8F5] border border-[#E5DCD5] text-[#2C2825] font-semibold text-sm sm:text-base hover:bg-[#E5DCD5]/50 transition-all shadow-sm"
                 >
-                   Chat with Web Consultant
+                   Chat with Tech Consultant
                 </motion.a>
               </div>
             </div>
