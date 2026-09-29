@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
 // =========================================================
@@ -119,7 +119,7 @@ export function SiteFooter() {
                 </h2>
               </motion.div>
 
-              {/* CTA Button - FIXED HYDRATION ERROR */}
+              {/* CTA Button */}
               <motion.div variants={fadeUp} className="w-full sm:w-auto">
                 <motion.div
                   whileHover={reduceMotion ? {} : { y: -4, scale: 1.03 }}
@@ -150,13 +150,12 @@ export function SiteFooter() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={stagger}
-          className="border-t border-neutral-200/80 py-8 lg:py-10"
+          className="border-t border-neutral-200/80 py-8 lg:py-12"
         >
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
             
-            {/* BRAND + CONTACT */}
-            <motion.div variants={fadeUp} className="sm:col-span-2 lg:col-span-5">
-              {/* Logo Link - FIXED HYDRATION ERROR */}
+            {/* 1. BRAND + SOCIAL LINKS */}
+            <motion.div variants={fadeUp} className="sm:col-span-2 lg:col-span-4">
               <motion.div whileHover={reduceMotion ? {} : { y: -2 }} className="inline-block">
                 <Link href="/" className="group inline-block">
                   <div className="relative overflow-hidden rounded-xl border border-neutral-200 bg-white px-4 py-2 shadow-sm transition-all duration-500 group-hover:border-[#C46A42]/30 group-hover:shadow-[0_10px_30px_rgba(196,106,66,0.1)]">
@@ -168,81 +167,72 @@ export function SiteFooter() {
                       priority
                       className="h-auto w-[110px] object-contain sm:w-[130px]"
                     />
-                    <div className="absolute -right-5 -top-5 h-14 w-14 rounded-full bg-[#C46A42]/10 blur-xl transition-all duration-500 group-hover:bg-[#C46A42]/20" />
                   </div>
                 </Link>
               </motion.div>
               
-              <p className="mt-4 max-w-md text-xs leading-relaxed text-neutral-500 sm:text-sm">
+              <p className="mt-4 max-w-sm text-xs leading-relaxed text-neutral-500 sm:text-sm">
                 A premium web design, development & cyber security company helping brands ship exceptional digital products with round-the-clock support.
               </p>
-              
-              <motion.div variants={stagger} className="mt-5 space-y-2">
-                <motion.a variants={fadeUp} href="tel:+919833624073" className="group flex items-center justify-between gap-3 rounded-lg py-1.5 transition-all duration-300 hover:pl-1.5">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all duration-300 group-hover:bg-[#C46A42] group-hover:text-white group-hover:shadow-[0_0_15px_rgba(196,106,66,0.3)]">
-                      <Phone className="h-3.5 w-3.5" />
-                    </span>
-                    <span className="text-xs font-medium text-neutral-600 transition-colors group-hover:text-neutral-950 sm:text-sm">9833-624-073</span>
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 -translate-x-1.5 text-[#C46A42] opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
-                </motion.a>
 
-                <motion.a variants={fadeUp} href="mailto:info@digital-factory.in" className="group flex items-center justify-between gap-3 rounded-lg py-1.5 transition-all duration-300 hover:pl-1.5">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all duration-300 group-hover:bg-[#C46A42] group-hover:text-white group-hover:shadow-[0_0_15px_rgba(196,106,66,0.3)]">
-                      <Mail className="h-3.5 w-3.5" />
-                    </span>
-                    <span className="break-all text-xs font-medium text-neutral-600 transition-colors group-hover:text-neutral-950 sm:text-sm">info@digital-factory.in</span>
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 -translate-x-1.5 text-[#C46A42] opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
-                </motion.a>
-
-                <motion.a variants={fadeUp} href="https://www.google.com/maps/search/?api=1&query=912+72+Corp+Saki+Vihar+Road+Sakinaka+Junction+Andheri+Mumbai+400072" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-3 rounded-lg py-1.5 transition-all duration-300 hover:pl-1.5">
-                  <div className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all duration-300 group-hover:bg-[#C46A42] group-hover:text-white group-hover:shadow-[0_0_15px_rgba(196,106,66,0.3)]">
-                      <MapPin className="h-3.5 w-3.5" />
-                    </span>
-                    <span className="max-w-[280px] text-xs leading-snug text-neutral-600 transition-colors group-hover:text-neutral-950 sm:text-sm">
-                      912, 72 Corp, Saki Vihar Road,<br />Sakinaka Junction, Andheri, Mumbai 400072
-                    </span>
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 -translate-x-1.5 text-[#C46A42] opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
-                </motion.a>
-              </motion.div>
+              {/* Social Media Links */}
+              <div className="mt-6 flex items-center gap-3">
+                <Link href="#" className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white">
+                  <Facebook className="h-4 w-4" />
+                </Link>
+                <Link href="#" className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white">
+                  <Twitter className="h-4 w-4" />
+                </Link>
+                <Link href="#" className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white">
+                  <Instagram className="h-4 w-4" />
+                </Link>
+                <Link href="#" className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white">
+                  <Linkedin className="h-4 w-4" />
+                </Link>
+              </div>
             </motion.div>
 
-            {/* SERVICES */}
-            <motion.div variants={fadeUp} className="lg:col-span-2 lg:col-start-6">
-              <FooterColumn column={COLUMNS[0]} />
-            </motion.div>
-
-            {/* QUICK LINKS */}
+            {/* 2. QUICK LINKS */}
             <motion.div variants={fadeUp} className="lg:col-span-2">
               <FooterColumn column={COLUMNS[1]} />
             </motion.div>
 
-            {/* NEWSLETTER SIGNUP CARD */}
-            <motion.div variants={fadeUp} className="sm:col-span-2 lg:col-span-3">
-              <motion.div whileHover={reduceMotion ? {} : { y: -4 }} className="relative overflow-hidden rounded-[20px] border border-[#C46A42]/20 bg-white p-5 shadow-sm transition-all duration-500 hover:border-[#C46A42]/40 hover:shadow-[0_20px_50px_rgba(196,106,66,0.08)]">
-                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#C46A42]/10 blur-[40px]" />
-                <div className="mb-3 flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42]">
-                    <Mail className="h-3.5 w-3.5" />
-                  </span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#C46A42]">Stay Updated</span>
-                </div>
-                <h4 className="font-serif text-lg font-medium leading-tight text-neutral-900">Subscribe to our <span className="text-[#C46A42]">Newsletter</span></h4>
-                <p className="mt-2 text-[11px] leading-relaxed text-neutral-500">Get the latest insights on cyber security, web development, and digital trends.</p>
-                <form className="relative mt-5 flex flex-col gap-2.5" onSubmit={(e) => e.preventDefault()}>
-                  <input type="email" placeholder="Enter your email" className="w-full rounded-xl border border-neutral-200 bg-[#faf9f7] px-4 py-2.5 text-xs text-neutral-900 placeholder:text-neutral-400 transition-all focus:border-[#C46A42] focus:outline-none focus:ring-1 focus:ring-[#C46A42]/50" required />
-                  <button type="submit" className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#C46A42] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-[#A95A37]">
-                    Subscribe
-                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </button>
-                </form>
-              </motion.div>
+            {/* 3. SERVICES */}
+            <motion.div variants={fadeUp} className="lg:col-span-3">
+              <FooterColumn column={COLUMNS[0]} />
             </motion.div>
+
+            {/* 4. CONTACT INFO & ADDRESS */}
+            <motion.div variants={fadeUp} className="sm:col-span-2 lg:col-span-3">
+              <h3 className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#C46A42] sm:text-xs">
+                Contact
+              </h3>
+              <div className="mb-4 h-[2px] w-8 bg-[#C46A42]" />
+              
+              <ul className="space-y-4">
+                <li>
+                  <a href="tel:+919833624073" className="group flex items-start gap-3 transition-all duration-300 hover:text-neutral-950">
+                    <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#C46A42]" />
+                    <span className="text-[13px] text-neutral-600 transition-colors group-hover:text-neutral-950">9833-624-073</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@digital-factory.in" className="group flex items-start gap-3 transition-all duration-300 hover:text-neutral-950">
+                    <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#C46A42]" />
+                    <span className="break-all text-[13px] text-neutral-600 transition-colors group-hover:text-neutral-950">info@digital-factory.in</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.google.com/maps/search/?api=1&query=912+72+Corp+Saki+Vihar+Road+Sakinaka+Junction+Andheri+Mumbai+400072" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-3 transition-all duration-300 hover:text-neutral-950">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C46A42]" />
+                    <span className="text-[13px] leading-relaxed text-neutral-600 transition-colors group-hover:text-neutral-950">
+                      912, 72 Corp, Saki Vihar Road,<br />Sakinaka Junction, Andheri, Mumbai 400072
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </motion.div>
+
           </div>
         </motion.section>
 
@@ -253,6 +243,27 @@ export function SiteFooter() {
           <p className="flex items-center gap-1.5">Built with <span className="font-semibold text-[#C46A42]">Digital Factory</span></p>
         </motion.div>
       </div>
+
+      {/* =====================================================
+          FLOATING WHATSAPP BUTTON (Global Position)
+      ====================================================== */}
+      <a
+        href="https://wa.me/919833624073"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110 hover:shadow-xl"
+        aria-label="Chat on WhatsApp"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="28" 
+          height="28" 
+          viewBox="0 0 24 24" 
+          fill="currentColor"
+        >
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+      </a>
     </footer>
   );
 }
@@ -268,15 +279,14 @@ function FooterColumn({ column }: { column: { title: string; links: { name: stri
         {column.title}
       </h3>
       <div className="mb-3 h-[2px] w-8 bg-[#C46A42]" />
-      <ul className="space-y-0.5">
+      <ul className="space-y-2">
         {column.links.map((link) => (
           <li key={link.name}>
             <Link 
               href={link.href} 
-              className="group flex items-center justify-between gap-2 rounded-lg py-1.5 text-xs text-neutral-600 transition-all duration-300 hover:pl-1.5 hover:text-neutral-950 sm:text-sm"
+              className="group flex items-center gap-2 text-[13px] text-neutral-600 transition-all duration-300 hover:text-neutral-950"
             >
               <span>{link.name}</span>
-              <ArrowUpRight className="h-3.5 w-3.5 -translate-x-1.5 text-[#C46A42] opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </Link>
           </li>
         ))}

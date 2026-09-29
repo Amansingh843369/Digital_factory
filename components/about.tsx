@@ -104,7 +104,7 @@ export function About() {
                 <div className="grid grid-cols-3 gap-2 sm:gap-4 text-white text-center">
                   <div>
                     <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#C46A42]">
-                      <AnimatedNumber value={10} suffix="+" duration={2000} />
+                      <AnimatedNumber value={16} suffix="+" duration={2000} />
                     </p>
                     <p className="text-[9px] sm:text-[10px] lg:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1 sm:mt-1.5">Years Exp.</p>
                   </div>
@@ -116,9 +116,9 @@ export function About() {
                   </div>
                   <div>
                     <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#C46A42]">
-                      <AnimatedNumber value={82.1} isDecimal={true} suffix="%" duration={3000} />
+                      <AnimatedNumber value={2001}    duration={3000} />
                     </p>
-                    <p className="text-[9px] sm:text-[10px] lg:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1 sm:mt-1.5">Satisfaction</p>
+                    <p className="text-[9px] sm:text-[10px] lg:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1 sm:mt-1.5">Since</p>
                   </div>
                 </div>
               </div>
@@ -176,7 +176,7 @@ export function About() {
                 href="/about" 
                 className="group inline-flex items-center gap-2 rounded-full bg-[#C46A42] px-7 py-3.5 text-[14px] sm:text-[15px] font-semibold text-white transition-all duration-300 hover:bg-[#a65633] hover:shadow-lg hover:shadow-[#C46A42]/20 hover:-translate-y-1"
               >
-                Know More About Us
+                Know More 
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>

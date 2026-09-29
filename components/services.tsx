@@ -188,7 +188,7 @@ export function Services() {
                   <div className="overflow-hidden">
                     <div className="px-3 sm:px-6 ml-0 sm:ml-12 md:ml-10 lg:ml-[6.1rem] grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 pt-0">
                       
-                      {/* Description Column (Left) */}
+                      {/* Description Column (Left)*/}
                       <div className="lg:col-span-11">
                         <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-neutral-600">
                           {service.description}

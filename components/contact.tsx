@@ -36,17 +36,18 @@ export function Contact() {
                     <input
                       id="name"
                       type="text"
-                      placeholder="Jane Smith"
+                      placeholder="Your Name"
                       className="w-full rounded-2xl bg-[#F0EBE1] px-5 py-4.5 text-neutral-800 placeholder-neutral-400 outline-none transition-all focus:ring-2 focus:ring-[#C46A42]/40"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-semibold text-neutral-800">
+                    <label htmlFor="email" className="text-sm font-semibold text-neutral-800 " >
                       Email
                     </label>
                     <input
                       id="email"
                       type="email"
+                       placeholder="Your Email"
                       className="w-full rounded-2xl bg-[#F0EBE1] px-5 py-4.5 text-neutral-800 outline-none transition-all focus:ring-2 focus:ring-[#C46A42]/40"
                     />
                   </div>
@@ -71,6 +72,7 @@ export function Contact() {
                         <option value="cyber-security">Cyber Security</option>
                         <option value="penetration-testing">Penetration Testing</option>
                         <option value="eoms">eOMS</option>
+                        <option value="eoms">Others</option>
                           </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-5">
                         <ChevronDown className="h-5 w-5 text-neutral-400" />

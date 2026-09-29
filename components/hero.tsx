@@ -493,7 +493,7 @@ export function Hero() {
     "Software Design ",
     "Website Design ",
     "Cyber Security ",
-    "Pen Testing ",
+    "Penetration Testing ",
   ]);
 
   return (
@@ -835,17 +835,18 @@ export function Hero() {
             <motion.p
               variants={itemVariants}
               className="
-                mt-3
-                sm:mt-4
+              mt-3
+                sm:mt-6
                 max-w-2xl
                 text-base
                 sm:text-lg
                 lg:text-xl
                 leading-relaxed
+                text-justify
                 text-muted-foreground
               "
             >
-              We transform complex challenges into secure, scalable, and high-performance solutions built for long-term growth.
+              We transform complex challenges into secure, scalable, and <br className="hidden lg:block" /> high-performance solutions built for long-term growth.
             </motion.p>
 
 

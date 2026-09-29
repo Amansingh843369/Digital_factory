@@ -1,11 +1,10 @@
-
 {
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Digital Factory update",
+      "label": "Auto Git Push",
       "type": "shell",
-      "command": "git add . && git commit -m \"Auto update\" && git push",
+      "command": "git add .; git commit -m \"Auto update\"; git push",
       "problemMatcher": []
     }
   ]

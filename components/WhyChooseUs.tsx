@@ -91,15 +91,18 @@ export function WhyChooseUs() {
           <div className="lg:col-span-4 space-y-6 lg:space-y-8">
             
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-bold uppercase tracking-wider text-neutral-800">
+              {/* <div className="inline-flex items-center gap-2 text-[12px] sm:text-[15px] font-bold uppercase tracking-wider text-neutral-800">
                 <span className="h-2 w-2 rounded-full bg-neutral-900" />
-                Why Choose Us
-              </div>
+                 See The Difference When You Choose Us.
+              </div> */}
+              <h2 className="text-3xl sm:text-4xl lg:text-3xl  text-neutral-900 tracking-tight">
+                See The Difference When You Choose Us. 
+              </h2> 
 
-              <h2 className="text-3xl sm:text-4xl lg:text-4xl  text-neutral-900 tracking-tight">
+              {/* <h2 className="text-3xl sm:text-4xl lg:text-4xl  text-neutral-900 tracking-tight">
                 See The Difference When You <br className="hidden sm:block" />
                 <span className="italic font-normal">Choose Us.</span>
-              </h2>
+              </h2> */}
             </div>
 
             {/* Tabs - Horizontal on Mobile, Vertical on Desktop */}
