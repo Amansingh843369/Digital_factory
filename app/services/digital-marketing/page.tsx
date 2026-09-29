@@ -118,7 +118,7 @@ export default function DigitalMarketingPage() {
       title: "Google Ads Management",
       desc: "Reach the right audience, drive high-quality traffic, and maximize your advertising ROI.",
       highlights: [ "Google Search & Display Ads Setup", "Keyword Research & Campaign Optimization", "Ad Copy & Landing Page Optimization", "Conversion & ROI Tracking", "Performance Monitoring & Reports" ],
-      image: "/google-ads.jpg", 
+      image: "/googe-ads.jpg", 
       badge: "Google Ads"
     },
     {

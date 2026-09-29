@@ -10,7 +10,7 @@ import {
   TerminalSquare, 
   ArrowUpRight,
   Sparkles,
-  Check
+ 
 } from "lucide-react";
 
 const services = [
@@ -20,19 +20,8 @@ const services = [
     tag: "Custom Architecture",
     description: "Robust, secure, and scalable custom software solutions engineered to automate operations and solve complex business problems.",
     icon: Settings2,
-    features: [
-      "High-Performance Web Apps",
-      "Scalable SaaS Platforms",
-      "Cross-Platform Mobile Apps",
-      "Custom API Development",
-      "Enterprise Software Solutions",
-    ],
-    techs: [
-      "Custom Solutions",
-      "Full Stack",
-      "API Integration",
-      "High Performance"
-    ],
+  
+ 
     link: "/services/software-development"
   },
   
@@ -42,20 +31,7 @@ const services = [
 
     description: "Fast, responsive, and visually stunning websites crafted around your brand identity, built to deliver seamless user experiences, strengthen your digital presence, and turn visitors into loyal customers.",
     icon: MonitorSmartphone,
-    features: [
-      "Premium Business Websites",
-      "High-Converting E-Commerce",
-      "Conversion-Focused Landing Pages",
-      "Responsive Web Experiences",
-      "Custom UI & Interactions",
-    ],
-    techs: [
-      "Next.js",
-      "React",
-      "Modern UI/UX",
-      "Node.js ",
-      "Conversion Optimized",
-    ],
+ 
     link: "/services/website-development"
   },
   {
@@ -64,22 +40,7 @@ const services = [
     
     description: "Expand your reach and turn attention into measurable growth with data-driven marketing campaigns, precision audience targeting, and continuous optimization built to generate quality leads and meaningful conversions.",
     icon: TrendingUp,
-    features: [
-      "Organic Search Growth",
-      "Performance Ad Campaigns",
-      "Social Media Marketing",
-      "Conversion Rate Optimization",
-      "Qualified Lead Generation",
-    ],
-    techs: [
-      "SEO",
-      "PPC",
-      "Social Media",
-      "Lead Gen",
-      "Brand Awareness",
-      "Conversion Optimization",
-      "Analytics & Strategy",
-    ],
+   
     link: "/services/digital-marketing" 
   },
   {
@@ -88,8 +49,7 @@ const services = [
    
     description: "Comprehensive enterprise security measures and protocols designed to guard your critical data and digital assets against threats.",
     icon: ShieldCheck,
-    features: ["OWASP Top 10", "Data Protection", "IT Infrastructure Audits","Cyber Vadis", "Continuous Threat Monitoring"],
-    techs: ["NIST", "SIEM", "DORA", "CIS Controls", "VAPT"],
+ 
     link: "/services/cyber-security"
   },
   {
@@ -98,8 +58,7 @@ const services = [
     
     description: "Simulated real-world cyber attacks to proactively find and patch security vulnerabilities before adversaries can exploit them.",
     icon: TerminalSquare,
-    features: ["Web App Testing", "Network Testing", "API Security Testing" ,"Cloud Testing","Mobile Testing"],
-    techs: ["Red Teaming", "Exploit Analysis", "OWASP Top 10", "Reporting"],
+  
     link: "/services/penetration-testing"
   },
   {
@@ -109,17 +68,7 @@ const services = [
     description:
       "Secure and efficient e-office management solutions that streamline digital workflows, protect sensitive data, and improve organizational productivity.",
     icon: ShieldCheck,
-    features: [
-      "Digital Document Management",
-      "Access & Security Controls",
-      "Workflow & Process Automation",
-    ],
-    techs: [
-      "e-Office",
-      "Data Security",
-      "Access Control",
-      "Digital Workflow",
-    ],
+   
     link: "/services/e-office-management-security"
   }
 ];
@@ -199,7 +148,7 @@ export function Services() {
                     </div>
                   </div>
 
-                  {/* Right Side: Icons & Navigation Button */}
+                  
                   <div className="flex items-center gap-2 sm:gap-4 shrink-0">
                     
                     {/* Service Type Icon */}
@@ -237,48 +186,16 @@ export function Services() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-3 sm:px-6 ml-0 sm:ml-12 md:ml-20 lg:ml-[7.5rem] grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 pt-2">
+                    <div className="px-3 sm:px-6 ml-0 sm:ml-12 md:ml-10 lg:ml-[6.1rem] grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 pt-0">
                       
                       {/* Description Column (Left) */}
-                      <div className="lg:col-span-5">
+                      <div className="lg:col-span-11">
                         <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-neutral-600">
                           {service.description}
                         </p>
                       </div>
 
-                      {/* Right Side: Techs & Features */}
-                      <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5 items-start">
-                        
-                        {/* Tech Stack Section */}
-                        {service.techs && (
-                          <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                            {service.techs.map((tag, idx) => (
-                              <span 
-                                key={idx} 
-                                className="inline-flex items-center rounded-full border border-neutral-200/60 bg-white/40 backdrop-blur-sm px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-semibold text-neutral-600 shadow-sm transition-all hover:border-[#C46A42]/30 hover:bg-white"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-
-                        {/* Features Column */}
-                        <div className="flex flex-wrap gap-2 sm:gap-3 items-start">
-                          {service.features.map((feature, idx) => (
-                            <div 
-                              key={idx} 
-                              className="inline-flex items-center gap-2 sm:gap-2.5 rounded-full border border-neutral-200/80 bg-white/60 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-neutral-700 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-[#C46A42]/40 hover:bg-white"
-                            >
-                              <div className="flex h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 items-center justify-center rounded-full bg-[#C46A42]/10">
-                                <Check className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-[#C46A42] stroke-[3]" />
-                              </div>
-                              <span>{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-
-                      </div>
+               
 
                     </div>
                   </div>
