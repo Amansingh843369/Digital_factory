@@ -67,7 +67,7 @@ const detailedServices = [
       "Endpoint Protection",
       "24/7 Threat Monitoring"
     ],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=85&w=1400",
+    image: "/network.png",
     badge: "Network Defense"
   },
 
@@ -82,7 +82,7 @@ const detailedServices = [
       "Data Encryption",
       "Continuous Threat Mitigation"
     ],
-    image: "https://unsplash.com/photos/8zB4P0eafrs/download?force=true",
+    image: "/cloud.png",
     badge: "Cloud Safe"
   },
 
@@ -97,7 +97,7 @@ const detailedServices = [
       "Privacy Compliance",
       "Secure File Sharing"
     ],
-    image: "https://unsplash.com/photos/FnA5pAzqhMM/download?force=true",
+    image: "/data.png",
     badge: "Data Privacy"
   },
 
@@ -112,7 +112,7 @@ const detailedServices = [
       "Compliance Audits",
       "Policy Development"
     ],
-    image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&q=85&w=1400",
+    image: "/audit.png",
     badge: "Audit Ready"
   },
 
@@ -142,7 +142,7 @@ const detailedServices = [
       "Role-Based Access Control",
       "Biometric Integration"
     ],
-    image: "https://unsplash.com/photos/Uw_8vSroCSc/download?force=true",
+    image: "/authe.png",
     badge: "Zero Trust"
   }
 ];

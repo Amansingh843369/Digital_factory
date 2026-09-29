@@ -15,7 +15,7 @@ import {
 
 const services = [
     {
-    id: "03",
+    id: "01",
     title: "Software Development",
     tag: "Custom Architecture",
     description: "At Digital Factory, we specialize in designing custom software applications and scalable platforms tailored to your specific business requirements. Whether you need enterprise-grade solutions, SaaS products, or mobile applications, our team ensures your software is secure, user-friendly, and future-ready.",
@@ -35,7 +35,7 @@ const services = [
     link: "/services/website-development"
   },
   {
-    id: "01",
+    id: "03",
     title: "Digital Marketing",
     
     description: "We design result-driven digital marketing strategies that help businesses grow their online presence, reach the right audience, and achieve measurable success. From SEO to social media campaigns and paid advertising, our team blends creativity with data-driven insights to maximize ROI.",

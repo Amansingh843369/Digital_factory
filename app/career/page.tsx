@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import {  Home ,ChevronRight, } from 'lucide-react';
+
 import { 
   Sparkles, 
   ArrowUpRight, 
@@ -141,7 +143,62 @@ export default function CareersPage() {
     <div className="bg-[#FDFBF7] text-[#2D2823] min-h-screen font-sans selection:bg-[#C46A42] selection:text-white">
       
       {/* ================= 1. HERO SECTION ================= */}
-      
+  <section className="relative overflow-hidden bg-[#2C1E16] py-16 lg:py-14">
+  {/* 1. Digital Cyber Grid Background */}
+  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px]" />
+
+  {/* 2. Ambient Light Glows */}
+  <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#C87D55]/25 blur-[100px]" />
+  <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-[#C87D55]/15 blur-[120px]" />
+
+  <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center lg:px-10">
+
+    {/* Left Content */}
+    <div className="z-10 max-w-3xl">
+
+      {/* Glass Badge */}
+      <div className="inline-flex items-center gap-2 rounded-full border border-[#C87D55]/30 bg-[#C87D55]/10 px-3.5 py-1.5 text-xs font-medium text-[#C87D55] backdrop-blur-md">
+        <Briefcase className="h-3.5 w-3.5 text-[#C87D55]" />
+        <span>Join Our Team</span>
+      </div>
+
+      {/* Heading */}
+      <h1 className="mt-4 text-4xl font-bold tracking-tight text-[#F7F3E8] md:text-6xl">
+        Build Your
+        <span className="bg-gradient-to-r from-[#F7F3E8] via-[#E2B398] to-[#C87D55] bg-clip-text text-transparent">
+          {" "}Future With Us
+        </span>
+      </h1>
+
+      {/* Description */}
+      <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#F7F3E8]/80 md:text-lg">
+        Join Digital Factory and work with a passionate team building
+        innovative, secure, and impactful digital solutions for businesses
+        around the world.
+      </p>
+
+      {/* Breadcrumb */}
+      <nav className="mt-6 flex items-center gap-2 text-sm text-[#F7F3E8]/70">
+
+        <a
+          href="/"
+          className="flex items-center gap-1.5 transition-colors hover:text-[#F7F3E8]"
+        >
+          <Home className="h-4 w-4 text-[#C87D55]" />
+          <span>Home</span>
+        </a>
+
+        <ChevronRight className="h-4 w-4 text-[#C87D55]" />
+
+        <span className="font-medium text-[#F7F3E8]">
+          Careers
+        </span>
+
+      </nav>
+    </div>
+
+  </div>
+</section>
        
       {/* ================= 2. PERKS & BENEFITS (NEW) ================= */}
       <section className="py-20 bg-[#F4EFE6] border-y border-[#EBE3D5]">

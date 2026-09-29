@@ -57,7 +57,7 @@ const SERVICES: Service[] = [
       "Desktop Applications",
       "API Development & Integration"
     ],
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
+    image: "/custom-dev.png",
     badge: "Custom Dev"
   },
   {
@@ -129,7 +129,7 @@ const SERVICES: Service[] = [
       "Real-Time Data & Reporting",
       "Scalable & Secure ERP Solutions"
     ],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    image: "/ERP.png",
     badge: "ERP Systems"
   },
   {
@@ -151,7 +151,7 @@ const SERVICES: Service[] = [
       "Seamless API-Driven Integration",
       "Reduced Operational Overhead"
     ],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
+    image: "/ai.png",
     badge: "AI Solutions"
   },
   {
@@ -173,7 +173,7 @@ const SERVICES: Service[] = [
       "Seamless Integration with SaaS Tools",
       "24/7 Uninterrupted Operations"
     ],
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
+    image: "/ipa.png",
     badge: "Automation"
   },
   {

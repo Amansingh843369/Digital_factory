@@ -75,9 +75,9 @@ const detailedServices = [
       "SQL Injection & XSS Exploitation",
       "CSRF & Session Management Testing",
       "File Upload Vulnerability Assessment",
-      "API Endpoint Security Review"
+      
     ],
-    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=85&w=1400",
+    image: "/wat.png",
     badge: "OWASP Top 10"
   },
 
@@ -109,7 +109,7 @@ const detailedServices = [
       "TLS/SSL Configuration Review",
       "Reverse Engineering & Tampering"
     ],
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=85&w=1400",
+    image: "/networks.png",
     badge: "iOS & Android"
   },
 
@@ -125,7 +125,7 @@ const detailedServices = [
       "Network Segmentation Validation",
       "Legacy Protocol Exploitation"
     ],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=85&w=1400",
+    image: "/networksss.png",
     badge: "Infra Security"
   },
 
@@ -157,7 +157,7 @@ const detailedServices = [
       "Employee Security Awareness",
       "USB Drop & Tailgating Tests"
     ],
-    image: "https://www.swktech.com/wp-content/uploads/2023/11/Social-Engineering.jpg",
+    image: "/wireless.png",
     badge: "Wireless & Social"
   },
 
@@ -171,7 +171,7 @@ const detailedServices = [
       "Identity & Privilege Escalation Testing",
       "Network & Infrastructure Assessment",
       "Social Engineering & Phishing Simulation",
-      "Detection & Response Control Validation"
+    
     ],
     image: "https://cybersecurity-nxxt.com/assets/images/vapt/about-1.png",
     badge: "White Box"
@@ -365,7 +365,7 @@ const detailedServices = [
                   </div>
 
                   {/* TEXT SIDE */}
-                  <div className="w-full lg:w-1/2 space-y-4 md:space-y-6">
+                  <div className="w-full lg:w-1/2 space-y-4 md:space-y-3">
                     <div className="space-y-2 md:space-y-3">
                       <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#A64B2A] font-bold">{service.category}</span>
                       <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-[#2C1E16] tracking-tight leading-tight">{service.title}</h3>

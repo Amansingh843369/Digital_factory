@@ -79,7 +79,7 @@ export default function DigitalMarketingPage() {
       title: "Pay-Per-Click Advertising (PPC & Ads)",
       desc: "Drive targeted traffic instantly with well-optimized ad campaigns tailored for conversions.",
       highlights: [ "Google Ads (Search, Display, Shopping)", "Social Media Ads (Facebook, Instagram, LinkedIn)", "Remarketing & Retargeting Campaigns", "Conversion Rate Optimization (CRO)", "Ad Copywriting & Creative Design", "Campaign Monitoring & Analytics" ],
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRiTxwLfyMk3K2I_r1q2YepiYskOvy6Lb6sI1etJfEWwn-hpsjBvdSTtc&s=10", 
+      image: "/new.jpeg", 
       badge: "Performance Ads"
     },
     {
@@ -95,7 +95,7 @@ export default function DigitalMarketingPage() {
       title: "Content Marketing",
       desc: "Tell your brand story and attract loyal customers with powerful, conversion-driven content.",
       highlights: [ "Blog Writing & Optimization", "Website & Landing Page Copywriting", "Case Studies & Whitepapers", "Infographics & Visual Content", "Video Content Strategy", "Email Newsletters" ],
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1200", 
+      image: "/content.png", 
       badge: "Content Strategy"
     },
     {
@@ -103,7 +103,7 @@ export default function DigitalMarketingPage() {
       title: "Email Marketing & Automation",
       desc: "Build lasting relationships and drive consistent sales with personalized, automated email campaigns.",
       highlights: [ "Email Campaign Design", "Drip Campaigns & Automation", "Subscriber List Segmentation", "Performance Tracking & A/B Testing" ],
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200", 
+      image: "/email.png", 
       badge: "Automation"
     },
     {
@@ -135,7 +135,7 @@ export default function DigitalMarketingPage() {
       title: "Influencer Marketing & GMB",
       desc: "Reach authentic audiences through trusted influencers and dominate local search rankings.",
       highlights: [ "Influencer Research & Campaign Management", "Google Business Profile Setup", "Local SEO & Map Pack Optimization", "Google Reviews & Reputation Management", "Audience Engagement & Tracking" ],
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200", 
+      image: "/influencer.png", 
       badge: "Influencers & Local"
     }
   ];
