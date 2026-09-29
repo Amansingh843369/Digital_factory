@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Eye, MonitorPlay, Code2, ShieldCheck, TrendingUp, CheckCircle2, ArrowRight, User, Globe2, Network } from 'lucide-react';
+import { Target, Eye, Home ,ChevronRight,MonitorPlay, Code2, Sparkles, ShieldCheck, TrendingUp, CheckCircle2, ArrowRight, User, Globe2, Network } from 'lucide-react';
 
 const AboutUs = () => {
   const fadeUp = {
@@ -22,34 +22,51 @@ const AboutUs = () => {
   return (
     <div className="bg-[#FCFBF9] min-h-screen font-sans selection:bg-[#A64B2A] selection:text-white pb-20">
       
-      <section className="relative overflow-hidden bg-[#2C1E16]">
- 
+    <section className="relative overflow-hidden bg-[#2C1E16] py-16 lg:py-14">
+      {/* 1. Digital Cyber Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px]" />
 
-  <div className="relative mx-auto flex min-h-[280px] max-w-7xl items-center justify-between px-6 py-16 lg:px-10">
-    
-    {/* Left */}
-    <div>
-       
+      {/* 2. Ambient Light Glows (High-Tech Feel) */}
+      <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#C87D55]/25 blur-[100px]" />
+      <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-[#C87D55]/15 blur-[120px]" />
 
-      <h1 className="text-4xl font-semibold text-[#F7F3E8] md:text-5xl">
-        About Us
-      </h1>
+      <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center lg:px-10">
+        
+        {/* Left Content */}
+        <div className="z-10 max-w-2xl">
+          {/* Glass Badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#C87D55]/30 bg-[#C87D55]/10 px-3.5 py-1.5 text-xs font-medium text-[#C87D55] backdrop-blur-md">
+            <Sparkles className="h-3.5 w-3.5 text-[#C87D55]" />
+            <span>Digital Transformation Leader</span>
+          </div>
 
-      <div className="mt-5 flex items-center gap-3 text-sm text-[#F7F3E8]/70">
-        <span>Home</span>
-        <span className="text-[#C87D55]">›</span>
-        <span className="text-[#F7F3E8]">About Us</span>
+          {/* Heading with Soft Gradient */}
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-[#F7F3E8] md:text-6xl">
+            About <span className="bg-gradient-to-r from-[#F7F3E8] via-[#E2B398] to-[#C87D55] bg-clip-text text-transparent">Us</span>
+          </h1>
+
+          <p className="mt-3 text-base text-[#F7F3E8]/80 md:text-lg">
+            Empowering businesses with strategic, secure, and cutting-edge digital solutions.
+          </p>
+
+          {/* Modern Interactive Breadcrumb */}
+          <nav className="mt-6 flex items-center gap-2 text-sm text-[#F7F3E8]/70">
+            <a href="/" className="flex items-center gap-1.5 hover:text-[#F7F3E8] transition-colors">
+              <Home className="h-4 w-4 text-[#C87D55]" />
+              <span>Home</span>
+            </a>
+            <ChevronRight className="h-4 w-4 text-[#C87D55]" />
+            <span className="font-medium text-[#F7F3E8]">About Us</span>
+          </nav>
+        </div>
+
+  
       </div>
-    </div>
-
-    
-
-  </div>
-</section>
+    </section>
 
 
       {/* 1. HERO & COMPANY OVERVIEW (Redesigned matching the reference layout) */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-white">
+      <section className="relative pt-24 pb-16 md:pt-12 md:pb-24 overflow-hidden bg-white">
         
         {/* Decorative Background Element (matches the purple circle in reference, updated to brand color) */}
         <div className="absolute top-1/2 -left-32 -translate-y-1/2 w-96 h-96 bg-[#A64B2A] rounded-full mix-blend-multiply filter blur-[100px] opacity-10"></div>
@@ -97,7 +114,7 @@ const AboutUs = () => {
             {/* RIGHT COLUMN - Text Content */}
             <motion.div 
               initial="hidden" animate="visible" variants={staggerContainer}
-              className="space-y-8 lg:pl-8"
+              className="space-y-6 lg:pl-8"
             >
               {/* Overline Label */}
               <motion.div variants={fadeUp} className="flex items-center gap-4">
@@ -109,22 +126,21 @@ const AboutUs = () => {
 
               {/* Headline */}
               <motion.h2 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-[#2A2320] leading-[1.1] tracking-tight">
-                Explore Endless Digital <br className="hidden lg:block"/>
-                <span className="text-[#A64B2A]">Possibilities for Growth.</span>
+                Explore Endless   <br className="hidden lg:block"/>
+                <span className="text-[#A64B2A]"> Digital Possibilities for Growth.</span>
               </motion.h2>
 
-              {/* Paragraph Content */}
-              <motion.div variants={fadeUp} className="space-y-6 text-gray-700 text-lg leading-relaxed font-normal">
-                <p>
-                  At <strong className="text-[#2A2320] font-bold">Digital Factory</strong>, we harness the power of technology to provide exceptional support to our clients. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
-                </p>
-                <p>
-                  We provide end-to-end services in Digital Marketing, Website Development, Software Development, and Cyber Security Solutions, making us a one-stop partner for digital transformation tailored to exceed expectations.
-                </p>
-                    <p className="font-medium  text-1xl leading-tight">
-                  Driven by innovation and guided by values of integrity, quality, and trust, <strong className='font-bold'>Digital Factory</strong> is committed to shaping a future where businesses of every size can thrive digitally and unlock their true potential.
-                  </p>
-              </motion.div>
+             <motion.div 
+  variants={fadeUp} 
+  className="space-y-6 text-gray-700 text-lg leading-relaxed font-normal text-left sm:text-justify hyphens-auto"
+>
+  <p>
+    At <strong className="text-[#2A2320] font-bold">Digital Factory</strong>, we harness the power of technology to provide exceptional support to our clients. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
+  </p>
+  <p>
+    We provide end-to-end services in <strong className="text-[#2A2320] font-bold">Digital Marketing</strong>, <strong className="text-[#2A2320] font-bold">Website Development</strong>, <strong className="text-[#2A2320] font-bold">Software Development</strong>, and <strong className="text-[#2A2320] font-bold">Cyber Security Solutions</strong>  , making us a one-stop partner for digital transformation. Our solutions are tailored to meet the unique needs of every client, whether it’s building brand visibility, designing user-friendly websites, developing enterprise-grade applications, or ensuring robust digital security.
+  </p>
+</motion.div>
 
              
             </motion.div>
@@ -132,8 +148,73 @@ const AboutUs = () => {
         </div>
       </section>
 
+<section className="py-16 md:py-14 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        
+        {/* Left Side: Content */}
+        <div className="w-full lg:w-1/2 space-y-6">
+          <div className="inline-block px-4 py-1.5 bg-blue-100 text-[#7b3f00] font-semibold rounded-full text-sm tracking-wide">
+            About Us
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            Empowering Your <span className="text-[#7b3f00]">Digital Growth</span>
+          </h2>
+          
+          <p className="text-gray-600 text-lg leading-relaxed text-justify">
+            At <strong>Digital Factory</strong>, we believe that technology and creativity must go hand-in-hand. Our team brings together specialists from different domains who collaborate to deliver measurable results, not just promises. We adopt a client-first approach, ensuring transparency, reliability, and long-term success in every project we undertake.
+          </p>
+
+          <div className="pt-4 space-y-4">
+            <h3 className="font-semibold text-gray-900 text-lg">
+              We work with businesses across industries, enabling them to:
+            </h3>
+            
+            <ul className="space-y-4">
+              {[
+                { title: 'Build', desc: 'a strong and lasting digital identity.' },
+                { title: 'Enhance', desc: 'customer engagement through effective marketing strategies.' },
+                { title: 'Deploy', desc: 'custom software to improve efficiency and growth.' },
+                { title: 'Protect', desc: 'their data and systems with cutting-edge cybersecurity solutions.' }
+              ].map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#7b3f00] text-white flex items-center justify-center mt-0.5 shadow-md">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <p className="text-gray-700">
+                    <strong className="text-gray-900">{item.title}</strong> {item.desc}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="text-gray-600 pt-4 pb-2 italic border-l-4 pl-4 text-justify">
+            Driven by innovation and guided by values of integrity, quality, and trust, Digital Factory is committed to shaping a future where businesses of every size can thrive digitally and unlock their true potential.
+          </p>
+        </div>
+
+        {/* Right Side: Image */}
+        <div className="w-full lg:w-1/2 relative group">
+          <div className="absolute inset-0 bg-[#7b3f00] rounded-3xl rotate-3 scale-105 opacity-20 transition-transform duration-500 group-hover:rotate-6"></div>
+          <img
+            // Using a high-quality Unsplash image related to digital marketing and analytics
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
+            alt="Digital Marketing and Analytics Team"
+            className="relative z-10 w-full h-auto object-cover rounded-3xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2"
+          />
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
       {/* 2. MISSION & VISION (Unchanged) */}
-      <section className="py-16 md:py-24 bg-[#FCFBF9] border-y border-[#E5D7CD]">
+      <section className="py-16 md:py-14 bg-[#FCFBF9] border-y border-[#E5D7CD]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             
@@ -169,78 +250,10 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* 3. OUR TEAM & LEADERSHIP (Unchanged) */}
-      <section className="py-16 md:py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#2A2320] tracking-tight mb-6">Our Team & Leadership</h2>
-            <p className="text-[#6B5D56] text-lg font-light leading-relaxed">
-              At Digital Factory, our strength lies in a team of passionate professionals who bring diverse expertise to the table. Our leadership and specialists work hand-in-hand to ensure we deliver solutions that are both innovative and secure.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-          >
-            {[
-              {
-                icon: <TrendingUp className="w-6 h-6 text-[#A64B2A]" />,
-                title: "Digital Marketing Experts",
-                desc: "Crafting data-driven strategies to boost visibility and engagement.",
-                img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              },
-              {
-                icon: <MonitorPlay className="w-6 h-6 text-[#A64B2A]" />,
-                title: "Web Development Specialists",
-                desc: "Building responsive, user-friendly, and high-performance websites.",
-                img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              },
-              {
-                icon: <Code2 className="w-6 h-6 text-[#A64B2A]" />,
-                title: "Software Engineers",
-                desc: "Designing custom applications and scalable platforms tailored to business needs.",
-                img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              },
-              {
-                icon: <ShieldCheck className="w-6 h-6 text-[#A64B2A]" />,
-                title: "Cyber Security Professionals",
-                desc: "Safeguarding digital assets with robust security frameworks and compliance standards.",
-                img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              }
-            ].map((role, idx) => (
-              <motion.div key={idx} variants={fadeUp} className="group relative bg-[#FCFBF9] rounded-3xl overflow-hidden border border-[#E5D7CD] hover:shadow-2xl transition-all duration-300">
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <img src={role.img} alt={role.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-[#2A2320]/20 group-hover:bg-[#2A2320]/40 transition-colors duration-300"></div>
-                  <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-lg">
-                    {role.icon}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#2A2320] mb-2">{role.title}</h3>
-                  <p className="text-[#6B5D56] font-light text-sm leading-relaxed">{role.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div 
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <p className="text-[#6B5D56] text-lg font-light leading-relaxed italic">
-              Together, our team is committed to helping businesses achieve their goals while maintaining the highest standards of quality, security, and customer satisfaction.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+ 
 
       {/* 4. CALL-TO-ACTION (BOTTOM BANNER) (Unchanged) */}
-      <section className="px-4 pb-10 bg-white">
+      <section className="px-4 pb-9 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
