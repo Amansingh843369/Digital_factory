@@ -445,13 +445,13 @@ const frameworks = [
                   </div>
 
                   {/* TEXT SIDE */}
-                  <div className="w-full lg:w-1/2 space-y-4 md:space-y-6">
-                    <div className="space-y-2 md:space-y-3">
+                  <div className="w-full lg:w-1/2 space-y-4 md:space-y-4">
+                    <div className="space-y-5 md:space-y-3">
                       <span className="text-[10px] md:text-xs font-mono uppercase tracking-wider text-[#A64B2A] font-medium">{service.category}</span>
                       <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#2C1E16] tracking-tight leading-tight">{service.title}</h3>
                     </div>
                     <p className="text-sm md:text-base text-[#6B5D56] leading-relaxed font-normal">{service.desc}</p>
-                    <ul className="space-y-2 md:space-y-3 pt-2">
+                    <ul className="space-y-2 md:space-y-5 pt-2">
                       {service.highlights.map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-xs md:text-sm font-normal text-[#382B27]">
                           <span className="flex-shrink-0 w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#A64B2A]/10 text-[#A64B2A] flex items-center justify-center font-bold text-[8px] md:text-[10px] mt-0.5">✓</span>

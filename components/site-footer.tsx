@@ -272,7 +272,7 @@ export function SiteFooter() {
                   >
                     <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#C46A42]" />
                     <span className="text-[13px] text-neutral-600 transition-colors group-hover:text-neutral-950">
-                      98336 24073 / 98670 81041
+                       97680 19387 / 98670 81041
                     </span>
                   </a>
                 </li>
@@ -347,7 +347,7 @@ export function SiteFooter() {
           FLOATING WHATSAPP BUTTON (Global Position)
       ====================================================== */}
       <a
-        href="https://wa.me/919833624073"
+        href="https://wa.me/9768019387"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110 hover:shadow-xl"
