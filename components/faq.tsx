@@ -39,7 +39,7 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="bg-[#FAFAFA] py-15 px-5 sm:px-8">
+    <section id="faq" className="bg-[#FAFAFA] py-15 px-5 sm:px-8 scroll-mt-20">
       <div className="mx-auto max-w-3xl">
         
         {/* ================= HEADER ================= */}

@@ -92,22 +92,7 @@ const SERVICES: Service[] = [
     image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&q=80&w=1200",
     badge: "Mobile Apps"
   },
-  {
-    num: "04",
-    category: "Web Platforms",
-    title: "Web Application Development",
-    desc: "High-performing, secure, and responsive web apps built with modern frontend frameworks and robust backend systems.",
-    highlights: [
-      "Progressive Web Apps (PWAs)",
-      "Enterprise Portals & Dashboards",
-      "Custom Web Platforms",
-      "Real-Time Data Applications",
-      "Third-Party Integrations"
-    ],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200",
-    badge: "Web Apps"
-  },
-
+  
   {
     num: "06",
     category: "Enterprise Systems",
@@ -154,50 +139,8 @@ const SERVICES: Service[] = [
     image: "/ai.png",
     badge: "AI Solutions"
   },
-  {
-    num: "08",
-    category: "Smart Automation",
-    title: "Intelligent Process Automation",
-    desc: "Eliminate repetitive tasks and streamline workflows to empower teams for high-value strategic growth.",
-    highlights: [
-      "Workflow Automation Pipelines",
-      "Automated Customer Support Systems",
-      "Lead Generation & Nurture Automation",
-      "Document Processing & OCR Systems",
-      "Marketing & Sales Automation",
-      "Automated Reporting & Analytics"
-    ],
-    whyChoose: [
-      "Eliminate Manual Errors",
-      "Up to 60% Faster Task Processing",
-      "Seamless Integration with SaaS Tools",
-      "24/7 Uninterrupted Operations"
-    ],
-    image: "/ipa.png",
-    badge: "Automation"
-  },
-  {
-    num: "09",
-    category: "Process Engineering",
-    title: "Workflow Orchestration",
-    desc: "Connect people, software systems, and data pipelines into unified, high-efficiency business processes.",
-    highlights: [
-      "Enterprise Workflow Mapping",
-      "Automated Task Management",
-      "System & API Integration",
-      "Real-time Workflow Monitoring",
-      "Custom Approval Pipelines",
-      "Process Optimization Consulting"
-    ],
-    whyChoose: [
-      "End-to-End Operational Visibility",
-      "Frictionless Departmental Handoffs",
-      "Scalable Process Infrastructure",
-      "Enterprise Security Standards"
-    ],
-    image: "/Workflow_Orchestration.jpg",
-    badge: "Orchestration"
-  }
+  
+  
 ];
 
 export default function SoftwareDevelopmentPage() {
@@ -291,7 +234,7 @@ export default function SoftwareDevelopmentPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mb-10 md:mb-6 text-lg sm:text-xl md:text-2xl text-[#6B635B] leading-relaxed font-light max-w-3xl mx-auto"
           >
-            We engineer high-performance web applications, scalable cloud platforms, and automated workflows designed specifically to unlock real business growth.
+            We engineer high-performance software applications, scalable cloud platforms, and automated workflows designed specifically to unlock real business growth.
           </motion.p>
 
           <motion.div 
@@ -309,14 +252,7 @@ export default function SoftwareDevelopmentPage() {
               <span>Start Your Software Project</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              href="#services"
-              className="w-full sm:w-auto px-8 py-4 md:px-10 md:py-4.5 rounded-full bg-white/70 border border-[#E5DCD5] text-[#2C2825] font-semibold text-sm md:text-base hover:bg-white hover:shadow-md transition-all shadow-sm flex items-center justify-center"
-            >
-              Explore Capabilities
-            </motion.a>
+             
           </motion.div>
           
         </section>

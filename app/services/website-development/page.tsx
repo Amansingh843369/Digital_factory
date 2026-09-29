@@ -225,131 +225,140 @@ export default function WebsiteDevelopmentPage() {
           </p>
         </motion.section>
 
-        {/* PARALLAX HERO SHOWCASE */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2, ease: customEase }}
-          className="mt-10 md:mt-20 rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-[#E5DCD5] shadow-xl relative h-[250px] sm:h-[350px] md:h-[450px]"
-        >
-          <motion.img 
-            style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" 
-            alt="Website Development Workspace" 
-            className="w-full h-full object-cover transform-origin-top will-change-transform"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2C2825]/90 via-[#2C2825]/20 to-transparent flex items-end p-6 md:p-14">
-            <div className="text-white space-y-3">
-              <span className="text-[10px] md:text-xs font-mono font-bold text-[#FAF8F5] uppercase tracking-widest backdrop-blur-md bg-[#BD6E44]/80 px-4 py-1.5 rounded-full border border-white/20">Digital Excellence</span>
-              <h3 className="text-xl sm:text-3xl md:text-5xl font-bold tracking-tight">Performance. Usability. Conversion.</h3>
-            </div>
-          </div>
-        </motion.div>
+      {/* PARALLAX HERO SHOWCASE - CONSISTENT SIZING */}
+<motion.div 
+  initial={{ opacity: 0, y: 40 }} 
+  animate={{ opacity: 1, y: 0 }} 
+  transition={{ duration: 0.9, delay: 0.2, ease: customEase }}
+  // FIXED HEIGHTS: Mobile 300px, Tablet 400px, Desktop 500px
+  className="mt-10 md:mt-20 rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-[#E5DCD5] shadow-xl relative h-[300px] sm:h-[400px] md:h-[500px]"
+>
+  <motion.img 
+    style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
+    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" 
+    alt="Website Development Workspace" 
+    // object-cover ensures image fills the fixed height without stretching
+    className="w-full h-full object-cover transform-origin-top will-change-transform"
+  />
+  
+  {/* Gradient Overlay & Content */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#2C2825]/90 via-[#2C2825]/20 to-transparent flex items-end p-6 md:p-14">
+    <div className="text-white space-y-3 w-full">
+      <span className="inline-block text-[10px] md:text-xs font-mono font-bold text-[#FAF8F5] uppercase tracking-widest backdrop-blur-md bg-[#BD6E44]/80 px-4 py-1.5 rounded-full border border-white/20">
+        Digital Excellence
+      </span>
+      <h3 className="text-xl sm:text-3xl md:text-5xl font-bold tracking-tight leading-tight max-w-4xl">
+        Performance. Usability. Conversion.
+      </h3>
+    </div>
+  </div>
+</motion.div>
 
         {/* SERVICES ZIG-ZAG WITH DIRECTIONAL CURTAIN REVEAL */}
-        <section id="services" className="mt-12 md:mt-24 space-y-8 md:space-y-24">
-          <div className="text-center max-w-2xl mx-auto space-y-3 mb-8 md:mb-10 px-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">Our Expertise</span>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#2C2825] tracking-tight">Website Development Services</h2>
+<section id="services" className="py-12 md:py-24">
+  <div className="text-center max-w-2xl mx-auto space-y-4 mb-16 md:mb-24 px-4">
+    <span className="text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">Our Expertise</span>
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#2C2825] tracking-tight">Website Development Services</h2>
+  </div>
+
+  <div className="space-y-20 md:space-y-32"> {/* Increased vertical spacing between items */}
+    {services.map((service, index) => {
+      const isEven = index % 2 === 0;
+      
+      // LOGIC FOR DIRECTIONAL REVEAL
+      const revealClip = isEven 
+        ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] // Left to Right
+        : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; // Right to Left
+
+      return (
+        <motion.div 
+          key={index}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={fadeInUp}
+          className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-8 md:gap-16 px-4 md:px-0`}
+        >
+          {/* IMAGE SIDE WITH DIRECTIONAL CURTAIN REVEAL EFFECT */}
+          <div className="w-full lg:w-5/12 relative group">
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.5, ease: customEase }}
+              className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-xl bg-[#F3EEEA] h-full min-h-[350px] md:min-h-[500px]" // Increased min-height
+            >
+              {/* The Mask Container using Clip Path */}
+              <motion.div 
+                initial={{ clipPath: revealClip[0] }}
+                whileInView={{ clipPath: revealClip[1] }}
+                transition={{ duration: 1.4, ease: customEase, delay: 0.2 }}
+                className="w-full h-full relative"
+              >
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5]/60 via-transparent to-transparent opacity-80" />
+              </motion.div>
+
+              {/* Floating Tech Badge */}
+              <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-[#FAF8F5]/90 backdrop-blur-md border border-[#E5DCD5] px-3 py-1.5 md:px-4 md:py-2 rounded-xl shadow-md flex items-center gap-3 z-20">
+                <span className="font-mono text-[10px] md:text-sm font-bold text-[#BD6E44]">{String(index + 1).padStart(2, '0')}</span>
+                <span className="text-[10px] md:text-xs font-bold text-[#2C2825] uppercase tracking-wider">{service.badge}</span>
+              </div>
+            </motion.div>
           </div>
 
-          <div className="space-y-12 md:space-y-32">
-            {services.map((service, index) => {
-              const isEven = index % 2 === 0;
-              
-              // LOGIC FOR DIRECTIONAL REVEAL
-              const revealClip = isEven 
-                ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] // Left to Right
-                : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; // Right to Left
+          {/* CONTENT BLOCK */}
+          <div className="w-full lg:w-7/12 flex flex-col justify-center space-y-6 md:space-y-8"> {/* Adjusted inner spacing */}
+            <div className="space-y-3">
+              <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">
+                {service.category}
+              </span>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight leading-tight">
+                {service.title}
+              </h3>
+            </div>
 
-              return (
-                <motion.div 
-                  key={index}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.1 }}
-                  variants={fadeInUp}
-                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-8 md:gap-16`}
-                >
-                  {/* IMAGE SIDE WITH DIRECTIONAL CURTAIN REVEAL EFFECT */}
-                  <div className="w-full lg:w-5/12 relative group">
-                    <motion.div 
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.5, ease: customEase }}
-                      className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-xl bg-[#F3EEEA] h-full min-h-[300px] md:min-h-[400px]"
-                    >
-                      {/* The Mask Container using Clip Path */}
-                      <motion.div 
-                        initial={{ clipPath: revealClip[0] }}
-                        whileInView={{ clipPath: revealClip[1] }}
-                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }}
-                        className="w-full h-full relative"
-                      >
-                        <img 
-                          src={service.image} 
-                          alt={service.title} 
-                          className="w-full h-full object-cover opacity-90 group-hover:opacity-100"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5]/60 via-transparent to-transparent opacity-80" />
-                      </motion.div>
+            <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light">
+              {service.desc}
+            </p>
 
-                      {/* Floating Tech Badge */}
-                      <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-[#FAF8F5]/90 backdrop-blur-md border border-[#E5DCD5] px-3 py-1.5 md:px-4 md:py-2 rounded-xl shadow-md flex items-center gap-3 z-20">
-                        <span className="font-mono text-[10px] md:text-sm font-bold text-[#BD6E44]">{String(index + 1).padStart(2, '0')}</span>
-                        <span className="text-[10px] md:text-xs font-bold text-[#2C2825] uppercase tracking-wider">{service.badge}</span>
-                      </div>
-                    </motion.div>
-                  </div>
+            {/* Features List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 md:gap-y-4 pt-2">
+              {service.highlights.map((item, i) => (
+                <div key={i} className="flex items-start gap-3 text-xs md:text-sm text-[#4A433D]">
+                  <span className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded bg-[#F3EEEA] text-[#BD6E44] border border-[#E5DCD5] flex items-center justify-center font-bold text-[10px] md:text-xs mt-0.5">
+                    ✦
+                  </span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
 
-                  {/* CONTENT BLOCK */}
-                  <div className="w-full lg:w-7/12 flex flex-col justify-center space-y-4 md:space-y-6">
-                    <div className="space-y-2">
-                      <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">
-                        {service.category}
-                      </span>
-                      <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight leading-tight">
-                        {service.title}
-                      </h3>
-                    </div>
+            {/* WHY CHOOSE SECTION */}
+            {service.whyChoose && (
+              <div className="mt-4 md:mt-6 bg-[#F3EEEA] border border-[#E5DCD5] rounded-xl md:rounded-2xl p-5 md:p-8 shadow-sm">
+                <h4 className="text-xs md:text-sm font-bold text-[#2C2825] uppercase tracking-wider mb-4 md:mb-5 border-b border-[#E5DCD5] pb-3">
+                  Why Choose Our {service.badge}?
+                </h4>
+                <ul className="space-y-3 md:space-y-4">
+                  {service.whyChoose.map((reason, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm md:text-base text-[#6B635B]">
+                      <span className="text-[#BD6E44] font-bold text-lg leading-none">✓</span>
+                      <span>{reason}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-                    <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light">
-                      {service.desc}
-                    </p>
-
-                    {/* Features List */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 md:gap-y-3 pt-2">
-                      {service.highlights.map((item, i) => (
-                        <div key={i} className="flex items-start gap-3 text-xs md:text-sm text-[#4A433D]">
-                          <span className="flex-shrink-0 w-4 h-4 md:w-5 md:h-5 rounded bg-[#F3EEEA] text-[#BD6E44] border border-[#E5DCD5] flex items-center justify-center font-bold text-[8px] md:text-[10px] mt-0.5">
-                            ✦
-                          </span>
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* WHY CHOOSE SECTION */}
-                    {service.whyChoose && (
-                      <div className="mt-6 md:mt-8 bg-[#F3EEEA] border border-[#E5DCD5] rounded-xl md:rounded-2xl p-4 md:p-6 shadow-sm">
-                        <h4 className="text-[10px] md:text-sm font-bold text-[#2C2825] uppercase tracking-wider mb-3 md:mb-4 border-b border-[#E5DCD5] pb-2 md:pb-3">
-                          Why Choose Our {service.badge}?
-                        </h4>
-                        <ul className="space-y-2 md:space-y-2.5">
-                          {service.whyChoose.map((reason, i) => (
-                            <li key={i} className="flex items-start gap-3 text-xs md:text-sm text-[#6B635B]">
-                              <span className="text-[#BD6E44] font-bold">✓</span>
-                              <span>{reason}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                  </div>
-                </motion.div>
-              );
-            })}
           </div>
-        </section>
-
+        </motion.div>
+      );
+    })}
+  </div>
+</section>
     
 
         {/* WHY CHOOSE US */}

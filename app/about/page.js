@@ -22,47 +22,7 @@ const AboutUs = () => {
   return (
     <div className="bg-[#FCFBF9] min-h-screen font-sans selection:bg-[#A64B2A] selection:text-white pb-20">
       
-    <section className="relative overflow-hidden bg-[#2C1E16] py-16 lg:py-14">
-      {/* 1. Digital Cyber Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px]" />
-
-      {/* 2. Ambient Light Glows (High-Tech Feel) */}
-      <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#C87D55]/25 blur-[100px]" />
-      <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-[#C87D55]/15 blur-[120px]" />
-
-      <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center lg:px-10">
-        
-        {/* Left Content */}
-        <div className="z-10 max-w-2xl">
-          {/* Glass Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#C87D55]/30 bg-[#C87D55]/10 px-3.5 py-1.5 text-xs font-medium text-[#C87D55] backdrop-blur-md">
-            <Sparkles className="h-3.5 w-3.5 text-[#C87D55]" />
-            <span>Digital Transformation Leader</span>
-          </div>
-
-          {/* Heading with Soft Gradient */}
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-[#F7F3E8] md:text-6xl">
-            About <span className="bg-gradient-to-r from-[#F7F3E8] via-[#E2B398] to-[#C87D55] bg-clip-text text-transparent">Us</span>
-          </h1>
-
-          <p className="mt-3 text-base text-[#F7F3E8]/80 md:text-lg">
-            Empowering businesses with strategic, secure, and cutting-edge digital solutions.
-          </p>
-
-          {/* Modern Interactive Breadcrumb */}
-          <nav className="mt-6 flex items-center gap-2 text-sm text-[#F7F3E8]/70">
-            <a href="/" className="flex items-center gap-1.5 hover:text-[#F7F3E8] transition-colors">
-              <Home className="h-4 w-4 text-[#C87D55]" />
-              <span>Home</span>
-            </a>
-            <ChevronRight className="h-4 w-4 text-[#C87D55]" />
-            <span className="font-medium text-[#F7F3E8]">About Us</span>
-          </nav>
-        </div>
-
-  
-      </div>
-    </section>
+ 
 
 
       {/* 1. HERO & COMPANY OVERVIEW (Redesigned matching the reference layout) */}
@@ -104,8 +64,8 @@ const AboutUs = () => {
                   <User size={36} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h4 className="text-3xl sm:text-4xl font-extrabold text-[#2A2320] leading-none mb-1">240+</h4>
-                  <p className="text-sm sm:text-base text-gray-500 font-medium leading-none">Projects Completed</p>
+                  <h4 className="text-3xl sm:text-4xl font-extrabold text-[#2A2320] leading-none mb-1">2010</h4>
+                  <p className="text-sm sm:text-base text-gray-500 font-medium leading-none">Since</p>
                 </div>
               </div>
             </motion.div>

@@ -116,7 +116,7 @@ export function About() {
                   </div>
                   <div>
                     <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#C46A42]">
-                      <AnimatedNumber value={2001}    duration={3000} />
+                      <AnimatedNumber value={2010}    duration={3000} />
                     </p>
                     <p className="text-[9px] sm:text-[10px] lg:text-xs font-semibold uppercase tracking-wider opacity-80 mt-1 sm:mt-1.5">Since</p>
                   </div>
