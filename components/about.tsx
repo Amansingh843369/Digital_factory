@@ -91,16 +91,16 @@ export function About() {
               }}
             >
               <Image
-                src="/about.jpg" 
+                src="/images/about.png" 
                 alt="Digital Factory Team"
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover  object-center transition-transform duration-1000 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 40vw"
               />
               
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-900/40 to-transparent" />
+ 
               
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 backdrop-blur-md bg-white/5 border-t border-white/10 z-10">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 backdrop-blur-md bg-black/70 border-t border-white/10 z-10">
                 <div className="grid grid-cols-3 gap-2 sm:gap-4 text-white text-center">
                   <div>
                     <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#C46A42]">
