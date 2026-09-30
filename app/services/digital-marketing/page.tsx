@@ -76,10 +76,10 @@ export default function DigitalMarketingPage() {
     },
     {
       category: "Paid Advertising", 
-      title: "Pay-Per-Click Advertising (PPC & Ads)",
+      title: "Pay-Per-Click Advertising (PPC)",
       desc: "Drive targeted traffic instantly with well-optimized ad campaigns tailored for conversions.",
       highlights: [ "Google Ads (Search, Display, Shopping)", "Social Media Ads (Facebook, Instagram, LinkedIn)", "Remarketing & Retargeting Campaigns", "Conversion Rate Optimization (CRO)", "Ad Copywriting & Creative Design", "Campaign Monitoring & Analytics" ],
-      image: "/new.jpeg", 
+      image: "/ppc.png", 
       badge: "Performance Ads"
     },
     {
@@ -87,7 +87,7 @@ export default function DigitalMarketingPage() {
       title: "Social Media Marketing & Management",
       desc: "Engage your audience and build strong brand loyalty through high-impact social media platforms.",
       highlights: [ "Social Media Strategy & Planning", "Content Creation (graphics, videos, reels)", "Social Media Account Management", "Community Building & Engagement", "Influencer Collaboration & Campaigns", "Social Media Analytics & Reporting" ],
-      image: "/social-media.jpg", 
+      image: "/smm.png", 
       badge: "Social Media"
     },
     {
@@ -127,7 +127,7 @@ export default function DigitalMarketingPage() {
       title: "Brand Development",
       desc: "Build a strong, memorable brand that connects with your target audience and creates lasting value.",
       highlights: [ "Brand Strategy & Positioning", "Logo & Visual Identity Design", "Brand Guidelines & Identity Systems", "Social Media Branding & Collateral", "Brand Messaging & Communication", "Brand Awareness Campaigns" ],
-      image: "/brand.jpg", 
+      image: "/b.png", 
       badge: "Brand Identity"
     },
     {
@@ -239,9 +239,9 @@ export default function DigitalMarketingPage() {
         >
           <motion.img 
             style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
-            src="https://t4.ftcdn.net/jpg/07/07/02/79/360_F_707027965_o1Nawl8IUYvBowX2BWbJBO8lAyHtkuIa.jpg" 
+            src="/dig-banner.png" 
             alt="Dashboard Analytics" 
-            className="w-full h-full object-cover transform-origin-top will-change-transform"
+            className="w-full h-full object-fill transform-origin-top will-change-transform"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1C1614] via-[#1C1614]/20 to-transparent flex items-end p-6 md:p-14">
             <div className="text-white space-y-3">
