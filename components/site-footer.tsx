@@ -203,21 +203,14 @@ export function SiteFooter() {
               {/* Social Media Links */}
               <div className="mt-6 flex items-center gap-3">
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=100067236799779"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white"
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                   </svg>
                 </Link>
-                <Link
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white"
-                >
-                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </Link>
+            
                 <Link
                   href="#"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white"
