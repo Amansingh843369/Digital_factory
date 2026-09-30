@@ -84,7 +84,7 @@ export function Hero() {
       >
         <div className="relative h-full w-full lg:w-[45%] bg-gray-100 opacity-20 lg:opacity-100 transition-opacity">
           <Image
-            src="/images/hero-workspace.png" 
+            src="/images/home-page.png" 
             alt="Digital Factory Engineering Team"
             fill
             className="object-cover object-center"
