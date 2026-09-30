@@ -19,7 +19,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 }
+    transition: { staggerChildren: 0.15 } // Slightly slower stagger for better effect
   }
 };
 
@@ -49,16 +49,16 @@ export default function WebsiteDevelopmentPage() {
     return () => { if (lenis) lenis.destroy(); };
   }, []);
 
-  // Parallax Hooks for Background Only
+  // Parallax Hooks
   const containerRef = React.useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
   const yHeroBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
-  // Accordion State for FAQ
+  // Accordion State
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
   const toggleAccordion = (index: number) => setOpenAccordion(openAccordion === index ? null : index);
 
-  // --- WEBSITE DEVELOPMENT SERVICES DATA ---
+  // --- DATA ---
   const services = [
     {
       category: "Corporate Presence",
@@ -73,7 +73,7 @@ export default function WebsiteDevelopmentPage() {
         "Corporate Intranet / Extranet Solutions",
         "Maintenance & Ongoing Support"
       ],
-      image: "/Corporate.png",
+      image: "/corporates.png",
       badge: "Corporate"
     },
     {
@@ -90,13 +90,8 @@ export default function WebsiteDevelopmentPage() {
         "User Account & Loyalty Programs",
         "Analytics & Sales Tracking"
       ],
-      whyChoose: [
-        "Secure Payment Processing",
-        "Scalable Product Management",
-        "Conversion-Optimized Checkout",
-        "Real-time Inventory Sync"
-      ],
-      image: "/eco.png", 
+      
+      image: "/ecommerce.png", 
       badge: "E-Commerce"
     },
     {
@@ -112,21 +107,19 @@ export default function WebsiteDevelopmentPage() {
         "Mobile-First Design",
         "Call-to-Action Strategy & Tracking"
       ],
-      image: "https://images.unsplashcrop&q=80&w=1200",
+      image: "/images/image.png",
       badge: "Landing Pages"
     }
   ];
 
-  // WHY CHOOSE US DATA
+  // UPDATED WHY CHOOSE US DATA WITH NUMBERS
   const whyChooseUs = [
-    { title: "Modern, User-Friendly Designs", desc: "Visually appealing interfaces that engage users and reflect your brand identity perfectly.", icon: "🚀" },
-    { title: "Custom-Built Solutions", desc: "Tailored specifically to your needs, not just generic templates. Built for performance.", icon: "🛠️" },
-    { title: "End-to-End Support", desc: "From initial design and development to ongoing maintenance and updates.", icon: "🔄" },
-    { title: "Security & Compliance", desc: "Built-in security protocols including SSL, HTTPS, and encrypted data handling.", icon: "🔐" },
-    { title: "Focused on Growth", desc: "Every element is designed to drive conversions and support your business expansion.", icon: "📈" }
+    { id: "01", title: "Modern, User-Friendly Designs", desc: "Visually appealing interfaces that engage users and reflect your brand identity perfectly.", icon: "🚀" },
+    { id: "02", title: "Custom-Built Solutions", desc: "Tailored specifically to your needs, not just generic templates. Built for performance.", icon: "🛠️" },
+    { id: "03", title: "End-to-End Support", desc: "From initial design and development to ongoing maintenance and updates.", icon: "🔄" },
+    { id: "04", title: "Security & Compliance", desc: "Built-in security protocols including SSL, HTTPS, and encrypted data handling.", icon: "🔐" }
   ];
 
-  // FAQ DATA
   const faqs = [
     { question: "How long does it take to build a website?", answer: "Timelines vary based on complexity. A standard corporate site typically takes 4-6 weeks, while complex e-commerce platforms may require 8-12 weeks. We provide detailed roadmaps after initial scoping." },
     { question: "Do you provide SEO services with the website?", answer: "Yes. Every website we build comes with an SEO-friendly structure, fast loading speeds, and mobile-first design principles to ensure you rank well on search engines from day one." },
@@ -143,47 +136,32 @@ export default function WebsiteDevelopmentPage() {
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#BD6E44]/10 rounded-full blur-[140px] pointer-events-none" 
       />
 
-      {/* MAIN CONTENT WRAPPER */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 relative z-10">
         
-   {/* HERO SECTION */}
+        {/* HERO SECTION */}
         <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-16 lg:pt-1 pb-12 flex flex-col items-center">
-          
-          {/* Centered Breadcrumb Pill */}
           <motion.nav 
             initial={{ opacity: 0, y: -10 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.6 }}
             className="mb-8 inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white border border-[#E5DCD5] shadow-[0_2px_10px_-4px_rgba(0,0,0,0.08)]"
           >
-            <a href="/" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">
-              Home
-            </a>
-            
+            <a href="/" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">Home</a>
             <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
-            
-            <a href="/#services" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">
-              Services
-            </a>
-            
+            <a href="/#services" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">Services</a>
             <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
-            
-            <span className="text-[#BD6E44] text-sm md:text-[15px] font-bold">
-              Website Development
-            </span>
+            <span className="text-[#BD6E44] text-sm md:text-[15px] font-bold">Website Development</span>
           </motion.nav>
 
-          {/* Headline */}
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mb-6 md:mb-8 text-5xl sm:text-6xl md:text-7xl lg:text-[4rem] font-black text-[#272422] tracking-tighter leading-[1.05]"
           >
-            Websites That Drive Business Growth
+            Websites That Drive  <br /> Business Growth
           </motion.h1>
 
-          {/* Subheadline */}
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -193,7 +171,6 @@ export default function WebsiteDevelopmentPage() {
             At Digital Factory, we design and develop websites that are not only visually appealing but also optimized for performance, usability, and conversions.
           </motion.p>
 
-          {/* CTA Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -206,10 +183,9 @@ export default function WebsiteDevelopmentPage() {
               href="#contact"
               className="w-full sm:w-auto px-8 py-4 md:px-10 md:py-4.5 rounded-full bg-[#BD6E44] text-white font-bold text-sm md:text-base tracking-wide shadow-xl shadow-[#BD6E44]/30 hover:bg-[#A65E38] transition-all flex items-center justify-center gap-2 group"
             >
-              <span>Get a Free Consultation →</span>
+              <span>Start Your Website </span>
             </motion.a>
           </motion.div>
-          
         </section>
 
         {/* INTRO BLOCK */}
@@ -225,181 +201,174 @@ export default function WebsiteDevelopmentPage() {
           </p>
         </motion.section>
 
-      {/* PARALLAX HERO SHOWCASE - CONSISTENT SIZING */}
-<motion.div 
-  initial={{ opacity: 0, y: 40 }} 
-  animate={{ opacity: 1, y: 0 }} 
-  transition={{ duration: 0.9, delay: 0.2, ease: customEase }}
-  // FIXED HEIGHTS: Mobile 300px, Tablet 400px, Desktop 500px
-  className="mt-10 md:mt-20 rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-[#E5DCD5] shadow-xl relative h-[300px] sm:h-[400px] md:h-[500px]"
->
-  <motion.img 
-    style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
-    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" 
-    alt="Website Development Workspace" 
-    // object-cover ensures image fills the fixed height without stretching
-    className="w-full h-full object-cover transform-origin-top will-change-transform"
-  />
-  
-  {/* Gradient Overlay & Content */}
-  <div className="absolute inset-0 bg-gradient-to-t from-[#2C2825]/90 via-[#2C2825]/20 to-transparent flex items-end p-6 md:p-14">
-    <div className="text-white space-y-3 w-full">
-      <span className="inline-block text-[10px] md:text-xs font-mono font-bold text-[#FAF8F5] uppercase tracking-widest backdrop-blur-md bg-[#BD6E44]/80 px-4 py-1.5 rounded-full border border-white/20">
-        Digital Excellence
-      </span>
-      <h3 className="text-xl sm:text-3xl md:text-5xl font-bold tracking-tight leading-tight max-w-4xl">
-        Performance. Usability. Conversion.
-      </h3>
-    </div>
-  </div>
-</motion.div>
-
-        {/* SERVICES ZIG-ZAG WITH DIRECTIONAL CURTAIN REVEAL */}
-<section id="services" className="py-12 md:py-24">
-  <div className="text-center max-w-2xl mx-auto space-y-4 mb-16 md:mb-24 px-4">
-    <span className="text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">Our Expertise</span>
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#2C2825] tracking-tight">Website Development Services</h2>
-  </div>
-
-  <div className="space-y-20 md:space-y-32"> {/* Increased vertical spacing between items */}
-    {services.map((service, index) => {
-      const isEven = index % 2 === 0;
-      
-      // LOGIC FOR DIRECTIONAL REVEAL
-      const revealClip = isEven 
-        ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] // Left to Right
-        : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; // Right to Left
-
-      return (
+        {/* PARALLAX HERO SHOWCASE */}
         <motion.div 
-          key={index}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={fadeInUp}
-          className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-8 md:gap-16 px-4 md:px-0`}
+          initial={{ opacity: 0, y: 40 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.9, delay: 0.2, ease: customEase }}
+          className="mt-10 md:mt-20 rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-[#E5DCD5] shadow-xl relative h-[300px] sm:h-[400px] md:h-[500px]"
         >
-          {/* IMAGE SIDE WITH DIRECTIONAL CURTAIN REVEAL EFFECT */}
-          <div className="w-full lg:w-5/12 relative group">
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.5, ease: customEase }}
-              className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-xl bg-[#F3EEEA] h-full min-h-[350px] md:min-h-[500px]" // Increased min-height
-            >
-              {/* The Mask Container using Clip Path */}
-              <motion.div 
-                initial={{ clipPath: revealClip[0] }}
-                whileInView={{ clipPath: revealClip[1] }}
-                transition={{ duration: 1.4, ease: customEase, delay: 0.2 }}
-                className="w-full h-full relative"
-              >
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5]/60 via-transparent to-transparent opacity-80" />
-              </motion.div>
-
-              {/* Floating Tech Badge */}
-              <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-[#FAF8F5]/90 backdrop-blur-md border border-[#E5DCD5] px-3 py-1.5 md:px-4 md:py-2 rounded-xl shadow-md flex items-center gap-3 z-20">
-                <span className="font-mono text-[10px] md:text-sm font-bold text-[#BD6E44]">{String(index + 1).padStart(2, '0')}</span>
-                <span className="text-[10px] md:text-xs font-bold text-[#2C2825] uppercase tracking-wider">{service.badge}</span>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* CONTENT BLOCK */}
-          <div className="w-full lg:w-7/12 flex flex-col justify-center space-y-6 md:space-y-8"> {/* Adjusted inner spacing */}
-            <div className="space-y-3">
-              <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">
-                {service.category}
+          <motion.img 
+            style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
+            src="/images/image2.png" 
+            alt="Website Development Workspace" 
+            className="absolute inset-0 w-full h-full object-cover transform-origin-top will-change-transform"
+          />
+          
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2C2825]/90 via-[#2C2825]/20 to-transparent flex items-end justify-start p-6 md:p-14">
+            <div className="text-white space-y-3 max-w-3xl text-left">
+              <span className="inline-block text-[10px] md:text-xs font-mono font-bold text-[#FAF8F5] uppercase tracking-widest backdrop-blur-md bg-[#BD6E44]/80 px-4 py-1.5 rounded-full border border-white/20">
+                Digital Excellence
               </span>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight leading-tight">
-                {service.title}
+              <h3 className="text-xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+                Performance. Usability. Conversion.
               </h3>
             </div>
-
-            <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light">
-              {service.desc}
-            </p>
-
-            {/* Features List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 md:gap-y-4 pt-2">
-              {service.highlights.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 text-xs md:text-sm text-[#4A433D]">
-                  <span className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded bg-[#F3EEEA] text-[#BD6E44] border border-[#E5DCD5] flex items-center justify-center font-bold text-[10px] md:text-xs mt-0.5">
-                    ✦
-                  </span>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* WHY CHOOSE SECTION */}
-            {service.whyChoose && (
-              <div className="mt-4 md:mt-6 bg-[#F3EEEA] border border-[#E5DCD5] rounded-xl md:rounded-2xl p-5 md:p-8 shadow-sm">
-                <h4 className="text-xs md:text-sm font-bold text-[#2C2825] uppercase tracking-wider mb-4 md:mb-5 border-b border-[#E5DCD5] pb-3">
-                  Why Choose Our {service.badge}?
-                </h4>
-                <ul className="space-y-3 md:space-y-4">
-                  {service.whyChoose.map((reason, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm md:text-base text-[#6B635B]">
-                      <span className="text-[#BD6E44] font-bold text-lg leading-none">✓</span>
-                      <span>{reason}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
           </div>
         </motion.div>
-      );
-    })}
-  </div>
-</section>
-    
 
-        {/* WHY CHOOSE US */}
+        {/* SERVICES ZIG-ZAG */}
+        <section id="services" className="py-12 md:py-24">
+          <div className="text-center max-w-2xl mx-auto space-y-4 mb-16 md:mb-24 px-4">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">Our Expertise</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#2C2825] tracking-tight">Website Development Services</h2>
+          </div>
+
+          <div className="space-y-20 md:space-y-32">
+            {services.map((service, index) => {
+              const isEven = index % 2 === 0;
+              const revealClip = isEven 
+                ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] 
+                : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; 
+
+              return (
+                <motion.div 
+                  key={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
+                  variants={fadeInUp}
+                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-8 md:gap-16 px-4 md:px-0`}
+                >
+                  <div className="w-full lg:w-5/12 relative group">
+                    <motion.div 
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.5, ease: customEase }}
+                      className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-xl bg-[#F3EEEA] h-full min-h-[350px] md:min-h-[500px]"
+                    >
+                      <motion.div 
+                        initial={{ clipPath: revealClip[0] }}
+                        whileInView={{ clipPath: revealClip[1] }}
+                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }}
+                        className="w-full h-full relative"
+                      >
+                        <img 
+                          src={service.image} 
+                          alt={service.title} 
+                          className="w-full h-full object-cover opacity-90 group-hover:opacity-100"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5]/60 via-transparent to-transparent opacity-80" />
+                      </motion.div>
+
+                      <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-[#FAF8F5]/90 backdrop-blur-md border border-[#E5DCD5] px-3 py-1.5 md:px-4 md:py-2 rounded-xl shadow-md flex items-center gap-3 z-20">
+                        <span className="font-mono text-[10px] md:text-sm font-bold text-[#BD6E44]">{String(index + 1).padStart(2, '0')}</span>
+                        <span className="text-[10px] md:text-xs font-bold text-[#2C2825] uppercase tracking-wider">{service.badge}</span>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  <div className="w-full lg:w-7/12 flex flex-col justify-center space-y-6 md:space-y-8">
+                    <div className="space-y-3">
+                      <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">
+                        {service.category}
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight leading-tight">
+                        {service.title}
+                      </h3>
+                    </div>
+
+                    <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light">
+                      {service.desc}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 md:gap-y-4 pt-2">
+                      {service.highlights.map((item, i) => (
+                        <div key={i} className="flex items-start gap-3 text-xs md:text-sm text-[#4A433D]">
+                          <span className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded bg-[#F3EEEA] text-[#BD6E44] border border-[#E5DCD5] flex items-center justify-center font-bold text-[10px] md:text-xs mt-0.5">
+                            ✦
+                          </span>
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {service.whyChoose && (
+                      <div className="mt-4 md:mt-6 bg-[#F3EEEA] border border-[#E5DCD5] rounded-xl md:rounded-2xl p-5 md:p-8 shadow-sm">
+                        <h4 className="text-xs md:text-sm font-bold text-[#2C2825] uppercase tracking-wider mb-4 md:mb-5 border-b border-[#E5DCD5] pb-3">
+                          Why Choose Our {service.badge}?
+                        </h4>
+                        <ul className="space-y-3 md:space-y-4">
+                          {service.whyChoose.map((reason, i) => (
+                            <li key={i} className="flex items-start gap-3 text-sm md:text-base text-[#6B635B]">
+                              <span className="text-[#BD6E44] font-bold text-lg leading-none">✓</span>
+                              <span>{reason}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
+    
+        {/* UPDATED WHY CHOOSE US - 2x2 GRID WITH NUMBERED BOXES */}
         <motion.section 
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="mt-16 md:mt-32 max-w-5xl mx-auto bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 md:p-14 rounded-2xl md:rounded-3xl shadow-sm relative overflow-hidden"
+          className="mt-16 md:mt-32 max-w-5xl mx-auto px-4"
         >
-          <div className="absolute -top-10 -left-10 w-32 h-32 md:w-40 md:h-40 bg-[#BD6E44]/15 blur-3xl rounded-full" />
-          <div className="absolute -bottom-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-[#BD6E44]/15 blur-3xl rounded-full" />
+          <div className="text-center max-w-2xl mx-auto space-y-3 mb-12 md:mb-16">
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">The Digital Factory Advantage</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Choose Digital Factory?</h2>
+          </div>
 
-          <div className="relative z-10">
-            <div className="text-center max-w-2xl mx-auto space-y-3 mb-8 md:mb-12">
-              <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">The Digital Factory Advantage</span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Choose Digital Factory?</h2>
-            </div>
+          {/* 2x2 Grid Layout */}
+          <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {whyChooseUs.map((item, idx) => (
+              <motion.div 
+                key={idx} 
+                variants={fadeInUp}
+                whileHover={{ y: -5 }}
+                className="relative bg-[#F3EEEA] border border-[#E5DCD5] p-8 md:p-10 rounded-2xl md:rounded-3xl shadow-sm group hover:border-[#BD6E44]/30 hover:shadow-lg transition-all duration-300 overflow-hidden"
+              >
+                {/* Number Badge in Corner */}
+                <div className="absolute top-6 right-6 md:top-8 md:right-8 text-4xl md:text-5xl font-black text-[#BD6E44]/10 group-hover:text-[#BD6E44]/20 transition-colors select-none">
+                  {item.id}
+                </div>
 
-            <motion.div variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
-              {whyChooseUs.map((item, idx) => (
-                <motion.div 
-                  key={idx} variants={fadeInUp}
-                  whileHover={{ y: -4 }}
-                  className="bg-[#FAF8F5] border border-[#E5DCD5] p-5 md:p-6 rounded-xl md:rounded-2xl shadow-sm group hover:border-[#BD6E44]/40 transition-all duration-300"
-                >
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#BD6E44] flex items-center justify-center text-lg md:text-xl mb-3 md:mb-4 group-hover:bg-[#BD6E44] group-hover:text-white group-hover:border-[#BD6E44] transition-all duration-300">
+                <div className="relative z-10">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#FAF8F5] border border-[#E5DCD5] text-[#BD6E44] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#BD6E44] group-hover:text-white group-hover:border-[#BD6E44] transition-all duration-300 shadow-sm">
                     {item.icon}
                   </div>
-                  <h3 className="text-base md:text-lg font-bold text-[#2C2825] mb-2 group-hover:text-[#BD6E44] transition-colors duration-300">
+                  
+                  <h3 className="text-xl md:text-2xl font-bold text-[#2C2825] mb-3 group-hover:text-[#BD6E44] transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-[#6B635B] leading-relaxed font-light">
+                  
+                  <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light pr-8">
                     {item.desc}
                   </p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.section>
 
         {/* FAQ SECTION */}
-        <section className="mt-16 md:mt-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start">
+        <section className="mt-16 md:mt-32 px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start max-w-7xl mx-auto">
             
             <div className="lg:col-span-5 space-y-4 md:space-y-6 lg:sticky lg:top-32">
               <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">Common Questions</span>
@@ -458,57 +427,54 @@ export default function WebsiteDevelopmentPage() {
                 );
               })}
             </div>
-
           </div>
         </section>
 
-       {/* ATTRACTIVE & SHORT CTA SECTION */}
-<motion.section 
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6 }}
-  id="contact"
-  className="mt-12 md:mt-20 relative"
->
-  <div className="relative rounded-2xl md:rounded-3xl bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 md:p-12 text-center overflow-hidden shadow-lg">
-    
-    {/* Centered Ambient Glow */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#BD6E44]/15 rounded-full blur-[90px] pointer-events-none" />
-
-    <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-      <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight leading-tight text-[#2C2825]">
-        Ready to Stand Out Online? <br />
-        <span className="text-[#BD6E44]">Let’s Build Your Website.</span>
-      </h2>
-
-      <p className="text-[#6B635B] text-sm sm:text-base max-w-lg mx-auto">
-        Turn visitors into customers with a custom high-converting website tailored for your business.
-      </p>
-
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
-        <motion.a
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.96 }}
-          href="#contact-form"
-          className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#BD6E44] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#BD6E44]/25 hover:bg-[#A65E38] transition-all flex items-center justify-center gap-2 group"
+        {/* CTA SECTION */}
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          id="contact"
+          className="mt-12 md:mt-20 relative px-4"
         >
-          <span>Claim Free Consultation</span>
-          <span className="group-hover:translate-x-1 transition-transform">→</span>
-        </motion.a>
+          <div className="relative rounded-2xl md:rounded-3xl bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 md:p-12 text-center overflow-hidden shadow-lg max-w-5xl mx-auto">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#BD6E44]/15 rounded-full blur-[90px] pointer-events-none" />
 
-        <motion.a
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          href="tel:+919833624073"
-          className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#E5DCD5] text-[#2C2825] font-semibold text-sm hover:bg-[#E5DCD5]/60 transition-all"
-        >
-          📞 9833-624-073
-        </motion.a>
-      </div>
-    </div>
-  </div>
-</motion.section>
+            <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight leading-tight text-[#2C2825]">
+                Ready to Stand Out Online? <br />
+                <span className="text-[#BD6E44]">Let’s Build Your Website.</span>
+              </h2>
+
+              <p className="text-[#6B635B] text-sm sm:text-base max-w-lg mx-auto">
+                Turn visitors into customers with a custom high-converting website tailored for your business.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
+                <motion.a
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  href="#contact-form"
+                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#BD6E44] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#BD6E44]/25 hover:bg-[#A65E38] transition-all flex items-center justify-center gap-2 group"
+                >
+                  <span>Claim Free Consultation</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </motion.a>
+
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  href="tel:+919833624073"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#E5DCD5] text-[#2C2825] font-semibold text-sm hover:bg-[#E5DCD5]/60 transition-all"
+                >
+                  📞 9833-624-073
+                </motion.a>
+              </div>
+            </div>
+          </div>
+        </motion.section>
 
       </main>
     </div>

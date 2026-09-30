@@ -43,6 +43,14 @@ interface Service {
   badge: string;
 }
 
+
+ const whyChooseUs = [
+    { id: "01", title: "Modern, User-Friendly Designs", desc: "Visually appealing interfaces that engage users and reflect your brand identity perfectly.", icon: "🚀" },
+    { id: "02", title: "Custom-Built Solutions", desc: "Tailored specifically to your needs, not just generic templates. Built for performance.", icon: "🛠️" },
+    { id: "03", title: "End-to-End Support", desc: "From initial design and development to ongoing maintenance and updates.", icon: "🔄" },
+    { id: "04", title: "Security & Compliance", desc: "Built-in security protocols including SSL, HTTPS, and encrypted data handling.", icon: "🔐" }
+  ];
+  
 const SERVICES: Service[] = [
   {
     num: "01",
@@ -73,7 +81,7 @@ const SERVICES: Service[] = [
       "Data Security & Compliance",
       "Ongoing Maintenance & Scaling"
     ],
-    image: "/Saas.jpg",
+    image: "/saas.png",
     badge: "Saas Platform"
   },
   {
@@ -89,7 +97,7 @@ const SERVICES: Service[] = [
       "App Store & Play Store Deployment",
       "Performance Optimization & Updates"
     ],
-    image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&q=80&w=1200",
+    image: "/an.png",
     badge: "Mobile Apps"
   },
   
@@ -107,13 +115,7 @@ const SERVICES: Service[] = [
       "Business Process Automation",
       "Real-Time Analytics & Reporting"
     ],
-    whyChoose: [
-      "Centralized Business Management",
-      "Improved Operational Efficiency",
-      "Customized Solutions for Your Business",
-      "Real-Time Data & Reporting",
-      "Scalable & Secure ERP Solutions"
-    ],
+     
     image: "/ERP.png",
     badge: "ERP Systems"
   },
@@ -130,12 +132,7 @@ const SERVICES: Service[] = [
       "Predictive Data Analytics",
       "Workflow Process Optimization"
     ],
-    whyChoose: [
-      "Smarter & Faster Decision Making",
-      "Customized AI Architecture",
-      "Seamless API-Driven Integration",
-      "Reduced Operational Overhead"
-    ],
+ 
     image: "/ai.png",
     badge: "AI Solutions"
   },
@@ -669,6 +666,50 @@ export default function SoftwareDevelopmentPage() {
     </div>
   </div>
 </motion.section>
+
+
+
+ <motion.section 
+          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="mt-16 md:mt-32 max-w-5xl mx-auto px-4"
+        >
+          <div className="text-center max-w-2xl mx-auto space-y-3 mb-12 md:mb-16">
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">The Digital Factory Advantage</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Choose Digital Factory?</h2>
+          </div>
+
+          {/* 2x2 Grid Layout */}
+          <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {whyChooseUs.map((item, idx) => (
+              <motion.div 
+                key={idx} 
+                variants={fadeInUp}
+                whileHover={{ y: -5 }}
+                className="relative bg-[#F3EEEA] border border-[#E5DCD5] p-8 md:p-10 rounded-2xl md:rounded-3xl shadow-sm group hover:border-[#BD6E44]/30 hover:shadow-lg transition-all duration-300 overflow-hidden"
+              >
+                {/* Number Badge in Corner */}
+                <div className="absolute top-6 right-6 md:top-8 md:right-8 text-4xl md:text-5xl font-black text-[#BD6E44]/10 group-hover:text-[#BD6E44]/20 transition-colors select-none">
+                  {item.id}
+                </div>
+
+                <div className="relative z-10">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#FAF8F5] border border-[#E5DCD5] text-[#BD6E44] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#BD6E44] group-hover:text-white group-hover:border-[#BD6E44] transition-all duration-300 shadow-sm">
+                    {item.icon}
+                  </div>
+                  
+                  <h3 className="text-xl md:text-2xl font-bold text-[#2C2825] mb-3 group-hover:text-[#BD6E44] transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  
+                  <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light pr-8">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.section>
+
       </main>
     </div>
   );
