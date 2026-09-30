@@ -84,26 +84,15 @@ export function WhyChooseUs() {
       
       {/* Sticky Container (Sticky only on Desktop) */}
       <div className="lg:sticky lg:top-20 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 lg:pt-10">
-        
+         <h2 className="text-3xl sm:text-4xl lg:text-3xl text-center text-neutral-900 tracking-tight">
+                See The Difference When  You<span className="text-[brown]"> Choose Us</span>   . 
+              </h2> 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start lg:items-center">
           
           {/* ================= LEFT SIDE: HEADINGS & TABS ================= */}
           <div className="lg:col-span-4 space-y-6 lg:space-y-8">
             
-            <div className="space-y-4">
-              {/* <div className="inline-flex items-center gap-2 text-[12px] sm:text-[15px] font-bold uppercase tracking-wider text-neutral-800">
-                <span className="h-2 w-2 rounded-full bg-neutral-900" />
-                 See The Difference When You Choose Us.
-              </div> */}
-              <h2 className="text-3xl sm:text-4xl lg:text-3xl  text-neutral-900 tracking-tight">
-                See The Difference When You Choose Us. 
-              </h2> 
-
-              {/* <h2 className="text-3xl sm:text-4xl lg:text-4xl  text-neutral-900 tracking-tight">
-                See The Difference When You <br className="hidden sm:block" />
-                <span className="italic font-normal">Choose Us.</span>
-              </h2> */}
-            </div>
+            
 
             {/* Tabs - Horizontal on Mobile, Vertical on Desktop */}
             <div className="flex flex-row lg:flex-col gap-3 lg:gap-0 lg:space-y-3 pt-2 lg:pt-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 snap-x hide-scrollbar [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">

@@ -11,7 +11,7 @@ export default function ParallaxPage() {
         className="h-80 w-full bg-fixed bg-center bg-cover bg-no-repeat flex items-center justify-center"
         style={{ 
           // Yahan apni pasand ki image ka URL daalein
-          backgroundImage: "url('/digital-bg.webp')", 
+          backgroundImage: "url('https://www.spicex.com/wp-content/uploads/2023/07/digital-transformation.webp)", 
         }}
       >
          

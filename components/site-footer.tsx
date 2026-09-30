@@ -296,7 +296,7 @@ export function SiteFooter() {
                   >
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C46A42]" />
                     <span className="text-[13px] leading-relaxed text-neutral-600 transition-colors group-hover:text-neutral-950">
-                      912, 72 Corp, Saki Vihar Road, <br /> Sakinaka Junction, Andheri East, Mumbai, Maharashtra – 400072, <br /> India
+                      912, 72 Corp, Saki Vihar Road, <br /> Sakinaka Junction, Andheri East, Mumbai – 400072, Maharashtra,  <br /> India
                     </span>
                   </a>
                 </li>

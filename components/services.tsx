@@ -56,7 +56,7 @@ const services = [
     id: "05",
     title: "Penetration Testing",
     
-    description: "Simulated real-world cyber attacks to proactively find and patch security vulnerabilities before adversaries can exploit them.",
+    description: "In today's connected business environment, cyber threats can target websites, applications, networks, cloud infrastructure, APIs, and digital assets at any time. A single exploitable vulnerability can result in unauthorized access, data exposure, service disruption, financial loss, and reputational damage.Digital Factory provides professional Penetration Testing and Vulnerability Assessment (VAPT) services to help organizations identify security weaknesses, evaluate their potential impact, and strengthen their cybersecurity posture. Our assessments combine automated vulnerability scanning with controlled security testing and expert analysis to provide organizations with a practical understanding of their security risks.",
     icon: TerminalSquare,
   
     link: "/services/penetration-testing"
