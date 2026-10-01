@@ -151,7 +151,7 @@ export function Hero() {
                     to-indigo-500
                     bg-clip-text
                     text-transparent
-                    lg:text-6xl
+                    lg:text-7xl
                   "
                 >
                   {typeWriterText}
@@ -185,7 +185,7 @@ export function Hero() {
               Digital Factory empowers businesses with expert engineering teams to design, build, and scale high-impact digital products.
             </motion.p>
 
-            <motion.p
+            {/* <motion.p
               variants={itemVariants}
               className="
               mt-3
@@ -200,7 +200,7 @@ export function Hero() {
               "
             >
               We transform complex challenges into secure, scalable, and <br className="hidden lg:block" /> high-performance solutions built for long-term growth.
-            </motion.p>
+            </motion.p> */}
       
             {/* =================================================
                 BUTTONS
