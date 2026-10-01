@@ -76,66 +76,32 @@ export function Hero() {
       
     
 {/* ================= CURVED VIDEO ================= */}
+{/* ================= FULL BACKGROUND VIDEO ================= */}
 <motion.div
   className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{
-    duration: 1.4,
-    ease: [0.76, 0, 0.24, 1],
+    duration: 1.5,
+    ease: "easeOut",
   }}
 >
-  <svg
-    className="absolute inset-0 w-full h-full"
-    viewBox="0 0 1920 900"
-    preserveAspectRatio="none"
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
   >
-    <defs>
-      <clipPath id="curvedVideoClip">
-        <path
-          d="
-            M 620 900
+    <source src="/homepage.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-            C 680 850, 730 810, 800 770
-            C 880 725, 930 690, 980 630
-            C 1015 590, 1015 530, 1040 480
-            C 1080 410, 1130 350, 1170 300
-            C 1210 250, 1240 190, 1300 145
-            C 1370 90, 1460 55, 1550 20
-            C 1600 0, 1640 -10, 1680 -30
+  {/* Dark/White overlay for text readability */}
+  <div className="absolute inset-0 bg-background/10" />
 
-            L 1920 -30
-            L 1920 900
-
-            Z
-          "
-        />
-      </clipPath>
-    </defs>
-
-    <foreignObject
-      x="0"
-      y="0"
-      width="1920"
-      height="900"
-      clipPath="url(#curvedVideoClip)"
-    >
-      <div className="w-full h-full">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/homepage.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </foreignObject>
-  </svg>
-
-  {/* Mobile Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent lg:hidden" />
+  {/* Optional gradient */}
+  <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-background/20" />
 </motion.div>
 
 
