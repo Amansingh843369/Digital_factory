@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -75,21 +74,25 @@ export function Hero() {
   return (
     <section className="relative min-h-[90dvh] flex items-center overflow-hidden bg-background pt-20 pb-12 sm:pt-24 sm:pb-16 lg:py-0">
       
-      {/* BACKGROUND IMAGE LAYER (Responsive Reveal) */}
+      {/* BACKGROUND VIDEO LAYER (Responsive Reveal) */}
       <motion.div
         className="absolute inset-0 z-0 flex items-center justify-end pointer-events-none"
         initial={{ clipPath: "inset(0 100% 0 0)" }}
         animate={{ clipPath: "inset(0 0% 0 0)" }}
         transition={{ duration: 1.8, ease: [0.76, 0, 0.24, 1] }}
       >
-        <div className="relative h-full w-full lg:w-[45%] bg-gray-100 opacity-20 lg:opacity-100 transition-opacity">
-          <Image
-            src="/" 
-            alt="Digital Factory Engineering Team"
-            fill
-            className="object-cover object-center"
-            priority
+        <div className="relative h-full w-full lg:w-[45%] bg-gray-100 opacity-20 lg:opacity-100 transition-opacity overflow-hidden">
+          
+          {/* REPLACED IMAGE WITH VIDEO TAG */}
+          <video
+            src="/homepage.mp4" 
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover object-center"
           />
+
           {/* Mobile Overlay for guaranteed text readability on small screens */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent lg:hidden" />
         </div>
@@ -105,8 +108,6 @@ export function Hero() {
             animate="visible"
             className="flex flex-col items-start"
           >
-            
-       
             <motion.h1
               variants={itemVariants}
               className="
@@ -162,8 +163,6 @@ export function Hero() {
               </span>
             </motion.h1>
 
-          
-
             <motion.p
               variants={itemVariants}
               className="
@@ -179,7 +178,6 @@ export function Hero() {
             >
               Digital Factory empowers businesses with expert engineering teams to design, build, and scale high-impact digital products.
             </motion.p>
-
 
             <motion.p
               variants={itemVariants}
@@ -291,7 +289,6 @@ export function Hero() {
 
               </a>
 
-
               {/* ================= EXPLORE SERVICES ================= */}
 
               <a
@@ -366,39 +363,12 @@ export function Hero() {
 
               </a>
 
-
-
-
             </motion.div>
 
-      
-
-       
-
           </motion.div>
-          
-
-
-
-
-
           
         </div>
       </div>
     </section>
   );
 }
-
-
-
-
-
-
- 
- 
-
-
-
-
-
- 

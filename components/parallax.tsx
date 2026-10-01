@@ -11,7 +11,7 @@ export default function ParallaxPage() {
         className="h-80 w-full bg-fixed bg-center bg-cover bg-no-repeat flex items-center justify-center"
         style={{ 
           // Yahan apni pasand ki image ka URL daalein
-          backgroundImage: "url()", 
+          backgroundImage: "url(/bg.png)", 
         }}
       >
          
