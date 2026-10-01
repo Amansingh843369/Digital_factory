@@ -66,7 +66,7 @@ const services = [
     title: "e-Office Management Security",
    
     description:
-      "Secure and efficient e-office management solutions that streamline digital workflows, protect sensitive data, and improve organizational productivity.",
+      " Digitalize Your Certification Body. Manage the Complete Certification Lifecycle in One Platform.office Management System is a cloud-based SaaS platform designed specifically for Certification Bodies, Conformity Assessment Bodies, Auditing Organizations and Compliance Service Providers.From the first client enquiry to certification issuance and ongoing surveillance, the platform helps organizations manage their complete certification workflow through a centralized digital system.Built around structured management system workflows, eOMS helps organizations move away from scattered Excel sheets, emails, and manual records to a centralized, organized, and traceable digital platform. ",
     icon: ShieldCheck,
    
     link: "/services/e-office-management-security"

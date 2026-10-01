@@ -52,7 +52,7 @@ const staggerContainer = {
 export function LatestNews() {
   return (
     <section id="blog" className="w-full border-t border-neutral-200/60 bg-[#FAF7F2] overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20 lg:px-8 lg:py-8">
         
         {/* ================= HEADER SECTION ================= */}
         <motion.div 
