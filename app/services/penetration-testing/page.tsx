@@ -285,27 +285,22 @@ const detailedServices = [
                <span className="text-xl leading-none font-light ml-1">→</span>
              </motion.a>
           </motion.div>
-          
+          {/* INTRO BLOCK */}
+<motion.section
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="mt-10 md:mt-7 max-w-4xl mx-auto text-center bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 rounded-2xl md:rounded-3xl shadow-sm relative overflow-hidden"
+>
+  <div className="absolute -top-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-[#BD6E44]/15 blur-3xl rounded-full" />
+
+  <p className="text-sm sm:text-base md:text-lg text-[#4A433D] leading-relaxed relative z-10">
+    Protect your business from evolving cyber threats with robust security solutions designed to safeguard your systems, data, and digital infrastructure. From vulnerability assessment and threat monitoring to secure network protection, our cybersecurity solutions help keep your business secure and resilient.
+  </p>
+</motion.section>
         </section>
 
-        {/* PARALLAX HERO SHOWCASE */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.4, ease: customEase }}
-          className="mt-10 md:mt-20 rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-[#E5D7CD] shadow-2xl relative h-[250px] sm:h-[400px] md:h-[550px]"
-        >
-          <motion.img 
-            style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
-            src="/pen.png" 
-            alt="Security Operations Center" 
-            className="w-full h-full object-cover transform-origin-top will-change-transform"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2C1E16] via-[#2C1E16]/40 to-transparent flex items-end p-6 md:p-14">
-            <div className="text-white space-y-3">
-              <span className="text-[10px] md:text-xs font-mono font-bold text-[#F7F3E8] uppercase tracking-widest backdrop-blur-md bg-[#A64B2A]/80 px-4 py-1.5 rounded-full border border-white/20">Offensive Security</span>
-              <h3 className="text-xl sm:text-3xl md:text-5xl font-bold tracking-tight">Simulate Real-World Attacks</h3>
-            </div>
-          </div>
-        </motion.div>
+       
 
         {/* ZIG-ZAG SERVICES WITH DIRECTIONAL CURTAIN REVEAL */}
         <section id="capabilities" className="mt-12 md:mt-24 space-y-8 md:space-y-25">

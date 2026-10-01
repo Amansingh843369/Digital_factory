@@ -7,21 +7,21 @@ import { motion } from "framer-motion";
 // Naya Content: Penetration Testing, Digital Marketing, Software Development
 const POSTS = [
   {
-    date: "April 10, 2026",
+    date: "Oct 01, 2026",
     title: "Advanced Penetration Testing: Finding Flaws Before Hackers Do",
     excerpt: "Modern cyber threats require proactive defense. Discover how comprehensive VAPT techniques uncover hidden vulnerabilities in your enterprise networks.",
     img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80", 
     tag: "Cybersecurity"
   },
   {
-    date: "March 28, 2026",
+    date: " Sep 28, 2026",
     title: "Building Resilience: Secure Software Development Lifecycle (SDLC)",
     excerpt: "Security shouldn't be an afterthought. Learn how to integrate robust security protocols directly into your software engineering and coding processes.",
     img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     tag: "Software Engineering"
   },
   {
-    date: "March 15, 2026",
+    date: "Sep 15, 2026",
     title: "Data-Driven Digital Marketing: Scaling Your Tech Brand",
     excerpt: "Leverage advanced analytics, SEO, and targeted campaigns to build brand authority and drive high-quality enterprise leads in a competitive market.",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",

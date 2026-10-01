@@ -251,15 +251,27 @@ export default function SoftwareDevelopmentPage() {
             </motion.a>
              
           </motion.div>
-          
+          {/* INTRO BLOCK */}
+<motion.section
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="mt-10 md:mt-7 max-w-4xl mx-auto text-center bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 rounded-2xl md:rounded-3xl shadow-sm relative overflow-hidden"
+>
+  <div className="absolute -top-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-[#BD6E44]/15 blur-3xl rounded-full" />
+
+  <p className="text-sm sm:text-base md:text-lg text-[#4A433D] leading-relaxed relative z-10">
+    We develop custom software solutions that are scalable, secure, and built around your business requirements. From enterprise applications and business management systems to automation and cloud-based platforms, our solutions help streamline operations and drive digital growth.
+  </p>
+</motion.section>
         </section>
 
   
    {/* SERVICES SHOWCASE */}
-        <section id="services" className="mt-28 sm:mt-16 space-y-24 sm:space-y-32 scroll-mt-24">
+        <section id="services" className="mt-28 sm:mt-6 space-y-24 sm:space-y-32 scroll-mt-24">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs font-bold uppercase tracking-widest text-[#C87D55]">Our Core Expertise</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2C2825] tracking-tight">Software Engineering Services</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2C2825] tracking-tight">Software Development </h2>
           </div>
 
           <div className="space-y-24 sm:space-y-32">
@@ -661,6 +673,7 @@ export default function SoftwareDevelopmentPage() {
             "
           />
         </motion.a>
+        
       </motion.div>
 
     </div>
@@ -709,6 +722,7 @@ export default function SoftwareDevelopmentPage() {
             ))}
           </motion.div>
         </motion.section>
+
 
       </main>
     </div>

@@ -193,7 +193,7 @@ export default function WebsiteDevelopmentPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-10 md:mt-20 max-w-4xl mx-auto text-center bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 rounded-2xl md:rounded-3xl shadow-sm relative overflow-hidden"
+          className="mt-10 md:mt-7 max-w-4xl mx-auto text-center bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 rounded-2xl md:rounded-3xl shadow-sm relative overflow-hidden"
         >
           <div className="absolute -top-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-[#BD6E44]/15 blur-3xl rounded-full" />
           <p className="text-sm sm:text-base md:text-lg text-[#4A433D] leading-relaxed relative z-10">
@@ -201,37 +201,13 @@ export default function WebsiteDevelopmentPage() {
           </p>
         </motion.section>
 
-        {/* PARALLAX HERO SHOWCASE */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.9, delay: 0.2, ease: customEase }}
-          className="mt-10 md:mt-20 rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-[#E5DCD5] shadow-xl relative h-[300px] sm:h-[400px] md:h-[500px]"
-        >
-          <motion.img 
-            style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), scale: 1.15 }}
-            src="/images/image2.png" 
-            alt="Website Development Workspace" 
-            className="absolute inset-0 w-full h-full object-cover transform-origin-top will-change-transform"
-          />
-          
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2C2825]/90 via-[#2C2825]/20 to-transparent flex items-end justify-start p-6 md:p-14">
-            <div className="text-white space-y-3 max-w-3xl text-left">
-              <span className="inline-block text-[10px] md:text-xs font-mono font-bold text-[#FAF8F5] uppercase tracking-widest backdrop-blur-md bg-[#BD6E44]/80 px-4 py-1.5 rounded-full border border-white/20">
-                Digital Excellence
-              </span>
-              <h3 className="text-xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-                Performance. Usability. Conversion.
-              </h3>
-            </div>
-          </div>
-        </motion.div>
+   
 
         {/* SERVICES ZIG-ZAG */}
         <section id="services" className="py-12 md:py-24">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-16 md:mb-24 px-4">
             <span className="text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">Our Expertise</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#2C2825] tracking-tight">Website Development Services</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#2C2825] tracking-tight">Website Development </h2>
           </div>
 
           <div className="space-y-20 md:space-y-32">

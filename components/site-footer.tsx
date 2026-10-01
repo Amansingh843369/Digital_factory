@@ -203,7 +203,7 @@ export function SiteFooter() {
               {/* Social Media Links */}
               <div className="mt-6 flex items-center gap-3">
                 <Link
-                  href="https://www.facebook.com/profile.php?id=100067236799779"
+                  href="https://www.facebook.com/profile.php?id=100067236799779" target="_blank" rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white"
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -212,7 +212,7 @@ export function SiteFooter() {
                 </Link>
             
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/digital_factory2010/?hl=en" target="_blank"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white"
                 >
                   <svg
@@ -229,14 +229,14 @@ export function SiteFooter() {
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                   </svg>
                 </Link>
-                <Link
+                {/* <Link
                   href="#"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white"
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
             </motion.div>
 
