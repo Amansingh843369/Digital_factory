@@ -20,9 +20,105 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="bg-[#FCFBF9] min-h-screen font-sans selection:bg-[#A64B2A] selection:text-white pb-20">
+    <div className="bg-[#FCFBF9] min-h-screen  selection:bg-[#A64B2A] selection:text-white pb-20">
       
- 
+{/* ABOUT US HERO */}
+<section className="relative min-h-[320px] overflow-hidden bg-[#2C1E16] text-[#F7F3E8]">
+
+  {/* Background Grid */}
+  <div
+    className="absolute inset-0 opacity-[0.08]"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px)
+      `,
+      backgroundSize: "48px 48px",
+    }}
+  />
+
+  {/* Soft Background Glow */}
+  <div className="absolute -right-32 top-10 h-[300px] w-[300px] rounded-full bg-[#A64B2A]/10 blur-[100px]" />
+  <div className="absolute -left-32 bottom-0 h-[200px] w-[200px] rounded-full bg-[#C87D55]/10 blur-[100px]" />
+
+  {/* Container with reduced vertical padding (py-6 md:py-8) */}
+  <div className="relative mx-auto flex min-h-[320px] max-w-7xl flex-col justify-center px-6 py-6 md:px-10 md:py-8">
+
+    {/* Small Badge */}
+    <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-[#A64B2A]/70 bg-[#3A271D]/70 px-3.5 py-1.5">
+      <span className="flex h-4 w-4 items-center justify-center text-[#D99A78]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 2 2 7l10 5 10-5-10-5Z" />
+          <path d="m2 17 10 5 10-5" />
+          <path d="m2 12 10 5 10-5" />
+        </svg>
+      </span>
+
+      <span className="text-xs font-medium text-[#D99A78]">
+        Who We Are
+      </span>
+    </div>
+
+    {/* Main Heading */}
+    <h1 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+      Turning Ideas Into{" "}
+      <span className="bg-gradient-to-r from-[#F7F3E8] via-[#E2AA8C] to-[#B96B46] bg-clip-text text-transparent">
+        Digital Excellence
+      </span>
+    </h1>
+
+    {/* Description */}
+    <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#D8C8BE] md:text-lg">
+      We help businesses build smarter digital experiences through innovative,
+      secure, and scalable technology solutions that create lasting impact.
+    </p>
+
+    {/* Breadcrumb */}
+    <div className="mt-5 flex items-center gap-2 text-sm">
+
+      {/* Home */}
+      <a
+        href="/"
+        className="flex items-center gap-1.5 text-[#D8C8BE] transition-colors duration-300 hover:text-[#D99A78]"
+      >
+        <Home className="h-4 w-4 text-[#C87D55]" />
+        Home
+      </a>
+
+      {/* Arrow */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#C87D55"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+
+      {/* Current Page */}
+      <span className="font-medium text-[#F7F3E8]">
+        About Us
+      </span>
+
+    </div>
+
+  </div>
+</section>
 
 
       {/* 1. HERO & COMPANY OVERVIEW (Redesigned matching the reference layout) */}
@@ -113,9 +209,7 @@ const AboutUs = () => {
         
         {/* Left Side: Content */}
         <div className="w-full lg:w-1/2 space-y-6">
-          <div className="inline-block px-4 py-1.5 bg-blue-100 text-[#7b3f00] font-semibold rounded-full text-sm tracking-wide">
-            About Us
-          </div>
+           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Empowering Your <span className="text-[#7b3f00]">Digital Growth</span>
           </h2>
@@ -150,10 +244,10 @@ const AboutUs = () => {
             </ul>
           </div>
 
-          <p className="text-gray-600 pt-4 pb-2 italic border-l-4 pl-4 text-justify">
-            Driven by innovation and guided by values of integrity, quality, and trust, Digital Factory is committed to shaping a future where businesses of every size can thrive digitally and unlock their true potential.
-          </p>
+    
         </div>
+       
+    
 
         {/* Right Side: Image */}
         <div className="w-full lg:w-1/2 relative group">
@@ -167,6 +261,10 @@ const AboutUs = () => {
         </div>
 
       </div>
+         
+                 <p className="text-gray-600 pt-4 pb-2 italic border-l-4 pl-9 text-justify">
+            Driven by innovation and guided by values of integrity, quality, and trust, Digital Factory is committed to shaping a future where businesses of every <br/> size can thrive digitally and unlock their true potential.
+          </p>
     </section>
 
 
