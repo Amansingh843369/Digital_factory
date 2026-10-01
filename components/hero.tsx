@@ -93,15 +93,14 @@ export function Hero() {
     playsInline
     className="absolute inset-0 w-full h-full object-cover"
   >
-    <source src="/homepage.mp4" type="video/mp4" />
+    <source src="/new.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
+ 
 
-  {/* Dark/White overlay for text readability */}
-  <div className="absolute inset-0 bg-background/10" />
 
   {/* Optional gradient */}
-  <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-background/20" />
+  {/* <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60" /> */}
 </motion.div>
 
 
@@ -129,7 +128,7 @@ export function Hero() {
                 leading-[1.1]
                 sm:leading-[1.05]
                 tracking-tight
-                text-foreground
+                text-white
               "
             >
               Digital Factory
@@ -180,7 +179,7 @@ export function Hero() {
                 sm:text-lg
                 lg:text-xl
                 leading-relaxed
-                text-muted-foreground
+                text-white
               "
             >
               Digital Factory empowers businesses with expert engineering teams to design, build, and scale high-impact digital products.
@@ -197,7 +196,7 @@ export function Hero() {
                 lg:text-xl
                 leading-relaxed
                 text-justify
-                text-muted-foreground
+                text-white
               "
             >
               We transform complex challenges into secure, scalable, and <br className="hidden lg:block" /> high-performance solutions built for long-term growth.

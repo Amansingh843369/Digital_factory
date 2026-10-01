@@ -20,7 +20,7 @@ export default function Page() {
       {/* <SiteHeader /> */}
       <main>
         <Hero />
-        <ParallaxImage />
+        
          <About />
         <Services />
         <WhyChooseUs/>
