@@ -84,14 +84,17 @@ export function Hero() {
         <div className="relative h-full w-full lg:w-[45%] bg-gray-100 opacity-20 lg:opacity-100 transition-opacity overflow-hidden">
           
           {/* REPLACED IMAGE WITH VIDEO TAG */}
-          <video
-            src="/homepage.mp4" 
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
+             <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/homepage.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
 
           {/* Mobile Overlay for guaranteed text readability on small screens */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent lg:hidden" />

@@ -6,16 +6,23 @@ export default function ParallaxPage() {
     <main>
  
 
-      {/* Parallax Section */}
-      <section 
-        className="h-80 w-full bg-fixed bg-center bg-cover bg-no-repeat flex items-center justify-center"
-        style={{ 
-          // Yahan apni pasand ki image ka URL daalein
-          backgroundImage: "url(/bg.png)", 
-        }}
+     <section className="relative h-80 w-full flex items-center justify-center overflow-hidden">
+  
+  {/* Background Video */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
       >
-         
-      </section>
+        <source src="/homepage.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+     
+
+</section>
  
     </main>
   );
