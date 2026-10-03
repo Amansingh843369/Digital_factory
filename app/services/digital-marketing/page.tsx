@@ -7,6 +7,9 @@ import {
   BarChart3,
   Target,
   Lightbulb,
+  ArrowRight, // Added for button icon
+  X,          // Added for close button
+  Send        // Added for form icon
 } from "lucide-react";
 
 // Premium smooth easing
@@ -30,6 +33,9 @@ const staggerContainer = {
 };
 
 export default function DigitalMarketingPage() {
+  // ✅ State for Popup Modal
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   // Lenis Smooth Scroll Integration
   useEffect(() => {
     let lenis;
@@ -69,7 +75,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Search Engine Optimization", 
       title: "Search Engine Optimization (SEO)",
-      desc: "Improve your website’s visibility and reach the right audience through effective SEO strategies. Optimize your content, keywords, and website structure to rank higher on search engines. Drive more organic traffic, attract potential customers, and build long-term online growth.actices.",
+      desc: "Improve your website’s visibility and reach the right audience through effective SEO strategies. Optimize your content, keywords, and website structure to rank higher on search engines. Drive more organic traffic, attract potential customers, and build long-term online growth.",
       highlights: [ "Keyword Research & Strategy", "On-Page SEO (content, metadata, structure)", "Off-Page SEO (link building, outreach)", "Technical SEO (site speed, mobile optimization)", "Local SEO (Google Business Profile optimization)", "SEO Audits & Performance Reporting" ],
       image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200", 
       badge: "Organic Search"
@@ -101,7 +107,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Customer Nurturing", 
       title: "Email Marketing & Automation",
-      desc: "Connect with customers through personalized, automated email campaigns that nurture leads, strengthen relationships, and drive conversions. Build lasting relationships and drive consistent sales with personalized, automated email campaigns. Nurture leads, strengthen relationships, and drive more conversions. Automate follow-ups, promotions, and customer communication to save time.",
+      desc: "Connect with customers through personalized, automated email campaigns that nurture leads, strengthen relationships, and drive conversions. Build lasting relationships and drive consistent sales with personalized, automated email campaigns. Nurture leads, strengthen relationships, and drive more conversions.",
       highlights: [ "Email Campaign Design", "Drip Campaigns & Automation", "Subscriber List Segmentation", "Performance Tracking & A/B Testing" ],
       image: "/email.png", 
       badge: "Automation"
@@ -109,7 +115,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Data & Insights", 
       title: "Analytics & Performance Tracking",
-      desc: "Measure what matters, eliminate guesswork, and continuously optimize your digital ROI. rack your website and marketing performance with clear, data-driven insights to understand user behavior, measure results, and make smarter business decisions. Track your website and marketing performance with actionable insights that help you understand user behavior, measure growth, and improve your business results.",
+      desc: "Measure what matters, eliminate guesswork, and continuously optimize your digital ROI. Track your website and marketing performance with clear, data-driven insights to understand user behavior, measure results, and make smarter business decisions.",
       highlights: [ "Google Analytics & Tag Manager Setup", "Campaign Performance Dashboards", "ROI Tracking & Monthly Reports", "Actionable Insights & Recommendations" ],
       image: "/analytics.jpg", 
       badge: "Analytics"
@@ -117,7 +123,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Google Search & Display", 
       title: "Google Ads Management",
-      desc: "Reach the right audience, drive high-quality traffic, and maximize your advertising ROI. Grow your business with targeted Google Ads campaigns designed to reach the right audience at the right time. We create, manage, and optimize your campaigns to drive qualified traffic, generate quality leads, and increase conversions. With continuous performance tracking and data-driven optimization, we help you make the most of your advertising budget and achieve measurable business results.",
+      desc: "Reach the right audience, drive high-quality traffic, and maximize your advertising ROI. Grow your business with targeted Google Ads campaigns designed to reach the right audience at the right time. We create, manage, and optimize your campaigns to drive qualified traffic and generate quality leads.",
       highlights: [ "Google Search & Display Ads Setup", "Keyword Research & Campaign Optimization", "Ad Copy & Landing Page Optimization", "Conversion & ROI Tracking", "Performance Monitoring & Reports" ],
       image: "/googe-ads.jpg", 
       badge: "Google Ads"
@@ -125,7 +131,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Identity & Strategy", 
       title: "Brand Development",
-      desc: "Build a strong, memorable brand that connects with your target audience and creates lasting value. uild a strong and memorable brand that reflects your business identity and connects with your target audience. We help develop your brand through a clear visual identity, consistent messaging, and a professional brand presence across digital platforms. Our approach strengthens brand recognition, builds customer trust, and creates a lasting impression in a competitive market.",
+      desc: "Build a strong, memorable brand that connects with your target audience and creates lasting value. We help develop your brand through a clear visual identity, consistent messaging, and a professional brand presence across digital platforms.",
       highlights: [ "Brand Strategy & Positioning", "Logo & Visual Identity Design", "Brand Guidelines & Identity Systems", "Social Media Branding & Collateral", "Brand Messaging & Communication", "Brand Awareness Campaigns" ],
       image: "/b.png", 
       badge: "Brand Identity"
@@ -133,7 +139,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Influencer & Local SEO", 
       title: "Influencer Marketing & Google Business Profile Optimization",
-      desc: "Expand your brand reach through strategic influencer collaborations and a strong Google Business Profile presence. We help connect your business with relevant audiences, improve local visibility, and build trust through authentic promotions and customer reviews. Our approach drives engagement, increases local discovery, and brings more potential customers to your business.",
+      desc: "Expand your brand reach through strategic influencer collaborations and a strong Google Business Profile presence. We help connect your business with relevant audiences, improve local visibility, and build trust through authentic promotions and customer reviews.",
       highlights: [ "Influencer Research & Campaign Management", "Google Business Profile Setup", "Local SEO & Map Pack Optimization", "Google Reviews & Reputation Management", "Audience Engagement & Tracking" ],
       image: "/influencer.png", 
       badge: "Influencers & Local"
@@ -282,19 +288,20 @@ export default function DigitalMarketingPage() {
                       className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl bg-white border border-[#E8DDD2]/50 w-full h-full min-h-[300px] md:min-h-[400px]"
                     >
                       {/* The Mask Container using Clip Path - Triggers on Viewport Entry */}
-                      <motion.div 
-                        initial={{ clipPath: revealClip[0] }} // Hidden initially based on direction
-                        whileInView={{ clipPath: revealClip[1] }} // Revealed when in view
-                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} // Smooth timing
-                        className="w-full h-full relative"
-                      >
-                        <img 
-                          src={service.image} 
-                          alt={service.title} 
-                          className="w-full h-full object-cover" 
-                        />
-                        <div className="absolute inset-0 bg-[#1C1614]/10 group-hover:bg-transparent transition-colors duration-700" />
-                      </motion.div>
+                     <motion.div 
+  initial={{ clipPath: revealClip[0] }} 
+  whileInView={{ clipPath: revealClip[1] }} 
+  transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} 
+  // relative hata kar absolute inset-0 kar diya hai
+  className="absolute inset-0 w-full h-full" 
+>
+  <img 
+    src={service.image} 
+    alt={service.title} 
+    className="w-full h-full object-cover" 
+  />
+  <div className="absolute inset-0 bg-[#1C1614]/10 group-hover:bg-transparent transition-colors duration-700" />
+</motion.div>
                       
                       {/* Badge stays on top of the reveal */}
                       <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-white/90 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg flex items-center gap-2 z-20">
@@ -319,6 +326,20 @@ export default function DigitalMarketingPage() {
                         </li>
                       ))}
                     </ul>
+
+                    {/* ✅ NEW: KNOW MORE BUTTON ADDED HERE */}
+                    <div className="pt-4">
+                       <motion.button
+                         whileHover={{ scale: 1.02 }}
+                         whileTap={{ scale: 0.98 }}
+                         onClick={() => setIsPopupOpen(true)}
+                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#CD7F5D]/30 transition-all group"
+                       >
+                         <span>Know More</span>
+                         <ArrowRight className="w-4 h-4 text-[#CD7F5D] transition-transform group-hover:translate-x-1" />
+                       </motion.button>
+                    </div>
+
                   </div>
                 </motion.div>
               );
@@ -687,6 +708,91 @@ export default function DigitalMarketingPage() {
         </motion.section>
 
       </main>
+
+      {/* ✅ CENTERED POPUP MODAL */}
+      <AnimatePresence>
+        {isPopupOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsPopupOpen(false)}
+              className="fixed inset-0 bg-[#2C2825]/40 backdrop-blur-sm z-[60]"
+            />
+            
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] w-full max-w-lg px-4"
+            >
+              <div className="bg-[#FAF8F5] border border-[#E5DCD5] rounded-3xl shadow-2xl overflow-hidden relative">
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsPopupOpen(false)}
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#F3EEEA] border border-[#E5DCD5] flex items-center justify-center text-[#6B635B] hover:bg-[#CD7F5D] hover:text-white hover:border-[#CD7F5D] transition-all duration-300 z-10"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+
+                {/* Header */}
+                <div className="p-8 pb-0 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#CD7F5D]/10 flex items-center justify-center">
+                    <Send className="w-8 h-8 text-[#CD7F5D]" />
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-[#2C2825] mb-2">Let's Discuss Your Project</h3>
+                  <p className="text-sm text-[#6B635B] font-light">Fill out the form below and our team will get back to you within 24 hours.</p>
+                </div>
+
+                {/* Form */}
+                <form className="p-8 space-y-4" onSubmit={(e) => { e.preventDefault(); setIsPopupOpen(false); }}>
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
+                    <input 
+                      type="text" 
+                      placeholder="Enter your name"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#CD7F5D] focus:ring-2 focus:ring-[#CD7F5D]/20 transition-all"
+                    />
+                  </div>
+                  
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Email Address</label>
+                    <input 
+                      type="email" 
+                      placeholder="Enter your email"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#CD7F5D] focus:ring-2 focus:ring-[#CD7F5D]/20 transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Project Details</label>
+                    <textarea 
+                      rows={3}
+                      placeholder="Tell us about your marketing requirements..."
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#CD7F5D] focus:ring-2 focus:ring-[#CD7F5D]/20 transition-all resize-none"
+                    />
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full py-4 rounded-xl bg-[#CD7F5D] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#CD7F5D]/30 hover:bg-[#B35E3B] transition-all flex items-center justify-center gap-2 mt-2"
+                  >
+                    <span>Send Inquiry</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.button>
+                </form>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
     </div>
   );
 }

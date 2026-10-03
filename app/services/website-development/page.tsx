@@ -1,7 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; // useRef add kiya
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, X, Send, Loader2 } from 'lucide-react'; // Loader icon add kiya loading state ke liye
+import emailjs from '@emailjs/browser'; // EmailJS import kiya
 
 // Premium smooth easing
 const customEase = [0.22, 1, 0.36, 1];
@@ -19,11 +21,23 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 } // Slightly slower stagger for better effect
+    transition: { staggerChildren: 0.15 }
   }
 };
 
 export default function WebsiteDevelopmentPage() {
+  // ✅ State for Popup Modal
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  
+  // ✅ NEW: Form States
+  const [formData, setFormData] = useState({
+    from_name: '',
+    from_email: '',
+    message: ''
+  });
+  const [isSending, setIsSending] = useState(false);
+  const [sendStatus, setSendStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   // Lenis Smooth Scroll Integration
   useEffect(() => {
     let lenis;
@@ -57,6 +71,40 @@ export default function WebsiteDevelopmentPage() {
   // Accordion State
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
   const toggleAccordion = (index: number) => setOpenAccordion(openAccordion === index ? null : index);
+
+  // ✅ NEW: Handle Input Change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // ✅ NEW: Handle Form Submit
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSending(true);
+    setSendStatus('idle');
+
+   
+    const serviceID = 'service_mw3ox08';  
+    const templateID = 'template_m0j6a6c';  
+    const publicKey = 'UkIVC6jN-9bKzmRzH';  
+
+    try {
+      await emailjs.send(serviceID, templateID, formData, publicKey);
+      setSendStatus('success');
+      setFormData({ from_name: '', from_email: '', message: '' }); // Form reset
+      
+      // 3 second baad popup close kar de
+      setTimeout(() => {
+        setIsPopupOpen(false);
+        setSendStatus('idle');
+      }, 3000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSendStatus('error');
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   // --- DATA ---
   const services = [
@@ -232,19 +280,20 @@ export default function WebsiteDevelopmentPage() {
                       transition={{ duration: 0.5, ease: customEase }}
                       className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-xl bg-[#F3EEEA] h-full min-h-[350px] md:min-h-[500px]"
                     >
-                      <motion.div 
-                        initial={{ clipPath: revealClip[0] }}
-                        whileInView={{ clipPath: revealClip[1] }}
-                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }}
-                        className="w-full h-full relative"
-                      >
-                        <img 
-                          src={service.image} 
-                          alt={service.title} 
-                          className="w-full h-full object-cover opacity-90 group-hover:opacity-100"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5]/60 via-transparent to-transparent opacity-80" />
-                      </motion.div>
+                     <motion.div 
+  initial={{ clipPath: revealClip[0] }} 
+  whileInView={{ clipPath: revealClip[1] }} 
+  transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} 
+  // relative hata kar absolute inset-0 kar diya hai
+  className="absolute inset-0 w-full h-full" 
+>
+  <img 
+    src={service.image} 
+    alt={service.title} 
+    className="w-full h-full object-cover" 
+  />
+  <div className="absolute inset-0 bg-[#1C1614]/10 group-hover:bg-transparent transition-colors duration-700" />
+</motion.div>
 
                       <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-[#FAF8F5]/90 backdrop-blur-md border border-[#E5DCD5] px-3 py-1.5 md:px-4 md:py-2 rounded-xl shadow-md flex items-center gap-3 z-20">
                         <span className="font-mono text-[10px] md:text-sm font-bold text-[#BD6E44]">{String(index + 1).padStart(2, '0')}</span>
@@ -276,6 +325,19 @@ export default function WebsiteDevelopmentPage() {
                           <span>{item}</span>
                         </div>
                       ))}
+                    </div>
+
+                    {/* ✅ NEW: KNOW MORE BUTTON ADDED HERE */}
+                    <div className="pt-4">
+                       <motion.button
+                         whileHover={{ scale: 1.02 }}
+                         whileTap={{ scale: 0.98 }}
+                         onClick={() => setIsPopupOpen(true)}
+                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#BD6E44]/30 transition-all group"
+                       >
+                         <span>Know More</span>
+                         <ArrowRight className="w-4 h-4 text-[#BD6E44] transition-transform group-hover:translate-x-1" />
+                       </motion.button>
                     </div>
 
                     {service.whyChoose && (
@@ -453,6 +515,121 @@ export default function WebsiteDevelopmentPage() {
         </motion.section>
 
       </main>
+
+      {/* ✅ CENTERED POPUP MODAL WITH EMAILJS INTEGRATION */}
+      <AnimatePresence>
+        {isPopupOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsPopupOpen(false)}
+              className="fixed inset-0 bg-[#2C2825]/40 backdrop-blur-sm z-[60]"
+            />
+            
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] w-full max-w-lg px-4"
+            >
+              <div className="bg-[#FAF8F5] border border-[#E5DCD5] rounded-3xl shadow-2xl overflow-hidden relative">
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsPopupOpen(false)}
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#F3EEEA] border border-[#E5DCD5] flex items-center justify-center text-[#6B635B] hover:bg-[#BD6E44] hover:text-white hover:border-[#BD6E44] transition-all duration-300 z-10"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+
+                {/* Header */}
+                <div className="p-8 pb-0 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#BD6E44]/10 flex items-center justify-center">
+                    <Send className="w-8 h-8 text-[#BD6E44]" />
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-[#2C2825] mb-2">Let's Discuss Your Project</h3>
+                  <p className="text-sm text-[#6B635B] font-light">Fill out the form below and our team will get back to you within 24 hours.</p>
+                </div>
+
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="p-8 space-y-4">
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
+                    <input 
+                      type="text" 
+                      name="from_name"
+                      value={formData.from_name}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="Enter your name"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#BD6E44] focus:ring-2 focus:ring-[#BD6E44]/20 transition-all"
+                    />
+                  </div>
+                  
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Email Address</label>
+                    <input 
+                      type="email" 
+                      name="from_email"
+                      value={formData.from_email}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="Enter your email"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#BD6E44] focus:ring-2 focus:ring-[#BD6E44]/20 transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Project Details</label>
+                    <textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={3}
+                      placeholder="Tell us about your website requirements..."
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#BD6E44] focus:ring-2 focus:ring-[#BD6E44]/20 transition-all resize-none"
+                    />
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    disabled={isSending}
+                    className="w-full py-4 rounded-xl bg-[#BD6E44] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#BD6E44]/30 hover:bg-[#A65E38] transition-all flex items-center justify-center gap-2 mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSending ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Inquiry</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
+                  </motion.button>
+
+                  {/* Status Messages */}
+                  {sendStatus === 'success' && (
+                    <p className="text-green-600 text-sm text-center font-medium mt-2">Message sent successfully!</p>
+                  )}
+                  {sendStatus === 'error' && (
+                    <p className="text-red-600 text-sm text-center font-medium mt-2">Failed to send. Please try again.</p>
+                  )}
+                </form>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
     </div>
   );
 }

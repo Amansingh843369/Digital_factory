@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, X, Send } from 'lucide-react'; // Added icons for popup
 
 // Premium smooth easing
 const customEase = [0.22, 1, 0.36, 1];
@@ -24,6 +25,9 @@ const staggerContainer = {
 };
 
 export default function CyberSecurityPage() {
+  // ✅ State for Popup Modal
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   // Lenis Smooth Scroll Integration
   useEffect(() => {
     let lenis;
@@ -37,7 +41,7 @@ export default function CyberSecurityPage() {
         });
 
         function raf(time) {
-          lenis.raf(time);
+          lenis?.raf(time);
           requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
@@ -444,6 +448,20 @@ const frameworks = [
                         </li>
                       ))}
                     </ul>
+
+                    {/* ✅ NEW: KNOW MORE BUTTON ADDED HERE */}
+                    <div className="pt-4">
+                       <motion.button
+                         whileHover={{ scale: 1.02 }}
+                         whileTap={{ scale: 0.98 }}
+                         onClick={() => setIsPopupOpen(true)}
+                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#A64B2A]/30 transition-all group"
+                       >
+                         <span>Know More</span>
+                         <ArrowRight className="w-4 h-4 text-[#A64B2A] transition-transform group-hover:translate-x-1" />
+                       </motion.button>
+                    </div>
+
                   </div>
                 </motion.div>
               );
@@ -703,6 +721,90 @@ const frameworks = [
           </motion.div>
         </div>
       </motion.section>
+
+      {/* ✅ CENTERED POPUP MODAL */}
+      <AnimatePresence>
+        {isPopupOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsPopupOpen(false)}
+              className="fixed inset-0 bg-[#2C2825]/40 backdrop-blur-sm z-[60]"
+            />
+            
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] w-full max-w-lg px-4"
+            >
+              <div className="bg-[#FAF8F5] border border-[#E5DCD5] rounded-3xl shadow-2xl overflow-hidden relative">
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsPopupOpen(false)}
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#F3EEEA] border border-[#E5DCD5] flex items-center justify-center text-[#6B635B] hover:bg-[#A64B2A] hover:text-white hover:border-[#A64B2A] transition-all duration-300 z-10"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+
+                {/* Header */}
+                <div className="p-8 pb-0 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#A64B2A]/10 flex items-center justify-center">
+                    <Send className="w-8 h-8 text-[#A64B2A]" />
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-[#2C2825] mb-2">Let's Discuss Your Project</h3>
+                  <p className="text-sm text-[#6B635B] font-light">Fill out the form below and our team will get back to you within 24 hours.</p>
+                </div>
+
+                {/* Form */}
+                <form className="p-8 space-y-4" onSubmit={(e) => { e.preventDefault(); setIsPopupOpen(false); }}>
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
+                    <input 
+                      type="text" 
+                      placeholder="Enter your name"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#A64B2A] focus:ring-2 focus:ring-[#A64B2A]/20 transition-all"
+                    />
+                  </div>
+                  
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Email Address</label>
+                    <input 
+                      type="email" 
+                      placeholder="Enter your email"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#A64B2A] focus:ring-2 focus:ring-[#A64B2A]/20 transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Project Details</label>
+                    <textarea 
+                      rows={3}
+                      placeholder="Tell us about your project requirements..."
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#A64B2A] focus:ring-2 focus:ring-[#A64B2A]/20 transition-all resize-none"
+                    />
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full py-4 rounded-xl bg-[#A64B2A] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#A64B2A]/30 hover:bg-[#8a3d22] transition-all flex items-center justify-center gap-2 mt-2"
+                  >
+                    <span>Send Inquiry</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.button>
+                </form>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
     </div>
   );

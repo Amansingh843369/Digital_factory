@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, 
   Check, 
@@ -12,15 +12,20 @@ import {
   Cpu, 
   Layers, 
   Zap, 
-  CheckCircle2 
+  CheckCircle2,
+  ChevronDown,
+  X,
+  Send
 } from 'lucide-react';
+
+const customEase = [0.22, 1, 0.36, 1];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
     y: 0, 
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } 
+    transition: { duration: 0.7, ease: customEase } 
   }
 };
 
@@ -43,14 +48,33 @@ interface Service {
   badge: string;
 }
 
+const whyChooseUs = [
+  { id: "01", title: "Modern, User-Friendly Designs", desc: "Visually appealing interfaces that engage users and reflect your brand identity perfectly.", icon: "🚀" },
+  { id: "02", title: "Custom-Built Solutions", desc: "Tailored specifically to your needs, not just generic templates. Built for performance.", icon: "🛠️" },
+  { id: "03", title: "End-to-End Support", desc: "From initial design and development to ongoing maintenance and updates.", icon: "🔄" },
+  { id: "04", title: "Security & Compliance", desc: "Built-in security protocols including SSL, HTTPS, and encrypted data handling.", icon: "🔐" }
+];
 
- const whyChooseUs = [
-    { id: "01", title: "Modern, User-Friendly Designs", desc: "Visually appealing interfaces that engage users and reflect your brand identity perfectly.", icon: "🚀" },
-    { id: "02", title: "Custom-Built Solutions", desc: "Tailored specifically to your needs, not just generic templates. Built for performance.", icon: "🛠️" },
-    { id: "03", title: "End-to-End Support", desc: "From initial design and development to ongoing maintenance and updates.", icon: "🔄" },
-    { id: "04", title: "Security & Compliance", desc: "Built-in security protocols including SSL, HTTPS, and encrypted data handling.", icon: "🔐" }
-  ];
-  
+// ✅ NEW: FAQ Data for Software Development
+const faqData = [
+  {
+    question: "How long does it take to develop custom software?",
+    answer: "Timelines vary based on complexity. A simple MVP typically takes 8-12 weeks, while complex enterprise systems can take 4-6 months. We provide detailed timelines during our discovery phase."
+  },
+  {
+    question: "Do you work with existing legacy systems?",
+    answer: "Absolutely. We specialize in integrating modern solutions with legacy infrastructure, ensuring seamless data flow and minimal disruption to your current operations."
+  },
+  {
+    question: "What technologies do you use for development?",
+    answer: "We use a modern tech stack including React, Next.js, Node.js, Python, and cloud platforms like AWS/Azure. We choose the best technology based on your specific project requirements."
+  },
+  {
+    question: "Do you provide post-launch support and maintenance?",
+    answer: "Yes, we offer comprehensive support packages including bug fixes, performance monitoring, security updates, and feature enhancements to ensure your software stays reliable and up-to-date."
+  }
+];
+
 const SERVICES: Service[] = [
   {
     num: "01",
@@ -141,6 +165,11 @@ const SERVICES: Service[] = [
 ];
 
 export default function SoftwareDevelopmentPage() {
+  // ✅ State for Popup Modal
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  // ✅ State for FAQ Accordion
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
   useEffect(() => {
     let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
     const initLenis = async () => {
@@ -168,6 +197,11 @@ export default function SoftwareDevelopmentPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
   const yHeroBg = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+
+  // ✅ Toggle FAQ Function
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#FAF8F5] text-[#2C2825] font-sans selection:bg-[#C87D55] selection:text-white relative overflow-hidden">
@@ -277,6 +311,12 @@ export default function SoftwareDevelopmentPage() {
           <div className="space-y-24 sm:space-y-32">
             {SERVICES.map((service, index) => {
               const isEven = index % 2 === 0;
+              
+              // ✅ FIXED: Defined revealClip logic here so curtain animation works
+              const revealClip = isEven 
+                ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] // Left to Right
+                : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; // Right to Left
+
               return (
                 <motion.div 
                   key={service.num}
@@ -300,7 +340,7 @@ export default function SoftwareDevelopmentPage() {
                       <motion.div
                         variants={{
                           hidden: { scale: 1.25 },
-                          visible: { scale: 1, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                          visible: { scale: 1, transition: { duration: 1.2, ease: customEase } }
                         }}
                         className="absolute inset-0 w-full h-full"
                       >
@@ -310,6 +350,7 @@ export default function SoftwareDevelopmentPage() {
                           fill
                           sizes="(max-width: 1024px) 100vw, 45vw"
                           // ✅ object-cover + no fixed height = fills parent perfectly
+                          // ✅ FIXED: Added opacity-95 so image is visible on mobile
                           className="object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                         />
                       </motion.div>
@@ -366,6 +407,19 @@ export default function SoftwareDevelopmentPage() {
                           <span className="leading-snug">{item}</span>
                         </div>
                       ))}
+                    </div>
+
+                    {/* ✅ NEW: KNOW MORE BUTTON ADDED HERE */}
+                    <div className="pt-4">
+                       <motion.button
+                         whileHover={{ scale: 1.02 }}
+                         whileTap={{ scale: 0.98 }}
+                         onClick={() => setIsPopupOpen(true)}
+                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#C87D55]/30 transition-all group"
+                       >
+                         <span>Know More</span>
+                         <ArrowRight className="w-4 h-4 text-[#C87D55] transition-transform group-hover:translate-x-1" />
+                       </motion.button>
                     </div>
 
                     {/* WHY CHOOSE CARD */}
@@ -723,8 +777,149 @@ export default function SoftwareDevelopmentPage() {
           </motion.div>
         </motion.section>
 
+        {/* ✅ NEW: FAQ SECTION (Cream Color) */}
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }}
+          className="mt-16 md:mt-32 max-w-4xl mx-auto px-4"
+        >
+          <div className="text-center max-w-2xl mx-auto space-y-3 mb-12 md:mb-16">
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#C87D55] font-bold">Support & Knowledge</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Frequently Asked Questions</h2>
+            <p className="text-sm md:text-base text-[#6B635B] font-light">Everything you need to know about our software development process.</p>
+          </div>
+
+          <div className="space-y-4">
+            {faqData.map((faq, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-[#F3EEEA] border border-[#E5DCD5] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none group"
+                >
+                  <span className="text-base md:text-lg font-bold text-[#2C2825] group-hover:text-[#C87D55] transition-colors pr-4">
+                    {faq.question}
+                  </span>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-[#C87D55]/10 flex items-center justify-center transition-transform duration-300 ${openFaqIndex === index ? 'rotate-180 bg-[#C87D55]' : ''}`}>
+                    <ChevronDown className={`w-5 h-5 ${openFaqIndex === index ? 'text-white' : 'text-[#C87D55]'}`} />
+                  </div>
+                </button>
+                
+                <AnimatePresence>
+                  {openFaqIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: customEase }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 md:px-8 pb-6 md:pb-8">
+                        <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
 
       </main>
+
+      {/* ✅ CENTERED POPUP MODAL */}
+      <AnimatePresence>
+        {isPopupOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsPopupOpen(false)}
+              className="fixed inset-0 bg-[#2C2825]/40 backdrop-blur-sm z-[60]"
+            />
+            
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] w-full max-w-lg px-4"
+            >
+              <div className="bg-[#FAF8F5] border border-[#E5DCD5] rounded-3xl shadow-2xl overflow-hidden relative">
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsPopupOpen(false)}
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#F3EEEA] border border-[#E5DCD5] flex items-center justify-center text-[#6B635B] hover:bg-[#C87D55] hover:text-white hover:border-[#C87D55] transition-all duration-300 z-10"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+
+                {/* Header */}
+                <div className="p-8 pb-0 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#C87D55]/10 flex items-center justify-center">
+                    <Send className="w-8 h-8 text-[#C87D55]" />
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-[#2C2825] mb-2">Let's Discuss Your Project</h3>
+                  <p className="text-sm text-[#6B635B] font-light">Fill out the form below and our team will get back to you within 24 hours.</p>
+                </div>
+
+                {/* Form */}
+                <form className="p-8 space-y-4" onSubmit={(e) => { e.preventDefault(); setIsPopupOpen(false); }}>
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
+                    <input 
+                      type="text" 
+                      placeholder="Enter your name"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#C87D55] focus:ring-2 focus:ring-[#C87D55]/20 transition-all"
+                    />
+                  </div>
+                  
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Email Address</label>
+                    <input 
+                      type="email" 
+                      placeholder="Enter your email"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#C87D55] focus:ring-2 focus:ring-[#C87D55]/20 transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Project Details</label>
+                    <textarea 
+                      rows={3}
+                      placeholder="Tell us about your software requirements..."
+                      className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#C87D55] focus:ring-2 focus:ring-[#C87D55]/20 transition-all resize-none"
+                    />
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full py-4 rounded-xl bg-[#C87D55] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#C87D55]/30 hover:bg-[#B56E47] transition-all flex items-center justify-center gap-2 mt-2"
+                  >
+                    <span>Send Inquiry</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.button>
+                </form>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
     </div>
   );
 }
