@@ -7,10 +7,12 @@ import {
   BarChart3,
   Target,
   Lightbulb,
-  ArrowRight, // Added for button icon
-  X,          // Added for close button
-  Send        // Added for form icon
+  ArrowRight,
+  X,
+  Send,
+  Loader2 // Loading icon ke liye add kiya
 } from "lucide-react";
+import emailjs from '@emailjs/browser'; // EmailJS import kiya
 
 // Premium smooth easing
 const customEase = [0.22, 1, 0.36, 1];
@@ -35,6 +37,15 @@ const staggerContainer = {
 export default function DigitalMarketingPage() {
   // ✅ State for Popup Modal
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  
+  // ✅ NEW: Form States
+  const [formData, setFormData] = useState({
+    from_name: '',
+    from_email: '',
+    message: ''
+  });
+  const [isSending, setIsSending] = useState(false);
+  const [sendStatus, setSendStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // Lenis Smooth Scroll Integration
   useEffect(() => {
@@ -69,6 +80,40 @@ export default function DigitalMarketingPage() {
   // Accordion State
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
   const toggleAccordion = (index: number) => setOpenAccordion(openAccordion === index ? null : index);
+
+  // ✅ NEW: Handle Input Change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // ✅ NEW: Handle Form Submit with EmailJS
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSending(true);
+    setSendStatus('idle');
+   
+    // .env.local se credentials fetch karna
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
+    try {
+      await emailjs.send(serviceID, templateID, formData, publicKey);
+      setSendStatus('success');
+      setFormData({ from_name: '', from_email: '', message: '' });
+      
+      // 3 second baad popup close kar de
+      setTimeout(() => {
+        setIsPopupOpen(false);
+        setSendStatus('idle');
+      }, 3000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSendStatus('error');
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   // DATA - Cleaned Content & Numbers Removed
   const detailedServices = [
@@ -318,6 +363,8 @@ export default function DigitalMarketingPage() {
                       <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-[#1C1614] tracking-tight leading-tight">{service.title}</h3>
                     </div>
                     <p className="text-sm md:text-base text-[#6B5D56] leading-relaxed  text-justify">{service.desc}</p>
+                    
+                    {/* ✅ TICK MARKS YAHAN SAFE HAIN - UNHE NAHI HATAYA */}
                     <ul className="space-y-2 md:space-y-3 pt-2">
                       {service.highlights.map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-xs md:text-sm font-medium text-[#382B27]">
@@ -327,7 +374,7 @@ export default function DigitalMarketingPage() {
                       ))}
                     </ul>
 
-                    {/* ✅ NEW: KNOW MORE BUTTON ADDED HERE */}
+                    {/* ✅ KNOW MORE BUTTON */}
                     <div className="pt-4">
                        <motion.button
                          whileHover={{ scale: 1.02 }}
@@ -709,7 +756,7 @@ export default function DigitalMarketingPage() {
 
       </main>
 
-      {/* ✅ CENTERED POPUP MODAL */}
+      {/* ✅ CENTERED POPUP MODAL WITH EMAILJS INTEGRATION */}
       <AnimatePresence>
         {isPopupOpen && (
           <>
@@ -748,12 +795,16 @@ export default function DigitalMarketingPage() {
                   <p className="text-sm text-[#6B635B] font-light">Fill out the form below and our team will get back to you within 24 hours.</p>
                 </div>
 
-                {/* Form */}
-                <form className="p-8 space-y-4" onSubmit={(e) => { e.preventDefault(); setIsPopupOpen(false); }}>
+                {/* ✅ UPDATED FORM WITH HANDLESUBMIT */}
+                <form onSubmit={handleSubmit} className="p-8 space-y-4">
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
                     <input 
                       type="text" 
+                      name="from_name"
+                      value={formData.from_name}
+                      onChange={handleInputChange}
+                      required
                       placeholder="Enter your name"
                       className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#CD7F5D] focus:ring-2 focus:ring-[#CD7F5D]/20 transition-all"
                     />
@@ -763,6 +814,10 @@ export default function DigitalMarketingPage() {
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Email Address</label>
                     <input 
                       type="email" 
+                      name="from_email"
+                      value={formData.from_email}
+                      onChange={handleInputChange}
+                      required
                       placeholder="Enter your email"
                       className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#CD7F5D] focus:ring-2 focus:ring-[#CD7F5D]/20 transition-all"
                     />
@@ -771,6 +826,10 @@ export default function DigitalMarketingPage() {
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Project Details</label>
                     <textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                       rows={3}
                       placeholder="Tell us about your marketing requirements..."
                       className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#CD7F5D] focus:ring-2 focus:ring-[#CD7F5D]/20 transition-all resize-none"
@@ -781,11 +840,29 @@ export default function DigitalMarketingPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-[#CD7F5D] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#CD7F5D]/30 hover:bg-[#B35E3B] transition-all flex items-center justify-center gap-2 mt-2"
+                    disabled={isSending}
+                    className="w-full py-4 rounded-xl bg-[#CD7F5D] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#CD7F5D]/30 hover:bg-[#B35E3B] transition-all flex items-center justify-center gap-2 mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    <span>Send Inquiry</span>
-                    <ArrowRight className="w-4 h-4" />
+                    {isSending ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Inquiry</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
                   </motion.button>
+
+                  {/* Status Messages */}
+                  {sendStatus === 'success' && (
+                    <p className="text-green-600 text-sm text-center font-medium mt-2">Message sent successfully!</p>
+                  )}
+                  {sendStatus === 'error' && (
+                    <p className="text-red-600 text-sm text-center font-medium mt-2">Failed to send. Please try again.</p>
+                  )}
                 </form>
               </div>
             </motion.div>

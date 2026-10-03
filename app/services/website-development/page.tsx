@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react'; // useRef add kiya
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, X, Send, Loader2 } from 'lucide-react'; // Loader icon add kiya loading state ke liye
-import emailjs from '@emailjs/browser'; // EmailJS import kiya
+import { ArrowRight, X, Send, Loader2, Check } from 'lucide-react'; // ✅ Check icon add kiya
+import emailjs from '@emailjs/browser';
 
 // Premium smooth easing
 const customEase = [0.22, 1, 0.36, 1];
@@ -29,7 +29,7 @@ export default function WebsiteDevelopmentPage() {
   // ✅ State for Popup Modal
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   
-  // ✅ NEW: Form States
+  // ✅ Form States
   const [formData, setFormData] = useState({
     from_name: '',
     from_email: '',
@@ -72,28 +72,26 @@ export default function WebsiteDevelopmentPage() {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
   const toggleAccordion = (index: number) => setOpenAccordion(openAccordion === index ? null : index);
 
-  // ✅ NEW: Handle Input Change
+  // ✅ Handle Input Change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // ✅ NEW: Handle Form Submit
+  // ✅ Handle Form Submit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
     setSendStatus('idle');
-
    
-    const serviceID = 'service_mw3ox08';  
-    const templateID = 'template_m0j6a6c';  
-    const publicKey = 'UkIVC6jN-9bKzmRzH';  
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
     try {
       await emailjs.send(serviceID, templateID, formData, publicKey);
       setSendStatus('success');
-      setFormData({ from_name: '', from_email: '', message: '' }); // Form reset
+      setFormData({ from_name: '', from_email: '', message: '' });
       
-      // 3 second baad popup close kar de
       setTimeout(() => {
         setIsPopupOpen(false);
         setSendStatus('idle');
@@ -111,7 +109,7 @@ export default function WebsiteDevelopmentPage() {
     {
       category: "Corporate Presence",
       title: "Corporate Websites",
-      desc: "Create a professional digital presence that reflects your brand and business values. Showcase your services, achievements, and company story in a clear and engaging way. Build credibility, connect with customers, and turn visitors into potential business opportunities.    ",
+      desc: "Create a professional digital presence that reflects your brand and business values. Showcase your services, achievements, and company story in a clear and engaging way. Build credibility, connect with customers, and turn visitors into potential business opportunities.",
       highlights: [
         "Custom Corporate Website Design",
         "Mobile-Responsive Development",
@@ -127,7 +125,7 @@ export default function WebsiteDevelopmentPage() {
     {
       category: "Online Retail",
       title: "E-Commerce Websites",
-      desc: "Launch a powerful online store designed to showcase your products and grow your business.Provide customers with a smooth, secure, and user-friendly shopping experience. Manage products, orders, payments, and customers easily from one scalable platform. Turn visitors into customers and maximize your online sales potential.",
+      desc: "Launch a powerful online store designed to showcase your products and grow your business. Provide customers with a smooth, secure, and user-friendly shopping experience.",
       highlights: [
         "Online Store Design & Development",
         "Shopify, WooCommerce, Magento Solutions",
@@ -138,14 +136,13 @@ export default function WebsiteDevelopmentPage() {
         "User Account & Loyalty Programs",
         "Analytics & Sales Tracking"
       ],
-      
       image: "/ecommerce.png", 
       badge: "E-Commerce"
     },
     {
       category: "Lead Generation",
       title: "Landing Pages",
-      desc: "Create high-impact landing pages designed to grab attention and drive conversions.Present your products, services, or offers with clear and compelling messaging. Optimized for speed, mobile responsiveness, and lead generation.Turn campaign traffic into valuable leads and potential customers.",
+      desc: "Create high-impact landing pages designed to grab attention and drive conversions. Present your products, services, or offers with clear and compelling messaging.",
       highlights: [
         "Custom Landing Page Design",
         "Conversion-Optimized Layouts",
@@ -160,19 +157,18 @@ export default function WebsiteDevelopmentPage() {
     }
   ];
 
-  // UPDATED WHY CHOOSE US DATA WITH NUMBERS
   const whyChooseUs = [
-    { id: "01", title: "Modern, User-Friendly Designs", desc: "Visually appealing interfaces that engage users and reflect your brand identity perfectly.", icon: "🚀" },
+    { id: "01", title: "Modern, User-Friendly Designs", desc: "Visually appealing interfaces that engage users and reflect your brand identity perfectly.", icon: "" },
     { id: "02", title: "Custom-Built Solutions", desc: "Tailored specifically to your needs, not just generic templates. Built for performance.", icon: "🛠️" },
-    { id: "03", title: "End-to-End Support", desc: "From initial design and development to ongoing maintenance and updates.", icon: "🔄" },
+    { id: "03", title: "End-to-End Support", desc: "From initial design and development to ongoing maintenance and updates.", icon: "" },
     { id: "04", title: "Security & Compliance", desc: "Built-in security protocols including SSL, HTTPS, and encrypted data handling.", icon: "🔐" }
   ];
 
   const faqs = [
-    { question: "How long does it take to build a website?", answer: "Timelines vary based on complexity. A standard corporate site typically takes 4-6 weeks, while complex e-commerce platforms may require 8-12 weeks. We provide detailed roadmaps after initial scoping." },
-    { question: "Do you provide SEO services with the website?", answer: "Yes. Every website we build comes with an SEO-friendly structure, fast loading speeds, and mobile-first design principles to ensure you rank well on search engines from day one." },
-    { question: "Can I update the website content myself?", answer: "Absolutely. We integrate user-friendly CMS platforms like WordPress or custom dashboards that allow you to easily manage blogs, products, and pages without technical knowledge." },
-    { question: "Is my website secure?", answer: "Security is a priority. We implement SSL certificates, HTTPS protocols, and secure data handling practices to protect your business and your customers' information." }
+    { question: "How long does it take to build a website?", answer: "Timelines vary based on complexity. A standard corporate site typically takes 4-6 weeks, while complex e-commerce platforms may require 8-12 weeks." },
+    { question: "Do you provide SEO services with the website?", answer: "Yes. Every website we build comes with an SEO-friendly structure, fast loading speeds, and mobile-first design principles." },
+    { question: "Can I update the website content myself?", answer: "Absolutely. We integrate user-friendly CMS platforms like WordPress or custom dashboards." },
+    { question: "Is my website secure?", answer: "Security is a priority. We implement SSL certificates, HTTPS protocols, and secure data handling practices." }
   ];
 
   return (
@@ -249,8 +245,6 @@ export default function WebsiteDevelopmentPage() {
           </p>
         </motion.section>
 
-   
-
         {/* SERVICES ZIG-ZAG */}
         <section id="services" className="py-12 md:py-24">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-16 md:mb-24 px-4">
@@ -281,19 +275,14 @@ export default function WebsiteDevelopmentPage() {
                       className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-[#E5DCD5] shadow-xl bg-[#F3EEEA] h-full min-h-[350px] md:min-h-[500px]"
                     >
                      <motion.div 
-  initial={{ clipPath: revealClip[0] }} 
-  whileInView={{ clipPath: revealClip[1] }} 
-  transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} 
-  // relative hata kar absolute inset-0 kar diya hai
-  className="absolute inset-0 w-full h-full" 
->
-  <img 
-    src={service.image} 
-    alt={service.title} 
-    className="w-full h-full object-cover" 
-  />
-  <div className="absolute inset-0 bg-[#1C1614]/10 group-hover:bg-transparent transition-colors duration-700" />
-</motion.div>
+                        initial={{ clipPath: revealClip[0] }} 
+                        whileInView={{ clipPath: revealClip[1] }} 
+                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} 
+                        className="absolute inset-0 w-full h-full" 
+                      >
+                        <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-[#1C1614]/10 group-hover:bg-transparent transition-colors duration-700" />
+                      </motion.div>
 
                       <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-[#FAF8F5]/90 backdrop-blur-md border border-[#E5DCD5] px-3 py-1.5 md:px-4 md:py-2 rounded-xl shadow-md flex items-center gap-3 z-20">
                         <span className="font-mono text-[10px] md:text-sm font-bold text-[#BD6E44]">{String(index + 1).padStart(2, '0')}</span>
@@ -316,18 +305,18 @@ export default function WebsiteDevelopmentPage() {
                       {service.desc}
                     </p>
 
+                    {/* ✅ UPDATED HIGHLIGHTS WITH CHECK ICON */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 md:gap-y-4 pt-2">
                       {service.highlights.map((item, i) => (
                         <div key={i} className="flex items-start gap-3 text-xs md:text-sm text-[#4A433D]">
-                          <span className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded bg-[#F3EEEA] text-[#BD6E44] border border-[#E5DCD5] flex items-center justify-center font-bold text-[10px] md:text-xs mt-0.5">
-                            ✦
+                          <span className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded bg-[#F3EEEA] text-[#BD6E44] border border-[#E5DCD5] flex items-center justify-center mt-0.5">
+                            <Check className="w-3 h-3 md:w-3.5 md:h-3.5" strokeWidth={3} />
                           </span>
                           <span>{item}</span>
                         </div>
                       ))}
                     </div>
 
-                    {/* ✅ NEW: KNOW MORE BUTTON ADDED HERE */}
                     <div className="pt-4">
                        <motion.button
                          whileHover={{ scale: 1.02 }}
@@ -339,22 +328,6 @@ export default function WebsiteDevelopmentPage() {
                          <ArrowRight className="w-4 h-4 text-[#BD6E44] transition-transform group-hover:translate-x-1" />
                        </motion.button>
                     </div>
-
-                    {service.whyChoose && (
-                      <div className="mt-4 md:mt-6 bg-[#F3EEEA] border border-[#E5DCD5] rounded-xl md:rounded-2xl p-5 md:p-8 shadow-sm">
-                        <h4 className="text-xs md:text-sm font-bold text-[#2C2825] uppercase tracking-wider mb-4 md:mb-5 border-b border-[#E5DCD5] pb-3">
-                          Why Choose Our {service.badge}?
-                        </h4>
-                        <ul className="space-y-3 md:space-y-4">
-                          {service.whyChoose.map((reason, i) => (
-                            <li key={i} className="flex items-start gap-3 text-sm md:text-base text-[#6B635B]">
-                              <span className="text-[#BD6E44] font-bold text-lg leading-none">✓</span>
-                              <span>{reason}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
                   </div>
                 </motion.div>
               );
@@ -362,7 +335,7 @@ export default function WebsiteDevelopmentPage() {
           </div>
         </section>
     
-        {/* UPDATED WHY CHOOSE US - 2x2 GRID WITH NUMBERED BOXES */}
+        {/* WHY CHOOSE US */}
         <motion.section 
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="mt-16 md:mt-32 max-w-5xl mx-auto px-4"
@@ -372,7 +345,6 @@ export default function WebsiteDevelopmentPage() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Choose Digital Factory?</h2>
           </div>
 
-          {/* 2x2 Grid Layout */}
           <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {whyChooseUs.map((item, idx) => (
               <motion.div 
@@ -381,20 +353,16 @@ export default function WebsiteDevelopmentPage() {
                 whileHover={{ y: -5 }}
                 className="relative bg-[#F3EEEA] border border-[#E5DCD5] p-8 md:p-10 rounded-2xl md:rounded-3xl shadow-sm group hover:border-[#BD6E44]/30 hover:shadow-lg transition-all duration-300 overflow-hidden"
               >
-                {/* Number Badge in Corner */}
                 <div className="absolute top-6 right-6 md:top-8 md:right-8 text-4xl md:text-5xl font-black text-[#BD6E44]/10 group-hover:text-[#BD6E44]/20 transition-colors select-none">
                   {item.id}
                 </div>
-
                 <div className="relative z-10">
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#FAF8F5] border border-[#E5DCD5] text-[#BD6E44] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#BD6E44] group-hover:text-white group-hover:border-[#BD6E44] transition-all duration-300 shadow-sm">
                     {item.icon}
                   </div>
-                  
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C2825] mb-3 group-hover:text-[#BD6E44] transition-colors duration-300">
                     {item.title}
                   </h3>
-                  
                   <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light pr-8">
                     {item.desc}
                   </p>
@@ -407,7 +375,6 @@ export default function WebsiteDevelopmentPage() {
         {/* FAQ SECTION */}
         <section className="mt-16 md:mt-32 px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start max-w-7xl mx-auto">
-            
             <div className="lg:col-span-5 space-y-4 md:space-y-6 lg:sticky lg:top-32">
               <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">Common Questions</span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight leading-tight">
@@ -479,17 +446,14 @@ export default function WebsiteDevelopmentPage() {
         >
           <div className="relative rounded-2xl md:rounded-3xl bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 md:p-12 text-center overflow-hidden shadow-lg max-w-5xl mx-auto">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#BD6E44]/15 rounded-full blur-[90px] pointer-events-none" />
-
             <div className="relative z-10 max-w-2xl mx-auto space-y-4">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight leading-tight text-[#2C2825]">
                 Ready to Stand Out Online? <br />
                 <span className="text-[#BD6E44]">Let’s Build Your Website.</span>
               </h2>
-
               <p className="text-[#6B635B] text-sm sm:text-base max-w-lg mx-auto">
                 Turn visitors into customers with a custom high-converting website tailored for your business.
               </p>
-
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
                 <motion.a
                   whileHover={{ scale: 1.04 }}
@@ -500,7 +464,6 @@ export default function WebsiteDevelopmentPage() {
                   <span>Claim Free Consultation</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </motion.a>
-
                 <motion.a
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -513,14 +476,12 @@ export default function WebsiteDevelopmentPage() {
             </div>
           </div>
         </motion.section>
-
       </main>
 
       {/* ✅ CENTERED POPUP MODAL WITH EMAILJS INTEGRATION */}
       <AnimatePresence>
         {isPopupOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -529,7 +490,6 @@ export default function WebsiteDevelopmentPage() {
               className="fixed inset-0 bg-[#2C2825]/40 backdrop-blur-sm z-[60]"
             />
             
-            {/* Modal Content */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -538,7 +498,6 @@ export default function WebsiteDevelopmentPage() {
               className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] w-full max-w-lg px-4"
             >
               <div className="bg-[#FAF8F5] border border-[#E5DCD5] rounded-3xl shadow-2xl overflow-hidden relative">
-                {/* Close Button */}
                 <button
                   onClick={() => setIsPopupOpen(false)}
                   className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#F3EEEA] border border-[#E5DCD5] flex items-center justify-center text-[#6B635B] hover:bg-[#BD6E44] hover:text-white hover:border-[#BD6E44] transition-all duration-300 z-10"
@@ -546,7 +505,6 @@ export default function WebsiteDevelopmentPage() {
                   <X className="w-5 h-5" />
                 </button>
 
-                {/* Header */}
                 <div className="p-8 pb-0 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#BD6E44]/10 flex items-center justify-center">
                     <Send className="w-8 h-8 text-[#BD6E44]" />
@@ -555,7 +513,6 @@ export default function WebsiteDevelopmentPage() {
                   <p className="text-sm text-[#6B635B] font-light">Fill out the form below and our team will get back to you within 24 hours.</p>
                 </div>
 
-                {/* Form */}
                 <form onSubmit={handleSubmit} className="p-8 space-y-4">
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
@@ -616,7 +573,6 @@ export default function WebsiteDevelopmentPage() {
                     )}
                   </motion.button>
 
-                  {/* Status Messages */}
                   {sendStatus === 'success' && (
                     <p className="text-green-600 text-sm text-center font-medium mt-2">Message sent successfully!</p>
                   )}
@@ -629,7 +585,6 @@ export default function WebsiteDevelopmentPage() {
           </>
         )}
       </AnimatePresence>
-
     </div>
   );
 }
