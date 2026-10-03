@@ -63,7 +63,7 @@ export default function WebsiteDevelopmentPage() {
     {
       category: "Corporate Presence",
       title: "Corporate Websites",
-      desc: "Showcase your brand, build trust, and communicate your story with a professional corporate website tailored to your business goals.",
+      desc: "Create a professional digital presence that reflects your brand and business values. Showcase your services, achievements, and company story in a clear and engaging way. Build credibility, connect with customers, and turn visitors into potential business opportunities.    ",
       highlights: [
         "Custom Corporate Website Design",
         "Mobile-Responsive Development",
@@ -79,7 +79,7 @@ export default function WebsiteDevelopmentPage() {
     {
       category: "Online Retail",
       title: "E-Commerce Websites",
-      desc: "Sell online with secure, scalable, and conversion-focused e-commerce platforms designed to maximize your sales potential.",
+      desc: "Launch a powerful online store designed to showcase your products and grow your business.Provide customers with a smooth, secure, and user-friendly shopping experience. Manage products, orders, payments, and customers easily from one scalable platform. Turn visitors into customers and maximize your online sales potential.",
       highlights: [
         "Online Store Design & Development",
         "Shopify, WooCommerce, Magento Solutions",
@@ -97,7 +97,7 @@ export default function WebsiteDevelopmentPage() {
     {
       category: "Lead Generation",
       title: "Landing Pages",
-      desc: "Convert visitors into leads and customers with high-performing landing pages optimized for campaigns and product launches.",
+      desc: "Create high-impact landing pages designed to grab attention and drive conversions.Present your products, services, or offers with clear and compelling messaging. Optimized for speed, mobile responsiveness, and lead generation.Turn campaign traffic into valuable leads and potential customers.",
       highlights: [
         "Custom Landing Page Design",
         "Conversion-Optimized Layouts",
@@ -263,7 +263,7 @@ export default function WebsiteDevelopmentPage() {
                       </h3>
                     </div>
 
-                    <p className="text-sm md:text-base text-[#6B635B] leading-relaxed font-light">
+                    <p className="text-sm md:text-base text-[#6B635B] text-justify leading-relaxed font-light">
                       {service.desc}
                     </p>
 

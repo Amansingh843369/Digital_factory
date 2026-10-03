@@ -59,13 +59,13 @@ const detailedServices = [
   {
     category: "Infrastructure", 
     title: "Network Security",
-    desc: "Secure your IT infrastructure against unauthorized access and ensure business continuity.",
+    desc: "Protect your business network from cyber threats with robust security solutions designed to keep your systems, devices, and data safe. We help identify vulnerabilities, strengthen network defenses, monitor potential threats, and reduce security risks. ",
     highlights: [
       "Firewalls & IPS Deployment",
       "Secure Network Architecture",
       "VPN & Remote Access Security",
       "Endpoint Protection",
-      "24/7 Threat Monitoring"
+ 
     ],
     image: "/network.png",
     badge: "Network Defense"
@@ -74,7 +74,7 @@ const detailedServices = [
   {
     category: "Cloud", 
     title: "Cloud Security",
-    desc: "Protect your data and applications across AWS, Azure, and Google Cloud environments.",
+    desc: "Protect your data and applications across AWS, Azure, and Google Cloud environments. Secure your cloud infrastructure, applications, and data with reliable security solutions built for modern businesses.",
     highlights: [
       "Secure Cloud Migration",
       "Identity & Access Management",
@@ -89,7 +89,7 @@ const detailedServices = [
   {
     category: "Data", 
     title: "Data Protection & Privacy",
-    desc: "Safeguard sensitive business and customer information from leaks and theft.",
+    desc: "Safeguard sensitive business and customer information from leaks and theft. Protect your sensitive business and customer data with effective privacy and security measures. ",
     highlights: [
       "Data Loss Prevention (DLP)",
       "Encryption (Rest & Transit)",
@@ -104,7 +104,7 @@ const detailedServices = [
   {
     category: "Compliance", 
     title: "IT Security Audits",
-    desc: "Identify vulnerabilities and ensure your organization meets global regulatory standards.",
+    desc: "Identify vulnerabilities and ensure your organization meets global regulatory standards. Identify security gaps and strengthen your IT infrastructure with comprehensive security audits. ",
     highlights: [
       "Vulnerability Assessment (VAPT)",
       "Risk Assessments",
@@ -119,7 +119,7 @@ const detailedServices = [
   {
     category: "Intelligence", 
     title: "Threat Intelligence & SOC",
-    desc: "Proactive monitoring and analysis to detect threats before they impact your business.",
+    desc: "Proactive monitoring and analysis to detect threats before they impact your business. Strengthen your cybersecurity with real-time threat intelligence and proactive Security Operations Center (SOC) monitoring.",
     highlights: [
       "24/7 Security Operations Center",
       "Real-time Threat Detection",

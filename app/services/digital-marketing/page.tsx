@@ -69,7 +69,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Search Engine Optimization", 
       title: "Search Engine Optimization (SEO)",
-      desc: "Boost your visibility on Google and attract the right customers with effective SEO practices.",
+      desc: "Improve your website’s visibility and reach the right audience through effective SEO strategies. Optimize your content, keywords, and website structure to rank higher on search engines. Drive more organic traffic, attract potential customers, and build long-term online growth.actices.",
       highlights: [ "Keyword Research & Strategy", "On-Page SEO (content, metadata, structure)", "Off-Page SEO (link building, outreach)", "Technical SEO (site speed, mobile optimization)", "Local SEO (Google Business Profile optimization)", "SEO Audits & Performance Reporting" ],
       image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200", 
       badge: "Organic Search"
@@ -77,7 +77,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Paid Advertising", 
       title: "Pay-Per-Click Advertising (PPC)",
-      desc: "Drive targeted traffic instantly with well-optimized ad campaigns tailored for conversions.",
+      desc: "Reach your target audience with highly focused PPC campaigns designed to generate quick and measurable results. Optimize your campaigns for better clicks, leads, and conversions while managing your advertising budget effectively. Grow your business with data-driven paid advertising strategies.",
       highlights: [ "Google Ads (Search, Display, Shopping)", "Social Media Ads (Facebook, Instagram, LinkedIn)", "Remarketing & Retargeting Campaigns", "Conversion Rate Optimization (CRO)", "Ad Copywriting & Creative Design", "Campaign Monitoring & Analytics" ],
       image: "/ppc.png", 
       badge: "Performance Ads"
@@ -85,7 +85,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Social Engagement", 
       title: "Social Media Marketing & Management",
-      desc: "Engage your audience and build strong brand loyalty through high-impact social media platforms.",
+      desc: "Engage your audience and build strong brand loyalty through high-impact social media platforms. Create engaging content and campaigns that increase reach, engagement, and brand awareness. Manage your social media platforms consistently with a clear and effective strategy.",
       highlights: [ "Social Media Strategy & Planning", "Content Creation (graphics, videos, reels)", "Social Media Account Management", "Community Building & Engagement", "Influencer Collaboration & Campaigns", "Social Media Analytics & Reporting" ],
       image: "/smm.png", 
       badge: "Social Media"
@@ -93,7 +93,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Brand Storytelling", 
       title: "Content Marketing",
-      desc: "Tell your brand story and attract loyal customers with powerful, conversion-driven content.",
+      desc: "Develop blogs, website content, social media posts, and marketing materials tailored to your business needs. Improve audience engagement, strengthen your online presence, and support your SEO strategy. Create compelling content that resonates with your target audience and drives conversions.",
       highlights: [ "Blog Writing & Optimization", "Website & Landing Page Copywriting", "Case Studies & Whitepapers", "Infographics & Visual Content", "Video Content Strategy", "Email Newsletters" ],
       image: "/content.png", 
       badge: "Content Strategy"
@@ -101,7 +101,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Customer Nurturing", 
       title: "Email Marketing & Automation",
-      desc: "Build lasting relationships and drive consistent sales with personalized, automated email campaigns.",
+      desc: "Connect with customers through personalized, automated email campaigns that nurture leads, strengthen relationships, and drive conversions. Build lasting relationships and drive consistent sales with personalized, automated email campaigns. Nurture leads, strengthen relationships, and drive more conversions. Automate follow-ups, promotions, and customer communication to save time.",
       highlights: [ "Email Campaign Design", "Drip Campaigns & Automation", "Subscriber List Segmentation", "Performance Tracking & A/B Testing" ],
       image: "/email.png", 
       badge: "Automation"
@@ -109,7 +109,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Data & Insights", 
       title: "Analytics & Performance Tracking",
-      desc: "Measure what matters, eliminate guesswork, and continuously optimize your digital ROI.",
+      desc: "Measure what matters, eliminate guesswork, and continuously optimize your digital ROI. rack your website and marketing performance with clear, data-driven insights to understand user behavior, measure results, and make smarter business decisions. Track your website and marketing performance with actionable insights that help you understand user behavior, measure growth, and improve your business results.",
       highlights: [ "Google Analytics & Tag Manager Setup", "Campaign Performance Dashboards", "ROI Tracking & Monthly Reports", "Actionable Insights & Recommendations" ],
       image: "/analytics.jpg", 
       badge: "Analytics"
@@ -117,7 +117,7 @@ export default function DigitalMarketingPage() {
     {
       category: "Google Search & Display", 
       title: "Google Ads Management",
-      desc: "Reach the right audience, drive high-quality traffic, and maximize your advertising ROI.",
+      desc: "Reach the right audience, drive high-quality traffic, and maximize your advertising ROI. Grow your business with targeted Google Ads campaigns designed to reach the right audience at the right time. We create, manage, and optimize your campaigns to drive qualified traffic, generate quality leads, and increase conversions. With continuous performance tracking and data-driven optimization, we help you make the most of your advertising budget and achieve measurable business results.",
       highlights: [ "Google Search & Display Ads Setup", "Keyword Research & Campaign Optimization", "Ad Copy & Landing Page Optimization", "Conversion & ROI Tracking", "Performance Monitoring & Reports" ],
       image: "/googe-ads.jpg", 
       badge: "Google Ads"
@@ -125,15 +125,15 @@ export default function DigitalMarketingPage() {
     {
       category: "Identity & Strategy", 
       title: "Brand Development",
-      desc: "Build a strong, memorable brand that connects with your target audience and creates lasting value.",
+      desc: "Build a strong, memorable brand that connects with your target audience and creates lasting value. uild a strong and memorable brand that reflects your business identity and connects with your target audience. We help develop your brand through a clear visual identity, consistent messaging, and a professional brand presence across digital platforms. Our approach strengthens brand recognition, builds customer trust, and creates a lasting impression in a competitive market.",
       highlights: [ "Brand Strategy & Positioning", "Logo & Visual Identity Design", "Brand Guidelines & Identity Systems", "Social Media Branding & Collateral", "Brand Messaging & Communication", "Brand Awareness Campaigns" ],
       image: "/b.png", 
       badge: "Brand Identity"
     },
     {
       category: "Influencer & Local SEO", 
-      title: "Influencer Marketing & GMB",
-      desc: "Reach authentic audiences through trusted influencers and dominate local search rankings.",
+      title: "Influencer Marketing & Google Business Profile Optimization",
+      desc: "Expand your brand reach through strategic influencer collaborations and a strong Google Business Profile presence. We help connect your business with relevant audiences, improve local visibility, and build trust through authentic promotions and customer reviews. Our approach drives engagement, increases local discovery, and brings more potential customers to your business.",
       highlights: [ "Influencer Research & Campaign Management", "Google Business Profile Setup", "Local SEO & Map Pack Optimization", "Google Reviews & Reputation Management", "Audience Engagement & Tracking" ],
       image: "/influencer.png", 
       badge: "Influencers & Local"
@@ -239,7 +239,7 @@ export default function DigitalMarketingPage() {
   <div className="absolute -top-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-[#BD6E44]/15 blur-3xl rounded-full" />
 
   <p className="text-sm sm:text-base md:text-lg text-[#4A433D] leading-relaxed relative z-10">
-    Build powerful, scalable, and reliable software solutions tailored to your business needs. From custom applications and enterprise platforms to automation and cloud-based solutions, our software development services turn ideas into secure and high-performing digital products.
+    Build powerful, scalable, and reliable software solutions tailored to your business needs. From custom applications and enterprise platforms to automation and cloud-based solutions, our software development services turn ideas into secure and <br className="hidden md:block" /> high-performing digital products.
   </p>
 </motion.section>
         </section>
@@ -310,7 +310,7 @@ export default function DigitalMarketingPage() {
                       <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#CD7F5D] font-bold">{service.category}</span>
                       <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-[#1C1614] tracking-tight leading-tight">{service.title}</h3>
                     </div>
-                    <p className="text-sm md:text-base text-[#6B5D56] leading-relaxed font-light">{service.desc}</p>
+                    <p className="text-sm md:text-base text-[#6B5D56] leading-relaxed  text-justify">{service.desc}</p>
                     <ul className="space-y-2 md:space-y-3 pt-2">
                       {service.highlights.map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-xs md:text-sm font-medium text-[#382B27]">
