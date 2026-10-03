@@ -1,7 +1,62 @@
-import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+'use client'; 
+
+import React, { useState } from 'react';
+import { ChevronDown, Loader2, Send } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 export function Contact() {
+  // ✅ Form States
+  const [formData, setFormData] = useState({
+    from_name: '',
+    from_email: '',
+    project_type: '',
+    estimated_budget: '',
+    message: ''
+  });
+  
+  const [isSending, setIsSending] = useState(false);
+  const [sendStatus, setSendStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // ✅ Handle Input Change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // ✅ Handle Form Submit with EmailJS
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSending(true);
+    setSendStatus('idle');
+   
+    // .env.local se credentials fetch karna
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
+    try {
+      await emailjs.send(serviceID, templateID, formData, publicKey);
+      setSendStatus('success');
+      // Form reset
+      setFormData({ 
+        from_name: '', 
+        from_email: '', 
+        project_type: '', 
+        estimated_budget: '', 
+        message: '' 
+      });
+      
+      // 4 second baad success message hat jayega
+      setTimeout(() => {
+        setSendStatus('idle');
+      }, 4000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSendStatus('error');
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <section id="contact" className="w-full bg-[#FAF7F2] py-16 lg:py-15 scroll-mt-15">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
@@ -25,7 +80,7 @@ export function Contact() {
               </p>
 
               {/* FORM FIELDS */}
-              <form className="mt-10 space-y-6">
+              <form onSubmit={handleSubmit} className="mt-10 space-y-6">
                 
                 {/* Row 1: Name & Email */}
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -35,19 +90,27 @@ export function Contact() {
                     </label>
                     <input
                       id="name"
+                      name="from_name"
                       type="text"
+                      value={formData.from_name}
+                      onChange={handleInputChange}
+                      required
                       placeholder="Your Name"
                       className="w-full rounded-2xl bg-[#F0EBE1] px-5 py-4.5 text-neutral-800 placeholder-neutral-400 outline-none transition-all focus:ring-2 focus:ring-[#C46A42]/40"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-semibold text-neutral-800 " >
+                    <label htmlFor="email" className="text-sm font-semibold text-neutral-800">
                       Email
                     </label>
                     <input
                       id="email"
+                      name="from_email"
                       type="email"
-                       placeholder="Your Email"
+                      value={formData.from_email}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="Your Email"
                       className="w-full rounded-2xl bg-[#F0EBE1] px-5 py-4.5 text-neutral-800 outline-none transition-all focus:ring-2 focus:ring-[#C46A42]/40"
                     />
                   </div>
@@ -62,18 +125,21 @@ export function Contact() {
                     <div className="relative">
                       <select
                         id="project-type"
-                        defaultValue=""
-                        className="w-full appearance-none rounded-2xl bg-[#F0EBE1] px-5 py-4.5 pr-12 text-neutral-500 outline-none transition-all cursor-pointer focus:ring-2 focus:ring-[#C46A42]/40"
+                        name="project_type"
+                        value={formData.project_type}
+                        onChange={handleInputChange}
+                        required
+                        className={`w-full appearance-none rounded-2xl bg-[#F0EBE1] px-5 py-4.5 pr-12 outline-none transition-all cursor-pointer focus:ring-2 focus:ring-[#C46A42]/40 ${formData.project_type ? 'text-neutral-800' : 'text-neutral-500'}`}
                       >
                         <option value="" disabled>Select...</option>
-                        <option value="software-development">Software Development</option>
-                        <option value="website-development">Website Development</option>
-                        <option value="digital-marketing">Digital Marketing</option>
-                        <option value="cyber-security">Cyber Security</option>
-                        <option value="penetration-testing">Penetration Testing</option>
-                        <option value="eoms">eOMS</option>
-                        <option value="eoms">Others</option>
-                          </select>
+                        <option value="Software Development">Software Development</option>
+                        <option value="Website Development">Website Development</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="Cyber Security">Cyber Security</option>
+                        <option value="Penetration Testing">Penetration Testing</option>
+                        <option value="eOMS">eOMS</option>
+                        <option value="Others">Others</option>
+                      </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-5">
                         <ChevronDown className="h-5 w-5 text-neutral-400" />
                       </div>
@@ -87,14 +153,17 @@ export function Contact() {
                     <div className="relative">
                       <select
                         id="budget"
-                        defaultValue=""
-                        className="w-full appearance-none rounded-2xl bg-[#F0EBE1] px-5 py-4.5 pr-12 text-neutral-500 outline-none transition-all cursor-pointer focus:ring-2 focus:ring-[#C46A42]/40"
+                        name="estimated_budget"
+                        value={formData.estimated_budget}
+                        onChange={handleInputChange}
+                        required
+                        className={`w-full appearance-none rounded-2xl bg-[#F0EBE1] px-5 py-4.5 pr-12 outline-none transition-all cursor-pointer focus:ring-2 focus:ring-[#C46A42]/40 ${formData.estimated_budget ? 'text-neutral-800' : 'text-neutral-500'}`}
                       >
                         <option value="" disabled>Select...</option>
-                        <option value="under-5k">Under $5,000</option>
-                        <option value="5k-15k">$5,000 - $15,000</option>
-                        <option value="15k-50k">$15,000 - $50,000</option>
-                        <option value="50k-plus">$50,000+</option>
+                        <option value="Under $5,000">Under $5,000</option>
+                        <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+                        <option value="$15,000 - $50,000">$15,000 - $50,000</option>
+                        <option value="$50,000+">$50,000+</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-5">
                         <ChevronDown className="h-5 w-5 text-neutral-400" />
@@ -110,7 +179,11 @@ export function Contact() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
                     placeholder="Tell us about your project"
                     className="w-full resize-none rounded-2xl bg-[#F0EBE1] px-5 py-4.5 text-neutral-800 placeholder-neutral-400 outline-none transition-all focus:ring-2 focus:ring-[#C46A42]/40"
                   />
@@ -120,10 +193,29 @@ export function Contact() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full rounded-2xl bg-[#C46A42] py-4.5 text-[16px] font-semibold text-white transition-colors duration-300 hover:bg-[#A95A37] focus:outline-none focus:ring-2 focus:ring-[#C46A42] focus:ring-offset-2 focus:ring-offset-[#FAF7F2]"
+                    disabled={isSending}
+                    className="w-full rounded-2xl bg-[#C46A42] py-4.5 text-[16px] font-semibold text-white transition-colors duration-300 hover:bg-[#A95A37] focus:outline-none focus:ring-2 focus:ring-[#C46A42] focus:ring-offset-2 focus:ring-offset-[#FAF7F2] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    Send Message
+                    {isSending ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <Send className="w-5 h-5" />
+                      </>
+                    )}
                   </button>
+
+                  {/* Status Messages */}
+                  {sendStatus === 'success' && (
+                    <p className="text-green-600 text-sm font-medium mt-4 text-center">Thanks! Your project details have been sent successfully.</p>
+                  )}
+                  {sendStatus === 'error' && (
+                    <p className="text-red-600 text-sm font-medium mt-4 text-center">Something went wrong. Please try again or email us directly.</p>
+                  )}
                 </div>
               </form>
             </div>
