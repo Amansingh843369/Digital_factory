@@ -212,7 +212,7 @@ export default function WebsiteDevelopmentPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mb-10 md:mb-8 text-lg sm:text-xl md:text-2xl text-[#6B635B] leading-relaxed font-light max-w-3xl mx-auto px-4"
           >
-            At Digital Factory Theory Labs, we design and develop websites that are not only visually appealing but also optimized for performance, usability, and conversions.
+            At Digital  Theory Labs, we design and develop websites that are not only visually appealing but also optimized for performance, usability, and conversions.
           </motion.p>
 
           <motion.div 
@@ -341,8 +341,8 @@ export default function WebsiteDevelopmentPage() {
           className="mt-16 md:mt-32 max-w-5xl mx-auto px-4"
         >
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-12 md:mb-16">
-            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">The Digital Factory Theory Labs Advantage</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Choose Digital Factory Theory Labs?</h2>
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">The Digital  Theory Labs Advantage</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Choose Digital  Theory Labs?</h2>
           </div>
 
           <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">

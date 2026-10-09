@@ -479,12 +479,12 @@ export default function CyberSecurityPage() {
                     Cyber threats are evolving. <br className="hidden sm:block"/> Don't fall behind.
                 </h2>
                 <p className="text-white/80 text-sm md:text-lg font-normal leading-relaxed max-w-xl mx-auto">
-                    Protect your organization with Digital Factory Theory Labs . Get a comprehensive security audit today.
+                    Protect your organization with Digital Theory Labs . Get a comprehensive security audit today.
                 </p>
                 <div className="pt-6">
                     <motion.a
                       whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                      href="mailto:security@digitalfactory.com"
+                      href="mailto:info@digitaltheorylabs.com"
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#A64B2A] font-bold text-sm md:text-base tracking-wide shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all"
                     >
                       Request Free Audit

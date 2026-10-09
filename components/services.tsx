@@ -18,7 +18,7 @@ const services = [
     id: "01",
     title: "Software Development",
     tag: "Custom Architecture",
-    description: "At Digital Factory Labs  Labs, we specialize in designing custom software applications and scalable platforms tailored to your specific business requirements. Whether you need enterprise-grade solutions, SaaS products, or mobile applications, our team ensures your software is secure, user-friendly, and future-ready.",
+    description: "At Digital Theory Labs, we specialize in designing custom software applications and scalable platforms tailored to your specific business requirements. Whether you need enterprise-grade solutions, SaaS products, or mobile applications, our team ensures your software is secure, user-friendly, and future-ready.",
     icon: Settings2,
   
  

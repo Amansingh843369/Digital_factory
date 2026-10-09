@@ -129,7 +129,7 @@ export function Hero() {
                 text-white
               "
             >
-              Digital Factory Labs
+              Digital Theory Labs
 
               <br />
 
@@ -180,12 +180,13 @@ export function Hero() {
                 text-white
               "
             >
-              Digital Factory Theory Labs Labs empowers businesses with expert engineering teams to design, build, and scale high-impact  digital <br/>  products.
+              Digital Theory Labs  empowers businesses with expert engineering teams to design, build, and scale high-impact  digital <br/>  products.
             </motion.p>
 
             {/* <motion.p
               variants={itemVariants}
               className="
+              
               mt-3
                 sm:mt-6
                 max-w-2xl

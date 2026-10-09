@@ -92,7 +92,7 @@ export function About() {
             >
               <Image
                 src="/images/about.png" 
-                alt="Digital Factory Theory  Labs Team"
+                alt="Digital  Theory  Labs Team"
                 fill
                 className="object-cover  object-center transition-transform duration-1000 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -130,7 +130,7 @@ export function About() {
             
             <div className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-bold uppercase tracking-wider text-[#C46A42]">
               <span className="h-px w-6 sm:w-8 bg-[#C46A42]" />
-              About Digital Factory Theory Labs 
+              About Digital Theory Labs 
             </div>
 
             <h2 className="font-serif text-3xl sm:text-4xl leading-[1.2] sm:leading-[1.1] tracking-tight text-neutral-900 md:text-5xl lg:text-[52px]">

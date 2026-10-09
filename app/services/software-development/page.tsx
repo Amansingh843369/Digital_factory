@@ -786,8 +786,8 @@ export default function SoftwareDevelopmentPage() {
           className="mt-16 md:mt-32 max-w-5xl mx-auto px-4"
         >
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-12 md:mb-16">
-            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">The Digital Factory Theory Labs Advantage</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Choose Digital Factory Theory Labs?</h2>
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">The Digital  Theory Labs Advantage</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2C2825] tracking-tight">Why Choose Digital  Theory Labs?</h2>
           </div>
 
           {/* 2x2 Grid Layout */}

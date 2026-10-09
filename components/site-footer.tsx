@@ -197,7 +197,7 @@ export function SiteFooter() {
               </motion.div>
 
               <p className="mt-4 max-w-sm text-justify text-xs leading-relaxed text-neutral-500 sm:text-sm">
-                Digital Factory Theory Labs delivers innovative web, software, and cybersecurity solutions that help businesses build, grow, and scale in the digital world.
+                Digital Theory Labs delivers innovative web, software, and cybersecurity solutions that help businesses build, grow, and scale in the digital world.
               </p>
 
               {/* Social Media Links */}
@@ -271,12 +271,12 @@ export function SiteFooter() {
                 </li>
                 <li>
                   <a
-                    href="mailto:info@digital-factory.in"
+                    href="mailto:info@digitaltheorylabs.com"
                     className="group flex items-start gap-3 transition-all duration-300 hover:text-neutral-950"
                   >
                     <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#C46A42]" />
                     <span className="break-all text-[13px] text-neutral-600 transition-colors group-hover:text-neutral-950">
-                      info@digital-factory.in
+                      info@digitaltheorylabs.com
                     </span>
                   </a>
                 </li>
