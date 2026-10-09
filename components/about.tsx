@@ -92,7 +92,7 @@ export function About() {
             >
               <Image
                 src="/images/about.png" 
-                alt="Digital Factory Team"
+                alt="Digital Factory Theory  Labs Team"
                 fill
                 className="object-cover  object-center transition-transform duration-1000 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -130,7 +130,7 @@ export function About() {
             
             <div className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-bold uppercase tracking-wider text-[#C46A42]">
               <span className="h-px w-6 sm:w-8 bg-[#C46A42]" />
-              About Digital Factory
+              About Digital Factory Theory Labs 
             </div>
 
             <h2 className="font-serif text-3xl sm:text-4xl leading-[1.2] sm:leading-[1.1] tracking-tight text-neutral-900 md:text-5xl lg:text-[52px]">
@@ -143,10 +143,10 @@ export function About() {
             {/* Description Paragraphs with Added Bullet Points */}
             <div className="space-y-4 sm:space-y-5 text-[15px] sm:text-[16px] leading-relaxed text-neutral-600 text-justify">
               <p>
-                <strong className="text-neutral-900">Digital Factory</strong> is a forward-thinking digital solutions company. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
+                <strong className="text-neutral-900">Digital Factory Theory Labs  Labs</strong> is a forward-thinking digital solutions company. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
               </p>
               <p>
-                At Digital Factory, we believe that technology and creativity must go hand-in-hand. Our team brings together specialists from different domains who collaborate to deliver measurable results, not just promises. We adopt a client-first approach, ensuring transparency, reliability, and long-term success in every project we undertake.
+                At Digital Factory Labs, we believe that technology and creativity must go hand-in-hand. Our team brings together specialists from different domains who collaborate to deliver measurable results, not just promises. We adopt a client-first approach, ensuring transparency, reliability, and long-term success in every project we undertake.
               </p>
               
               <div className="pt-2 text-left">

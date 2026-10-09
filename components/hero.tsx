@@ -9,6 +9,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 
+
 // ================= CUSTOM TYPEWRITER HOOK =================
 const useTypewriter = (words: string[], typingSpeed = 100, deletingSpeed = 50, pauseTime = 1500) => {
   const [text, setText] = useState("");
@@ -75,7 +76,7 @@ export function Hero() {
     <section className="relative min-h-[90dvh] flex items-center overflow-hidden bg-background pt-20 pb-12 sm:pt-24 sm:pb-16 lg:py-0">
       
     
-{/* ================= CURVED VIDEO ================= */}
+ 
 {/* ================= FULL BACKGROUND VIDEO ================= */}
 <motion.div
   className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
@@ -97,9 +98,6 @@ export function Hero() {
     Your browser does not support the video tag.
   </video>
  
-
-
-  {/* Optional gradient */}
   {/* <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60" /> */}
 </motion.div>
 
@@ -131,7 +129,7 @@ export function Hero() {
                 text-white
               "
             >
-              Digital Factory
+              Digital Factory Labs
 
               <br />
 
@@ -182,7 +180,7 @@ export function Hero() {
                 text-white
               "
             >
-              Digital Factory empowers businesses with expert engineering teams to design, build, and scale high-impact  digital <br/>  products.
+              Digital Factory Theory Labs Labs empowers businesses with expert engineering teams to design, build, and scale high-impact  digital <br/>  products.
             </motion.p>
 
             {/* <motion.p

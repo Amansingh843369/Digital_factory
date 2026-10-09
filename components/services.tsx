@@ -18,7 +18,7 @@ const services = [
     id: "01",
     title: "Software Development",
     tag: "Custom Architecture",
-    description: "At Digital Factory, we specialize in designing custom software applications and scalable platforms tailored to your specific business requirements. Whether you need enterprise-grade solutions, SaaS products, or mobile applications, our team ensures your software is secure, user-friendly, and future-ready.",
+    description: "At Digital Factory Labs  Labs, we specialize in designing custom software applications and scalable platforms tailored to your specific business requirements. Whether you need enterprise-grade solutions, SaaS products, or mobile applications, our team ensures your software is secure, user-friendly, and future-ready.",
     icon: Settings2,
   
  
@@ -29,7 +29,7 @@ const services = [
     id: "02",
     title: "Website Development",
 
-    description: "Your website is often the first impression of your business. At Digital Factory, we design and develop websites that are not only visually appealing but also optimized for performance, usability, and conversions.",
+    description: "Your website is often the first impression of your business. At Digital Factory Labs, we design and develop websites that are not only visually appealing but also optimized for performance, usability, and conversions.",
     icon: MonitorSmartphone,
  
     link: "/services/website-development"
@@ -56,7 +56,7 @@ const services = [
     id: "05",
     title: "Penetration Testing",
     
-    description: "In today's connected business environment, cyber threats can target websites, applications, networks, cloud infrastructure, APIs, and digital assets at any time. A single exploitable vulnerability can result in unauthorized access, data exposure, service disruption, financial loss, and reputational damage.Digital Factory provides professional Penetration Testing and Vulnerability Assessment (VAPT) services to help organizations identify security weaknesses, evaluate their potential impact, and strengthen their cybersecurity posture. Our assessments combine automated vulnerability scanning with controlled security testing and expert analysis to provide organizations with a practical understanding of their security risks.",
+    description: "In today's connected business environment, cyber threats can target websites, applications, networks, cloud infrastructure, APIs, and digital assets at any time. A single exploitable vulnerability can result in unauthorized access, data exposure, service disruption, financial loss, and reputational damage.Digital Factory Labs provides professional Penetration Testing and Vulnerability Assessment (VAPT) services to help organizations identify security weaknesses, evaluate their potential impact, and strengthen their cybersecurity posture. Our assessments combine automated vulnerability scanning with controlled security testing and expert analysis to provide organizations with a practical understanding of their security risks.",
     icon: TerminalSquare,
   
     link: "/services/penetration-testing"

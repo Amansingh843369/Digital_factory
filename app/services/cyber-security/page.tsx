@@ -418,7 +418,7 @@ export default function CyberSecurityPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-12 md:mb-16">
-            <span className="text-xs font-mono uppercase tracking-[0.18em] text-[#A64B2A] font-bold">Why Digital Factory</span>
+            <span className="text-xs font-mono uppercase tracking-[0.18em] text-[#A64B2A] font-bold">Why Digital Factory Theory  Labs</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#2B211C] tracking-tight">Why Choose Us?</h2>
             <p className="text-[#75675F] text-sm md:text-base leading-relaxed font-normal">Advanced tools combined with human expertise for scalable security.</p>
           </div>
@@ -479,7 +479,7 @@ export default function CyberSecurityPage() {
                     Cyber threats are evolving. <br className="hidden sm:block"/> Don't fall behind.
                 </h2>
                 <p className="text-white/80 text-sm md:text-lg font-normal leading-relaxed max-w-xl mx-auto">
-                    Protect your organization with Digital Factory. Get a comprehensive security audit today.
+                    Protect your organization with Digital Factory Theory Labs . Get a comprehensive security audit today.
                 </p>
                 <div className="pt-6">
                     <motion.a

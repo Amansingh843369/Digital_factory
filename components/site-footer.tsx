@@ -183,21 +183,21 @@ export function SiteFooter() {
             <motion.div variants={fadeUp} className="sm:col-span-2 lg:col-span-4">
               <motion.div whileHover={reduceMotion ? {} : { y: -2 }} className="inline-block">
                 <Link href="/" className="group inline-block">
-                  <div className="relative overflow-hidden rounded-xl border border-neutral-200 bg-white px-4 py-2 shadow-sm transition-all duration-500 group-hover:border-[#C46A42]/30 group-hover:shadow-[0_10px_30px_rgba(196,106,66,0.1)]">
+                   
                     <Image
-                      src="/digital-factory.jpeg"
+                      src="/digitalfactorytheorylab.png"
                       alt="Digital Factory Logo"
                       width={140}
-                      height={40}
+                      height={140}
                       priority
-                      className="h-auto w-[110px] object-contain sm:w-[130px]"
+                      className="h-[100px] w-[110px] object-cover sm:w-[310px]"
                     />
-                  </div>
+ 
                 </Link>
               </motion.div>
 
               <p className="mt-4 max-w-sm text-justify text-xs leading-relaxed text-neutral-500 sm:text-sm">
-                Digital Factory delivers innovative web, software, and cybersecurity solutions that help businesses build, grow, and scale in the digital world.
+                Digital Factory Theory Labs delivers innovative web, software, and cybersecurity solutions that help businesses build, grow, and scale in the digital world.
               </p>
 
               {/* Social Media Links */}

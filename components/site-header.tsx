@@ -51,11 +51,11 @@ function Logo() {
       className="flex items-center gap-2 font-display text-xl font-bold tracking-tight"
     >
       <Image
-        src="/digital-factory.png"
+        src="/digitalfactorytheorylab.png"
         alt="Digital Factory Logo"
-        width={170}
-        height={140}
-        className="object-contain"
+        width={180}
+        height={170}
+         
       />
     </Link>
   );
