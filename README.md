@@ -1,12 +1,12 @@
-# 🚀 Digital Factorys
+# 🚀 Digital Theory Labs
 
 > A modern digital solutions platform built with Next.js, React, TypeScript, and Tailwind CSS.
 
-Digital Factory is a modern and responsive technology services website designed to showcase digital solutions including **Web Development, AI Solutions, AI Automation, CRM, Digital Marketing, SEO, and IT Services**.
+Digital Theory Labs is a modern and responsive technology services website designed to showcase digital solutions including **Web Development, AI Solutions, AI Automation, CRM, Digital Marketing, SEO, and IT Services**.
 
 ## 🌐 Live Demo
 
-[Visit Digital Factory](https://digital-factory-nu.vercel.app/)
+[Visit Digital Theory Labs](https://digitaltheorylabs.com)
 
 
 ## ✨ Features
@@ -41,7 +41,7 @@ Digital Factory is a modern and responsive technology services website designed 
 
 ## 💼 Services
 
-Digital Factory provides solutions across multiple technology domains:
+Digital Theory Labs provides solutions across multiple technology domains:
 
 - 🌐 Web Development
 - 💻 Full Stack Development

@@ -14,7 +14,7 @@ const poppins = Poppins({
   display: 'swap',
 })
 
-// 2. Digital Factory Logo
+// 2. Digital Theory Labs Logo
 export function DigitalFactoryLogo({
   className = 'w-8 h-8',
 }: {
@@ -26,7 +26,7 @@ export function DigitalFactoryLogo({
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Digital Factory Logo"
+      aria-label="Digital Theory Labs Logo"
     >
       <path
         d="M4 26V12L10 16V12L16 16V6L28 12V26H4Z"
@@ -52,19 +52,19 @@ export function DigitalFactoryLogo({
 
 // 3. Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL('https://digitalfactory.agency'),
+  metadataBase: new URL('https://digitaltheorylabs.com/'),
 
   title: {
     default:
-      'Digital Factory — Next-Gen Web Design & Software Engineering Studio',
-    template: '%s | Digital Factory',
+      'Digital Theory Labs — Next-Gen Web Design & Software Engineering Studio',
+    template: '%s | Digital Theory Labs',
   },
 
   description:
-    'Digital Factory is an elite digital production studio crafting high-performance websites, web applications, and scalable digital products with 24/7 technical support.',
+    'Digital Theory Labs is an elite digital production studio crafting high-performance websites, web applications, and scalable digital products with 24/7 technical support.',
 
   keywords: [
-    'Digital Factory',
+    'Digital Theory Labs',
     'Web Design Studio',
     'Software Factory',
     'Web Development Agency',
@@ -74,9 +74,9 @@ export const metadata: Metadata = {
     'Custom Web Solutions',
   ],
 
-  authors: [{ name: 'Digital Factory Team' }],
-  creator: 'Digital Factory Studio',
-  publisher: 'Digital Factory',
+  authors: [{ name: 'Digital Theory LabsTeam' }],
+  creator: 'Digital Theory LabsStudio',
+  publisher: 'Digital Theory Labs',
 
   alternates: {
     canonical: '/',
@@ -84,21 +84,21 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      'Digital Factory — Next-Gen Web Design & Software Engineering Studio',
+      'Digital Theory Labs— Next-Gen Web Design & Software Engineering Studio',
 
     description:
       'We build, scale, and maintain high-performance digital products and web experiences for ambitious brands.',
 
-    url: 'https://digitalfactory.agency',
+    url: 'https://digitaltheorylabs.com/',
 
-    siteName: 'Digital Factory',
+    siteName: 'Digital Theory Labs',
 
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Digital Factory Showcase',
+        alt: 'Digital Theory Labs Showcase',
       },
     ],
 
@@ -110,12 +110,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
 
     title:
-      'Digital Factory — Web Design & Development Agency',
+      'Digital Theory Labs — Web Design & Development Agency',
 
     description:
       'Building high-performance websites and modern digital products with 24/7 support.',
 
-    creator: '@digitalfactory',
+    creator: '@digitaltheorylabs',
 
     images: ['/og-image.png'],
   },

@@ -29,7 +29,7 @@ const services = [
     id: "02",
     title: "Website Development",
 
-    description: "Your website is often the first impression of your business. At Digital Factory Labs, we design and develop websites that are not only visually appealing but also optimized for performance, usability, and conversions.",
+    description: "Your website is often the first impression of your business. At Digital Theory Labs, we design and develop websites that are not only visually appealing but also optimized for performance, usability, and conversions.",
     icon: MonitorSmartphone,
  
     link: "/services/website-development"
@@ -56,7 +56,7 @@ const services = [
     id: "05",
     title: "Penetration Testing",
     
-    description: "In today's connected business environment, cyber threats can target websites, applications, networks, cloud infrastructure, APIs, and digital assets at any time. A single exploitable vulnerability can result in unauthorized access, data exposure, service disruption, financial loss, and reputational damage.Digital Factory Labs provides professional Penetration Testing and Vulnerability Assessment (VAPT) services to help organizations identify security weaknesses, evaluate their potential impact, and strengthen their cybersecurity posture. Our assessments combine automated vulnerability scanning with controlled security testing and expert analysis to provide organizations with a practical understanding of their security risks.",
+    description: "In today's connected business environment, cyber threats can target websites, applications, networks, cloud infrastructure, APIs, and digital assets at any time. A single exploitable vulnerability can result in unauthorized access, data exposure, service disruption, financial loss, and reputational damage.Digital Theory Labs provides professional Penetration Testing and Vulnerability Assessment (VAPT) services to help organizations identify security weaknesses, evaluate their potential impact, and strengthen their cybersecurity posture. Our assessments combine automated vulnerability scanning with controlled security testing and expert analysis to provide organizations with a practical understanding of their security risks.",
     icon: TerminalSquare,
   
     link: "/services/penetration-testing"
@@ -137,7 +137,7 @@ export function Services() {
                     </span>
 
                     <div className="flex flex-col lg:flex-row lg:items-center gap-1 sm:gap-3 lg:gap-6 min-w-0">
-                      <h3 className={`text-lg sm:text-2xl md:text-3xl lg:text-4xl font-serif tracking-tight transition-colors duration-300 break-words ${
+                      <h3 className={`text-lg sm:text-2xl md:text-3xl lg:text-3xl font-serif tracking-tight transition-colors duration-300 break-words ${
                         isActive ? "text-[#C46A42]" : "text-neutral-900 group-hover:text-[#C46A42]"
                       }`}>
                         {service.title}

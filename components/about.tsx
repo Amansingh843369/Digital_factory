@@ -92,7 +92,7 @@ export function About() {
             >
               <Image
                 src="/images/about.png" 
-                alt="Digital  Theory  Labs Team"
+                alt="Digital Theory Labs "
                 fill
                 className="object-cover  object-center transition-transform duration-1000 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -143,10 +143,10 @@ export function About() {
             {/* Description Paragraphs with Added Bullet Points */}
             <div className="space-y-4 sm:space-y-5 text-[15px] sm:text-[16px] leading-relaxed text-neutral-600 text-justify">
               <p>
-                <strong className="text-neutral-900">Digital Factory Theory Labs  Labs</strong> is a forward-thinking digital solutions company. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
+                <strong className="text-neutral-900">Digital Theory Labs</strong> is a forward-thinking digital solutions company. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
               </p>
               <p>
-                At Digital Factory Labs, we believe that technology and creativity must go hand-in-hand. Our team brings together specialists from different domains who collaborate to deliver measurable results, not just promises. We adopt a client-first approach, ensuring transparency, reliability, and long-term success in every project we undertake.
+                At Digital Theory Labs, we believe that technology and creativity must go hand-in-hand. Our team brings together specialists from different domains who collaborate to deliver measurable results, not just promises. We adopt a client-first approach, ensuring transparency, reliability, and long-term success in every project we undertake.
               </p>
               
               <div className="pt-2 text-left">

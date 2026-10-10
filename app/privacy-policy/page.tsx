@@ -1,15 +1,15 @@
  import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Digital Factory",
+  title: "Privacy Policy | Digital Theory Labs",
   description:
-    "How Digital Factory collects, uses, stores and protects your personal information.",
+    "How Digital Theory Labs collects, uses, stores and protects your personal information.",
 };
 
  
-const COMPANY = "Digital Factory";
-const LAST_UPDATED = "30 September 2026";
-const EMAIL = "info@digital-factory.in";
+const COMPANY = "Digital Theory Labs";
+const LAST_UPDATED = "10 October 2026";
+const EMAIL = "info@digitaltheorylabs.com";
 const PHONE = "+91 97680 19387";
 const ADDRESS = "912, 72 Corp, Saki Vihar Road,Sakinaka Junction, Andheri East, Mumbai – 400072, Maharashtra,India";
 
@@ -198,16 +198,3 @@ export default function PrivacyPolicyPage() {
   );
 }
 
-/*
-  
-
-  <label className="flex items-start gap-2 text-sm text-gray-600">
-    <input type="checkbox" required className="mt-1" />
-    <span>
-      I have read the{" "}
-      <a href="/privacy-policy" className="underline">Privacy Policy</a> and
-      agree that Digital Factory may use my details to respond to my enquiry
-      and provide relevant services.
-    </span>
-  </label>
-*/

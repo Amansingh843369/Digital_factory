@@ -172,7 +172,7 @@ export default function CareersPage() {
 
       {/* Description */}
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#F7F3E8]/80 md:text-lg">
-        Join Digital Factory and work with a passionate team building
+        Join Digital Theory Labs and work with a passionate team building
         innovative, secure, and impactful digital solutions for businesses
         around the world.
       </p>

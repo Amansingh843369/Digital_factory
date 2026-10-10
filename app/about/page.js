@@ -191,7 +191,7 @@ const AboutUs = () => {
   className="space-y-6 text-gray-700 text-lg leading-relaxed font-normal text-left sm:text-justify hyphens-auto"
 >
   <p>
-    At <strong className="text-[#2A2320] font-bold">Digital Factory</strong>, we harness the power of technology to provide exceptional support to our clients. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
+    At <strong className="text-[#2A2320] font-bold">Digital Theory Labs</strong>, we harness the power of technology to provide exceptional support to our clients. In today’s fast-paced and technology-driven world, organizations need more than just an online presence — they need strategic, secure, and innovative solutions that create real impact.
   </p>
   <p>
     We provide end-to-end services in <strong className="text-[#2A2320] font-bold">Digital Marketing</strong>, <strong className="text-[#2A2320] font-bold">Website Development</strong>, <strong className="text-[#2A2320] font-bold">Software Development</strong>, and <strong className="text-[#2A2320] font-bold">Cyber Security Solutions</strong>  , making us a one-stop partner for digital transformation. Our solutions are tailored to meet the unique needs of every client, whether it’s building brand visibility, designing user-friendly websites, developing enterprise-grade applications, or ensuring robust digital security.
@@ -215,7 +215,7 @@ const AboutUs = () => {
           </h2>
           
           <p className="text-gray-600 text-lg leading-relaxed text-justify">
-            At <strong>Digital Factory</strong>, we believe that technology and creativity must go hand-in-hand. Our team brings together specialists from different domains who collaborate to deliver measurable results, not just promises. We adopt a client-first approach, ensuring transparency, reliability, and long-term success in every project we undertake.
+            At <strong>Digital Theory Labs</strong>, we believe that technology and creativity must go hand-in-hand. Our team brings together specialists from different domains who collaborate to deliver measurable results, not just promises. We adopt a client-first approach, ensuring transparency, reliability, and long-term success in every project we undertake.
           </p>
 
           <div className="pt-4 space-y-4">
@@ -263,7 +263,7 @@ const AboutUs = () => {
       </div>
          
                  <p className="text-gray-600 pt-4 pb-2 italic border-l-4 pl-9 text-justify">
-            Driven by innovation and guided by values of integrity, quality, and trust, Digital Factory is committed to shaping a future where businesses of every <br/> size can thrive digitally and unlock their true potential.
+            Driven by innovation and guided by values of integrity, quality, and trust, Digital Theory Labs is committed to shaping a future where businesses of every <br/> size can thrive digitally and unlock their true potential.
           </p>
     </section>
 

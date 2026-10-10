@@ -186,7 +186,7 @@ export function SiteFooter() {
                    
                     <Image
                       src="/digitalfactorytheorylab.png"
-                      alt="Digital Factory Logo"
+                      alt="Digital Theory labs Logo"
                       width={140}
                       height={140}
                       priority
@@ -313,9 +313,9 @@ export function SiteFooter() {
             transition={{ duration: 1, ease }}
             className="absolute left-0 top-0 h-[1px] w-full origin-left bg-[#C46A42]/20"
           />
-          <p>© {new Date().getFullYear()} Digital Factory. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Digital Theory Labs. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
-            Built with <span className="font-semibold text-[#C46A42]">Digital Factory</span>
+            Built with <span className="font-semibold text-[#C46A42]">Digital Theory Labs</span>
           </p>
         </motion.div>
       </div>
