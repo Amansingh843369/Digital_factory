@@ -53,7 +53,7 @@ function Logo() {
       <Image
         src="/digitalfactorytheorylab.png"
         alt="Digital Theory labs Logo"
-        width={180}
+        width={230}
         height={170}
          
       />

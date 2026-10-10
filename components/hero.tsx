@@ -112,60 +112,35 @@ export function Hero() {
             animate="visible"
             className="flex flex-col items-start"
           >
-            <motion.h1
-              variants={itemVariants}
-              className="
-                max-w-4xl
-                font-display
-                text-3xl
-                sm:text-5xl
-                md:text-6xl
-                lg:text-5xl
-                xl:text-7xl
-                font-extrabold
-                leading-[1.1]
-                sm:leading-[1.05]
-                tracking-tight
-                text-white
-              "
-            >
-              Digital Theory Labs
+           <motion.h1
+  variants={itemVariants}
+  className="
+    flex flex-wrap items-baseline gap-x-3
+    font-display font-extrabold tracking-tight
+    text-white
+    text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
+    leading-tight
+  "
+>
+  <span className="whitespace-nowrap">
+    Digital Theory Labs
+  </span>
 
-              <br />
+  <span className="inline-flex items-baseline whitespace-nowrap">
+    <span
+      className="
+        bg-gradient-to-r from-brand via-cyan-400 to-indigo-500
+        bg-clip-text text-transparent
+      "
+    >
+      {typeWriterText}
+    </span>
 
-              <span
-                className="
-                  inline-flex
-                  items-baseline
-                  whitespace-nowrap
-                  min-h-[1.2em]
-                "
-              >
-                <span
-                  className="
-                    bg-gradient-to-r
-                    from-brand
-                    via-cyan-400
-                    to-indigo-500
-                    bg-clip-text
-                    text-transparent
-                    lg:text-7xl
-                  "
-                >
-                  {typeWriterText}
-                </span>
-
-                <span
-                  className="
-                    animate-pulse
-                    text-indigo-500
-                    font-light
-                  "
-                >
-                  |
-                </span>
-              </span>
-            </motion.h1>
+    <span className="animate-pulse text-indigo-500 font-light">
+      |
+    </span>
+  </span>
+</motion.h1>
 
             <motion.p
               variants={itemVariants}

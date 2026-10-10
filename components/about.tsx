@@ -133,7 +133,7 @@ export function About() {
               About Digital Theory Labs 
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl leading-[1.2] sm:leading-[1.1] tracking-tight text-neutral-900 md:text-5xl lg:text-[52px]">
+            <h2 className="font-serif text-3xl sm:text-4xl leading-[1.2] sm:leading-[1.1] tracking-tight text-neutral-900 md:text-5xl lg:text-[45px]">
               Exploring Endless <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 to-[#C46A42]">
                 Digital Possibilities
