@@ -19,10 +19,10 @@ const customEase = [0.22, 1, 0.36, 1];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: customEase } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: customEase }
   }
 };
 
@@ -37,7 +37,7 @@ const staggerContainer = {
 export default function DigitalMarketingPage() {
   // ✅ State for Popup Modal
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  
+
   // ✅ NEW: Form States
   const [formData, setFormData] = useState({
     from_name: '',
@@ -91,7 +91,7 @@ export default function DigitalMarketingPage() {
     e.preventDefault();
     setIsSending(true);
     setSendStatus('idle');
-   
+
     // .env.local se credentials fetch karna
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
@@ -101,7 +101,7 @@ export default function DigitalMarketingPage() {
       await emailjs.send(serviceID, templateID, formData, publicKey);
       setSendStatus('success');
       setFormData({ from_name: '', from_email: '', message: '' });
-      
+
       // 3 second baad popup close kar de
       setTimeout(() => {
         setIsPopupOpen(false);
@@ -118,75 +118,75 @@ export default function DigitalMarketingPage() {
   // DATA - Cleaned Content & Numbers Removed
   const detailedServices = [
     {
-      category: "Search Engine Optimization", 
+      category: "Search Engine Optimization",
       title: "Search Engine Optimization (SEO)",
       desc: "Improve your website’s visibility and reach the right audience through effective SEO strategies. Optimize your content, keywords, and website structure to rank higher on search engines. Drive more organic traffic, attract potential customers, and build long-term online growth.",
-      highlights: [ "Keyword Research & Strategy", "On-Page SEO (content, metadata, structure)", "Off-Page SEO (link building, outreach)", "Technical SEO (site speed, mobile optimization)", "Local SEO (Google Business Profile optimization)", "SEO Audits & Performance Reporting" ],
-      image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200", 
+      highlights: ["Keyword Research & Strategy", "On-Page SEO (content, metadata, structure)", "Off-Page SEO (link building, outreach)", "Technical SEO (site speed, mobile optimization)", "Local SEO (Google Business Profile optimization)", "SEO Audits & Performance Reporting"],
+      image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200",
       badge: "Organic Search"
     },
     {
-      category: "Paid Advertising", 
+      category: "Paid Advertising",
       title: "Pay-Per-Click Advertising (PPC)",
       desc: "Reach your target audience with highly focused PPC campaigns designed to generate quick and measurable results. Optimize your campaigns for better clicks, leads, and conversions while managing your advertising budget effectively. Grow your business with data-driven paid advertising strategies.",
-      highlights: [ "Google Ads (Search, Display, Shopping)", "Social Media Ads (Facebook, Instagram, LinkedIn)", "Remarketing & Retargeting Campaigns", "Conversion Rate Optimization (CRO)", "Ad Copywriting & Creative Design", "Campaign Monitoring & Analytics" ],
-      image: "/ppc.png", 
+      highlights: ["Google Ads (Search, Display, Shopping)", "Social Media Ads (Facebook, Instagram, LinkedIn)", "Remarketing & Retargeting Campaigns", "Conversion Rate Optimization (CRO)", "Ad Copywriting & Creative Design", "Campaign Monitoring & Analytics"],
+      image: "/ppc.png",
       badge: "Performance Ads"
     },
     {
-      category: "Social Engagement", 
+      category: "Social Engagement",
       title: "Social Media Marketing & Management",
       desc: "Engage your audience and build strong brand loyalty through high-impact social media platforms. Create engaging content and campaigns that increase reach, engagement, and brand awareness. Manage your social media platforms consistently with a clear and effective strategy.",
-      highlights: [ "Social Media Strategy & Planning", "Content Creation (graphics, videos, reels)", "Social Media Account Management", "Community Building & Engagement", "Influencer Collaboration & Campaigns", "Social Media Analytics & Reporting" ],
-      image: "/smm.png", 
+      highlights: ["Social Media Strategy & Planning", "Content Creation (graphics, videos, reels)", "Social Media Account Management", "Community Building & Engagement", "Influencer Collaboration & Campaigns", "Social Media Analytics & Reporting"],
+      image: "/smm.png",
       badge: "Social Media"
     },
     {
-      category: "Brand Storytelling", 
+      category: "Brand Storytelling",
       title: "Content Marketing",
       desc: "Develop blogs, website content, social media posts, and marketing materials tailored to your business needs. Improve audience engagement, strengthen your online presence, and support your SEO strategy. Create compelling content that resonates with your target audience and drives conversions.",
-      highlights: [ "Blog Writing & Optimization", "Website & Landing Page Copywriting", "Case Studies & Whitepapers", "Infographics & Visual Content", "Video Content Strategy", "Email Newsletters" ],
-      image: "/content.png", 
+      highlights: ["Blog Writing & Optimization", "Website & Landing Page Copywriting", "Case Studies & Whitepapers", "Infographics & Visual Content", "Video Content Strategy", "Email Newsletters"],
+      image: "/content.png",
       badge: "Content Strategy"
     },
     {
-      category: "Customer Nurturing", 
+      category: "Customer Nurturing",
       title: "Email Marketing & Automation",
       desc: "Connect with customers through personalized, automated email campaigns that nurture leads, strengthen relationships, and drive conversions. Build lasting relationships and drive consistent sales with personalized, automated email campaigns. Nurture leads, strengthen relationships, and drive more conversions.",
-      highlights: [ "Email Campaign Design", "Drip Campaigns & Automation", "Subscriber List Segmentation", "Performance Tracking & A/B Testing" ],
-      image: "/email.png", 
+      highlights: ["Email Campaign Design", "Drip Campaigns & Automation", "Subscriber List Segmentation", "Performance Tracking & A/B Testing"],
+      image: "/email.png",
       badge: "Automation"
     },
     {
-      category: "Data & Insights", 
+      category: "Data & Insights",
       title: "Analytics & Performance Tracking",
       desc: "Measure what matters, eliminate guesswork, and continuously optimize your digital ROI. Track your website and marketing performance with clear, data-driven insights to understand user behavior, measure results, and make smarter business decisions.",
-      highlights: [ "Google Analytics & Tag Manager Setup", "Campaign Performance Dashboards", "ROI Tracking & Monthly Reports", "Actionable Insights & Recommendations" ],
-      image: "/analytics.jpg", 
+      highlights: ["Google Analytics & Tag Manager Setup", "Campaign Performance Dashboards", "ROI Tracking & Monthly Reports", "Actionable Insights & Recommendations"],
+      image: "/analytics.jpg",
       badge: "Analytics"
     },
     {
-      category: "Google Search & Display", 
+      category: "Google Search & Display",
       title: "Google Ads Management",
       desc: "Reach the right audience, drive high-quality traffic, and maximize your advertising ROI. Grow your business with targeted Google Ads campaigns designed to reach the right audience at the right time. We create, manage, and optimize your campaigns to drive qualified traffic and generate quality leads.",
-      highlights: [ "Google Search & Display Ads Setup", "Keyword Research & Campaign Optimization", "Ad Copy & Landing Page Optimization", "Conversion & ROI Tracking", "Performance Monitoring & Reports" ],
-      image: "/googe-ads.jpg", 
+      highlights: ["Google Search & Display Ads Setup", "Keyword Research & Campaign Optimization", "Ad Copy & Landing Page Optimization", "Conversion & ROI Tracking", "Performance Monitoring & Reports"],
+      image: "/googe-ads.jpg",
       badge: "Google Ads"
     },
     {
-      category: "Identity & Strategy", 
+      category: "Identity & Strategy",
       title: "Brand Development",
       desc: "Build a strong, memorable brand that connects with your target audience and creates lasting value. We help develop your brand through a clear visual identity, consistent messaging, and a professional brand presence across digital platforms.",
-      highlights: [ "Brand Strategy & Positioning", "Logo & Visual Identity Design", "Brand Guidelines & Identity Systems", "Social Media Branding & Collateral", "Brand Messaging & Communication", "Brand Awareness Campaigns" ],
-      image: "/b.png", 
+      highlights: ["Brand Strategy & Positioning", "Logo & Visual Identity Design", "Brand Guidelines & Identity Systems", "Social Media Branding & Collateral", "Brand Messaging & Communication", "Brand Awareness Campaigns"],
+      image: "/b.png",
       badge: "Brand Identity"
     },
     {
-      category: "Influencer & Local SEO", 
+      category: "Influencer & Local SEO",
       title: "Influencer Marketing & Google Business Profile Optimization",
       desc: "Expand your brand reach through strategic influencer collaborations and a strong Google Business Profile presence. We help connect your business with relevant audiences, improve local visibility, and build trust through authentic promotions and customer reviews.",
-      highlights: [ "Influencer Research & Campaign Management", "Google Business Profile Setup", "Local SEO & Map Pack Optimization", "Google Reviews & Reputation Management", "Audience Engagement & Tracking" ],
-      image: "/influencer.png", 
+      highlights: ["Influencer Research & Campaign Management", "Google Business Profile Setup", "Local SEO & Map Pack Optimization", "Google Reviews & Reputation Management", "Audience Engagement & Tracking"],
+      image: "/influencer.png",
       badge: "Influencers & Local"
     }
   ];
@@ -206,56 +206,56 @@ export default function DigitalMarketingPage() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#FAF8F5] text-[#1C1614] font-sans selection:bg-[#CD7F5D] selection:text-white relative overflow-hidden">
-      
+
       {/* Dynamic Background */}
-      <motion.div 
+      <motion.div
         style={{ y: yHeroBg }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] max-w-[1000px] h-[500px] bg-gradient-to-b from-[#F2E4DC]/80 to-transparent rounded-full blur-[100px] md:blur-[140px] pointer-events-none will-change-transform" 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] max-w-[1000px] h-[500px] bg-gradient-to-b from-[#F2E4DC]/80 to-transparent rounded-full blur-[100px] md:blur-[140px] pointer-events-none will-change-transform"
       />
 
       {/* Reduced global padding for mobile responsiveness */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-6 relative z-10">
-        
-    {/* HERO SECTION */}
+
+        {/* HERO SECTION */}
         <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-14 lg:pt-0 pb-12 flex flex-col items-center">
-          
+
           {/* Centered Breadcrumb Pill exactly matching the image */}
-          <motion.nav 
-            initial={{ opacity: 0, y: -10 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="mb-8 inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white border border-[#E5DCD5] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.05)]"
           >
             <a href="/" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">
               Home
             </a>
-            
+
             <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
-            
+
             <a href="/#services" className="text-[#867E77] text-sm md:text-[15px] font-semibold hover:text-[#2C2825] transition-colors">
               Services
             </a>
-            
+
             <span className="text-[#D0C8C1] text-lg leading-none mt-[-2px]">›</span>
-            
+
             <span className="text-[#CD7F5D] text-sm md:text-[15px] font-bold">
               Digital Marketing
             </span>
           </motion.nav>
 
           {/* Ultra-Bold Monochromatic Headline matching image spacing and weight */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mb-6 md:mb-8 text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-[#272422] tracking-tighter leading-[1.05]"
           >
-            Data-Driven Marketing. <br className="hidden md:block"/>
+            Data-Driven Marketing. <br className="hidden md:block" />
             Unstoppable Growth.
           </motion.h1>
 
           {/* Large, Light-weight Paragraph perfectly spaced */}
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -265,7 +265,7 @@ export default function DigitalMarketingPage() {
           </motion.p>
 
           {/* CTA Section - Placed with proper spacing below paragraph */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -274,28 +274,28 @@ export default function DigitalMarketingPage() {
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="/#contact"
+              href="#consultation"
               className="w-full sm:w-auto px-8 py-4 md:px-10 md:py-4.5 rounded-full bg-[#CD7F5D] text-white font-bold text-sm md:text-base tracking-wide shadow-xl shadow-[#CD7F5D]/30 hover:bg-[#B35E3B] transition-all flex items-center justify-center gap-2 group"
             >
               <span>Start Your Marketing Campaign</span>
             </motion.a>
           </motion.div>
           {/* INTRO BLOCK */}
-<motion.section
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  className="mt-10 md:mt-7 max-w-4xl mx-auto text-center bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 rounded-2xl md:rounded-3xl shadow-sm relative overflow-hidden"
->
-  <div className="absolute -top-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-[#BD6E44]/15 blur-3xl rounded-full" />
+          <motion.section
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-10 md:mt-7 max-w-4xl mx-auto text-center bg-[#F3EEEA] border border-[#E5DCD5] p-6 sm:p-10 rounded-2xl md:rounded-3xl shadow-sm relative overflow-hidden"
+          >
+            <div className="absolute -top-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-[#BD6E44]/15 blur-3xl rounded-full" />
 
-  <p className="text-sm sm:text-base md:text-lg text-[#4A433D] leading-relaxed relative z-10">
-    Build powerful, scalable, and reliable software solutions tailored to your business needs. From custom applications and enterprise platforms to automation and cloud-based solutions, our software development services turn ideas into secure and <br className="hidden md:block" /> high-performing digital products.
-  </p>
-</motion.section>
+            <p className="text-sm sm:text-base md:text-lg text-[#4A433D] leading-relaxed relative z-10">
+              Build powerful, scalable, and reliable software solutions tailored to your business needs. From custom applications and enterprise platforms to automation and cloud-based solutions, our software development services turn ideas into secure and <br className="hidden md:block" /> high-performing digital products.
+            </p>
+          </motion.section>
         </section>
 
-        
+
         {/* ZIG-ZAG SERVICES WITH DIRECTIONAL CURTAIN REVEAL */}
         <section id="capabilities" className="mt-12 md:mt-14 space-y-8 md:space-y-25">
           <div className="text-center max-w-3xl mx-auto space-y-3 md:space-y-4 px-4">
@@ -306,48 +306,48 @@ export default function DigitalMarketingPage() {
           <div className="space-y-12 md:space-y-32">
             {detailedServices.map((service, index) => {
               const isEven = index % 2 === 0;
-              
+
               // LOGIC FOR DIRECTIONAL REVEAL
               // If Even (Image Left): Reveal from Left (inset 0 100% 0 0 -> 0 0% 0 0)
               // If Odd (Image Right): Reveal from Right (inset 0 0 0 100% -> 0 0 0 0%)
-              const revealClip = isEven 
+              const revealClip = isEven
                 ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] // Left to Right
                 : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; // Right to Left
 
               return (
-                <motion.div 
-                  key={index} 
-                  initial="hidden" 
-                  whileInView="visible" 
-                  viewport={{ once: true, amount: 0.1 }} 
+                <motion.div
+                  key={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
                   variants={fadeInUp}
                   // ✅ KEY FIX: items-stretch ensures both columns equal height
                   className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-8 md:gap-16`}
                 >
                   {/* IMAGE SIDE WITH DIRECTIONAL CURTAIN REVEAL EFFECT */}
                   <div className="w-full lg:w-1/2 relative group">
-                    <motion.div 
-                      whileHover={{ scale: 1.02 }} 
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.5, ease: customEase }}
                       // ✅ KEY FIX: h-full + removed aspect ratio allows perfect stretching
                       className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl bg-white border border-[#E8DDD2]/50 w-full h-full min-h-[300px] md:min-h-[400px]"
                     >
                       {/* The Mask Container using Clip Path - Triggers on Viewport Entry */}
-                     <motion.div 
-  initial={{ clipPath: revealClip[0] }} 
-  whileInView={{ clipPath: revealClip[1] }} 
-  transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} 
-  // relative hata kar absolute inset-0 kar diya hai
-  className="absolute inset-0 w-full h-full" 
->
-  <img 
-    src={service.image} 
-    alt={service.title} 
-    className="w-full h-full object-cover" 
-  />
-  <div className="absolute inset-0 bg-[#1C1614]/10 group-hover:bg-transparent transition-colors duration-700" />
-</motion.div>
-                      
+                      <motion.div
+                        initial={{ clipPath: revealClip[0] }}
+                        whileInView={{ clipPath: revealClip[1] }}
+                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }}
+                        // relative hata kar absolute inset-0 kar diya hai
+                        className="absolute inset-0 w-full h-full"
+                      >
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-[#1C1614]/10 group-hover:bg-transparent transition-colors duration-700" />
+                      </motion.div>
+
                       {/* Badge stays on top of the reveal */}
                       <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-white/90 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg flex items-center gap-2 z-20">
                         <span className="font-mono text-[10px] md:text-xs font-bold text-[#CD7F5D]">0{index + 1}</span>
@@ -363,7 +363,7 @@ export default function DigitalMarketingPage() {
                       <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-[#1C1614] tracking-tight leading-tight">{service.title}</h3>
                     </div>
                     <p className="text-sm md:text-base text-[#6B5D56] leading-relaxed  text-justify">{service.desc}</p>
-                    
+
                     {/* ✅ TICK MARKS YAHAN SAFE HAIN - UNHE NAHI HATAYA */}
                     <ul className="space-y-2 md:space-y-3 pt-2">
                       {service.highlights.map((item, i) => (
@@ -376,15 +376,15 @@ export default function DigitalMarketingPage() {
 
                     {/* ✅ KNOW MORE BUTTON */}
                     <div className="pt-4">
-                       <motion.button
-                         whileHover={{ scale: 1.02 }}
-                         whileTap={{ scale: 0.98 }}
-                         onClick={() => setIsPopupOpen(true)}
-                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#CD7F5D]/30 transition-all group"
-                       >
-                         <span>Know More</span>
-                         <ArrowRight className="w-4 h-4 text-[#CD7F5D] transition-transform group-hover:translate-x-1" />
-                       </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => setIsPopupOpen(true)}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#CD7F5D]/30 transition-all group"
+                      >
+                        <span>Know More</span>
+                        <ArrowRight className="w-4 h-4 text-[#CD7F5D] transition-transform group-hover:translate-x-1" />
+                      </motion.button>
                     </div>
 
                   </div>
@@ -394,13 +394,13 @@ export default function DigitalMarketingPage() {
           </div>
         </section>
 
-       {/* WHY CHOOSE US / AGENCY ADVANTAGE SECTION */}
-<motion.section
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.1 }}
-  variants={fadeInUp}
-  className="
+        {/* WHY CHOOSE US / AGENCY ADVANTAGE SECTION */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={fadeInUp}
+          className="
     mt-16 md:mt-32
     relative
     bg-[#F5EFE6]
@@ -410,10 +410,10 @@ export default function DigitalMarketingPage() {
     shadow-[0_25px_80px_rgba(71,52,39,0.12)]
     border border-[#E4D8C9]
   "
->
-  {/* Ambient Background */}
-  <div
-    className="
+        >
+          {/* Ambient Background */}
+          <div
+            className="
       absolute -top-32 left-1/4
       w-[300px] h-[300px]
       md:w-[600px] md:h-[600px]
@@ -422,10 +422,10 @@ export default function DigitalMarketingPage() {
       blur-[80px] md:blur-[140px]
       pointer-events-none
     "
-  />
+          />
 
-  <div
-    className="
+          <div
+            className="
       absolute -bottom-32 right-1/4
       w-[250px] h-[250px]
       md:w-[500px] md:h-[500px]
@@ -434,14 +434,14 @@ export default function DigitalMarketingPage() {
       blur-[80px] md:blur-[140px]
       pointer-events-none
     "
-  />
+          />
 
-  {/* Top Decorative Line */}
-  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B48A68]/40 to-transparent" />
+          {/* Top Decorative Line */}
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B48A68]/40 to-transparent" />
 
-  {/* Header */}
-  <div
-    className="
+          {/* Header */}
+          <div
+            className="
       relative z-10
       text-center
       max-w-3xl
@@ -449,10 +449,10 @@ export default function DigitalMarketingPage() {
       space-y-4 md:space-y-5
       mb-10 md:mb-20
     "
-  >
-    {/* Small Label */}
-    <span
-      className="
+          >
+            {/* Small Label */}
+            <span
+              className="
         inline-flex
         items-center
         justify-center
@@ -464,17 +464,17 @@ export default function DigitalMarketingPage() {
         text-[#8B5E3C]
         font-bold
       "
-    >
-      <span className="w-6 md:w-8 h-px bg-[#B48A68]" />
+            >
+              <span className="w-6 md:w-8 h-px bg-[#B48A68]" />
 
-      The Agency Advantage
+              The Agency Advantage
 
-      <span className="w-6 md:w-8 h-px bg-[#B48A68]" />
-    </span>
+              <span className="w-6 md:w-8 h-px bg-[#B48A68]" />
+            </span>
 
-    {/* Heading */}
-    <h2
-      className="
+            {/* Heading */}
+            <h2
+              className="
         text-2xl
         sm:text-3xl
         md:text-5xl
@@ -484,13 +484,13 @@ export default function DigitalMarketingPage() {
         tracking-tight
         leading-tight
       "
-    >
-      Why Brands Choose Us
-    </h2>
+            >
+              Why Brands Choose Us
+            </h2>
 
-    {/* Description */}
-    <p
-      className="
+            {/* Description */}
+            <p
+              className="
         text-[#75675D]
         text-sm
         md:text-base
@@ -501,30 +501,30 @@ export default function DigitalMarketingPage() {
         mx-auto
         px-4
       "
-    >
-      We don't just run ads; we engineer growth. Our ecosystem is built around
-      transparency, creative strategy, measurable performance, and tangible ROI.
-    </p>
-  </div>
+            >
+              We don't just run ads; we engineer growth. Our ecosystem is built around
+              transparency, creative strategy, measurable performance, and tangible ROI.
+            </p>
+          </div>
 
-  {/* Card Grid */}
-  <motion.div
-    variants={staggerContainer}
-    className="
+          {/* Card Grid */}
+          <motion.div
+            variants={staggerContainer}
+            className="
       relative z-10
       grid
       grid-cols-1
       md:grid-cols-2
       gap-4 md:gap-8
     "
-  >
-    {whyChooseUs.map((item, idx) => (
-      <motion.div
-        key={idx}
-        variants={fadeInUp}
-        whileHover={{ y: -8 }}
-        transition={{ duration: 0.35 }}
-        className="
+          >
+            {whyChooseUs.map((item, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeInUp}
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.35 }}
+                className="
           relative
           bg-[#FFFDF9]
           p-6 md:p-12
@@ -537,11 +537,11 @@ export default function DigitalMarketingPage() {
           hover:border-[#B48A68]/70
           hover:shadow-[0_25px_65px_rgba(91,65,45,0.14)]
         "
-      >
+              >
 
-        {/* Hover Gradient */}
-        <div
-          className="
+                {/* Hover Gradient */}
+                <div
+                  className="
             absolute inset-0
             bg-gradient-to-br
             from-[#F1E4D5]/70
@@ -551,11 +551,11 @@ export default function DigitalMarketingPage() {
             group-hover:opacity-100
             transition-opacity duration-500
           "
-        />
+                />
 
-        {/* Giant Number */}
-        <div
-          className="
+                {/* Giant Number */}
+                <div
+                  className="
             absolute
             -top-8
             -right-4
@@ -568,16 +568,16 @@ export default function DigitalMarketingPage() {
             pointer-events-none
             select-none
           "
-        >
-          0{idx + 1}
-        </div>
+                >
+                  0{idx + 1}
+                </div>
 
-        {/* Content */}
-        <div className="relative z-10">
+                {/* Content */}
+                <div className="relative z-10">
 
-          {/* Icon */}
-          <div
-            className="
+                  {/* Icon */}
+                  <div
+                    className="
               w-12 h-12
               md:w-16 md:h-16
               rounded-xl md:rounded-2xl
@@ -603,13 +603,13 @@ export default function DigitalMarketingPage() {
 
               shadow-[0_8px_25px_rgba(91,65,45,0.08)]
             "
-          >
-            {item.icon}
-          </div>
+                  >
+                    {item.icon}
+                  </div>
 
-          {/* Title */}
-          <h3
-            className="
+                  {/* Title */}
+                  <h3
+                    className="
               text-lg
               md:text-2xl
               font-bold
@@ -618,13 +618,13 @@ export default function DigitalMarketingPage() {
               group-hover:text-[#8B5E3C]
               transition-colors duration-300
             "
-          >
-            {item.title}
-          </h3>
+                  >
+                    {item.title}
+                  </h3>
 
-          {/* Description */}
-          <p
-            className="
+                  {/* Description */}
+                  <p
+                    className="
               text-xs
               md:text-base
               text-[#75675D]
@@ -634,40 +634,40 @@ export default function DigitalMarketingPage() {
               transition-colors duration-300
               max-w-xl
             "
-          >
-            {item.desc}
-          </p>
+                  >
+                    {item.desc}
+                  </p>
 
-          {/* Bottom Accent */}
-          <div className="mt-6 md:mt-8 flex items-center gap-2">
-            <span
-              className="
+                  {/* Bottom Accent */}
+                  <div className="mt-6 md:mt-8 flex items-center gap-2">
+                    <span
+                      className="
                 w-8 h-[2px]
                 bg-[#B48A68]
                 group-hover:w-14
                 transition-all duration-500
               "
-            />
+                    />
 
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B48A68]" />
-          </div>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#B48A68]" />
+                  </div>
 
-        </div>
-      </motion.div>
-    ))}
-  </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
 
-  {/* Bottom Decorative Line */}
-  <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B48A68]/30 to-transparent" />
-</motion.section>
+          {/* Bottom Decorative Line */}
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B48A68]/30 to-transparent" />
+        </motion.section>
         {/* FAQ (SPLIT STICKY LAYOUT) */}
         <section className="mt-16 md:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-20 items-start">
-            
+
             <div className="lg:col-span-5 space-y-4 md:space-y-6 lg:sticky lg:top-32">
               <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#CD7F5D] font-bold">Support & Knowledge</span>
               <h2 className="text-2xl md:text-5xl font-extrabold text-[#1C1614] tracking-tight leading-tight">
-                Frequently Asked <br className="hidden lg:block"/> Questions
+                Frequently Asked <br className="hidden lg:block" /> Questions
               </h2>
               <p className="text-sm md:text-base text-[#6B5D56] leading-relaxed">
                 Everything you need to know about our digital marketing process, timelines, and reporting structure.
@@ -684,7 +684,7 @@ export default function DigitalMarketingPage() {
               {faqs.map((faq, index) => {
                 const isOpen = openAccordion === index;
                 return (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     className={`rounded-xl md:rounded-2xl border transition-all duration-500 ${isOpen ? 'bg-white border-[#EBE2D8] shadow-md' : 'bg-transparent border-transparent hover:bg-white/50'}`}
                   >
@@ -695,7 +695,7 @@ export default function DigitalMarketingPage() {
                       <span className={`font-bold text-sm md:text-lg transition-colors ${isOpen ? 'text-[#CD7F5D]' : 'text-[#1C1614] group-hover:text-[#CD7F5D]'}`}>
                         {faq.question}
                       </span>
-                      <motion.div 
+                      <motion.div
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         className={`flex-shrink-0 w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-[#CD7F5D] text-white' : 'bg-[#EBE2D8] text-[#1C1614]'}`}
                       >
@@ -726,13 +726,13 @@ export default function DigitalMarketingPage() {
         </section>
 
         {/* CALL TO ACTION */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, scale: 0.95, y: 30 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: customEase }}
           id="consultation" className="mt-16 md:mt-32 pb-10"
         >
           <div className="relative rounded-[1.5rem] md:rounded-[3rem] bg-gradient-to-br from-[#CD7F5D] to-[#A05C3F] p-8 md:p-24 text-center overflow-hidden shadow-2xl text-white">
             <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
-            
+
             <div className="relative z-10 max-w-3xl mx-auto space-y-6 md:space-y-8">
               <h2 className="text-2xl sm:text-3xl md:text-6xl font-extrabold tracking-tight leading-tight">
                 Ready to accelerate your revenue?
@@ -742,8 +742,9 @@ export default function DigitalMarketingPage() {
               </p>
               <div className="pt-2 md:pt-4">
                 <motion.a
-                  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  href="mailto:contact@agency.com"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="/#contact"
                   className="inline-flex items-center justify-center gap-3 px-6 py-3 md:px-8 md:py-5 rounded-full bg-[#1C1614] text-white font-bold text-sm md:text-base tracking-wide shadow-2xl hover:bg-black transition-colors w-full sm:w-auto"
                 >
                   Get Your Free Digital Audit Call
@@ -768,7 +769,7 @@ export default function DigitalMarketingPage() {
               onClick={() => setIsPopupOpen(false)}
               className="fixed inset-0 bg-[#2C2825]/40 backdrop-blur-sm z-[60]"
             />
-            
+
             {/* Modal Content */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -799,8 +800,8 @@ export default function DigitalMarketingPage() {
                 <form onSubmit={handleSubmit} className="p-8 space-y-4">
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="from_name"
                       value={formData.from_name}
                       onChange={handleInputChange}
@@ -809,11 +810,11 @@ export default function DigitalMarketingPage() {
                       className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#CD7F5D] focus:ring-2 focus:ring-[#CD7F5D]/20 transition-all"
                     />
                   </div>
-                  
+
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Email Address</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       name="from_email"
                       value={formData.from_email}
                       onChange={handleInputChange}
@@ -825,7 +826,7 @@ export default function DigitalMarketingPage() {
 
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Project Details</label>
-                    <textarea 
+                    <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}

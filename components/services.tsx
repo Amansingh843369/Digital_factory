@@ -82,7 +82,7 @@ export function Services() {
   };
 
   return (
-    <section id="service" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-24 lg:py-1 text-neutral-900">
+    <section id="services" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-24 lg:py-1 text-neutral-900">
       
       {/* Background Ambient Glow */}
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[400px] w-[400px] sm:h-[600px] sm:w-[600px] rounded-full bg-[#C46A42]/5 blur-[120px]" />

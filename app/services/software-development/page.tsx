@@ -56,8 +56,7 @@ const whyChooseUs = [
   { id: "03", title: "End-to-End Support", desc: "From initial design and development to ongoing maintenance and updates.", icon: "🔄" },
   { id: "04", title: "Security & Compliance", desc: "Built-in security protocols including SSL, HTTPS, and encrypted data handling.", icon: "🔐" }
 ];
-
-// ✅ NEW: FAQ Data for Software Development
+ 
 const faqData = [
   {
     question: "How long does it take to develop custom software?",
@@ -277,7 +276,7 @@ export default function SoftwareDevelopmentPage() {
             
             {/* Smooth Scroll Anchor Link */}
             <a 
-              href="/#service" 
+              href="/#services" 
               className="flex items-baseline text-[#8C827A] text-sm md:text-base font-semibold hover:text-[#2C2825] transition-colors group"
             >
               Services
@@ -347,10 +346,10 @@ export default function SoftwareDevelopmentPage() {
 
   
    {/* SERVICES SHOWCASE */}
-        <section id="services" className="mt-28 sm:mt-6 space-y-24 sm:space-y-32 scroll-mt-24">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
+        <section id="services" className="mt-18 sm:mt-6 space-y-14 sm:space-y-32 ">
+          <div className="text-center max-w-2xl mx-auto space-y-1">
             <span className="text-xs font-bold uppercase tracking-widest text-[#C87D55]">Our Core Expertise</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2C2825] tracking-tight">Software Development </h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2C2825] tracking-tight mb-[-35px]">Software Development </h2>
           </div>
 
           <div className="space-y-24 sm:space-y-32">
@@ -506,7 +505,7 @@ export default function SoftwareDevelopmentPage() {
     px-4
     sm:mt-28 sm:px-6
     md:mt-32
-    lg:mt-40 lg:px-8
+    lg:mt-30 lg:px-8
   "
 >
   {/* Main CTA Card */}
@@ -723,55 +722,53 @@ export default function SoftwareDevelopmentPage() {
           lg:mt-9
         "
       >
-        <motion.a
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          href="mailto:hello@digitalfactory.com"
-          className="
-            group
-            flex
-            w-full
-            items-center
-            justify-center
-            gap-3
-            rounded-full
-            bg-[#C87D55]
-            px-6
-            py-4
-            text-[15px]
-            font-bold
-            tracking-wide
-            text-white
-            shadow-xl
-            shadow-[#C87D55]/30
-            transition-all
-            duration-300
-            hover:bg-[#B56E47]
+    <motion.a
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.97 }}
+  href="/#contact"
+  className="
+    group
+    flex
+    w-full
+    items-center
+    justify-center
+    gap-3
+    rounded-full
+    bg-[#C87D55]
+    px-6
+    py-4
+    text-[15px]
+    font-bold
+    tracking-wide
+    text-white
+    shadow-xl
+    shadow-[#C87D55]/30
+    transition-all
+    duration-300
+    hover:bg-[#B56E47]
+    sm:w-auto
+    sm:px-9
+    sm:py-4
+    lg:px-10
+    lg:py-5
+    lg:text-base
+  "
+>
+  <span className="whitespace-nowrap">
+    Start Your Project
+  </span>
 
-            sm:w-auto
-            sm:px-9
-            sm:py-4
-
-            lg:px-10
-            lg:py-5
-            lg:text-base
-          "
-        >
-          <span className="whitespace-nowrap">
-            Start Your Project
-          </span>
-
-          <ArrowRight
-            className="
-              h-5
-              w-5
-              shrink-0
-              transition-transform
-              duration-300
-              group-hover:translate-x-1.5
-            "
-          />
-        </motion.a>
+  <ArrowRight
+    className="
+      h-5
+      w-5
+      shrink-0
+      transition-transform
+      duration-300
+      group-hover:translate-x-1.5
+    "
+  />
+</motion.a>
         
       </motion.div>
 

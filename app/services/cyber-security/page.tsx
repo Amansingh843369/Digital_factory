@@ -10,10 +10,10 @@ const customEase = [0.22, 1, 0.36, 1];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: customEase } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: customEase }
   }
 };
 
@@ -28,7 +28,7 @@ const staggerContainer = {
 export default function CyberSecurityPage() {
   // ✅ State for Popup Modal
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  
+
   // ✅ NEW: Form States
   const [formData, setFormData] = useState({
     from_name: '',
@@ -81,7 +81,7 @@ export default function CyberSecurityPage() {
     e.preventDefault();
     setIsSending(true);
     setSendStatus('idle');
-   
+
     // .env.local se credentials fetch karna
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
@@ -91,7 +91,7 @@ export default function CyberSecurityPage() {
       await emailjs.send(serviceID, templateID, formData, publicKey);
       setSendStatus('success');
       setFormData({ from_name: '', from_email: '', message: '' });
-      
+
       // 3 second baad popup close kar de
       setTimeout(() => {
         setIsPopupOpen(false);
@@ -108,7 +108,7 @@ export default function CyberSecurityPage() {
   // CYBER SECURITY SERVICES DATA
   const detailedServices = [
     {
-      category: "Infrastructure", 
+      category: "Infrastructure",
       title: "Network Security",
       desc: "Protect your business network from cyber threats with robust security solutions designed to keep your systems, devices, and data safe. We help identify vulnerabilities, strengthen network defenses, monitor potential threats, and reduce security risks.",
       highlights: [
@@ -121,7 +121,7 @@ export default function CyberSecurityPage() {
       badge: "Network Defense"
     },
     {
-      category: "Cloud", 
+      category: "Cloud",
       title: "Cloud Security",
       desc: "Protect your data and applications across AWS, Azure, and Google Cloud environments. Secure your cloud infrastructure, applications, and data with reliable security solutions built for modern businesses.",
       highlights: [
@@ -135,7 +135,7 @@ export default function CyberSecurityPage() {
       badge: "Cloud Safe"
     },
     {
-      category: "Data", 
+      category: "Data",
       title: "Data Protection & Privacy",
       desc: "Safeguard sensitive business and customer information from leaks and theft. Protect your sensitive business and customer data with effective privacy and security measures.",
       highlights: [
@@ -149,7 +149,7 @@ export default function CyberSecurityPage() {
       badge: "Data Privacy"
     },
     {
-      category: "Compliance", 
+      category: "Compliance",
       title: "IT Security Audits",
       desc: "Identify vulnerabilities and ensure your organization meets global regulatory standards. Identify security gaps and strengthen your IT infrastructure with comprehensive security audits.",
       highlights: [
@@ -163,7 +163,7 @@ export default function CyberSecurityPage() {
       badge: "Audit Ready"
     },
     {
-      category: "Intelligence", 
+      category: "Intelligence",
       title: "Threat Intelligence & SOC",
       desc: "Proactive monitoring and analysis to detect threats before they impact your business. Strengthen your cybersecurity with real-time threat intelligence and proactive Security Operations Center (SOC) monitoring.",
       highlights: [
@@ -177,7 +177,7 @@ export default function CyberSecurityPage() {
       badge: "24/7 SOC"
     },
     {
-      category: "Zero Trust", 
+      category: "Zero Trust",
       title: "Identity & Access Management",
       desc: "Implement Zero Trust architecture to verify every user and device accessing your resources.",
       highlights: [
@@ -194,25 +194,25 @@ export default function CyberSecurityPage() {
 
   // WHY CHOOSE US DATA
   const whyChooseUs = [
-    { 
-      title: "Comprehensive Coverage", 
-      desc: "Full-stack security from network to cloud.", 
-      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg> 
+    {
+      title: "Comprehensive Coverage",
+      desc: "Full-stack security from network to cloud.",
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
     },
-    { 
-      title: "Compliance Ready", 
-      desc: "Meets ISO, GDPR, HIPAA, and SOC 2 standards.", 
-      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m9 15 2 2 4-4"></path></svg> 
+    {
+      title: "Compliance Ready",
+      desc: "Meets ISO, GDPR, HIPAA, and SOC 2 standards.",
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m9 15 2 2 4-4"></path></svg>
     },
-    { 
-      title: "Proactive Detection", 
-      desc: "24/7 monitoring to stop threats early.", 
-      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10S2 17.5 2 12Z"></path><path d="M12 12v.01"></path><path d="M19.07 4.93a10 10 0 0 0-14.14 0"></path></svg> 
+    {
+      title: "Proactive Detection",
+      desc: "24/7 monitoring to stop threats early.",
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10S2 17.5 2 12Z"></path><path d="M12 12v.01"></path><path d="M19.07 4.93a10 10 0 0 0-14.14 0"></path></svg>
     },
-    { 
-      title: "Tailored Strategy", 
-      desc: "Custom security plans for your business needs.", 
-      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> 
+    {
+      title: "Tailored Strategy",
+      desc: "Custom security plans for your business needs.",
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
     },
   ];
 
@@ -239,23 +239,23 @@ export default function CyberSecurityPage() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#F7F3E8] text-[#2C1E16] font-sans selection:bg-[#A64B2A] selection:text-white relative overflow-hidden">
-      
+
       {/* Dynamic Background */}
-      <motion.div 
+      <motion.div
         style={{ y: yHeroBg }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] max-w-[1000px] h-[500px] bg-gradient-to-b from-[#A64B2A]/10 to-transparent rounded-full blur-[100px] md:blur-[140px] pointer-events-none will-change-transform" 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] max-w-[1000px] h-[500px] bg-gradient-to-b from-[#A64B2A]/10 to-transparent rounded-full blur-[100px] md:blur-[140px] pointer-events-none will-change-transform"
       />
 
       {/* MAIN CONTENT WRAPPER */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-1 sm:py-12 relative z-10">
-        
-     {/* HERO SECTION */}
+
+        {/* HERO SECTION */}
         <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-16 lg:pt-0 pb-12 flex flex-col items-center">
-          
+
           {/* CENTERED BREADCRUMB PILL */}
-          <motion.nav 
-            initial={{ opacity: 0, y: -10 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="mb-6 inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white border border-[#E5D7CD] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.05)]"
           >
@@ -267,20 +267,20 @@ export default function CyberSecurityPage() {
           </motion.nav>
 
           {/* HEADLINE */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-[#2A2320] tracking-tight leading-[1.1]"
           >
-            Protecting Your Business <br className="hidden md:block"/>
+            Protecting Your Business <br className="hidden md:block" />
             <span className="text-[#B35332]">In a Digital World.</span>
           </motion.h1>
 
           {/* PARAGRAPH */}
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mb-10 md:mb-12 text-lg sm:text-xl text-[#6B5D56] leading-[1.6] font-light max-w-2xl mx-auto px-4"
           >
@@ -288,22 +288,22 @@ export default function CyberSecurityPage() {
           </motion.p>
 
           {/* CTA BUTTON */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-             <motion.a
-               whileHover={{ scale: 1.02 }} 
-               whileTap={{ scale: 0.98 }}
-               href="#consultation"
-               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#A64B2A] text-white font-semibold text-base tracking-wide shadow-lg shadow-[#A64B2A]/20 hover:bg-[#8a3d22] transition-colors"
-             >
-               Secure Your Business
-               <span className="text-xl leading-none font-light ml-1">→</span>
-             </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="#consultation"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#A64B2A] text-white font-semibold text-base tracking-wide shadow-lg shadow-[#A64B2A]/20 hover:bg-[#8a3d22] transition-colors"
+            >
+              Secure Your Business
+              <span className="text-xl leading-none font-light ml-1">→</span>
+            </motion.a>
           </motion.div>
-          
+
           {/* INTRO BLOCK */}
           <motion.section
             initial={{ opacity: 0, y: 30 }}
@@ -328,36 +328,36 @@ export default function CyberSecurityPage() {
           <div className="space-y-12 md:space-y-24">
             {detailedServices.map((service, index) => {
               const isEven = index % 2 === 0;
-              const revealClip = isEven 
-                ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] 
-                : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; 
+              const revealClip = isEven
+                ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"]
+                : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"];
 
               return (
-                <motion.div 
-                  key={index} 
-                  initial="hidden" 
-                  whileInView="visible" 
-                  viewport={{ once: true, amount: 0.1 }} 
+                <motion.div
+                  key={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
                   variants={fadeInUp}
                   className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 md:gap-16`}
                 >
                   {/* IMAGE SIDE */}
                   <div className="w-full lg:w-1/2 relative group">
-                    <motion.div 
-                      whileHover={{ scale: 1.02 }} 
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.5, ease: customEase }}
                       className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl bg-white border border-[#E5D7CD]/50 aspect-[4/3] md:aspect-[16/10]"
                     >
-                      <motion.div 
-                        initial={{ clipPath: revealClip[0] }} 
-                        whileInView={{ clipPath: revealClip[1] }} 
-                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} 
+                      <motion.div
+                        initial={{ clipPath: revealClip[0] }}
+                        whileInView={{ clipPath: revealClip[1] }}
+                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }}
                         className="w-full h-full relative"
                       >
                         <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-[#2C1E16]/10 group-hover:bg-transparent transition-colors duration-700" />
                       </motion.div>
-                      
+
                       {/* Badge */}
                       <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-white/90 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg flex items-center gap-2 z-20">
                         <span className="font-mono text-[10px] md:text-xs font-bold text-[#A64B2A]">{String(index + 1).padStart(2, '0')}</span>
@@ -373,7 +373,7 @@ export default function CyberSecurityPage() {
                       <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#2C1E16] tracking-tight leading-tight">{service.title}</h3>
                     </div>
                     <p className="text-sm md:text-base text-[#6B5D56] leading-relaxed font-normal">{service.desc}</p>
-                    
+
                     {/* ✅ TICK MARKS SAFE HERE */}
                     <ul className="space-y-2 md:space-y-5 pt-2">
                       {service.highlights.map((item, i) => (
@@ -386,15 +386,15 @@ export default function CyberSecurityPage() {
 
                     {/* KNOW MORE BUTTON */}
                     <div className="pt-4">
-                       <motion.button
-                         whileHover={{ scale: 1.02 }}
-                         whileTap={{ scale: 0.98 }}
-                         onClick={() => setIsPopupOpen(true)}
-                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#A64B2A]/30 transition-all group"
-                       >
-                         <span>Know More</span>
-                         <ArrowRight className="w-4 h-4 text-[#A64B2A] transition-transform group-hover:translate-x-1" />
-                       </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => setIsPopupOpen(true)}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#A64B2A]/30 transition-all group"
+                      >
+                        <span>Know More</span>
+                        <ArrowRight className="w-4 h-4 text-[#A64B2A] transition-transform group-hover:translate-x-1" />
+                      </motion.button>
                     </div>
                   </div>
                 </motion.div>
@@ -473,24 +473,38 @@ export default function CyberSecurityPage() {
           <motion.div whileHover={{ y: -5 }} className="w-full rounded-[2rem] bg-gradient-to-br from-[#2C1E16] via-[#4A2B1D] to-[#A64B2A] p-10 md:p-16 text-center overflow-hidden relative shadow-2xl shadow-[#A64B2A]/20 border border-white/10">
             <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} className="absolute -top-1/2 -right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#A64B2A]/40 to-transparent rounded-full blur-[80px] pointer-events-none" />
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay pointer-events-none" />
-            
+
             <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-white drop-shadow-md">
-                    Cyber threats are evolving. <br className="hidden sm:block"/> Don't fall behind.
-                </h2>
-                <p className="text-white/80 text-sm md:text-lg font-normal leading-relaxed max-w-xl mx-auto">
-                    Protect your organization with Digital Theory Labs . Get a comprehensive security audit today.
-                </p>
-                <div className="pt-6">
-                    <motion.a
-                      whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                      href="mailto:info@digitaltheorylabs.com"
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#A64B2A] font-bold text-sm md:text-base tracking-wide shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all"
-                    >
-                      Request Free Audit
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                    </motion.a>
-                </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-white drop-shadow-md">
+                Cyber threats are evolving. <br className="hidden sm:block" /> Don't fall behind.
+              </h2>
+              <p className="text-white/80 text-sm md:text-lg font-normal leading-relaxed max-w-xl mx-auto">
+                Protect your organization with Digital Theory Labs . Get a comprehensive security audit today.
+              </p>
+              <div className="pt-6">
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="/#contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#A64B2A] font-bold text-sm md:text-base tracking-wide shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all"
+                >
+                  Request Free Audit
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </motion.a>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -508,7 +522,7 @@ export default function CyberSecurityPage() {
               onClick={() => setIsPopupOpen(false)}
               className="fixed inset-0 bg-[#2C2825]/40 backdrop-blur-sm z-[60]"
             />
-            
+
             {/* Modal Content */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -539,8 +553,8 @@ export default function CyberSecurityPage() {
                 <form onSubmit={handleSubmit} className="p-8 space-y-4">
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="from_name"
                       value={formData.from_name}
                       onChange={handleInputChange}
@@ -549,11 +563,11 @@ export default function CyberSecurityPage() {
                       className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#A64B2A] focus:ring-2 focus:ring-[#A64B2A]/20 transition-all"
                     />
                   </div>
-                  
+
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Email Address</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       name="from_email"
                       value={formData.from_email}
                       onChange={handleInputChange}
@@ -565,7 +579,7 @@ export default function CyberSecurityPage() {
 
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Project Details</label>
-                    <textarea 
+                    <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}

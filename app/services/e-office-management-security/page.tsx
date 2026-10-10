@@ -4,15 +4,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, X, Send, Loader2 } from 'lucide-react'; // Loader2 added for loading state
 import emailjs from '@emailjs/browser'; // EmailJS imported
-
+import {  ShieldCheck, Sparkles } from "lucide-react";
 const customEase = [0.22, 1, 0.36, 1];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: customEase } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: customEase }
   }
 };
 
@@ -27,7 +27,7 @@ const staggerContainer = {
 export default function EOfficeManagementSecurity() {
   // ✅ State for Popup Modal
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  
+
   // ✅ NEW: Form States
   const [formData, setFormData] = useState({
     from_name: '',
@@ -80,7 +80,7 @@ export default function EOfficeManagementSecurity() {
     e.preventDefault();
     setIsSending(true);
     setSendStatus('idle');
-   
+
     // .env.local se credentials fetch karna
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
@@ -90,7 +90,7 @@ export default function EOfficeManagementSecurity() {
       await emailjs.send(serviceID, templateID, formData, publicKey);
       setSendStatus('success');
       setFormData({ from_name: '', from_email: '', message: '' });
-      
+
       // 3 second baad popup close kar de
       setTimeout(() => {
         setIsPopupOpen(false);
@@ -172,21 +172,21 @@ export default function EOfficeManagementSecurity() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#FAF8F5] text-[#2C2825] font-sans selection:bg-[#C87D55] selection:text-white relative overflow-hidden">
-      
+
       {/* Background Soft Ambient Glow */}
-      <motion.div 
+      <motion.div
         style={{ y: yHeroBg }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] md:w-[900px] h-[450px] bg-[#C87D55]/8 rounded-full blur-[140px] pointer-events-none" 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] md:w-[900px] h-[450px] bg-[#C87D55]/8 rounded-full blur-[140px] pointer-events-none"
       />
 
       {/* MAIN CONTENT CONTAINER */}
       <main className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-12 md:py-0 relative z-10">
-        
+
         {/* HERO SECTION */}
         <section className="text-center max-w-5xl mx-auto pt-6 md:pt-7 pb-12">
-          
+
           {/* BREADCRUMB PILL */}
-          <motion.nav 
+          <motion.nav
             initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: customEase }}
             className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-[#524B45] bg-white border border-[#EBE4DD] px-6 py-2.5 rounded-full shadow-sm mb-10"
           >
@@ -198,7 +198,7 @@ export default function EOfficeManagementSecurity() {
           </motion.nav>
 
           {/* HEADLINE */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl sm:text-7xl lg:text-7xl font-black text-[#1C1817] tracking-tight leading-[1.05] max-w-5xl mx-auto"
           >
@@ -207,7 +207,7 @@ export default function EOfficeManagementSecurity() {
           </motion.h1>
 
           {/* SUBTITLE */}
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
             className="text-base sm:text-xl lg:text-2xl text-[#6B635B] leading-relaxed font-normal max-w-3xl mx-auto mt-8 px-4"
           >
@@ -215,13 +215,13 @@ export default function EOfficeManagementSecurity() {
           </motion.p>
 
           {/* SINGLE CTA BUTTON */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
             className="flex justify-center pt-10"
           >
             <motion.a
               whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-              href="#contact"
+              href="#consult"
               className="px-10 py-4 sm:py-5 rounded-full bg-[#A64B2A] text-white font-bold text-base sm:text-lg shadow-lg hover:bg-[#B56E47] transition-all duration-300 text-center"
             >
               Start Your eOMS
@@ -229,27 +229,27 @@ export default function EOfficeManagementSecurity() {
           </motion.div>
         </section>
 
-      {/* INTRO BLOCK */}
-<motion.section
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  className="mt-16 md:mt-5 max-w-4xl mx-auto text-center bg-[#F3EEEA] border border-[#E5DCD5] p-8 md:p-12 rounded-3xl shadow-sm relative overflow-hidden"
->
-  <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#C87D55]/10 blur-2xl rounded-full" />
+        {/* INTRO BLOCK */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 md:mt-5 max-w-4xl mx-auto text-center bg-[#F3EEEA] border border-[#E5DCD5] p-8 md:p-12 rounded-3xl shadow-sm relative overflow-hidden"
+        >
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#C87D55]/10 blur-2xl rounded-full" />
 
-  <p className="relative z-10 text-lg md:text-xl sm:text-left lg:text-justify lg:text-1xl  text-[#2C1E16] leading-relaxed">
-    e-Office Management System is a{" "}
-    <span className=" text-[#A64B2A]">
-      cloud-based SaaS platform
-    </span>{" "}
-    designed specifically for{" "}
-    <span className="font-bold text-[#2C1E16]">
-      Certification Bodies, Conformity Assessment Bodies, Auditing
-      Organizations, and Compliance Service Providers.
-    </span>
-  </p>
-</motion.section>
+          <p className="relative z-10 text-lg md:text-xl sm:text-left lg:text-justify lg:text-1xl  text-[#2C1E16] leading-relaxed">
+            e-Office Management System is a{" "}
+            <span className=" text-[#A64B2A]">
+              cloud-based SaaS platform
+            </span>{" "}
+            designed specifically for{" "}
+            <span className="font-bold text-[#2C1E16]">
+              Certification Bodies, Conformity Assessment Bodies, Auditing
+              Organizations, and Compliance Service Providers.
+            </span>
+          </p>
+        </motion.section>
 
         {/* MODULES ZIG-ZAG SHOWCASE */}
         <section id="modules" className="mt-24 md:mt-32 space-y-20 md:space-y-32">
@@ -262,19 +262,19 @@ export default function EOfficeManagementSecurity() {
             {modules.map((module, index) => {
               const isEven = index % 2 === 0;
               return (
-                <motion.div 
+                <motion.div
                   key={index} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}
                   className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center justify-between gap-10 lg:gap-16`}
                 >
                   {/* IMAGE CARD */}
                   <div className="w-full lg:w-1/2">
-                    <motion.div 
+                    <motion.div
                       whileHover={{ scale: 1.02 }} transition={{ duration: 0.4 }}
                       className="relative rounded-3xl overflow-hidden border border-[#E5DCD5] shadow-lg group bg-[#F3EEEA]"
                     >
                       <div className="h-[300px] md:h-[400px] w-full overflow-hidden relative">
-                        <img 
-                          src={module.image} alt={module.title} 
+                        <img
+                          src={module.image} alt={module.title}
                           className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5]/40 via-transparent to-transparent opacity-80" />
@@ -306,15 +306,15 @@ export default function EOfficeManagementSecurity() {
 
                     {/* KNOW MORE BUTTON */}
                     <div className="pt-4">
-                       <motion.button
-                         whileHover={{ scale: 1.02 }}
-                         whileTap={{ scale: 0.98 }}
-                         onClick={() => setIsPopupOpen(true)}
-                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#C87D55]/30 transition-all group"
-                       >
-                         <span>Know More</span>
-                         <ArrowRight className="w-4 h-4 text-[#C87D55] transition-transform group-hover:translate-x-1" />
-                       </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => setIsPopupOpen(true)}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#C87D55]/30 transition-all group"
+                      >
+                        <span>Know More</span>
+                        <ArrowRight className="w-4 h-4 text-[#C87D55] transition-transform group-hover:translate-x-1" />
+                      </motion.button>
                     </div>
 
                   </div>
@@ -324,13 +324,15 @@ export default function EOfficeManagementSecurity() {
           </div>
         </section>
 
+   
+
         {/* FAQ SECTION */}
         <section className="mt-24 md:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             <div className="lg:col-span-5 space-y-4 lg:sticky lg:top-28 text-center lg:text-left">
               <span className="text-xs md:text-sm font-mono uppercase tracking-wider text-[#C87D55] font-semibold">Common Questions</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#2C2825] tracking-tight leading-tight">
-                Frequently Asked <br className="hidden lg:block"/> Questions
+                Frequently Asked <br className="hidden lg:block" /> Questions
               </h2>
               <p className="text-base text-[#6B635B] leading-relaxed max-w-md mx-auto lg:mx-0">
                 Everything you need to know about implementing eOMS in your organization.
@@ -341,7 +343,7 @@ export default function EOfficeManagementSecurity() {
               {faqs.map((faq, index) => {
                 const isOpen = openAccordion === index;
                 return (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     className={`rounded-2xl border transition-all duration-300 ${isOpen ? 'bg-white border-[#E5DCD5] shadow-md' : 'bg-transparent border-[#E5DCD5] hover:bg-white/50'}`}
                   >
@@ -352,7 +354,7 @@ export default function EOfficeManagementSecurity() {
                       <span className={`font-semibold text-base md:text-lg transition-colors ${isOpen ? 'text-[#C87D55]' : 'text-[#2C2825] group-hover:text-[#C87D55]'}`}>
                         {faq.question}
                       </span>
-                      <motion.div 
+                      <motion.div
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors text-sm ${isOpen ? 'bg-[#C87D55] text-white' : 'bg-[#F3EEEA] text-[#2C2825]'}`}
                       >
@@ -381,79 +383,79 @@ export default function EOfficeManagementSecurity() {
       </main>
 
 
-{/* why choose us  */}
-<motion.section 
-  initial="hidden" 
-  whileInView="visible" 
-  viewport={{ once: true, amount: 0.1 }} 
-  variants={fadeInUp}
-  className="mt-24 md:mt-32 relative bg-[#F5EFE6]  w-full py-16 md:py-24 overflow-hidden border-y border-[#1A1816]"
->
-  {/* Background Glow */}
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#000]rounded-full blur-[140px] pointer-events-none" />
+      {/* why choose us  */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={fadeInUp}
+        className="mt-24 md:mt-32 relative bg-[#F5EFE6]  w-full py-16 md:py-24 overflow-hidden border-y border-[#1A1816]"
+      >
+        {/* Background Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#000]rounded-full blur-[140px] pointer-events-none" />
 
-  <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
-    
-    {/* Header Section with lines like the reference design */}
-    <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-      <div className="flex items-center justify-center gap-3">
-        <span className="w-10 h-[1px] bg-[#C87D55]/60"></span>
-        <span className="text-xs md:text-sm font-mono uppercase tracking-widest text-[#C87D55] font-semibold">
-          The Advantage
-        </span>
-        <span className="w-10 h-[1px] bg-[#C87D55]/60"></span>
-      </div>
+        <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
 
-      <h2 className="text-3xl md:text-5xl font-bold text-[#000] tracking-tight leading-tight">
-        Why Modernize With eOMS?
-      </h2>
-
-      <p className="text-[#000000] text-base md:text-lg leading-relaxed font-normal">
-        Built around structured workflows to bring order, speed, and audit transparency.
-      </p>
-    </div>
-
-    {/* 2x2 Grid Layout (2 Upar, 2 Niche) */}
-    <motion.div 
-      variants={staggerContainer} 
-      className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto"
-    >
-      {whyChooseUs.map((item, idx) => (
-        <motion.div 
-          key={idx} 
-          variants={fadeInUp} 
-          whileHover={{ y: -6 }}
-          className="relative bg-white p-8 md:p-10 rounded-3xl border border-[#4A433D]/60 shadow-xl group overflow-hidden transition-all duration-300 hover:border-[#C87D55]/60 flex flex-col justify-between"
-        >
-          {/* Background Watermark Number (01, 02, 03, 04) */}
-          <span className="absolute -top-3 -right-2 text-7xl md:text-8xl font-extrabold text-[#C87D55]/10 select-none pointer-events-none  transition-colors duration-300">
-            {String(idx + 1).padStart(2, '0')}
-          </span>
-
-          <div className="relative z-10">
-            {/* Icon Box */}
-            <div className="w-14 h-14 rounded-2xl bg-[#060606] border border-[#4A433D] text-[#C87D55] flex items-center justify-center text-2xl mb-6 group-hover:scale-105  transition-all duration-300 shadow-md">
-              {item.icon}
+          {/* Header Section with lines like the reference design */}
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <div className="flex items-center justify-center gap-3">
+              <span className="w-10 h-[1px] bg-[#C87D55]/60"></span>
+              <span className="text-xs md:text-sm font-mono uppercase tracking-widest text-[#C87D55] font-semibold">
+                The Advantage
+              </span>
+              <span className="w-10 h-[1px] bg-[#C87D55]/60"></span>
             </div>
 
-            {/* Title */}
-            <h3 className="text-xl font-semibold text-[#000000] mb-3  transition-colors duration-300">
-              {item.title}
-            </h3>
+            <h2 className="text-3xl md:text-5xl font-bold text-[#000] tracking-tight leading-tight">
+              Why Modernize With eOMS?
+            </h2>
 
-            {/* Description */}
-            <p className="text-sm md:text-base text-[#000000] leading-relaxed font-normal transition-colors duration-300">
-              {item.desc}
+            <p className="text-[#000000] text-base md:text-lg leading-relaxed font-normal">
+              Built around structured workflows to bring order, speed, and audit transparency.
             </p>
           </div>
-        </motion.div>
-      ))}
-    </motion.div>
 
-  </div>
-</motion.section>
+          {/* 2x2 Grid Layout (2 Upar, 2 Niche) */}
+          <motion.div
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto"
+          >
+            {whyChooseUs.map((item, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeInUp}
+                whileHover={{ y: -6 }}
+                className="relative bg-white p-8 md:p-10 rounded-3xl border border-[#4A433D]/60 shadow-xl group overflow-hidden transition-all duration-300 hover:border-[#C87D55]/60 flex flex-col justify-between"
+              >
+                {/* Background Watermark Number (01, 02, 03, 04) */}
+                <span className="absolute -top-3 -right-2 text-7xl md:text-8xl font-extrabold text-[#C87D55]/10 select-none pointer-events-none  transition-colors duration-300">
+                  {String(idx + 1).padStart(2, '0')}
+                </span>
 
-      {/* ✅ CENTERED POPUP MODAL WITH EMAILJS INTEGRATION */}
+                <div className="relative z-10">
+                  {/* Icon Box */}
+                  <div className="w-14 h-14 rounded-2xl bg-[#060606] border border-[#4A433D] text-[#C87D55] flex items-center justify-center text-2xl mb-6 group-hover:scale-105  transition-all duration-300 shadow-md">
+                    {item.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-[#000000] mb-3  transition-colors duration-300">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm md:text-base text-[#000000] leading-relaxed font-normal transition-colors duration-300">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+        </div>
+      </motion.section>
+
+    
       <AnimatePresence>
         {isPopupOpen && (
           <>
@@ -465,7 +467,7 @@ export default function EOfficeManagementSecurity() {
               onClick={() => setIsPopupOpen(false)}
               className="fixed inset-0 bg-[#2C2825]/40 backdrop-blur-sm z-[60]"
             />
-            
+
             {/* Modal Content */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -496,8 +498,8 @@ export default function EOfficeManagementSecurity() {
                 <form onSubmit={handleSubmit} className="p-8 space-y-4">
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="from_name"
                       value={formData.from_name}
                       onChange={handleInputChange}
@@ -506,11 +508,11 @@ export default function EOfficeManagementSecurity() {
                       className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#C87D55] focus:ring-2 focus:ring-[#C87D55]/20 transition-all"
                     />
                   </div>
-                  
+
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Email Address</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       name="from_email"
                       value={formData.from_email}
                       onChange={handleInputChange}
@@ -522,7 +524,7 @@ export default function EOfficeManagementSecurity() {
 
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Project Details</label>
-                    <textarea 
+                    <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
@@ -566,7 +568,80 @@ export default function EOfficeManagementSecurity() {
           </>
         )}
       </AnimatePresence>
+  <section id="consult" className="relative overflow-hidden bg-[#F7F3E8] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      {/* Background Effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#C87D55]/15 blur-3xl" />
+        <div className="absolute -bottom-24 -right-20 h-80 w-80 rounded-full bg-[#A64B2A]/10 blur-3xl" />
+      </div>
 
+      <div className="relative mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+          className="relative overflow-hidden rounded-3xl border border-[#C87D55]/25 bg-white p-6 shadow-[0_25px_80px_rgba(44,30,22,0.08)] sm:p-10 lg:p-16"
+        >
+          {/* Decorative Circle */}
+          <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full border border-[#C87D55]/20 sm:h-80 sm:w-80" />
+          <div className="pointer-events-none absolute -right-10 -top-14 h-44 w-44 rounded-full border border-[#C87D55]/15 sm:h-60 sm:w-60" />
+
+          <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-12">
+            {/* Content */}
+            <div className="max-w-3xl">
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C87D55]/30 bg-[#C87D55]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#A64B2A]">
+                <Sparkles className="h-4 w-4" />
+                Let&apos;s Build Something Great
+              </span>
+
+              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-[#2C1E16] sm:text-4xl lg:text-5xl">
+                Ready to Take Your Business{" "}
+                <span className="text-[#A64B2A]">
+                  to the Next Level?
+                </span>
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-[#6F6259] sm:text-base sm:leading-8">
+                From innovative software and websites to digital growth and
+                cybersecurity, we help turn your business goals into
+                meaningful digital solutions.
+              </p>
+
+              {/* Trust Points */}
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+                <span className="flex items-center gap-2 text-sm font-medium text-[#51443C]">
+                  <ShieldCheck className="h-5 w-5 text-[#A64B2A]" />
+                  Business-Focused Solutions
+                </span>
+
+                <span className="flex items-center gap-2 text-sm font-medium text-[#51443C]">
+                  <ShieldCheck className="h-5 w-5 text-[#A64B2A]" />
+                  Reliable Technical Support
+                </span>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
+              <motion.a
+                href="/#contact"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#A64B2A] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-[#A64B2A]/20 transition-colors hover:bg-[#843B22] sm:px-8"
+              >
+                Let&apos;s Talk
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </motion.a>
+
+              <p className="text-center text-xs leading-5 text-[#8A7B70]">
+                Let&apos;s discuss your next project
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
     </div>
   );
 }

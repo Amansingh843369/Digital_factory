@@ -338,7 +338,7 @@ export default function WebsiteDevelopmentPage() {
         {/* WHY CHOOSE US */}
         <motion.section 
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="mt-16 md:mt-32 max-w-5xl mx-auto px-4"
+          className="mt-16 md:mt-6 max-w-5xl mx-auto px-4"
         >
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-12 md:mb-16">
             <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#BD6E44] font-bold">The Digital  Theory Labs Advantage</span>
@@ -456,22 +456,16 @@ export default function WebsiteDevelopmentPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
                 <motion.a
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.96 }}
-                  href="#contact-form"
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#BD6E44] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#BD6E44]/25 hover:bg-[#A65E38] transition-all flex items-center justify-center gap-2 group"
-                >
-                  <span>Claim Free Consultation</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  href="tel:+919833624073"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#E5DCD5] text-[#2C2825] font-semibold text-sm hover:bg-[#E5DCD5]/60 transition-all"
-                >
-                  📞 9833-624-073
-                </motion.a>
+  whileHover={{ scale: 1.04 }}
+  whileTap={{ scale: 0.96 }}
+  href="/#contact"
+  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#BD6E44] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#BD6E44]/25 hover:bg-[#A65E38] transition-all flex items-center justify-center gap-2 group"
+>
+  <span>Claim Free Consultation</span>
+  <span className="group-hover:translate-x-1 transition-transform">→</span>
+</motion.a>
+
+ 
               </div>
             </div>
           </div>

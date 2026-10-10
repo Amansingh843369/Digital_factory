@@ -19,10 +19,10 @@ const customEase = [0.22, 1, 0.36, 1];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: customEase } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: customEase }
   }
 };
 
@@ -37,7 +37,7 @@ const staggerContainer = {
 export default function PenTestingServicesPage() {
   // ✅ State for Popup Modal
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  
+
   // ✅ NEW: Form States
   const [formData, setFormData] = useState({
     from_name: '',
@@ -91,7 +91,7 @@ export default function PenTestingServicesPage() {
     e.preventDefault();
     setIsSending(true);
     setSendStatus('idle');
-   
+
     // .env.local se credentials fetch karna
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
@@ -101,7 +101,7 @@ export default function PenTestingServicesPage() {
       await emailjs.send(serviceID, templateID, formData, publicKey);
       setSendStatus('success');
       setFormData({ from_name: '', from_email: '', message: '' });
-      
+
       // 3 second baad popup close kar de
       setTimeout(() => {
         setIsPopupOpen(false);
@@ -118,7 +118,7 @@ export default function PenTestingServicesPage() {
   // PENETRATION TESTING DATA
   const detailedServices = [
     {
-      category: "Application Security", 
+      category: "Application Security",
       title: "Web Application Penetration Testing",
       desc: "Identify and exploit vulnerabilities in your web apps before attackers do. Comprehensive OWASP Top 10 coverage.",
       highlights: [
@@ -132,7 +132,7 @@ export default function PenTestingServicesPage() {
       badge: "OWASP Top 10"
     },
     {
-      category: "Interface Security", 
+      category: "Interface Security",
       title: "API Penetration Testing",
       desc: "Secure your REST and GraphQL endpoints against data leaks, broken object level authorization, and injection attacks.",
       highlights: [
@@ -147,7 +147,7 @@ export default function PenTestingServicesPage() {
       badge: "REST & GraphQL"
     },
     {
-      category: "Mobile Security", 
+      category: "Mobile Security",
       title: "Mobile Application Testing",
       desc: "Deep-dive security assessment for Android and iOS applications, covering binary analysis and backend communication.",
       highlights: [
@@ -162,7 +162,7 @@ export default function PenTestingServicesPage() {
       badge: "iOS & Android"
     },
     {
-      category: "Infrastructure", 
+      category: "Infrastructure",
       title: "Network Penetration Testing",
       desc: "Assess the security posture of your internal and external networks, identifying misconfigurations and open attack vectors.",
       highlights: [
@@ -177,7 +177,7 @@ export default function PenTestingServicesPage() {
       badge: "Infra Security"
     },
     {
-      category: "Cloud Environment", 
+      category: "Cloud Environment",
       title: "Cloud Security Assessment",
       desc: "Review your AWS, Azure, or GCP environments for IAM misconfigurations, exposed storage, and serverless risks.",
       highlights: [
@@ -192,7 +192,7 @@ export default function PenTestingServicesPage() {
       badge: "AWS / Azure / GCP"
     },
     {
-      category: "Wireless & Physical", 
+      category: "Wireless & Physical",
       title: "Wireless & Social Engineering",
       desc: "Test the human element and wireless perimeter. From Wi-Fi cracking to targeted phishing simulations.",
       highlights: [
@@ -207,7 +207,7 @@ export default function PenTestingServicesPage() {
       badge: "Wireless & Social"
     },
     {
-      category: "Red Teaming", 
+      category: "Red Teaming",
       title: "Red Teaming & Adversary Simulation",
       desc: "Real-world attack scenarios to identify weaknesses across applications, infrastructure, identities, and security controls before actual attackers can exploit them.",
       highlights: [
@@ -254,23 +254,23 @@ export default function PenTestingServicesPage() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#F7F3E8] text-[#2C1E16] font-sans selection:bg-[#A64B2A] selection:text-white relative overflow-hidden">
-      
+
       {/* Dynamic Background */}
-      <motion.div 
+      <motion.div
         style={{ y: yHeroBg }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] max-w-[1000px] h-[500px] bg-gradient-to-b from-[#A64B2A]/10 to-transparent rounded-full blur-[100px] md:blur-[140px] pointer-events-none will-change-transform" 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] max-w-[1000px] h-[500px] bg-gradient-to-b from-[#A64B2A]/10 to-transparent rounded-full blur-[100px] md:blur-[140px] pointer-events-none will-change-transform"
       />
 
       {/* Tightened padding for mobile responsiveness */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-0 sm:py-12 relative z-10">
-        
-      {/* HERO SECTION */}
+
+        {/* HERO SECTION */}
         <section className="text-center max-w-5xl mx-auto pt-10 sm:pt-16 lg:pt-1 pb-12 flex flex-col items-center">
-          
+
           {/* CENTERED BREADCRUMB PILL */}
-          <motion.nav 
-            initial={{ opacity: 0, y: -10 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="mb-6 inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white border border-[#E5D7CD] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.05)]"
           >
@@ -282,20 +282,20 @@ export default function PenTestingServicesPage() {
           </motion.nav>
 
           {/* HEADLINE */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-[#2A2320] tracking-tight leading-[1.1]"
           >
-            Find Weaknesses. <br className="hidden md:block"/>
+            Find Weaknesses. <br className="hidden md:block" />
             <span className="text-[#A64B2A]">Before Hackers Do.</span>
           </motion.h1>
 
           {/* PARAGRAPH */}
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mb-10 md:mb-12 text-lg sm:text-xl text-[#6B5D56] leading-[1.6] font-light max-w-2xl mx-auto px-4"
           >
@@ -303,22 +303,22 @@ export default function PenTestingServicesPage() {
           </motion.p>
 
           {/* CTA BUTTON */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-             <motion.a
-               whileHover={{ scale: 1.02 }} 
-               whileTap={{ scale: 0.98 }}
-               href="/#contact"
-               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#A64B2A] text-white font-semibold text-base tracking-wide shadow-lg shadow-[#A64B2A]/20 hover:bg-[#8a3d22] transition-colors"
-             >
-               Request a Pen Test
-               <span className="text-xl leading-none font-light ml-1">→</span>
-             </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="#consultation"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#A64B2A] text-white font-semibold text-base tracking-wide shadow-lg shadow-[#A64B2A]/20 hover:bg-[#8a3d22] transition-colors"
+            >
+              Request a Pen Test
+              <span className="text-xl leading-none font-light ml-1">→</span>
+            </motion.a>
           </motion.div>
-          
+
           {/* INTRO BLOCK */}
           <motion.section
             initial={{ opacity: 0, y: 30 }}
@@ -343,36 +343,36 @@ export default function PenTestingServicesPage() {
           <div className="space-y-12 md:space-y-32">
             {detailedServices.map((service, index) => {
               const isEven = index % 2 === 0;
-              const revealClip = isEven 
-                ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] 
-                : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"]; 
+              const revealClip = isEven
+                ? ["inset(0 100% 0 0)", "inset(0 0% 0 0)"]
+                : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"];
 
               return (
-                <motion.div 
-                  key={index} 
-                  initial="hidden" 
-                  whileInView="visible" 
-                  viewport={{ once: true, amount: 0.1 }} 
+                <motion.div
+                  key={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
                   variants={fadeInUp}
                   className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 md:gap-16`}
                 >
                   {/* IMAGE SIDE */}
                   <div className="w-full lg:w-1/2 relative group">
-                    <motion.div 
-                      whileHover={{ scale: 1.02 }} 
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.5, ease: customEase }}
                       className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl bg-white border border-[#E5D7CD]/50 aspect-[4/3] md:aspect-[16/10]"
                     >
-                      <motion.div 
-                        initial={{ clipPath: revealClip[0] }} 
-                        whileInView={{ clipPath: revealClip[1] }} 
-                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }} 
+                      <motion.div
+                        initial={{ clipPath: revealClip[0] }}
+                        whileInView={{ clipPath: revealClip[1] }}
+                        transition={{ duration: 1.4, ease: customEase, delay: 0.2 }}
                         className="w-full h-full relative"
                       >
                         <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-[#2C1E16]/10 group-hover:bg-transparent transition-colors duration-700" />
                       </motion.div>
-                      
+
                       {/* Badge */}
                       <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-white/90 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg flex items-center gap-2 z-20">
                         <span className="font-mono text-[10px] md:text-xs font-bold text-[#A64B2A]">{String(index + 1).padStart(2, '0')}</span>
@@ -388,7 +388,7 @@ export default function PenTestingServicesPage() {
                       <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-[#2C1E16] tracking-tight leading-tight">{service.title}</h3>
                     </div>
                     <p className="text-sm md:text-base text-[#6B5D56] leading-relaxed font-light">{service.desc}</p>
-                    
+
                     {/* ✅ TICK MARKS SAFE HERE */}
                     <ul className="space-y-2 md:space-y-3 pt-2">
                       {service.highlights.map((item, i) => (
@@ -401,15 +401,15 @@ export default function PenTestingServicesPage() {
 
                     {/* KNOW MORE BUTTON */}
                     <div className="pt-4">
-                       <motion.button
-                         whileHover={{ scale: 1.02 }}
-                         whileTap={{ scale: 0.98 }}
-                         onClick={() => setIsPopupOpen(true)}
-                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#A64B2A]/30 transition-all group"
-                       >
-                         <span>Know More</span>
-                         <ArrowRight className="w-4 h-4 text-[#A64B2A] transition-transform group-hover:translate-x-1" />
-                       </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => setIsPopupOpen(true)}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#F3EEEA] border border-[#E5DCD5] rounded-full text-[#2C2825] font-bold text-sm shadow-sm hover:bg-[#EBE4DF] hover:border-[#A64B2A]/30 transition-all group"
+                      >
+                        <span>Know More</span>
+                        <ArrowRight className="w-4 h-4 text-[#A64B2A] transition-transform group-hover:translate-x-1" />
+                      </motion.button>
                     </div>
                   </div>
                 </motion.div>
@@ -429,7 +429,7 @@ export default function PenTestingServicesPage() {
           {/* Soft Ambient Background */}
           <div className="absolute -top-32 left-1/4 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#D9B99B]/25 rounded-full blur-[80px] md:blur-[140px] pointer-events-none" />
           <div className="absolute -bottom-32 right-1/4 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-[#C7A98D]/20 rounded-full blur-[80px] md:blur-[140px] pointer-events-none" />
-          
+
           {/* Decorative Lines */}
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B89A7C]/40 to-transparent" />
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B89A7C]/30 to-transparent" />
@@ -458,7 +458,7 @@ export default function PenTestingServicesPage() {
               >
                 {/* Soft Hover Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#F1E4D5]/70 via-transparent to-[#E8D4C0]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Giant Watermark Number */}
                 <div className="absolute -top-8 -right-4 text-[6rem] md:text-[10rem] font-extrabold text-[#5C4635]/[0.035] group-hover:text-[#8B5E3C]/[0.07] transition-colors duration-500 pointer-events-none leading-none">
                   0{idx + 1}
@@ -469,13 +469,13 @@ export default function PenTestingServicesPage() {
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-[#F3E9DD] border border-[#E2D1BF] text-[#8B5E3C] flex items-center justify-center text-xl md:text-3xl mb-6 md:mb-8 group-hover:scale-110 group-hover:bg-[#8B5E3C] group-hover:border-[#8B5E3C] group-hover:text-white transition-all duration-500 shadow-[0_8px_25px_rgba(91,65,45,0.08)]">
                     {item.icon}
                   </div>
-                  
+
                   {/* Title */}
                   <h3 className="text-lg md:text-2xl font-bold text-[#2B211B] mb-3 md:mb-4 group-hover:text-[#8B5E3C] transition-colors duration-300">{item.title}</h3>
-                  
+
                   {/* Description */}
                   <p className="text-xs md:text-base text-[#75675D] leading-relaxed font-light group-hover:text-[#55463C] transition-colors duration-300 max-w-xl">{item.desc}</p>
-                  
+
                   {/* Bottom Accent */}
                   <div className="mt-6 md:mt-8 flex items-center gap-2">
                     <span className="w-8 h-[2px] bg-[#B48A68] group-hover:w-14 transition-all duration-500" />
@@ -490,11 +490,11 @@ export default function PenTestingServicesPage() {
         {/* FAQ (SPLIT STICKY LAYOUT) */}
         <section className="mt-16 md:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-20 items-start">
-            
+
             <div className="lg:col-span-5 space-y-4 md:space-y-6 lg:sticky lg:top-32">
               <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#A64B2A] font-bold">Common Questions</span>
               <h2 className="text-2xl md:text-5xl font-extrabold text-[#2C1E16] tracking-tight leading-tight">
-                Engagement <br className="hidden lg:block"/> FAQs
+                Engagement <br className="hidden lg:block" /> FAQs
               </h2>
               <p className="text-sm md:text-base text-[#6B5D56] leading-relaxed">
                 Understand our testing methodology, scoping process, reporting format, and post-engagement support structure.
@@ -511,7 +511,7 @@ export default function PenTestingServicesPage() {
               {faqs.map((faq, index) => {
                 const isOpen = openAccordion === index;
                 return (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     className={`rounded-xl md:rounded-2xl border transition-all duration-500 ${isOpen ? 'bg-white border-[#E5D7CD] shadow-md' : 'bg-transparent border-transparent hover:bg-white/50'}`}
                   >
@@ -522,7 +522,7 @@ export default function PenTestingServicesPage() {
                       <span className={`font-bold text-sm md:text-lg transition-colors ${isOpen ? 'text-[#A64B2A]' : 'text-[#2C1E16] group-hover:text-[#A64B2A]'}`}>
                         {faq.question}
                       </span>
-                      <motion.div 
+                      <motion.div
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         className={`flex-shrink-0 w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-[#A64B2A] text-white' : 'bg-[#E5D7CD] text-[#2C1E16]'}`}
                       >
@@ -552,13 +552,13 @@ export default function PenTestingServicesPage() {
         </section>
 
         {/* CALL TO ACTION */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, scale: 0.95, y: 30 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: customEase }}
           id="consultation" className="mt-16 md:mt-32 pb-10"
         >
           <div className="relative rounded-[1.5rem] md:rounded-[3rem] bg-gradient-to-br from-[#A64B2A] to-[#7A351D] p-8 md:p-24 text-center overflow-hidden shadow-2xl text-white">
             <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
-            
+
             <div className="relative z-10 max-w-3xl mx-auto space-y-6 md:space-y-8">
               <h2 className="text-2xl sm:text-3xl md:text-6xl font-extrabold tracking-tight leading-tight">Secure Your Attack Surface</h2>
               <p className="text-white/80 text-sm md:text-lg font-medium leading-relaxed max-w-2xl mx-auto">
@@ -566,8 +566,9 @@ export default function PenTestingServicesPage() {
               </p>
               <div className="pt-2 md:pt-4">
                 <motion.a
-                  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  href="mailto:security@agency.com"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="/#contact"
                   className="inline-flex items-center justify-center gap-3 px-6 py-3 md:px-8 md:py-5 rounded-full bg-[#2C1E16] text-white font-bold text-sm md:text-base tracking-wide shadow-2xl hover:bg-black transition-colors w-full sm:w-auto"
                 >
                   Request Security Assessment
@@ -592,7 +593,7 @@ export default function PenTestingServicesPage() {
               onClick={() => setIsPopupOpen(false)}
               className="fixed inset-0 bg-[#2C2825]/40 backdrop-blur-sm z-[60]"
             />
-            
+
             {/* Modal Content */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -623,8 +624,8 @@ export default function PenTestingServicesPage() {
                 <form onSubmit={handleSubmit} className="p-8 space-y-4">
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Full Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="from_name"
                       value={formData.from_name}
                       onChange={handleInputChange}
@@ -633,11 +634,11 @@ export default function PenTestingServicesPage() {
                       className="w-full px-4 py-3 rounded-xl bg-[#F3EEEA] border border-[#E5DCD5] text-[#2C2825] placeholder-[#8C827A] focus:outline-none focus:border-[#A64B2A] focus:ring-2 focus:ring-[#A64B2A]/20 transition-all"
                     />
                   </div>
-                  
+
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Email Address</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       name="from_email"
                       value={formData.from_email}
                       onChange={handleInputChange}
@@ -649,7 +650,7 @@ export default function PenTestingServicesPage() {
 
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-[#2C2825] uppercase tracking-wider ml-1">Project Details</label>
-                    <textarea 
+                    <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}

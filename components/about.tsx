@@ -76,7 +76,7 @@ export function About() {
   }, []);
 
   return (
-    <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-20 lg:py-14">
+    <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-16 sm:py-20 lg:py-14 scroll-mt-15" >
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center lg:items-stretch gap-12 lg:grid-cols-2 lg:gap-20">

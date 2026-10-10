@@ -127,7 +127,7 @@ export function LatestNews() {
                 
                 {/* Read More Link (Pushed to bottom) */}
                 <Link
-                  href={`/blog/${p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                  href={'#'}
                   className="mt-auto pt-6 sm:pt-8 flex w-fit items-center gap-2 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-neutral-900 transition-colors duration-300 hover:text-[#C46A42]"
                 >
                   Read full article

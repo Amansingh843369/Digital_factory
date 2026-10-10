@@ -78,7 +78,7 @@ export function WhyChooseUs() {
   return (
     <section 
       ref={containerRef} 
-     
+      id="why-choose-us"
       className="relative bg-[#FAF7F2] py-16 lg:py-10 lg:min-h-[220vh]"
     >
       

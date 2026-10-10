@@ -271,78 +271,43 @@ export function Hero() {
 
               {/* ================= EXPLORE SERVICES ================= */}
 
-              <a
-                href="#services"
-                className="
-                  group
-                  relative
-                  isolate
-                  flex
-                  items-center
-                  justify-center
-                  gap-2
-                  overflow-hidden
-                  rounded-xl
-                  p-[1px]
-                  text-sm
-                  font-bold
-                  text-foreground
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                "
-              >
+<a
+  href="#services"
+  onClick={(e) => {
+    e.preventDefault();
 
-                {/* Animated border */}
-                <span
-                  className="
-                    absolute
-                    inset-[-100%]
-                    -z-10
-                    animate-[spin_6s_linear_infinite_reverse]
-                    bg-[conic-gradient(from_90deg,transparent_0%,#2C1E16_18%,#2C1E16_92%,#7c3aed_48%,transparent_70%)]
-                  "
-                />
+    document.getElementById("services")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
 
-                {/* Inner */}
-                <span
-                  className="
-                    relative
-                    flex
-                    w-full
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-[11px]
-                    border
-                 
-                    bg-background 
-                    px-6
-                    py-3.5
-                    backdrop-blur-xl
-                    transition-all
-                    duration-300
-                    
-                  "
-                >
+    window.history.replaceState(null, "", "#services");
+  }}
+  className="
+    group relative isolate flex items-center justify-center gap-2
+    overflow-hidden rounded-xl p-[1px] text-sm font-bold
+    text-foreground transition-all duration-300 hover:-translate-y-1
+  "
+>
+  <span
+    className="
+      absolute inset-[-100%] -z-10
+      animate-[spin_6s_linear_infinite_reverse]
+      bg-[conic-gradient(from_90deg,transparent_0%,#2C1E16_18%,#2C1E16_92%,#7c3aed_48%,transparent_70%)]
+    "
+  />
 
-                  <Layers
-                    className="
-                      h-3
-                      w-4
-                      text-muted-foreground
-                      
-                      duration-300
-                     
-                    "
-                  />
-
-                  Explore Services
-
-                </span>
-
-              </a>
-
+  <span
+    className="
+      relative flex w-full items-center justify-center gap-2
+      rounded-[11px] border bg-background px-6 py-3.5
+      backdrop-blur-xl transition-all duration-300
+    "
+  >
+    <Layers className="h-3 w-4 text-muted-foreground" />
+    Explore Services
+  </span>
+</a>
             </motion.div>
 
           </motion.div>

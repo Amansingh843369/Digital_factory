@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ContactLink from "@/components/ContactLink";
 import { ArrowUp, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -18,7 +19,7 @@ const COLUMNS = [
       { name: "Digital Marketing", href: "/services/digital-marketing" },
       { name: "Cyber Security", href: "/services/cyber-security" },
       { name: "Penetration Testing", href: "/services/penetration-testing" },
-      { name: "eOMS", href: "/services/eoms" },
+      { name: "eOMS", href: "/services/e-office-management-security" },
     ],
   },
   {
@@ -27,7 +28,7 @@ const COLUMNS = [
       { name: "Home", href: "/" },
       { name: "About Us", href: "/#about" },
       { name: "Why Choose Us", href: "/#why-choose-us" },
-      { name: "Careers", href: "/careers" },
+      { name: "Careers", href: "/career" },
       { name: "Contact", href: "/#contact" },
       { name: "Privacy Policy", href: "/privacy-policy" },
     ],
@@ -152,16 +153,17 @@ export function SiteFooter() {
                   whileTap={reduceMotion ? {} : { scale: 0.97 }}
                   className="inline-block w-full sm:w-auto"
                 >
-                  <Link
-                    href="/#contact"
+                  <ContactLink
                     className="group relative inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-[#C46A42] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_12px_28px_rgba(196,106,66,0.22)] transition-all duration-300 hover:bg-[#A95A37] sm:px-7 sm:py-4 sm:text-sm"
                   >
                     <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+
                     <span className="relative z-10">Start a project</span>
+
                     <span className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full bg-black/15 sm:h-8 sm:w-8">
                       <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </span>
-                  </Link>
+                  </ContactLink>
                 </motion.div>
               </motion.div>
             </div>
@@ -181,18 +183,32 @@ export function SiteFooter() {
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
             {/* 1. BRAND + SOCIAL LINKS */}
             <motion.div variants={fadeUp} className="sm:col-span-2 lg:col-span-4">
-              <motion.div whileHover={reduceMotion ? {} : { y: -2 }} className="inline-block">
-                <Link href="/" className="group inline-block">
-                   
-                    <Image
-                      src="/digitalfactorytheorylab.png"
-                      alt="Digital Theory labs Logo"
-                      width={140}
-                      height={140}
-                      priority
-                      className="h-[100px] w-[110px] object-cover sm:w-[310px]"
-                    />
- 
+              <motion.div
+                whileHover={reduceMotion ? {} : { y: -2 }}
+                className="inline-flex w-fit max-w-full"
+              >
+                <Link
+                  href="/"
+                  aria-label="Digital Theory Labs Home"
+                  className="inline-flex items-center"
+                >
+                  <Image
+                    src="/digitalfactorytheorylab.png"
+                    alt="Digital Theory Labs Logo"
+                    width={310}
+                    height={100}
+                    priority
+                    sizes="(max-width: 639px) 190px, (max-width: 1023px) 240px, 310px"
+                     className="
+                      h-auto
+                      w-[230px]
+                      max-w-full
+                      object-contain
+                      sm:w-[220px]
+                      lg:w-[270px]
+                      xl:w-[310px]
+  "
+                  />
                 </Link>
               </motion.div>
 
@@ -210,7 +226,7 @@ export function SiteFooter() {
                     <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                   </svg>
                 </Link>
-            
+
                 <Link
                   href="https://www.instagram.com/digital_factory2010/?hl=en" target="_blank"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C46A42]/10 text-[#C46A42] transition-all hover:bg-[#C46A42] hover:text-white"
@@ -265,7 +281,7 @@ export function SiteFooter() {
                   >
                     <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#C46A42]" />
                     <span className="text-[13px] text-neutral-600 transition-colors group-hover:text-neutral-950">
-                       97680 19387 / 98670 81041
+                      97680 19387 / 98670 81041
                     </span>
                   </a>
                 </li>
@@ -376,6 +392,30 @@ function FooterColumn({ column }: { column: { title: string; links: { name: stri
           <li key={link.name}>
             <Link
               href={link.href}
+              onClick={(e) => {
+                const isHomePage = window.location.pathname === "/";
+                const isHomeSection =
+                  link.href === "/" ||
+                  link.href === "/#about" ||
+                  link.href === "/#why-choose-us" ||
+                  link.href === "/#contact";
+
+                if (isHomePage && isHomeSection) {
+                  e.preventDefault();
+
+                  if (link.href === "/") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  } else {
+                    const sectionId = link.href.split("#")[1];
+                    document.getElementById(sectionId)?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+
+                    window.history.replaceState(null, "", link.href);
+                  }
+                }
+              }}
               className="group flex items-center gap-2 text-[13px] text-neutral-600 transition-all duration-300 hover:text-neutral-950"
             >
               <span>{link.name}</span>
